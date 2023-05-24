@@ -12,11 +12,7 @@ struct Macro01App: App {
     var body: some Scene {
         WindowGroup {
             MainView()
-            BotaoGenRedondoView(action: {},
-                                image: "Saci",
-                                foregroundColor: .white,
-                                padding: 10,
-                                backgroundColor: .blue)
+           
         }
     }
 }

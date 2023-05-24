@@ -1,6 +1,8 @@
 import SwiftUI
 
-struct BotaoGenRedondoView: View {
+
+
+struct ButtonGenRound: View {
     let action: () -> Void
     let image: String
     let foregroundColor: Color
@@ -23,7 +25,7 @@ struct BotaoGenRedondoView: View {
 
 struct BotaoGenRedondo_Previews: PreviewProvider {
     static var previews: some View {
-        BotaoGenRedondoView(action: {},
+        ButtonGenRound(action: {},
                             image: "Saci",
                             foregroundColor: .white,
                             padding: 10,
