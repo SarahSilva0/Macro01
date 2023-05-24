@@ -19,6 +19,7 @@
 		FA6F18732A1D302000E76127 /* Macro01UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6F18722A1D302000E76127 /* Macro01UITests.swift */; };
 		FA6F18752A1D302000E76127 /* Macro01UITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6F18742A1D302000E76127 /* Macro01UITestsLaunchTests.swift */; };
 		FAE3635C2A1E87C000643271 /* ButtonComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAE3635B2A1E87C000643271 /* ButtonComponent.swift */; };
+		FAE3635E2A1E90EA00643271 /* CardComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAE3635D2A1E90EA00643271 /* CardComponent.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,6 +55,7 @@
 		FA6F18722A1D302000E76127 /* Macro01UITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Macro01UITests.swift; sourceTree = "<group>"; };
 		FA6F18742A1D302000E76127 /* Macro01UITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Macro01UITestsLaunchTests.swift; sourceTree = "<group>"; };
 		FAE3635B2A1E87C000643271 /* ButtonComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonComponent.swift; sourceTree = "<group>"; };
+		FAE3635D2A1E90EA00643271 /* CardComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardComponent.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -127,6 +129,7 @@
 				1905A5332A1E8FB40010D8A9 /* TextBox.swift */,
 				193567A12A1E854200C7D34B /* CharacterTextBox.swift */,
 				1905A5352A1E961D0010D8A9 /* SquareGallery.swift */,
+				FAE3635D2A1E90EA00643271 /* CardComponent.swift */,
 				FA6F185B2A1D302000E76127 /* Assets.xcassets */,
 				FA6F185D2A1D302000E76127 /* Preview Content */,
 			);
@@ -288,6 +291,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FAE3635E2A1E90EA00643271 /* CardComponent.swift in Sources */,
 				FA6F185A2A1D301F00E76127 /* MainView.swift in Sources */,
 				FAE3635C2A1E87C000643271 /* ButtonComponent.swift in Sources */,
 				1905A5342A1E8FB40010D8A9 /* TextBox.swift in Sources */,
