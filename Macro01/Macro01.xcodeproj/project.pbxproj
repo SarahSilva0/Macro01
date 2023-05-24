@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		EBCFE2E12A1E8670002CABFF /* BotaoGenRedondoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBCFE2E02A1E8670002CABFF /* BotaoGenRedondoView.swift */; };
 		FA6F18582A1D301F00E76127 /* Macro01App.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6F18572A1D301F00E76127 /* Macro01App.swift */; };
 		FA6F185A2A1D301F00E76127 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6F18592A1D301F00E76127 /* MainView.swift */; };
 		FA6F185C2A1D302000E76127 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FA6F185B2A1D302000E76127 /* Assets.xcassets */; };
@@ -35,6 +36,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		EBCFE2E02A1E8670002CABFF /* BotaoGenRedondoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BotaoGenRedondoView.swift; sourceTree = "<group>"; };
 		FA6F18542A1D301F00E76127 /* Macro01.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Macro01.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FA6F18572A1D301F00E76127 /* Macro01App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Macro01App.swift; sourceTree = "<group>"; };
 		FA6F18592A1D301F00E76127 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
@@ -73,6 +75,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		EBCFE2DE2A1E8628002CABFF /* View */ = {
+			isa = PBXGroup;
+			children = (
+				EBCFE2DF2A1E863C002CABFF /* Componentes */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		EBCFE2DF2A1E863C002CABFF /* Componentes */ = {
+			isa = PBXGroup;
+			children = (
+				EBCFE2E02A1E8670002CABFF /* BotaoGenRedondoView.swift */,
+			);
+			path = Componentes;
+			sourceTree = "<group>";
+		};
 		FA6F184B2A1D301F00E76127 = {
 			isa = PBXGroup;
 			children = (
@@ -96,6 +114,7 @@
 		FA6F18562A1D301F00E76127 /* Macro01 */ = {
 			isa = PBXGroup;
 			children = (
+				EBCFE2DE2A1E8628002CABFF /* View */,
 				FA6F18572A1D301F00E76127 /* Macro01App.swift */,
 				FA6F18592A1D301F00E76127 /* MainView.swift */,
 				FAE3635B2A1E87C000643271 /* ButtonComponent.swift */,
@@ -263,6 +282,7 @@
 				FA6F185A2A1D301F00E76127 /* MainView.swift in Sources */,
 				FAE3635C2A1E87C000643271 /* ButtonComponent.swift in Sources */,
 				FA6F18582A1D301F00E76127 /* Macro01App.swift in Sources */,
+				EBCFE2E12A1E8670002CABFF /* BotaoGenRedondoView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
