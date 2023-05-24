@@ -10,10 +10,16 @@ import SwiftUI
 struct MainView: View {
     var body: some View {
         VStack {
+<<<<<<< Updated upstream
             Image(systemName: "globe")
                 .imageScale(.large)
                 .foregroundColor(.accentColor)
             Text("Hello, world!")
+=======
+            GeometryReader { geometry in
+                    
+            }
+>>>>>>> Stashed changes
         }
         .padding()
     }
