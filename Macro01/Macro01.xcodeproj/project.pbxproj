@@ -10,7 +10,8 @@
 		1905A5342A1E8FB40010D8A9 /* TextBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1905A5332A1E8FB40010D8A9 /* TextBox.swift */; };
 		1905A5362A1E961D0010D8A9 /* SquareGallery.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1905A5352A1E961D0010D8A9 /* SquareGallery.swift */; };
 		193567A22A1E854200C7D34B /* CharacterTextBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 193567A12A1E854200C7D34B /* CharacterTextBox.swift */; };
-		EBCFE2E12A1E8670002CABFF /* BotaoGenRedondoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBCFE2E02A1E8670002CABFF /* BotaoGenRedondoView.swift */; };
+		EBAEA43E2A1F7E300073FDB3 /* ScoreMarker.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBAEA43D2A1F7E300073FDB3 /* ScoreMarker.swift */; };
+		EBCFE2E12A1E8670002CABFF /* ButtonGenRound.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBCFE2E02A1E8670002CABFF /* ButtonGenRound.swift */; };
 		FA6F18582A1D301F00E76127 /* Macro01App.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6F18572A1D301F00E76127 /* Macro01App.swift */; };
 		FA6F185A2A1D301F00E76127 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6F18592A1D301F00E76127 /* MainView.swift */; };
 		FA6F185C2A1D302000E76127 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FA6F185B2A1D302000E76127 /* Assets.xcassets */; };
@@ -43,7 +44,8 @@
 		1905A5332A1E8FB40010D8A9 /* TextBox.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextBox.swift; sourceTree = "<group>"; };
 		1905A5352A1E961D0010D8A9 /* SquareGallery.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SquareGallery.swift; sourceTree = "<group>"; };
 		193567A12A1E854200C7D34B /* CharacterTextBox.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterTextBox.swift; sourceTree = "<group>"; };
-		EBCFE2E02A1E8670002CABFF /* BotaoGenRedondoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BotaoGenRedondoView.swift; sourceTree = "<group>"; };
+		EBAEA43D2A1F7E300073FDB3 /* ScoreMarker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreMarker.swift; sourceTree = "<group>"; };
+		EBCFE2E02A1E8670002CABFF /* ButtonGenRound.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonGenRound.swift; sourceTree = "<group>"; };
 		FA6F18542A1D301F00E76127 /* Macro01.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Macro01.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FA6F18572A1D301F00E76127 /* Macro01App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Macro01App.swift; sourceTree = "<group>"; };
 		FA6F18592A1D301F00E76127 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
@@ -100,12 +102,12 @@
 		EBCFE2DE2A1E8628002CABFF /* View */ = {
 			isa = PBXGroup;
 			children = (
-				EBCFE2DF2A1E863C002CABFF /* Componentes */,
+				EBCFE2DF2A1E863C002CABFF /* Components */,
 			);
 			path = View;
 			sourceTree = "<group>";
 		};
-		EBCFE2DF2A1E863C002CABFF /* Componentes */ = {
+		EBCFE2DF2A1E863C002CABFF /* Components */ = {
 			isa = PBXGroup;
 			children = (
 				1905A5332A1E8FB40010D8A9 /* TextBox.swift */,
@@ -113,9 +115,10 @@
 				193567A12A1E854200C7D34B /* CharacterTextBox.swift */,
 				FAE3635D2A1E90EA00643271 /* CardComponent.swift */,
 				FAE3635B2A1E87C000643271 /* ButtonComponent.swift */,
-				EBCFE2E02A1E8670002CABFF /* BotaoGenRedondoView.swift */,
+				EBCFE2E02A1E8670002CABFF /* ButtonGenRound.swift */,
+				EBAEA43D2A1F7E300073FDB3 /* ScoreMarker.swift */,
 			);
-			path = Componentes;
+			path = Components;
 			sourceTree = "<group>";
 		};
 		FA6F184B2A1D301F00E76127 = {
@@ -308,13 +311,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				FAE3635E2A1E90EA00643271 /* CardComponent.swift in Sources */,
+				EBAEA43E2A1F7E300073FDB3 /* ScoreMarker.swift in Sources */,
 				FA6F185A2A1D301F00E76127 /* MainView.swift in Sources */,
 				FAE3635C2A1E87C000643271 /* ButtonComponent.swift in Sources */,
 				1905A5342A1E8FB40010D8A9 /* TextBox.swift in Sources */,
 				193567A22A1E854200C7D34B /* CharacterTextBox.swift in Sources */,
 				1905A5362A1E961D0010D8A9 /* SquareGallery.swift in Sources */,
 				FA6F18582A1D301F00E76127 /* Macro01App.swift in Sources */,
-				EBCFE2E12A1E8670002CABFF /* BotaoGenRedondoView.swift in Sources */,
+				EBCFE2E12A1E8670002CABFF /* ButtonGenRound.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

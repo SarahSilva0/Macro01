@@ -23,7 +23,7 @@ struct ButtonGenRound: View {
     }
 }
 
-struct BotaoGenRedondo_Previews: PreviewProvider {
+struct ButtonGenRound_Previews: PreviewProvider {
     static var previews: some View {
         ButtonGenRound(action: {},
                             image: "Saci",
