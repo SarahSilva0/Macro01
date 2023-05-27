@@ -83,13 +83,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		EBCD66332A1EADA000157CBF /* Model */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Model;
-			sourceTree = "<group>";
-		};
 		EBCD66342A1EADA800157CBF /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
@@ -118,6 +111,13 @@
 			path = Componentes;
 			sourceTree = "<group>";
 		};
+		EBE41B942A228B4600262C00 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		FA6F184B2A1D301F00E76127 = {
 			isa = PBXGroup;
 			children = (
@@ -141,8 +141,8 @@
 		FA6F18562A1D301F00E76127 /* Macro01 */ = {
 			isa = PBXGroup;
 			children = (
+				EBE41B942A228B4600262C00 /* Model */,
 				EBCD66342A1EADA800157CBF /* ViewModel */,
-				EBCD66332A1EADA000157CBF /* Model */,
 				EBCFE2DE2A1E8628002CABFF /* View */,
 				FA6F18572A1D301F00E76127 /* Macro01App.swift */,
 				FA6F18592A1D301F00E76127 /* MainView.swift */,
