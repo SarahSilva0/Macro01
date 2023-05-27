@@ -7,16 +7,29 @@
 
 import SwiftUI
 
+struct GameModel {
+    var handPlayer: [Card]
+    var players: [Player]
+    
+    init() {
+        handPlayer = cardData
+        players = [Player(cards: handPlayer, characterImage: "character"),
+                   Player(cards: handPlayer, characterImage: "character")]
+        
+        print(players[0])
+        print(players[1])
+    }
+}
+
 struct Player: Identifiable {
     var id = UUID()
     var cards: [Card]
     var characterImage: String
     var mana: Int = 1
     var points: Int = 0
+    
 }
 
-var handPlayer: [Card] = cardData
-var players: [Player] = [Player(cards: handPlayer, characterImage: "character"), Player(cards: handPlayer, characterImage: "character")]
 
 struct Card: Identifiable, Equatable {
     var id = UUID()

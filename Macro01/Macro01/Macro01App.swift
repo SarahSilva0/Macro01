@@ -18,7 +18,7 @@ struct Macro01App: App {
     var body: some Scene {
         WindowGroup {
 //            MainView()
-            MatchView()
+            MatchView(gameModel: GameModel())
            
         }
     }

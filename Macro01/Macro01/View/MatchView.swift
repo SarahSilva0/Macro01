@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct MatchView: View {
+    var gameModel: GameModel
+    
     var body: some View {
         GeometryReader { geometry in
             HStack {
@@ -17,6 +19,14 @@ struct MatchView: View {
                         .frame(width: geometry.size.width * 0.85, height: geometry.size.height * 0.22)
                 }
                 
+                    HStack {
+                        ForEach(gameModel.players[0].cards) { card in
+                            CardComponent(image: Image(card.image))
+                                .frame(width: geometry.size.width * 0.1, height: geometry.size.height * 0.5)
+                        }
+                    } .background(.red)
+   
+
                 VStack(alignment: .leading) {
                     Spacer()
                     CharacterTextBox(character: "character")
@@ -36,6 +46,6 @@ struct MatchView: View {
 
 struct MatchView_Previews: PreviewProvider {
     static var previews: some View {
-        MatchView()
+        MatchView(gameModel: GameModel())
     }
 }

@@ -14,6 +14,7 @@ struct MainView: View {
         VStack {
             GeometryReader { geometry in
                 Text("Aqui é  Main")
+                
             }
         }
         .padding()
