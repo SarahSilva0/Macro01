@@ -20,6 +20,8 @@ struct CharacterTextBox: View {
             Circle()
                 .frame(width: 250)
                 .foregroundColor(.gray)
+ 
+                
             Image(character)
                 .resizable()
                 .frame(width: 250, height: 400)

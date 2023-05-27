@@ -10,12 +10,13 @@ import SwiftUI
 struct Player: Identifiable {
     var id = UUID()
     var cards: [Card]
+    var characterImage: String
     var mana: Int = 1
     var points: Int = 0
 }
 
 var handPlayer: [Card] = cardData
-var players: [Player] = [Player(cards: handPlayer), Player(cards: handPlayer)]
+var players: [Player] = [Player(cards: handPlayer, characterImage: "character"), Player(cards: handPlayer, characterImage: "character")]
 
 struct Card: Identifiable, Equatable {
     var id = UUID()
