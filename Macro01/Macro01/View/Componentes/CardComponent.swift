@@ -17,7 +17,7 @@ struct CardComponent: View {
                 image
                     .resizable()
                     .aspectRatio(contentMode: .fit)
-                    .frame(width: geometry.size.width * 0.75, height: geometry.size.height * 0.5)
+                    .frame(width: geometry.size.width * 0.95, height: geometry.size.height * 0.7)
                     .cornerRadius(10)
 //                    .padding()
             }

@@ -19,14 +19,20 @@ struct MatchView: View {
                         .frame(width: geometry.size.width * 0.85, height: geometry.size.height * 0.22)
                 }
                 
+                VStack {
+                    Spacer()
                     HStack {
                         ForEach(gameModel.players[0].cards) { card in
                             CardComponent(image: Image(card.image))
                                 .frame(width: geometry.size.width * 0.1, height: geometry.size.height * 0.5)
                         }
-                    } .background(.red)
-   
+                    }
+                    .frame(width: geometry.size.width * 0.1, height: geometry.size.height * 0.1)
+                }
+                .frame(width: geometry.size.width * 0.1, height: geometry.size.height * 1.0)
 
+            
+                
                 VStack(alignment: .leading) {
                     Spacer()
                     CharacterTextBox(character: "character")
