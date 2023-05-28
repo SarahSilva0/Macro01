@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct Player: Identifiable {
+struct Player: Identifiable, Equatable {
     var id = UUID()
     var cards: [CardModel]
     var characterImage: String
