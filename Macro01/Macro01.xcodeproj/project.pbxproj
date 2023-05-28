@@ -14,6 +14,9 @@
 		EBCFE2E12A1E8670002CABFF /* BotaoGenRedondoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBCFE2E02A1E8670002CABFF /* BotaoGenRedondoView.swift */; };
 		EBE41B962A228D8400262C00 /* GameTableModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBE41B952A228D8400262C00 /* GameTableModel.swift */; };
 		EBF134072A23D972000FA55E /*  CardOverlayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBF134062A23D972000FA55E /*  CardOverlayView.swift */; };
+		EBF134092A23FA7F000FA55E /* PlayerModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBF134082A23FA7F000FA55E /* PlayerModel.swift */; };
+		EBF1340B2A23FAA1000FA55E /* CardModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBF1340A2A23FAA1000FA55E /* CardModel.swift */; };
+		EBF1340D2A23FAF0000FA55E /* DeckModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBF1340C2A23FAF0000FA55E /* DeckModel.swift */; };
 		FA6F18582A1D301F00E76127 /* Macro01App.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6F18572A1D301F00E76127 /* Macro01App.swift */; };
 		FA6F185A2A1D301F00E76127 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6F18592A1D301F00E76127 /* MainView.swift */; };
 		FA6F185C2A1D302000E76127 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FA6F185B2A1D302000E76127 /* Assets.xcassets */; };
@@ -50,6 +53,9 @@
 		EBCFE2E02A1E8670002CABFF /* BotaoGenRedondoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BotaoGenRedondoView.swift; sourceTree = "<group>"; };
 		EBE41B952A228D8400262C00 /* GameTableModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameTableModel.swift; sourceTree = "<group>"; };
 		EBF134062A23D972000FA55E /*  CardOverlayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = " CardOverlayView.swift"; sourceTree = "<group>"; };
+		EBF134082A23FA7F000FA55E /* PlayerModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerModel.swift; sourceTree = "<group>"; };
+		EBF1340A2A23FAA1000FA55E /* CardModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardModel.swift; sourceTree = "<group>"; };
+		EBF1340C2A23FAF0000FA55E /* DeckModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeckModel.swift; sourceTree = "<group>"; };
 		FA6F18542A1D301F00E76127 /* Macro01.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Macro01.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FA6F18572A1D301F00E76127 /* Macro01App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Macro01App.swift; sourceTree = "<group>"; };
 		FA6F18592A1D301F00E76127 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
@@ -124,6 +130,9 @@
 			isa = PBXGroup;
 			children = (
 				EBE41B952A228D8400262C00 /* GameTableModel.swift */,
+				EBF134082A23FA7F000FA55E /* PlayerModel.swift */,
+				EBF1340C2A23FAF0000FA55E /* DeckModel.swift */,
+				EBF1340A2A23FAA1000FA55E /* CardModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -317,6 +326,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FAE3635E2A1E90EA00643271 /* CardComponent.swift in Sources */,
+				EBF134092A23FA7F000FA55E /* PlayerModel.swift in Sources */,
 				FA6F185A2A1D301F00E76127 /* MainView.swift in Sources */,
 				FAE3635C2A1E87C000643271 /* ButtonComponent.swift in Sources */,
 				1905A5342A1E8FB40010D8A9 /* TextBox.swift in Sources */,
@@ -324,7 +334,9 @@
 				193567A22A1E854200C7D34B /* CharacterTextBox.swift in Sources */,
 				1905A5362A1E961D0010D8A9 /* SquareGallery.swift in Sources */,
 				EB09111A2A22B0BC00D0BE67 /* MatchView.swift in Sources */,
+				EBF1340D2A23FAF0000FA55E /* DeckModel.swift in Sources */,
 				EBE41B962A228D8400262C00 /* GameTableModel.swift in Sources */,
+				EBF1340B2A23FAA1000FA55E /* CardModel.swift in Sources */,
 				FA6F18582A1D301F00E76127 /* Macro01App.swift in Sources */,
 				EBCFE2E12A1E8670002CABFF /* BotaoGenRedondoView.swift in Sources */,
 			);

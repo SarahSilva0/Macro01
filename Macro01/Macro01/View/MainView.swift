@@ -1,9 +1,3 @@
-//
-//  ContentView.swift
-//  Macro01
-//
-//  Created by Sarah dos Santos Silva on 23/05/23.
-//
 
 import SwiftUI
 
@@ -13,8 +7,7 @@ struct MainView: View {
     var body: some View {
         VStack {
             GeometryReader { geometry in
-                Text("Aqui é  Main")
-                
+                MatchView(gameModelBinding: .constant(GameTableModel()))
             }
         }
         .padding()

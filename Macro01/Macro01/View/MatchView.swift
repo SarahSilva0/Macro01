@@ -1,10 +1,11 @@
 import SwiftUI
 
 struct MatchView: View {
-    var gameModel: GameModel
+    @Binding var gameModelBinding: GameTableModel?
+    
     @State private var showCardOverlay = false
-    @State private var selectedPlayerCards: [Card]?
-
+    @State private var selectedPlayerCards: [CardModel]?
+    
     var body: some View {
         GeometryReader { geometry in
             VStack {
@@ -13,16 +14,16 @@ struct MatchView: View {
                     HStack {
                         VStack(alignment: .trailing) {
                             Spacer()
-                            CharacterTextBox(character: "character")
+                            CharacterTextBox(character: gameModelBinding?.players[0].characterImage ?? "")
                                 .frame(width: geometry.size.width * 0.85, height: geometry.size.height * 0.22)
                         }
                         
                         VStack {
                             Spacer()
                             HStack {
-                                ForEach(gameModel.players[0].cards) { card in
+                                ForEach(gameModelBinding?.players[0].cards ?? []) { card in
                                     Button(action: {
-                                        selectedPlayerCards = gameModel.players[0].cards
+                                        selectedPlayerCards = gameModelBinding?.players[0].cards
                                         showCardOverlay = true
                                     }) {
                                         CardComponent(image: Image(card.image))
@@ -35,7 +36,7 @@ struct MatchView: View {
 
                         VStack(alignment: .leading) {
                             Spacer()
-                            CharacterTextBox(character: "character")
+                            CharacterTextBox(character: gameModelBinding?.players[1].characterImage ?? "")
                                 .frame(width: geometry.size.width * 0.85, height: geometry.size.height * 0.22)
                         }
                     }
@@ -44,13 +45,7 @@ struct MatchView: View {
             }
         }
         .sheet(isPresented: $showCardOverlay) {
-            CardOverlayView(showCardOverlay: $showCardOverlay, selectedPlayerCards: selectedPlayerCards, gameModel: gameModel)
+            CardOverlayView(showCardOverlay: $showCardOverlay, selectedPlayerCards: selectedPlayerCards, gameModel: $gameModelBinding)
         }
-    }
-}
-
-struct MatchView_Previews: PreviewProvider {
-    static var previews: some View {
-        MatchView(gameModel: GameModel())
     }
 }
