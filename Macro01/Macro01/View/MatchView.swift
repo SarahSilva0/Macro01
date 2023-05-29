@@ -1,3 +1,4 @@
+<<<<<<< Updated upstream
 //
 //  MatchView.swift
 //  Macro01
@@ -6,12 +7,17 @@
 //
 
 import SwiftUI
+=======
+>>>>>>> Stashed changes
 
+
+import SwiftUI
 struct MatchView: View {
     var gameModel: GameModel
     
     var body: some View {
         GeometryReader { geometry in
+<<<<<<< Updated upstream
             HStack {
                 VStack(alignment: .trailing) {
                     Spacer()
@@ -26,9 +32,24 @@ struct MatchView: View {
                             CardComponent(image: Image(card.image))
                                 .frame(width: geometry.size.width * 0.1, height: geometry.size.height * 0.5)
                         }
+=======
+            VStack (spacing: 0) {
+                
+                if let cards = gameModel.players[0].cards {
+                
+                    ForEach(cards) { card in
+                        CardComponent(image: Image(card.image))
+                            .frame(width: UIScreen.main.bounds.width * 0.1, height: UIScreen.main.bounds.height * 0.5)
+                            .onTapGesture {
+                                selectedCard = card
+                                showCardOverlay = true
+                                
+                            }
+>>>>>>> Stashed changes
                     }
                     .frame(width: geometry.size.width * 0.1, height: geometry.size.height * 0.1)
                 }
+<<<<<<< Updated upstream
                 .frame(width: geometry.size.width * 0.1, height: geometry.size.height * 1.0)
 
             
@@ -40,6 +61,13 @@ struct MatchView: View {
                 }
             }
             .frame(width: geometry.size.width, height: geometry.size.height)
+=======
+                 
+            }
+            .sheet(isPresented: $showCardOverlay) {
+                CardOverlayView(showCardOverlay: $showCardOverlay, selectedCard: $selectedCard, gameModel: gameModel)
+            }
+>>>>>>> Stashed changes
         }
     }
 }

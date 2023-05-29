@@ -21,12 +21,21 @@ struct GameModel {
     }
 }
 
+<<<<<<< Updated upstream
 struct Player: Identifiable {
     var id = UUID()
     var cards: [Card]
     var characterImage: String
     var mana: Int = 1
     var points: Int = 0
+=======
+    func dealCardsToPlayers() {
+        for card in handPlayer {
+            players[0].cards.append(card)
+            players[1].cards.append(card)
+        }
+    }
+>>>>>>> Stashed changes
     
 }
 
