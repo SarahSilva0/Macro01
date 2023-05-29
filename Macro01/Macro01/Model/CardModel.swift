@@ -12,3 +12,7 @@ struct CardModel: Identifiable, Equatable {
     var image: String
     var type: String
 }
+
+
+
+

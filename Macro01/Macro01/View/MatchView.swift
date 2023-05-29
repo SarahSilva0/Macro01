@@ -1,51 +1,37 @@
 import SwiftUI
 
 struct MatchView: View {
-    @Binding var gameModelBinding: GameTableModel?
+    @ObservedObject var gameModel: GameTableModel
+    
     @State private var showCardOverlay = false
-    @State private var selectedPlayerCards: [CardModel]?
+    @State private var selectedCard: CardModel?
     
     var body: some View {
         VStack {
             Spacer()
+            
             HStack {
-                if let characterImage = gameModelBinding?.players[0].characterImage {
-                    CharacterTextBox(character: characterImage)
-                        .frame(width: UIScreen.main.bounds.width * 0.3, height: UIScreen.main.bounds.height * 1.5)
-                }
-                
-                    Spacer()
-                    HStack {
-                        if let cards = gameModelBinding?.players[0].cards {
-                            ForEach(cards.indices, id: \.self) { index in
-                                if index < cards.count {
-                                    let card = cards[index]
-                                    Button(action: {
-                                        selectedPlayerCards = cards
-                                        showCardOverlay = true
-                                    }) {
-                                        CardComponent(image: Image(card.image))
-                                            .frame(width: UIScreen.main.bounds.width * 0.1, height: UIScreen.main.bounds.height * 0.5)
-                                    }
-                                }
-                            }
+                if let cards = gameModel.players[0].cards {
+                    ForEach(cards) { card in
+                        Button(action: {
+                            selectedCard = card
+                            showCardOverlay = true
+                        }) {
+                            CardComponent(image: Image(card.image))
+                                .frame(width: UIScreen.main.bounds.width * 0.1, height: UIScreen.main.bounds.height * 0.5)
                         }
                     }
-                .frame(width: UIScreen.main.bounds.width * 0.1, height: UIScreen.main.bounds.height * 1.0)
-               
-                HStack {
-                    
-                    if let characterImage = gameModelBinding?.players[1].characterImage {
-                        CharacterTextBox(character: characterImage)
-                            .frame(width: UIScreen.main.bounds.width * 0.85, height: UIScreen.main.bounds.height * 0.22)
-                    }
                 }
-                Spacer()
             }
-            .sheet(isPresented: $showCardOverlay) {
-                CardOverlayView(showCardOverlay: $showCardOverlay, selectedPlayerCards: selectedPlayerCards, gameModel: $gameModelBinding)
-            }
+            
+            Spacer()
         }
-        
+        .sheet(isPresented: $showCardOverlay) {
+            CardOverlayView(showCardOverlay: $showCardOverlay, selectedCard: $selectedCard, gameModel: gameModel)
+        }
     }
 }
+
+
+
+
