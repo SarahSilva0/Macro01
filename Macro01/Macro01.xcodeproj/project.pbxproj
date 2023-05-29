@@ -22,6 +22,7 @@
 		FA6F18752A1D302000E76127 /* Macro01UITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6F18742A1D302000E76127 /* Macro01UITestsLaunchTests.swift */; };
 		FAE3635C2A1E87C000643271 /* ButtonComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAE3635B2A1E87C000643271 /* ButtonComponent.swift */; };
 		FAE3635E2A1E90EA00643271 /* CardComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAE3635D2A1E90EA00643271 /* CardComponent.swift */; };
+		FAFF07C72A251E4D00D5BA2B /* FisrtView .swift in Sources */ = {isa = PBXBuildFile; fileRef = FAFF07C62A251E4D00D5BA2B /* FisrtView .swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -60,6 +61,7 @@
 		FA6F18742A1D302000E76127 /* Macro01UITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Macro01UITestsLaunchTests.swift; sourceTree = "<group>"; };
 		FAE3635B2A1E87C000643271 /* ButtonComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonComponent.swift; sourceTree = "<group>"; };
 		FAE3635D2A1E90EA00643271 /* CardComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardComponent.swift; sourceTree = "<group>"; };
+		FAFF07C62A251E4D00D5BA2B /* FisrtView .swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FisrtView .swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +101,7 @@
 			children = (
 				EB0911192A22B0BC00D0BE67 /* MatchView.swift */,
 				FA6F18592A1D301F00E76127 /* MainView.swift */,
+				FAFF07C62A251E4D00D5BA2B /* FisrtView .swift */,
 				EBCFE2DF2A1E863C002CABFF /* Componentes */,
 			);
 			path = View;
@@ -315,6 +318,7 @@
 			files = (
 				FAE3635E2A1E90EA00643271 /* CardComponent.swift in Sources */,
 				FA6F185A2A1D301F00E76127 /* MainView.swift in Sources */,
+				FAFF07C72A251E4D00D5BA2B /* FisrtView .swift in Sources */,
 				FAE3635C2A1E87C000643271 /* ButtonComponent.swift in Sources */,
 				1905A5342A1E8FB40010D8A9 /* TextBox.swift in Sources */,
 				193567A22A1E854200C7D34B /* CharacterTextBox.swift in Sources */,
@@ -487,8 +491,8 @@
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -516,8 +520,8 @@
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
