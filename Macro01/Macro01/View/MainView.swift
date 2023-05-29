@@ -7,7 +7,7 @@ struct MainView: View {
     var body: some View {
         VStack {
             GeometryReader { geometry in
-                MatchView(gameModel: GameTableModel())
+//                MatchView(gameModel: GameTableModel())
             }
         }
         .padding()

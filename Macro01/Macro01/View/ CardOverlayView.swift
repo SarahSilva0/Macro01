@@ -6,38 +6,40 @@ struct CardOverlayView: View {
     @ObservedObject var gameModel: GameTableModel
     
     var body: some View {
-        VStack {
-            Text("Cartas do Primeiro Jogador")
-                .font(.headline)
-                .foregroundColor(.white)
-            
-            Spacer()
-            
-            if let players = gameModel.players {
-                LazyHStack {
-                    ForEach(players[0].cards.indices, id: \.self) { index in
-                        let card = players[0].cards[index]
-                        GeometryReader { geometry in
-                            Button(action: {
-                                handleCardSelection(index: index)
-                                showCardOverlay = false
-    
-                            }) {
-                                CardComponent(image: Image(card.image))
-                                    .frame(width: geometry.size.height * 1.0, height: geometry.size.height * 1.0)
-                                    .padding()
+        
+        GeometryReader { geometry in
+            ZStack{
+                Color(.black)
+                    .opacity(0.7)
+                
+                    VStack {
+                        Text("Cartas do Primeiro Jogador")
+                            .font(.headline)
+                                        
+                        if let players = gameModel.players {
+                            HStack {
+                                ForEach(players[0].cards.indices, id: \.self) { index in
+                                    let card = players[0].cards[index]
+                                    
+                                    Button(action: {
+                                        handleCardSelection(index: index)
+                                        showCardOverlay = false
+                                        
+                                    }) {
+                                        CardComponent(image: Image(card.image))
+                                            .padding()
+                                    }
+                                }
                             }
                         }
-                        .frame(width: UIScreen.main.bounds.height * 0.5)
                     }
-                }
-                .padding(.horizontal, 10)
+                    .frame(width: geometry.size.width * 0.9)
+                
             }
-            
-            Spacer()
+            .ignoresSafeArea(.all)
         }
-        .background(Color.clear)
     }
+        
     
     func checkAndRefillDeck() -> Bool {
         if gameModel.deck.cards.isEmpty {
