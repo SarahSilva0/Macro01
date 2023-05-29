@@ -7,31 +7,27 @@ struct MatchView: View {
     @State private var selectedCard: CardModel?
     
     var body: some View {
-        VStack {
-            Spacer()
-            
-            HStack {
-                if let cards = gameModel.players[0].cards {
-                    ForEach(cards) { card in
-                        Button(action: {
-                            selectedCard = card
-                            showCardOverlay = true
-                        }) {
+        GeometryReader { geometry in
+            VStack {
+                HStack {
+                    if let cards = gameModel.players[0].cards {
+                        ForEach(cards) { card in
                             CardComponent(image: Image(card.image))
                                 .frame(width: UIScreen.main.bounds.width * 0.1, height: UIScreen.main.bounds.height * 0.5)
+                                .onTapGesture {
+                                    selectedCard = card
+                                    showCardOverlay = true
+                                }
                         }
                     }
                 }
             }
-            
-            Spacer()
+            .frame(width: UIScreen.main.bounds.width * 0.85, height: UIScreen.main.bounds.height * 1.6)
         }
+     
         .sheet(isPresented: $showCardOverlay) {
             CardOverlayView(showCardOverlay: $showCardOverlay, selectedCard: $selectedCard, gameModel: gameModel)
+            
         }
     }
 }
-
-
-
-

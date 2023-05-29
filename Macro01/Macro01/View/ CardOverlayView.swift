@@ -19,20 +19,9 @@ struct CardOverlayView: View {
                         let card = players[0].cards[index]
                         GeometryReader { geometry in
                             Button(action: {
-                                if let selectedCard = selectedCard {
-                                    if let newCard = gameModel.deck.cards.first {
-                                        if let handIndex = gameModel.handPlayer.firstIndex(of: selectedCard) {
-                                            gameModel.handPlayer[handIndex] = newCard
-                                            gameModel.players[0].cards[index] = newCard
-                                            gameModel.deck.cards.removeFirst()
-                                        }
-                                    } else {
-                                        if gameModel.deck.cards.isEmpty {
-                                            gameModel.refillDeck()
-                                        }
-                                    }
-                                }
+                                handleCardSelection(index: index)
                                 showCardOverlay = false
+    
                             }) {
                                 CardComponent(image: Image(card.image))
                                     .frame(width: geometry.size.height * 1.0, height: geometry.size.height * 1.0)
@@ -48,5 +37,28 @@ struct CardOverlayView: View {
             Spacer()
         }
         .background(Color.clear)
+    }
+    
+    func checkAndRefillDeck() -> Bool {
+        if gameModel.deck.cards.isEmpty {
+            gameModel.refillDeck()
+            return true
+        }
+        return false
+    }
+
+    //Revisar função pra criar outras funcoes menores
+    func handleCardSelection(index: Int) {
+        if let selectedCard = selectedCard {
+            if let newCard = gameModel.deck.cards.first {
+                if let handIndex = gameModel.handPlayer.firstIndex(of: selectedCard) {
+                    gameModel.handPlayer[handIndex] = newCard
+                    gameModel.players[0].cards[index] = newCard
+                    gameModel.deck.cards.removeFirst()
+                }
+            } else if checkAndRefillDeck() {
+  
+            }
+        }
     }
 }
