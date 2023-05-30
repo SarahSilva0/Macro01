@@ -13,7 +13,7 @@ struct SecondView: View {
             VStack {
                 VStack {
                     ButtonGenRound(action: {
-                        print("botao apertado")
+                        print("botao")
                     }, image: "",
                     foregroundColor: Color.red,
                     backgroundColor: Color.blue)
