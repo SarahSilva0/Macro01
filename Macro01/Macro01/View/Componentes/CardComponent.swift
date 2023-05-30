@@ -16,15 +16,15 @@ struct CardComponent: View {
             VStack {
                 image
                     .resizable()
-                    .aspectRatio(contentMode: .fit)
+                    .aspectRatio(contentMode: .fill)
                     .frame(width: geometry.size.width * 0.95, height: geometry.size.height * 0.7)
                     .cornerRadius(10)
-//                    .padding()
+                    .padding()
             }
-//            .background(Color.white)
-//            .cornerRadius(10)
-//            .shadow(radius: 5)
-//            .padding()
+            .background(Color.white)
+            .cornerRadius(10)
+            .shadow(radius: 5)
+            .padding()
         }
     }
 }
