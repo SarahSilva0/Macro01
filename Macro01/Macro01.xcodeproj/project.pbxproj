@@ -22,6 +22,7 @@
 		FA6F18752A1D302000E76127 /* Macro01UITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6F18742A1D302000E76127 /* Macro01UITestsLaunchTests.swift */; };
 		FAE3635C2A1E87C000643271 /* ButtonComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAE3635B2A1E87C000643271 /* ButtonComponent.swift */; };
 		FAE3635E2A1E90EA00643271 /* CardComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAE3635D2A1E90EA00643271 /* CardComponent.swift */; };
+		FAEA1B9A2A2693C40007905A /* SecondView .swift in Sources */ = {isa = PBXBuildFile; fileRef = FAEA1B992A2693C40007905A /* SecondView .swift */; };
 		FAFF07C72A251E4D00D5BA2B /* FisrtView .swift in Sources */ = {isa = PBXBuildFile; fileRef = FAFF07C62A251E4D00D5BA2B /* FisrtView .swift */; };
 /* End PBXBuildFile section */
 
@@ -61,6 +62,7 @@
 		FA6F18742A1D302000E76127 /* Macro01UITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Macro01UITestsLaunchTests.swift; sourceTree = "<group>"; };
 		FAE3635B2A1E87C000643271 /* ButtonComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonComponent.swift; sourceTree = "<group>"; };
 		FAE3635D2A1E90EA00643271 /* CardComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardComponent.swift; sourceTree = "<group>"; };
+		FAEA1B992A2693C40007905A /* SecondView .swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SecondView .swift"; sourceTree = "<group>"; };
 		FAFF07C62A251E4D00D5BA2B /* FisrtView .swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FisrtView .swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -102,6 +104,7 @@
 				EB0911192A22B0BC00D0BE67 /* MatchView.swift */,
 				FA6F18592A1D301F00E76127 /* MainView.swift */,
 				FAFF07C62A251E4D00D5BA2B /* FisrtView .swift */,
+				FAEA1B992A2693C40007905A /* SecondView .swift */,
 				EBCFE2DF2A1E863C002CABFF /* Componentes */,
 			);
 			path = View;
@@ -323,6 +326,7 @@
 				1905A5342A1E8FB40010D8A9 /* TextBox.swift in Sources */,
 				193567A22A1E854200C7D34B /* CharacterTextBox.swift in Sources */,
 				1905A5362A1E961D0010D8A9 /* SquareGallery.swift in Sources */,
+				FAEA1B9A2A2693C40007905A /* SecondView .swift in Sources */,
 				EB09111A2A22B0BC00D0BE67 /* MatchView.swift in Sources */,
 				EBE41B962A228D8400262C00 /* GameTableModel.swift in Sources */,
 				FA6F18582A1D301F00E76127 /* Macro01App.swift in Sources */,
