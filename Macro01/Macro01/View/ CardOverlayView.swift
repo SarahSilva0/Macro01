@@ -1,14 +1,15 @@
+
 import SwiftUI
 
 struct CardOverlayView: View {
     @Binding var showCardOverlay: Bool
     @Binding var selectedCard: CardModel?
     @ObservedObject var gameModel: GameTableModel
+    var compareCards: (CardModel, CardModel) -> Void
     
     var body: some View {
-        
         GeometryReader { geometry in
-            ZStack{
+            ZStack {
                 Color(.black)
                     .opacity(0.7)
                 
@@ -24,22 +25,15 @@ struct CardOverlayView: View {
                                 Button(action: {
                                     handleCardSelection(index: index)
                                     showCardOverlay = false
-                                    
                                 }) {
-                                    if let selectedCard = selectedCard, selectedCard == card {
-                                        CardComponent(image: Image(selectedCard.image))
-                                            .padding()
-                                    } else {
-                                        CardComponent(image: Image(card.image))
-                                            .padding()
-                                    }
+                                    CardComponent(image: Image(card.image))
+                                        .padding()
                                 }
                             }
                         }
                     }
                 }
                 .frame(width: geometry.size.width * 0.9)
-                
             }
             .ignoresSafeArea(.all)
         }

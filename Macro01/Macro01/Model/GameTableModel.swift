@@ -1,5 +1,7 @@
 import SwiftUI
 
+
+//ARRUMAR A ATUALIZACAO DO DECK, POIS ESTÁ CHEGANDO UM MOMENTO QUE TODAS CARTAS FICAM IGUAIS
 class GameTableModel: ObservableObject {
     @Published var players: [Player]!
     @Published var handPlayer: [CardModel]
