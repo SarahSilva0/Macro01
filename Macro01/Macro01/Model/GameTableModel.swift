@@ -16,6 +16,7 @@ class GameTableModel: ObservableObject {
             Player(cards: [], characterImage: "character"),
             Player(cards: [], characterImage: "character")
         ]
+        
         deck = DeckModel(cards: cardData)
         handPlayer = cardData
         
@@ -31,7 +32,7 @@ class GameTableModel: ObservableObject {
     }
     
     func refillDeck() {
-         deck.cards += cardData
-         deck.cards.shuffle()
+        deck.cards += cardData
+        deck.cards.shuffle()
      }
 }

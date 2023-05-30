@@ -12,20 +12,24 @@ struct CardOverlayView: View {
                 Color(.black)
                     .opacity(0.7)
                 
-                    VStack {
-                        Text("Cartas do Primeiro Jogador")
-                            .font(.headline)
-                                        
-                        if let players = gameModel.players {
-                            HStack {
-                                ForEach(players[0].cards.indices, id: \.self) { index in
-                                    let card = players[0].cards[index]
+                VStack {
+                    Text("Cartas do Primeiro Jogador")
+                        .font(.headline)
+                    
+                    if let players = gameModel.players {
+                        HStack {
+                            ForEach(players[0].cards.indices, id: \.self) { index in
+                                let card = players[0].cards[index]
+                                
+                                Button(action: {
+                                    handleCardSelection(index: index)
+                                    showCardOverlay = false
                                     
-                                    Button(action: {
-                                        handleCardSelection(index: index)
-                                        showCardOverlay = false
-                                        
-                                    }) {
+                                }) {
+                                    if let selectedCard = selectedCard, selectedCard == card {
+                                        CardComponent(image: Image(selectedCard.image))
+                                            .padding()
+                                    } else {
                                         CardComponent(image: Image(card.image))
                                             .padding()
                                     }
@@ -33,34 +37,24 @@ struct CardOverlayView: View {
                             }
                         }
                     }
-                    .frame(width: geometry.size.width * 0.9)
+                }
+                .frame(width: geometry.size.width * 0.9)
                 
             }
             .ignoresSafeArea(.all)
         }
     }
-        
     
-    func checkAndRefillDeck() -> Bool {
+    func checkAndRefillDeck() {
         if gameModel.deck.cards.isEmpty {
             gameModel.refillDeck()
-            return true
         }
-        return false
     }
-
-    //Revisar função pra criar outras funcoes menores
+    
     func handleCardSelection(index: Int) {
         if let selectedCard = selectedCard {
-            if let newCard = gameModel.deck.cards.first {
-                if let handIndex = gameModel.handPlayer.firstIndex(of: selectedCard) {
-                    gameModel.handPlayer[handIndex] = newCard
-                    gameModel.players[0].cards[index] = newCard
-                    gameModel.deck.cards.removeFirst()
-                }
-            } else if checkAndRefillDeck() {
-  
-            }
+            gameModel.players[0].cards[index] = selectedCard
+            checkAndRefillDeck()
         }
     }
 }
