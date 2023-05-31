@@ -142,22 +142,30 @@ struct MatchView: View {
         let card1 = centerCards[0]
         let card2 = centerCards[1]
 
-        if card1.type == "attack" && card2.type == "attack" {
+        switch (card1.type, card2.type) {
+        case ("attack", "attack"):
             print("Ambos perdem 1 de Mana")
-        } else if card1.type == "attack" && card2.type == "recharge" {
+            
+        case ("attack", "recharge"):
             print("Vitória do atacante")
-        } else if card1.type == "attack" && card2.type == "defense" {
+            
+        case ("attack", "defense"):
             print("O atacante perde 1 de Mana")
-        } else if card1.type == "defense" && card2.type == "defense" {
+            
+        case ("defense", "defense"):
             print("Nada acontece")
-        } else if card1.type == "defense" && card2.type == "recharge" {
+            
+        case ("defense", "recharge"):
             print("O carregador ganha 1 de Mana")
-        } else if card1.type == "recharge" && card2.type == "recharge" {
+            
+        case ("recharge", "recharge"):
             print("Ambos ganham 1 de Mana")
-        } else {
+            
+        default:
             print("Nada acontece")
         }
     }
+
 
 
 
