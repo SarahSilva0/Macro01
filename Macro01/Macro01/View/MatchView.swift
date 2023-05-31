@@ -16,6 +16,15 @@ struct MatchView: View {
                     .frame(width: geometry.size.width, height: geometry.size.height * 0.2)
                     .background(Color.black)
                     
+                    HStack {
+                        Text("Cartas player 2")
+                        ForEach(gameModel.players[1].cards.prefix(3)) { card in
+                            CardComponent(image: Image(card.image))
+                                .frame(width: geometry.size.width * 0.1, height: geometry.size.height * 0.1)
+                        }
+                        
+                    }.background(Color.red)
+                    
                     HStack(alignment: .bottom, spacing: 0) {
                         VStack {
                             Button(action: {
@@ -37,7 +46,7 @@ struct MatchView: View {
                                     CardComponent(image: Image(card.image))
                                 }
                             }
-                            .frame(width: geometry.size.width * 0.2, height: geometry.size.height * 0.4)
+                            .frame(width: geometry.size.width * 0.15, height: geometry.size.height * 0.25)
                             .background(Color.yellow)
                             
                             Spacer()
