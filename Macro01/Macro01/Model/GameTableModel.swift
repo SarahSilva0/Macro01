@@ -52,12 +52,10 @@ class GameTableModel: ObservableObject {
     func refillDeck() {
         refillDeckAtIndex(deckIndex: 0)
         refillDeckAtIndex(deckIndex: 1)
-        
-        deck[0].cards.shuffle()
-        deck[1].cards.shuffle()
     }
     
     
+    //Verifica e enche o Deck usando parametro
     private func refillDeckAtIndex(deckIndex: Int) {
         guard let randomCardIndex = deck[deckIndex].cards.indices.randomElement() else {
             return
@@ -81,11 +79,13 @@ class GameTableModel: ObservableObject {
         if let deckIndex = deck.firstIndex(where: { $0.cards.isEmpty }) {
             deck[deckIndex].cards.append(card)
         }
-        
-        refillDeck()
+
     }
     
+    
+    //Adiciona Carta aleatória no player um que vem do Deck
     func addRandomCardToPlayerOneFromDeck() {
+        refillDeck()
         guard let randomCardIndex = deck[0].cards.indices.randomElement() else {
             return
         }
@@ -93,10 +93,13 @@ class GameTableModel: ObservableObject {
         let randomCard = deck[0].cards.remove(at: randomCardIndex)
         players[0].cards.append(randomCard)
         
-        refillDeck()
+        
     }
-
+    
+    
+    //Adiciona Carta aleatória no playerDois um que vem do Deck
     func addRandomCardToPlayerTwoFromDeck() {
+        refillDeck()
         guard let randomCardIndex = deck[1].cards.indices.randomElement() else {
             return
         }
@@ -104,6 +107,6 @@ class GameTableModel: ObservableObject {
         let randomCard = deck[1].cards.remove(at: randomCardIndex)
         players[1].cards.append(randomCard)
         
-        refillDeck()
+        
     }
 }
