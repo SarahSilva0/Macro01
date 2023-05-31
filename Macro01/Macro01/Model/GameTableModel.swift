@@ -11,9 +11,9 @@ class GameTableModel: ObservableObject {
     ]
     
     let cardDataPlayerTwo = [
-        CardModel(image: "attack", type: "attack"),
-        CardModel(image: "defense", type: "defense"),
-        CardModel(image: "recharge", type: "recharge")
+        CardModel(image: "attackTwo", type: "attack"),
+        CardModel(image: "defenseTwo", type: "defense"),
+        CardModel(image: "rechargeTwo", type: "recharge")
     ]
     
     init() {

@@ -26,18 +26,29 @@ struct MatchView: View {
                     }.background(Color.red)
                     
                     HStack(alignment: .bottom, spacing: 0) {
+                        
                         VStack {
                             Button(action: {
                                 showCardOverlay.toggle()
+                            
                             }) {
                                 Text("ABRIR A ESCOLHA DE CARTAS")
+                                    .foregroundColor(.yellow)
+                                    
                             }
                             Text("JOGADOR 1")
                             Text("\(gameModel.players[0].mana)")
                             Text("\(gameModel.players[0].points)")
+                            
+                            Button(action: {
+                                clearCenterCards()
+                            }) {
+                                Text("Limpar Center Cards")
+                                    .foregroundColor(.yellow)
+                            }
                         }
                         .frame(width: geometry.size.width * 0.3, height: geometry.size.height)
-                        .background(Color.green)
+                        .background(Color.blue)
                         
                         VStack(spacing: 0) {
                             HStack {
@@ -53,7 +64,7 @@ struct MatchView: View {
                         
                             HStack(alignment: .top, spacing: 0) {
                                 ForEach(gameModel.players[0].cards.prefix(3)) { card in
-                                    CardComponent(image: Image(card.image))
+                                    CardComponent(image: Image("cardOutside"))
                                         .frame(width: geometry.size.width * 0.1, height: geometry.size.height * 0.1)
                                 }
                             }
@@ -66,6 +77,22 @@ struct MatchView: View {
                         }
                         
                         VStack {
+                            
+                            Button(action: {
+                                if let card = gameModel.players[1].cards.first {
+                                    centerCards.append(card)
+                                    gameModel.players[1].cards.removeFirst()
+                                    
+                                    //TESTE
+                                    print(centerCards)
+                                }
+                            }) {
+                                Text("ABRIR A ESCOLHA DE CARTAS 2")
+                                    .foregroundColor(.yellow)
+                                
+                            }
+                            
+                            
                             Text("JOGADOR 2")
                             Text("\(gameModel.players[1].mana)")
                             Text("\(gameModel.players[1].points)")
@@ -86,4 +113,10 @@ struct MatchView: View {
             }
         }
     }
+    
+    //Esvazia o clearCenterCards
+    func clearCenterCards() {
+        centerCards.removeAll()
+    }
+
 }
