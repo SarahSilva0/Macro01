@@ -21,7 +21,7 @@ struct CardComponent: View {
                     .cornerRadius(10)
 //                    .padding()
             }
-            .background(Color.white)
+//            .background(Color.white)
             .cornerRadius(10)
             .shadow(radius: 5)
             .padding()
