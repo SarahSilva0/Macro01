@@ -6,7 +6,6 @@ struct ButtonGenRound: View {
     let action: () -> Void
     let image: String
     let foregroundColor: Color
-    let padding: CGFloat
     let backgroundColor: Color
     
     var body: some View {
@@ -15,7 +14,7 @@ struct ButtonGenRound: View {
                 .resizable()
                 .aspectRatio(contentMode: .fit)
                 .foregroundColor(foregroundColor)
-                .padding(padding)
+                .padding()
                 .background(backgroundColor)
                 .clipShape(Circle())
                
@@ -23,12 +22,12 @@ struct ButtonGenRound: View {
     }
 }
 
-struct BotaoGenRedondo_Previews: PreviewProvider {
-    static var previews: some View {
-        ButtonGenRound(action: {},
-                            image: "Saci",
-                            foregroundColor: .white,
-                            padding: 10,
-                            backgroundColor: .blue)
-    }
-}
+//struct BotaoGenRedondo_Previews: PreviewProvider {
+//    static var previews: some View {
+//        ButtonGenRound(action: {},
+//                            image: "Saci",
+//                            foregroundColor: .white,
+//                            padding: 10,
+//                            backgroundColor: .blue)
+//    }
+//}

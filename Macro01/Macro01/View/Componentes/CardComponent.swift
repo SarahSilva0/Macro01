@@ -27,9 +27,9 @@ struct CardComponent: View {
             
             
 //            .background(Color.white)
-//            .cornerRadius(10)
-//            .shadow(radius: 5)
-//            .padding()
+            .cornerRadius(10)
+            .shadow(radius: 5)
+            .padding()
         }
     }
 }
