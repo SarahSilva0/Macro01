@@ -18,8 +18,8 @@ class GameTableModel: ObservableObject {
     
     init() {
         players = [
-            Player(cards: [], characterImage: "character"),
-            Player(cards: [], characterImage: "character")
+            Player(cards: [], characterImage: "player1"),
+            Player(cards: [], characterImage: "player2")
         ]
         
         deck = [
