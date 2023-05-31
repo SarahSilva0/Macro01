@@ -27,18 +27,22 @@ struct MatchView: View {
                     }.background(Color.red)
                     
                     HStack(alignment: .bottom, spacing: 0) {
-                        
+                       
                         VStack {
-                            
+                            //Personagem 1
                             CharacterAndTextBox(character: "character")
                                 .frame(width: geometry.size.width * 0.10, height: geometry.size.height * 0.20)
                             
-//                            Button(action: {
-//                                showCardOverlay.toggle()
-//                            }) {
-//                                Text("ABRIR A ESCOLHA DE CARTAS")
-//                                    .foregroundColor(.yellow)
-//                            }
+                            
+                            //Botao para escolher a carta jogador 1
+                            Button(action: {
+                                showCardOverlay.toggle()
+                            }) {
+                                Text("ABRIR A ESCOLHA DE CARTAS")
+                                    .foregroundColor(.yellow)
+                            }
+                            
+                            
 //                            Text("JOGADOR 1")
 //                            Text("\(gameModel.players[0].mana)")
 //                            Text("\(gameModel.players[0].points)")
@@ -63,39 +67,37 @@ struct MatchView: View {
                             .frame(width: geometry.size.width * 0.15, height: geometry.size.height * 0.25)
                             .background(Color.yellow)
                             
-                            Spacer(minLength: 230)
-
-                        
+                            Spacer(minLength: 150)
                             HStack(alignment: .top, spacing: 0) {
                                 ForEach(gameModel.players[0].cards.prefix(3)) { card in
                                     CardComponent(image: Image(card.image))
-                                        .frame(width: geometry.size.width * 0.1, height: geometry.size.height * 0.1)
+                                        .frame(width: geometry.size.width * 0.15, height: geometry.size.height * 0.15)
                                 }
                             }
 
-                            .frame(width: geometry.size.width * 0.4, height: geometry.size.height * 0.2)
-                            .background(Color.white)
+                            .frame(width: geometry.size.width * 0.6, height: geometry.size.height * 0.3)
+                            .background(Color.green)
                             
                             Spacer()
                             
                         }
                         
                         VStack {
-                            
+                            //Personagem 2
                             CharacterAndTextBox(character: "character")
                                 .frame(width: geometry.size.width * 0.10, height: geometry.size.height * 0.20)
-//                            Button(action: {
-//                                if let card = gameModel.players[1].cards.first {
-//                                    centerCards.append(card)
-//                                    gameModel.players[1].cards.removeFirst()
-//
-//                                    //TESTE
-//                                    print(centerCards)
-//                                }
-//                            }) {
-//                                Text("ESCOLHER CARTAS 2")
-//                                    .foregroundColor(.yellow)
-//                            }
+                            Button(action: {
+                                if let card = gameModel.players[1].cards.first {
+                                    centerCards.append(card)
+                                    gameModel.players[1].cards.removeFirst()
+
+                                    //TESTE
+                                    print(centerCards)
+                                }
+                            }) {
+                                Text("ESCOLHER CARTAS 2")
+                                    .foregroundColor(.yellow)
+                            }
 //
 //                            Button(action: {
 //                                gameModel.addRandomCardToPlayerOneFromDeck()
@@ -118,7 +120,7 @@ struct MatchView: View {
 //                            }
                         }
                         .frame(width: geometry.size.width * 0.3, height: geometry.size.height)
-                        .background(Color.blue)
+                        .background(Color.red)
                         
                         
                     }
