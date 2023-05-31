@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		1905A5342A1E8FB40010D8A9 /* TextBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1905A5332A1E8FB40010D8A9 /* TextBox.swift */; };
 		1905A5362A1E961D0010D8A9 /* SquareGallery.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1905A5352A1E961D0010D8A9 /* SquareGallery.swift */; };
-		193567A22A1E854200C7D34B /* CharacterTextBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 193567A12A1E854200C7D34B /* CharacterTextBox.swift */; };
+		193567A22A1E854200C7D34B /* CharacterAndTextBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 193567A12A1E854200C7D34B /* CharacterAndTextBox.swift */; };
 		EB09111A2A22B0BC00D0BE67 /* MatchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB0911192A22B0BC00D0BE67 /* MatchView.swift */; };
 		EBCFE2E12A1E8670002CABFF /* BotaoGenRedondoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBCFE2E02A1E8670002CABFF /* BotaoGenRedondoView.swift */; };
 		EBE41B962A228D8400262C00 /* GameTableModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBE41B952A228D8400262C00 /* GameTableModel.swift */; };
@@ -48,7 +48,7 @@
 /* Begin PBXFileReference section */
 		1905A5332A1E8FB40010D8A9 /* TextBox.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextBox.swift; sourceTree = "<group>"; };
 		1905A5352A1E961D0010D8A9 /* SquareGallery.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SquareGallery.swift; sourceTree = "<group>"; };
-		193567A12A1E854200C7D34B /* CharacterTextBox.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterTextBox.swift; sourceTree = "<group>"; };
+		193567A12A1E854200C7D34B /* CharacterAndTextBox.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterAndTextBox.swift; sourceTree = "<group>"; };
 		EB0911192A22B0BC00D0BE67 /* MatchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchView.swift; sourceTree = "<group>"; };
 		EBCFE2E02A1E8670002CABFF /* BotaoGenRedondoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BotaoGenRedondoView.swift; sourceTree = "<group>"; };
 		EBE41B952A228D8400262C00 /* GameTableModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameTableModel.swift; sourceTree = "<group>"; };
@@ -118,7 +118,7 @@
 			children = (
 				1905A5332A1E8FB40010D8A9 /* TextBox.swift */,
 				1905A5352A1E961D0010D8A9 /* SquareGallery.swift */,
-				193567A12A1E854200C7D34B /* CharacterTextBox.swift */,
+				193567A12A1E854200C7D34B /* CharacterAndTextBox.swift */,
 				FAE3635D2A1E90EA00643271 /* CardComponent.swift */,
 				FAE3635B2A1E87C000643271 /* ButtonComponent.swift */,
 				EBCFE2E02A1E8670002CABFF /* BotaoGenRedondoView.swift */,
@@ -331,7 +331,7 @@
 				FAE3635C2A1E87C000643271 /* ButtonComponent.swift in Sources */,
 				1905A5342A1E8FB40010D8A9 /* TextBox.swift in Sources */,
 				EBF134072A23D972000FA55E /*  CardOverlayView.swift in Sources */,
-				193567A22A1E854200C7D34B /* CharacterTextBox.swift in Sources */,
+				193567A22A1E854200C7D34B /* CharacterAndTextBox.swift in Sources */,
 				1905A5362A1E961D0010D8A9 /* SquareGallery.swift in Sources */,
 				EB09111A2A22B0BC00D0BE67 /* MatchView.swift in Sources */,
 				EBF1340D2A23FAF0000FA55E /* DeckModel.swift in Sources */,

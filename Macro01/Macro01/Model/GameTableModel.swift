@@ -5,21 +5,24 @@ class GameTableModel: ObservableObject {
     @Published var deck: [DeckModel]
     
     var cardDataPlayerOne = [
+        //Saci
         CardModel(image: "attack", type: "attack"),
         CardModel(image: "defense", type: "defense"),
         CardModel(image: "recharge", type: "recharge")
     ]
     
+    //Boto
     let cardDataPlayerTwo = [
         CardModel(image: "attackTwo", type: "attack"),
         CardModel(image: "defenseTwo", type: "defense"),
         CardModel(image: "rechargeTwo", type: "recharge")
+        
     ]
     
     init() {
         players = [
-            Player(cards: [], characterImage: "character"),
-            Player(cards: [], characterImage: "character")
+            Player(cards: [], characterImage: "character", mana: 1, points: 0),
+            Player(cards: [], characterImage: "character", mana: 1, points: 0)
         ]
         
         deck = [
@@ -37,12 +40,12 @@ class GameTableModel: ObservableObject {
     }
     
     
-    // Coloca as cartas dentro do deck
+    // Funçao Coloca as cartas dentro do deck
     func dealCardsToDeck(cardData: [CardModel], deckIndex: Int) {
         deck[deckIndex].cards.append(contentsOf: cardData)
     }
     
-    // Coloca as cartas dentro do Player 1 e Player 2
+    // Funçao  Coloca as cartas dentro do Player 1 e Player 2
     func dealCardsToPlayers(cardData: [CardModel], playerIndex: Int) {
         players[playerIndex].cards.append(contentsOf: cardData)
     }
@@ -109,4 +112,6 @@ class GameTableModel: ObservableObject {
         
         
     }
+    
+    
 }

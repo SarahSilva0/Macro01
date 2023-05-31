@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct CharacterTextBox: View {
+struct CharacterAndTextBox: View {
     
     private var character: String
     
@@ -31,6 +31,6 @@ struct CharacterTextBox: View {
 
 struct CharacterTextBox_Previews: PreviewProvider {
     static var previews: some View {
-        CharacterTextBox(character: "character")
+        CharacterAndTextBox(character: "character")
     }
 }
