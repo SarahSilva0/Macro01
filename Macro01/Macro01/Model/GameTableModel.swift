@@ -53,4 +53,19 @@ class GameTableModel: ObservableObject {
         deck[0].cards.shuffle()
         deck[1].cards.shuffle()
     }
+    
+    // Seleciona uma carta do CardOverlayView
+        func selectCard(_ card: CardModel) {
+            guard let playerIndex = players.firstIndex(where: { $0.cards.contains(card) }) else {
+                return
+            }
+            
+            players[playerIndex].cards.removeAll(where: { $0 == card })
+            
+            if let deckIndex = deck.firstIndex(where: { $0.cards.isEmpty }) {
+                deck[deckIndex].cards.append(card)
+            }
+            
+            refillDeck()
+        }
 }

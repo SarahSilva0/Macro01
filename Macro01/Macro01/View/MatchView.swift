@@ -4,7 +4,6 @@ struct MatchView: View {
     @ObservedObject var gameModel: GameTableModel
     @State private var showCardOverlay = false
     @State private var centerCards: [CardModel] = []
-    @State private var selectedCard: CardModel?
     
     var body: some View {
         GeometryReader { geometry in
@@ -27,20 +26,20 @@ struct MatchView: View {
                         .background(Color.green)
                         
                         VStack(spacing: 0) {
-                            
-                            //Carta do centro
                             HStack {
-                                HStack {
-                                    ForEach(centerCards) { card in
-                                        CardComponent(image: Image(card.image))
-                                            .frame(width: geometry.size.width * 0.1, height: geometry.size.height * 0.1)
-                                    }
+                                Text("Cartas no centro")
+                                ForEach(centerCards) { card in
+                                    CardComponent(image: Image(card.image))
                                 }
-                                .frame(width: geometry.size.width * 0.2, height: geometry.size.height * 0.4)
-                                .background(Color.yellow)
-                                Spacer()
                             }
+                            .frame(width: geometry.size.width * 0.2, height: geometry.size.height * 0.4)
+                            .background(Color.yellow)
                             
+                            Spacer()
+                        
+                            .onTapGesture {
+                                showCardOverlay.toggle()
+                            }
                             
                             HStack(alignment: .top, spacing: 0) {
                                 ForEach(gameModel.players[0].cards.prefix(3)) { card in
@@ -48,20 +47,13 @@ struct MatchView: View {
                                         .frame(width: geometry.size.width * 0.1, height: geometry.size.height * 0.1)
                                 }
                             }
-
-                            
                             .frame(width: geometry.size.width * 0.4, height: geometry.size.height * 0.2)
                             .background(Color.white)
+                            
+                            
                             .onTapGesture {
                                 showCardOverlay.toggle()
                             }
-                            
-                            HStack {
-                               Text("aqui nao sei")
-                            }
-                            .alignmentGuide(HorizontalAlignment.leading, computeValue: { _ in 0 })
-                            .frame(maxWidth: .infinity, alignment: .leading)
-                            .padding(.leading)
                         }
                         
                         VStack {
@@ -77,6 +69,7 @@ struct MatchView: View {
                 
                 if showCardOverlay {
                     CardOverlayView(cards: gameModel.players[0].cards) { selectedCard in
+                        gameModel.selectCard(selectedCard)
                         centerCards.append(selectedCard)
                         showCardOverlay = false
                     }

@@ -2,7 +2,7 @@ import SwiftUI
 
 struct CardOverlayView: View {
     var cards: [CardModel]
-    var onCardSelected: ((CardModel) -> Void)
+    var onSelectCard: ((CardModel) -> Void)
     
     var body: some View {
         GeometryReader { geometry in
@@ -18,9 +18,10 @@ struct CardOverlayView: View {
                         ForEach(cards) { card in
                             CardComponent(image: Image(card.image))
                                 .onTapGesture {
-                                    onCardSelected(card)
+                                    onSelectCard(card)
                                 }
-                        } .frame(width: geometry.size.width * 0.2, height: geometry.size.height * 0.2)
+                        }
+                        .frame(width: geometry.size.width * 0.2, height: geometry.size.height * 0.2)
                     }
                 }
                 .frame(width: geometry.size.width * 0.9)
