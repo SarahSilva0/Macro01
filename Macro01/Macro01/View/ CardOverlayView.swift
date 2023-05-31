@@ -1,11 +1,8 @@
-
 import SwiftUI
 
 struct CardOverlayView: View {
-    @Binding var showCardOverlay: Bool
-    @Binding var selectedCard: CardModel?
-    @ObservedObject var gameModel: GameTableModel
-    var compareCards: (CardModel, CardModel) -> Void
+    var cards: [CardModel]
+    var onCardSelected: ((CardModel) -> Void)
     
     var body: some View {
         GeometryReader { geometry in
@@ -17,38 +14,18 @@ struct CardOverlayView: View {
                     Text("Cartas do Primeiro Jogador")
                         .font(.headline)
                     
-                    if let players = gameModel.players {
-                        HStack {
-                            ForEach(players[0].cards.indices, id: \.self) { index in
-                                let card = players[0].cards[index]
-                                
-                                Button(action: {
-                                    handleCardSelection(index: index)
-                                    showCardOverlay = false
-                                }) {
-                                    CardComponent(image: Image(card.image))
-                                        .padding()
+                    HStack(spacing: 10) {
+                        ForEach(cards) { card in
+                            CardComponent(image: Image(card.image))
+                                .onTapGesture {
+                                    onCardSelected(card)
                                 }
-                            }
-                        }
+                        } .frame(width: geometry.size.width * 0.2, height: geometry.size.height * 0.2)
                     }
                 }
                 .frame(width: geometry.size.width * 0.9)
             }
             .ignoresSafeArea(.all)
-        }
-    }
-    
-    func checkAndRefillDeck() {
-        if gameModel.deck.cards.isEmpty {
-            gameModel.refillDeck()
-        }
-    }
-    
-    func handleCardSelection(index: Int) {
-        if let selectedCard = selectedCard {
-            gameModel.players[0].cards[index] = selectedCard
-            checkAndRefillDeck()
         }
     }
 }
