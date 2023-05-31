@@ -18,6 +18,11 @@ struct MatchView: View {
                     
                     HStack(alignment: .bottom, spacing: 0) {
                         VStack {
+                            Button(action: {
+                                showCardOverlay.toggle()
+                            }) {
+                                Text("ABRIR A ESCOLHA DE CARTAS")
+                            }
                             Text("JOGADOR 1")
                             Text("\(gameModel.players[0].mana)")
                             Text("\(gameModel.players[0].points)")
@@ -37,10 +42,6 @@ struct MatchView: View {
                             
                             Spacer()
                         
-                            .onTapGesture {
-                                showCardOverlay.toggle()
-                            }
-                            
                             HStack(alignment: .top, spacing: 0) {
                                 ForEach(gameModel.players[0].cards.prefix(3)) { card in
                                     CardComponent(image: Image(card.image))
@@ -51,9 +52,8 @@ struct MatchView: View {
                             .background(Color.white)
                             
                             
-                            .onTapGesture {
-                                showCardOverlay.toggle()
-                            }
+                            Spacer()
+                            
                         }
                         
                         VStack {
