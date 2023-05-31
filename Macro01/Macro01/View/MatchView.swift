@@ -30,11 +30,9 @@ struct MatchView: View {
                         VStack {
                             Button(action: {
                                 showCardOverlay.toggle()
-                            
                             }) {
                                 Text("ABRIR A ESCOLHA DE CARTAS")
                                     .foregroundColor(.yellow)
-                                    
                             }
                             Text("JOGADOR 1")
                             Text("\(gameModel.players[0].mana)")
@@ -71,13 +69,11 @@ struct MatchView: View {
                             .frame(width: geometry.size.width * 0.4, height: geometry.size.height * 0.2)
                             .background(Color.white)
                             
-                            
                             Spacer()
                             
                         }
                         
                         VStack {
-                            
                             Button(action: {
                                 if let card = gameModel.players[1].cards.first {
                                     centerCards.append(card)
@@ -87,19 +83,37 @@ struct MatchView: View {
                                     print(centerCards)
                                 }
                             }) {
-                                Text("ABRIR A ESCOLHA DE CARTAS 2")
+                                Text("ESCOLHER CARTAS 2")
                                     .foregroundColor(.yellow)
-                                
                             }
                             
+                            Button(action: {
+                                gameModel.addRandomCardToPlayerOneFromDeck()
+                                gameModel.addRandomCardToPlayerTwoFromDeck()
+                            }) {
+                                Text("Adicionar Cartas Aleatórias")
+                                    .foregroundColor(.green)
+                            }
                             
                             Text("JOGADOR 2")
                             Text("\(gameModel.players[1].mana)")
                             Text("\(gameModel.players[1].points)")
+                            
+                            Button(action: {
+                                compareCardsInCenter()
+                                clearCenterCards()
+                            }) {
+                                Text("Comparar Cartas")
+                                    .foregroundColor(.yellow)
+                            }
                         }
                         .frame(width: geometry.size.width * 0.3, height: geometry.size.height)
                         .background(Color.blue)
+                        
+                        
                     }
+                    
+                    
                 }
                 .frame(width: geometry.size.width, height: geometry.size.height)
                 
@@ -109,14 +123,33 @@ struct MatchView: View {
                         centerCards.append(selectedCard)
                         showCardOverlay = false
                     }
+                    .environmentObject(gameModel) // Compartilhar a instância do gameModel com o CardOverlayView
                 }
             }
         }
     }
     
-    //Esvazia o clearCenterCards
+    // Esvazia o clearCenterCards
     func clearCenterCards() {
         centerCards.removeAll()
     }
+    
+    func compareCardsInCenter() {
+        guard centerCards.count == 2 else {
+            return
+        }
+        
+        let card1 = centerCards[0]
+        let card2 = centerCards[1]
+        
+        if card1.type == "attack" && card2.type == "recharge" {
+            print("ATAQUE VENCEU")
+        } else if card1.type == "attack" && card2.type == "defense" {
+            print("DEFESA VENCEU")
+        } else {
+            print("NADA ACONTECE")
+        }
+    }
+
 
 }

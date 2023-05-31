@@ -4,7 +4,7 @@ class GameTableModel: ObservableObject {
     @Published var players: [Player]!
     @Published var deck: [DeckModel]
     
-    let cardDataPlayerOne = [
+    var cardDataPlayerOne = [
         CardModel(image: "attack", type: "attack"),
         CardModel(image: "defense", type: "defense"),
         CardModel(image: "recharge", type: "recharge")
@@ -48,24 +48,62 @@ class GameTableModel: ObservableObject {
     }
     
 
-    // Embaralha as cartas do Deck
+    // Embaralha as cartas do Deck e enche o deck
     func refillDeck() {
+        refillDeckAtIndex(deckIndex: 0)
+        refillDeckAtIndex(deckIndex: 1)
+        
         deck[0].cards.shuffle()
         deck[1].cards.shuffle()
     }
     
-    // Seleciona uma carta do CardOverlayView
-        func selectCard(_ card: CardModel) {
-            guard let playerIndex = players.firstIndex(where: { $0.cards.contains(card) }) else {
-                return
-            }
-            
-            players[playerIndex].cards.removeAll(where: { $0 == card })
-            
-            if let deckIndex = deck.firstIndex(where: { $0.cards.isEmpty }) {
-                deck[deckIndex].cards.append(card)
-            }
-            
-            refillDeck()
+    
+    private func refillDeckAtIndex(deckIndex: Int) {
+        guard let randomCardIndex = deck[deckIndex].cards.indices.randomElement() else {
+            return
         }
+        
+        let randomCard = deck[deckIndex].cards[randomCardIndex]
+        deck[deckIndex].cards.remove(at: randomCardIndex)
+        deck[deckIndex].cards.append(randomCard)
+        deck[deckIndex].cards.shuffle()
+    }
+    
+    
+    // Seleciona uma carta do CardOverlayView
+    func selectCard(_ card: CardModel) {
+        guard let playerIndex = players.firstIndex(where: { $0.cards.contains(card) }) else {
+            return
+        }
+        
+        players[playerIndex].cards.removeAll(where: { $0 == card })
+        
+        if let deckIndex = deck.firstIndex(where: { $0.cards.isEmpty }) {
+            deck[deckIndex].cards.append(card)
+        }
+        
+        refillDeck()
+    }
+    
+    func addRandomCardToPlayerOneFromDeck() {
+        guard let randomCardIndex = deck[0].cards.indices.randomElement() else {
+            return
+        }
+        
+        let randomCard = deck[0].cards.remove(at: randomCardIndex)
+        players[0].cards.append(randomCard)
+        
+        refillDeck()
+    }
+
+    func addRandomCardToPlayerTwoFromDeck() {
+        guard let randomCardIndex = deck[1].cards.indices.randomElement() else {
+            return
+        }
+        
+        let randomCard = deck[1].cards.remove(at: randomCardIndex)
+        players[1].cards.append(randomCard)
+        
+        refillDeck()
+    }
 }
