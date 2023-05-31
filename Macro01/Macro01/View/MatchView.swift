@@ -71,6 +71,10 @@ struct MatchView: View {
                             HStack(alignment: .top, spacing: 0) {
                                 ForEach(gameModel.players[0].cards.prefix(3)) { card in
                                     CardComponent(image: Image(card.image))
+                                        .onTapGesture {
+                                            showCardOverlay.toggle()
+                                        }
+                                    
                                         .frame(width: geometry.size.width * 0.15, height: geometry.size.height * 0.15)
                                 }
                             }
