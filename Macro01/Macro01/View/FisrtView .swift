@@ -46,10 +46,13 @@ struct FirstView: View {
                         ButtonComponent(buttonText: "Modo História") {
                             print("modo história")
                         }
-                        
-                        ButtonComponent(buttonText: "Modo Co-op") {
-                            print("modo co-op")
+                        NavigationLink(destination: CombatView()){
+                            Text("CO OP")
                         }
+                        
+//                        ButtonComponent(buttonText: "Modo Co-op") {
+//                            print("modo co-op")
+//                        }
                     }
                     .padding()
                 }

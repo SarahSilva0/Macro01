@@ -28,6 +28,7 @@
 		FAE3635C2A1E87C000643271 /* ButtonComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAE3635B2A1E87C000643271 /* ButtonComponent.swift */; };
 		FAE3635E2A1E90EA00643271 /* CardComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAE3635D2A1E90EA00643271 /* CardComponent.swift */; };
 		FAEA1B9A2A2693C40007905A /* SecondView .swift in Sources */ = {isa = PBXBuildFile; fileRef = FAEA1B992A2693C40007905A /* SecondView .swift */; };
+		FAF5E9602A2814CB00155C76 /* CombatModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF5E95F2A2814CB00155C76 /* CombatModel.swift */; };
 		FAFF07C72A251E4D00D5BA2B /* FisrtView .swift in Sources */ = {isa = PBXBuildFile; fileRef = FAFF07C62A251E4D00D5BA2B /* FisrtView .swift */; };
 /* End PBXBuildFile section */
 
@@ -73,6 +74,7 @@
 		FAE3635B2A1E87C000643271 /* ButtonComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonComponent.swift; sourceTree = "<group>"; };
 		FAE3635D2A1E90EA00643271 /* CardComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardComponent.swift; sourceTree = "<group>"; };
 		FAEA1B992A2693C40007905A /* SecondView .swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SecondView .swift"; sourceTree = "<group>"; };
+		FAF5E95F2A2814CB00155C76 /* CombatModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CombatModel.swift; sourceTree = "<group>"; };
 		FAFF07C62A251E4D00D5BA2B /* FisrtView .swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FisrtView .swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -142,6 +144,7 @@
 				EBF134082A23FA7F000FA55E /* PlayerModel.swift */,
 				EBF1340C2A23FAF0000FA55E /* DeckModel.swift */,
 				EBF1340A2A23FAA1000FA55E /* CardModel.swift */,
+				FAF5E95F2A2814CB00155C76 /* CombatModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -345,6 +348,7 @@
 				193567A22A1E854200C7D34B /* CharacterTextBox.swift in Sources */,
 				1905A5362A1E961D0010D8A9 /* SquareGallery.swift in Sources */,
 				FAEA1B9A2A2693C40007905A /* SecondView .swift in Sources */,
+				FAF5E9602A2814CB00155C76 /* CombatModel.swift in Sources */,
 				EB09111A2A22B0BC00D0BE67 /* MatchView.swift in Sources */,
 				EBF1340D2A23FAF0000FA55E /* DeckModel.swift in Sources */,
 				EBE41B962A228D8400262C00 /* GameTableModel.swift in Sources */,

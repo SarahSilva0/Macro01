@@ -15,7 +15,7 @@ struct CardComponent: View {
         GeometryReader { geometry in
                 image
                     .resizable()
-                    .aspectRatio(contentMode: .fill)
+                    .aspectRatio(contentMode: .fit)
                     .frame(width: geometry.size.width, height: geometry.size.height)
             
             

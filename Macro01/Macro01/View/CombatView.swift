@@ -8,20 +8,7 @@
 import SwiftUI
 
 struct CombatView: View {
-    @State var cards = ["attack", "defense", "recharge"]
-    @State var player1 = "jogador1"
-    @State var player2 = "jogador2"
-    @State var manaPlayer1 = ["Mana": 1, "Vida": 0]
-    @State var manaPlayer2 = ["Mana": 1, "Vida": 0]
-    @State var selectedCard: String = ""
-    @State var countdown: Int = 5
-    @State var isCountdownVisible = true
-    @State var randomCard = ""
-    @State var isSheetVisible = false
-    @State private var isInteractionEnabled = true
-    @State private var selectedCard2: String = ""
-
-
+    @StateObject private var combatViewModel = CombatViewModel()
 
     
     var body: some View {
@@ -37,33 +24,41 @@ struct CombatView: View {
                     .frame(width: 20, height: 20)
                 Image("pontos")
                 Image("pontos")
-            }
+            }.offset(y: 100)
             
-            if isCountdownVisible {
-                Text("\(countdown)")
+            if combatViewModel.isCountdownVisible {
+                Text("\(combatViewModel.countdown)")
                     .font(.largeTitle)
                     .fontWeight(.bold)
                     .frame(height: 10)
-                    .offset(y: 150)
+                    .offset(y: 200)
             }
             
             HStack {
-                Image(player1)
+                VStack{
+                    Text("Ganhou: \(combatViewModel.player1.winTurno)")
+                        .offset(y: 150)
+                    Text("Mana: \(combatViewModel.player1.mana)")
+                        .offset(y: 150)
+                    Image(combatViewModel.player1.image)
+                        .offset(y: 150)
+                }
                 VStack {
-                    Image(selectedCard)
+                    Image(combatViewModel.selectedCard)
                         .resizable()
                         .aspectRatio(contentMode: .fit)
                         .frame(width: 120, height: 160)
+                        .offset(y: 100)
                 }
                 Spacer()
                     .frame(width: 150)
                 VStack {
-                    if !isCountdownVisible{
-                        
-                        Image(selectedCard2)
+                    if !combatViewModel.isCountdownVisible{
+                        Image(combatViewModel.selectedCard2)
                             .resizable()
                             .aspectRatio(contentMode: .fit)
                             .frame(width: 120, height: 160)
+                            .offset(y:100)
                     }
                     else{
                         Image("")
@@ -72,127 +67,86 @@ struct CombatView: View {
                             .frame(width: 120, height: 160)
                     }
                 }
-                Image(player2)
+                VStack{
+                    Text("Ganhou: \(combatViewModel.player2.winTurno)")
+                        .offset(y: 150)
+                    Text("Mana: \(combatViewModel.player2.mana)")
+                        .offset(y: 150)
+                    Image(combatViewModel.player2.image)
+                        .offset(y: 160)
+                }
             }
             
             HStack {
                 CardComponent(image: Image("attack"))
                     .onTapGesture {
-//                        selectedCard = cards[0]
-                        isSheetVisible = true
+                        combatViewModel.isSheetVisible = true
+                        //mudar a carta quando ela for jogada
                     }
                 CardComponent(image: Image("defense"))
                     .onTapGesture {
-//                        selectedCard = cards[1]
-                        isSheetVisible = true
+                        combatViewModel.isSheetVisible = true
+                        
                     }
                 CardComponent(image: Image("recharge"))
                     .onTapGesture {
-//                      selectedCard = cards[2]
-                        isSheetVisible = true
+                        combatViewModel.isSheetVisible = true
                     }
             }
-            .allowsHitTesting(isInteractionEnabled)
-            .frame(width: 250, height: 150)
+            .offset(y: -50)
+            .allowsHitTesting(combatViewModel.isInteractionEnabled)
+            .frame(width: 300, height: 300)
             
         }
         .onAppear {
-            startCountdown()
+            combatViewModel.startCountdown()
         }
-        .sheet(isPresented: $isSheetVisible, onDismiss: {
+        .sheet(isPresented: $combatViewModel.isSheetVisible, onDismiss: {
         }) {
-            SheetView(cards: cards, player1Card: $selectedCard, isSheetVisible: $isSheetVisible).background(ClearBackgroundView())
-        }
-    }
-    
-    func startCountdown() {
-        Timer.scheduledTimer(withTimeInterval: 1, repeats: true) { timer in
-            if countdown > 0 {
-                countdown -= 1
-            } else {
-                timer.invalidate()
-                selectedCard2 = cards.randomElement() ?? ""
-                isSheetVisible = false
-                isInteractionEnabled = false
-                isCountdownVisible = false
-                compareCardsInCenter(card1: selectedCard, card2: selectedCard2)
-                
-                DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
-                    isInteractionEnabled = true
-                    selectedCard = ""
-                    countdown = 5
-                    isCountdownVisible = true
-                    startCountdown()
-                }
-            }
-        }
-    }
-    
-    func loseMana(){
-        
-    }
-    func loseLife(){
-        
-    }
-    func rechargeMana(){
-        
-    }
-    
-    func compareCardsInCenter(card1: String, card2: String) {
-
-        switch (card1, card2) {
-        case ("attack", "attack"):
-            print("Ambos perdem 1 de Mana")
-            loseMana()
-            
-        case ("attack", "recharge"):
-            print("Vitória do atacante")
-            loseLife()
-            loseMana()
-            
-        case ("attack", "defense"):
-            print("O atacante perde 1 de Mana")
-            loseMana()
-            
-        case ("defense", "defense"):
-            print("Nada acontece")
-            
-        case ("defense", "recharge"):
-            print("O carregador ganha 1 de Mana")
-            rechargeMana()
-            
-        case ("recharge", "recharge"):
-            print("Ambos ganham 1 de Mana")
-            rechargeMana()
-            
-        default:
-            print("Nada acontece")
+            SheetView(cards: combatViewModel.cards, selectedCard: $combatViewModel.selectedCard, isSheetVisible: $combatViewModel.isSheetVisible).background(ClearBackgroundView())
         }
     }
 }
 
 struct SheetView: View {
-    var cards: [String]
-    @Binding var player1Card: String
+    var cards: Cards
+    @Binding var selectedCard: String
     @Binding var isSheetVisible: Bool
     
     var body: some View {
-            VStack {
-                HStack {
-                    ForEach(cards, id: \.self) { card in
-                        Button(action: {
-                            player1Card = card
-                            isSheetVisible = false
-                        }) {
-                            Image(card)
-                                .resizable()
-                                .aspectRatio(contentMode: .fit)
-                                .frame(width: 200, height: 250)
-                        }
-                    }
+        VStack {
+            HStack {
+                Button(action: {
+                    selectedCard = cards.attack
+                    isSheetVisible = false
+                }) {
+                    Image(cards.attack)
+                        .resizable()
+                        .aspectRatio(contentMode: .fit)
+                        .frame(width: 200, height: 250)
+                }
+                
+                Button(action: {
+                    selectedCard = cards.defense
+                    isSheetVisible = false
+                }) {
+                    Image(cards.defense)
+                        .resizable()
+                        .aspectRatio(contentMode: .fit)
+                        .frame(width: 200, height: 250)
+                }
+                
+                Button(action: {
+                    selectedCard = cards.recharge
+                    isSheetVisible = false
+                }) {
+                    Image(cards.recharge)
+                        .resizable()
+                        .aspectRatio(contentMode: .fit)
+                        .frame(width: 200, height: 250)
                 }
             }
-        
+        }
     }
 }
 
@@ -221,6 +175,3 @@ struct ClearBackgroundView: UIViewRepresentable {
     }
 }
 
-//FUNCAO PERDER MANA
-//FUNCAO PERDER VIDA
-//FUNCAO RECARREGAR

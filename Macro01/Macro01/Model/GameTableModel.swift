@@ -1,7 +1,7 @@
 import SwiftUI
 
 class GameTableModel: ObservableObject {
-    @Published var players: [Player]!
+    @Published var players: [Player1]!
     @Published var deck: [DeckModel]
     
     var cardDataPlayerOne = [
@@ -18,8 +18,8 @@ class GameTableModel: ObservableObject {
     
     init() {
         players = [
-            Player(cards: [], characterImage: "player1"),
-            Player(cards: [], characterImage: "player2")
+            Player1(cards: [], characterImage: "player1"),
+            Player1(cards: [], characterImage: "player2")
         ]
         
         deck = [

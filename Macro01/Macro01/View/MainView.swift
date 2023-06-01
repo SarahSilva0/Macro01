@@ -5,12 +5,12 @@ import SwiftUI
 
 struct MainView: View {
     var body: some View {
-        VStack {
-            GeometryReader { geometry in
-//                MatchView(gameModel: GameTableModel())
+        
+        NavigationView{
+            VStack {
+                FirstView()
             }
         }
-        .padding()
     }
 }
 
