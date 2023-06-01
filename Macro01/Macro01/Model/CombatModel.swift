@@ -14,6 +14,12 @@ class CombatViewModel: ObservableObject {
     var player1 = PlayerCombat(image: "jogador1")
     var player2 = PlayerCombat(image: "jogador2")
     
+    //Variável do contador
+    @Published var round: Int =  0
+    //Variável que controla a exibicao do alerta
+    @Published var isGameEndAlertPresented = false
+    
+    
     func startCountdown() {
         Timer.scheduledTimer(withTimeInterval: 1, repeats: true) { timer in
             if self.countdown > 0 {
@@ -32,7 +38,10 @@ class CombatViewModel: ObservableObject {
                     self.selectedCard = ""
                     self.countdown = 5
                     self.isCountdownVisible = true
+                    self.checkGameEnd() //verifica se tem 5 round e chama o final
+                    self.incrementRound() // Chama função para incrementar o round
                     self.startCountdown()
+                    
                 }
             }
         }
@@ -64,7 +73,7 @@ class CombatViewModel: ObservableObject {
             break
         }
     }
-
+    
     func handleAttackVsAttack() {
         if player1.mana >= 1 && player2.mana >= 1 {
             player1LoseMana()
@@ -80,7 +89,7 @@ class CombatViewModel: ObservableObject {
             print("ATAQUE E ATAQUE SEM MANA OS DOIS NADA ACONTECE")
         }
     }
-
+    
     func handleAttackVsDefense() {
         if player1.mana >= 1 {
             player1LoseMana()
@@ -88,7 +97,7 @@ class CombatViewModel: ObservableObject {
             print("ATACOU SEM MANA. NADA ACONTECE")
         }
     }
-
+    
     func handleAttackVsRecharge() {
         if player1.mana >= 1 {
             player1Win()
@@ -96,21 +105,21 @@ class CombatViewModel: ObservableObject {
             player2RechargeMana()
         }
     }
-
+    
     func handleDefenseVsAttack() {
         if player2.mana >= 1 {
             player2LoseMana()
         }
     }
-
+    
     func handleDefenseVsDefense() {
         print("NADA ACONTECE OS DOIS DEFENDERAM")
     }
-
+    
     func handleDefenseVsRecharge() {
         player2RechargeMana()
     }
-
+    
     func handleRechargeVsAttack() {
         if player2.mana >= 1 {
             player2Win()
@@ -118,11 +127,11 @@ class CombatViewModel: ObservableObject {
             player1RechargeMana()
         }
     }
-
+    
     func handleRechargeVsDefense() {
         player1RechargeMana()
     }
-
+    
     func handleRechargeVsRecharge() {
         player1RechargeMana()
         player2RechargeMana()
@@ -149,6 +158,22 @@ class CombatViewModel: ObservableObject {
     private func player2RechargeMana() {
         player2.mana += 1
     }
+    
+    
+    // Incrementa a variável round em 1
+    // Incrementa a variável round em 1
+    func incrementRound() {
+        round += 1
+    }
+    
+    func checkGameEnd() {
+        if round == 2 {
+            isGameEndAlertPresented = true
+        }
+    }
+    
+    
+    
 }
 
 //MARK: ATÉ AQUI. SERÁ MELHOR SE ESSE BLOCO TODO DE CÓDIGO IR PARA OUTRA VIEW
