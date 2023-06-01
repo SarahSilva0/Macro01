@@ -8,20 +8,23 @@
 import SwiftUI
 
 struct CombatView: View {
+    
+
     @State var cards = ["attack", "defense", "recharge"]
-    @State var player1 = "jogador1"
-    @State var player2 = "jogador2"
-    @State var manaPlayer1 = ["Mana": 1, "Vida": 0]
-    @State var manaPlayer2 = ["Mana": 1, "Vida": 0]
+    
+    //Criando os players usando o objeto PlayerModel
+    @State var player1 = Player(name: "jogador1", mana: 1, life: 0)
+    @State var player2 = Player(name: "jogador2", mana: 1, life: 0)
+    
     @State var selectedCard: String = ""
+    @State private var selectedCard2: String = ""
+    
     @State var countdown: Int = 5
     @State var isCountdownVisible = true
     @State var randomCard = ""
     @State var isSheetVisible = false
     @State private var isInteractionEnabled = true
-    @State private var selectedCard2: String = ""
-
-
+   
 
     
     var body: some View {
@@ -48,7 +51,7 @@ struct CombatView: View {
             }
             
             HStack {
-                Image(player1)
+                Image(player1.name)
                 VStack {
                     Image(selectedCard)
                         .resizable()
@@ -72,7 +75,7 @@ struct CombatView: View {
                             .frame(width: 120, height: 160)
                     }
                 }
-                Image(player2)
+                Image(player2.name)
             }
             
             HStack {
@@ -128,47 +131,71 @@ struct CombatView: View {
         }
     }
     
-    func loseMana(){
-        
-    }
-    func loseLife(){
-        
-    }
-    func rechargeMana(){
-        
+    
+    
+    //Diminuiu a mana diretamente no player escolhido, por isso uso do inout
+    func loseMana(for player: inout Player) {
+           player.mana -= 1
+       }
+    
+    //Diminuiu a vida diretamente no player escolhido, por isso uso do inout
+    func loseLife(for player: inout Player) {
+        player.life -= 1
     }
     
+    //Recarrega a vida diretamente no player escolhido, por isso uso do inout
+    func rechargeMana(for player: inout Player){
+        player.mana += 1
+    }
+    
+    
+    
+    //Compara as cartas
     func compareCardsInCenter(card1: String, card2: String) {
-
         switch (card1, card2) {
+       
         case ("attack", "attack"):
+            loseMana(for: &player1)
+            loseMana(for: &player2)
             print("Ambos perdem 1 de Mana")
-            loseMana()
+            
+            print(player1.mana)
+            print(player2.mana)
             
         case ("attack", "recharge"):
+            loseLife(for: &player2)
             print("Vitória do atacante")
-            loseLife()
-            loseMana()
+            
+            print(player2.life)
             
         case ("attack", "defense"):
+            loseMana(for: &player1)
             print("O atacante perde 1 de Mana")
-            loseMana()
+            
+            print(player1.mana)
             
         case ("defense", "defense"):
             print("Nada acontece")
             
         case ("defense", "recharge"):
+            rechargeMana(for: &player1)
             print("O carregador ganha 1 de Mana")
-            rechargeMana()
+            
+            print(player1.mana)
             
         case ("recharge", "recharge"):
+            rechargeMana(for: &player1)
+            rechargeMana(for: &player2)
             print("Ambos ganham 1 de Mana")
-            rechargeMana()
+            
+            print(player1.mana)
+            print(player2.mana)
             
         default:
             print("Nada acontece")
         }
     }
+
 }
 
 struct SheetView: View {
@@ -221,6 +248,3 @@ struct ClearBackgroundView: UIViewRepresentable {
     }
 }
 
-//FUNCAO PERDER MANA
-//FUNCAO PERDER VIDA
-//FUNCAO RECARREGAR
