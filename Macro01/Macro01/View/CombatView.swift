@@ -1,20 +1,11 @@
-//
-//  CombatView.swift
-//  Macro01
-//
-//  Created by Sarah dos Santos Silva on 30/05/23.
-//
-
 import SwiftUI
 
 struct CombatView: View {
     
-
     @State var cards = ["attack", "defense", "recharge"]
     
-    //Criando os players usando o objeto PlayerModel
-    @State var player1 = Player(name: "jogador1", mana: 1, life: 0)
-    @State var player2 = Player(name: "jogador2", mana: 1, life: 0)
+    @State var player1 = Player(name: "jogador1", mana: 1, life: 0, pointColor: .blue)
+    @State var player2 = Player(name: "jogador2", mana: 1, life: 0, pointColor: .blue)
     
     @State var selectedCard: String = ""
     @State private var selectedCard2: String = ""
@@ -24,8 +15,8 @@ struct CombatView: View {
     @State var randomCard = ""
     @State var isSheetVisible = false
     @State private var isInteractionEnabled = true
-   
-
+    
+    @State var pointColors: [Color] = Array(repeating: .blue, count: 5)
     
     var body: some View {
         VStack {
@@ -33,13 +24,11 @@ struct CombatView: View {
                 .frame(height: 120)
             
             HStack {
-                Image("pontos")
-                Image("pontos")
-                Image("pontos")
-                    .resizable()
-                    .frame(width: 20, height: 20)
-                Image("pontos")
-                Image("pontos")
+                ForEach(pointColors.indices, id: \.self) { index in
+                    Circle()
+                        .frame(width: index == pointColors.count / 2 ? 20 : 14.5, height: index == pointColors.count / 2 ? 20 : 14.5)
+                        .foregroundColor(index == pointColors.count / 2 ? player1.pointColor : .blue)
+                }
             }
             
             if isCountdownVisible {
@@ -61,14 +50,12 @@ struct CombatView: View {
                 Spacer()
                     .frame(width: 150)
                 VStack {
-                    if !isCountdownVisible{
-                        
+                    if !isCountdownVisible {
                         Image(selectedCard2)
                             .resizable()
                             .aspectRatio(contentMode: .fit)
                             .frame(width: 120, height: 160)
-                    }
-                    else{
+                    } else {
                         Image("")
                             .resizable()
                             .aspectRatio(contentMode: .fit)
@@ -81,23 +68,19 @@ struct CombatView: View {
             HStack {
                 CardComponent(image: Image("attack"))
                     .onTapGesture {
-//                        selectedCard = cards[0]
                         isSheetVisible = true
                     }
                 CardComponent(image: Image("defense"))
                     .onTapGesture {
-//                        selectedCard = cards[1]
                         isSheetVisible = true
                     }
                 CardComponent(image: Image("recharge"))
                     .onTapGesture {
-//                      selectedCard = cards[2]
                         isSheetVisible = true
                     }
             }
             .allowsHitTesting(isInteractionEnabled)
             .frame(width: 250, height: 150)
-            
         }
         .onAppear {
             startCountdown()
@@ -131,33 +114,27 @@ struct CombatView: View {
         }
     }
     
-    
-    
-    //Diminuiu a mana diretamente no player escolhido, por isso uso do inout
     func loseMana(for player: inout Player) {
-           player.mana -= 1
-       }
+        player.mana -= 1
+    }
     
-    //Diminuiu a vida diretamente no player escolhido, por isso uso do inout
     func loseLife(for player: inout Player) {
         player.life -= 1
     }
     
-    //Recarrega a vida diretamente no player escolhido, por isso uso do inout
-    func rechargeMana(for player: inout Player){
+    func rechargeMana(for player: inout Player) {
         player.mana += 1
     }
     
-    
-    
-    //Compara as cartas
     func compareCardsInCenter(card1: String, card2: String) {
         switch (card1, card2) {
-       
         case ("attack", "attack"):
             loseMana(for: &player1)
             loseMana(for: &player2)
             print("Ambos perdem 1 de Mana")
+            
+            player1.pointColor = .red
+            player2.pointColor = .red
             
             print(player1.mana)
             print(player2.mana)
@@ -166,11 +143,15 @@ struct CombatView: View {
             loseLife(for: &player2)
             print("Vitória do atacante")
             
+            player2.pointColor = .red
+            
             print(player2.life)
             
         case ("attack", "defense"):
             loseMana(for: &player1)
             print("O atacante perde 1 de Mana")
+            
+            player1.pointColor = .red
             
             print(player1.mana)
             
@@ -180,6 +161,8 @@ struct CombatView: View {
         case ("defense", "recharge"):
             rechargeMana(for: &player1)
             print("O carregador ganha 1 de Mana")
+            
+            player1.pointColor = .red
             
             print(player1.mana)
             
@@ -195,7 +178,6 @@ struct CombatView: View {
             print("Nada acontece")
         }
     }
-
 }
 
 struct SheetView: View {
@@ -204,25 +186,23 @@ struct SheetView: View {
     @Binding var isSheetVisible: Bool
     
     var body: some View {
-            VStack {
-                HStack {
-                    ForEach(cards, id: \.self) { card in
-                        Button(action: {
-                            player1Card = card
-                            isSheetVisible = false
-                        }) {
-                            Image(card)
-                                .resizable()
-                                .aspectRatio(contentMode: .fit)
-                                .frame(width: 200, height: 250)
-                        }
+        VStack {
+            HStack {
+                ForEach(cards, id: \.self) { card in
+                    Button(action: {
+                        player1Card = card
+                        isSheetVisible = false
+                    }) {
+                        Image(card)
+                            .resizable()
+                            .aspectRatio(contentMode: .fit)
+                            .frame(width: 200, height: 250)
                     }
                 }
             }
-        
+        }
     }
 }
-
 
 struct CombatView_Previews: PreviewProvider {
     static var previews: some View {
@@ -244,7 +224,5 @@ struct ClearBackgroundView: UIViewRepresentable {
             
             superview?.superview?.backgroundColor = .clear
         }
-        
     }
 }
-

@@ -15,9 +15,10 @@ import SwiftUI
 //    var points: Int = 0
 //}
 
-
+//Player Model  simplificado
 struct Player {
     var name: String
     var mana: Int
     var life: Int
+    var pointColor: Color
 }
