@@ -25,6 +25,8 @@ struct CharacterTextBox: View {
             Image(character)
                 .resizable()
                 .frame(width: 250, height: 400)
+                
+                
         }
     }
 }

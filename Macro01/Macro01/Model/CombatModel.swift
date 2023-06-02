@@ -11,8 +11,7 @@ class CombatViewModel: ObservableObject {
     @Published var isSheetVisible = false
     @Published var isInteractionEnabled = true
     
-  
-    
+
     var cards = Cards()
     var player1 = PlayerCombat(image: "jogador1")
     var player2 = PlayerCombat(image: "jogador2")
@@ -23,15 +22,14 @@ class CombatViewModel: ObservableObject {
     //Variável que controla a exibicao do alerta
     @Published var isGameEndAlertPresented = false
     
-//    @Published var result = false
-    
     
     func startCountdown() {
            // Verificar se o jogo atingiu numero de rounds
-           if round > 5 {
+           if round > 1 {
                self.gameEnd() // Encerra o Jogo
                return
            }
+        
            Timer.scheduledTimer(withTimeInterval: 1, repeats: true) { timer in
                if self.countdown > 0 {
                    self.countdown -= 1
@@ -56,6 +54,8 @@ class CombatViewModel: ObservableObject {
                }
            }
        }
+    
+    
     
     //MARK: REFATORAR ISSO AQUI E COLOCAR EM UM OUTRO ARQUIVO DAQUI ATÉ....
     
@@ -151,6 +151,7 @@ class CombatViewModel: ObservableObject {
     private func player1LoseMana() {
         player1.mana -= 1
     }
+    
     private func player2LoseMana() {
         player2.mana -= 1
     }
@@ -184,19 +185,18 @@ class CombatViewModel: ObservableObject {
     //Verifica o placar do jogo
     func getScore() -> String {
         if player1.winTurno > player2.winTurno {
-            return "\(player2.winTurno) Player 1 ganhou!"
+            return "\(player1.winTurno) Player ganhou!"
         } else if player1.winTurno < player2.winTurno {
-            return "\(player2.winTurno) Player 2 ganhou!"
+            return "\(player2.winTurno) Player ganhou!"
         } else {
             return "Empate"
         }
     }
-
-
-
-
-    
 }
+
+
+
+
 
 //MARK: ATÉ AQUI. SERÁ MELHOR SE ESSE BLOCO TODO DE CÓDIGO IR PARA OUTRA VIEW
 

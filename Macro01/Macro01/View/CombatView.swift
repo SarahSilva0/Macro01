@@ -101,6 +101,7 @@ struct CombatView: View {
         .alert(isPresented: $combatViewModel.isGameEndAlertPresented) {
             Alert(title: Text("Fim do Jogo"),
                   message: Text("\(combatViewModel.getScore())"),
+                  
                   dismissButton: .default(Text("OK"), action: {
                 presentationMode.wrappedValue.dismiss()
             }))
