@@ -19,19 +19,19 @@ class CombatViewModel: ObservableObject {
     
     //Variável do contador
     @Published var round: Int =  1
+    
     //Variável que controla a exibicao do alerta
     @Published var isGameEndAlertPresented = false
     
-    @Published var result = false
+//    @Published var result = false
     
     
     func startCountdown() {
            // Verificar se o jogo atingiu numero de rounds
-           if round > 1 {
-               self.gameEnd() // Chama o final
+           if round > 5 {
+               self.gameEnd() // Encerra o Jogo
                return
            }
-           
            Timer.scheduledTimer(withTimeInterval: 1, repeats: true) { timer in
                if self.countdown > 0 {
                    self.countdown -= 1
@@ -191,6 +191,8 @@ class CombatViewModel: ObservableObject {
             return "Empate"
         }
     }
+
+
 
 
     

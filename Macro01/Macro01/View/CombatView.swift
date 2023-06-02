@@ -14,7 +14,8 @@ struct CombatView: View {
             HStack {
                 Text("ROUND " + String(combatViewModel.round))
                     .fontWeight(.bold)
-            }.offset(y: 100)
+            }
+            .offset(y: 100)
             
             if combatViewModel.isCountdownVisible {
                 Text("\(combatViewModel.countdown)")
