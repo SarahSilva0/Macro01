@@ -22,6 +22,7 @@ struct CombatView: View {
             HStack {
                 Text("ROUND " + String(combatViewModel.turn))
                     .fontWeight(.bold)
+                    .offset(y: 100)
             }
             .offset(y: 100)
             
@@ -31,19 +32,19 @@ struct CombatView: View {
                     .foregroundColor(.green)
                     .fontWeight(.bold)
                     .frame(height: 10)
-                    .offset(y: 200)
+                    .offset(y: 300)
             }
             
             HStack {
                 VStack{
                     Text("Ganhou: \(combatViewModel.player1.winTurno)")
                         .foregroundColor(.red)
-                        .offset(y: 150)
+                        .offset(y: 200)
                     Text("Mana: \(combatViewModel.player1.mana)")
                         .foregroundColor(.red)
-                        .offset(y: 150)
+                        .offset(y: 200)
                     Image(combatViewModel.player1.image)
-                        .offset(y: 150)
+                        .offset(y: 170)
                 }
                 VStack {
                     Image(combatViewModel.player1.selectedCard)
@@ -72,12 +73,12 @@ struct CombatView: View {
                 VStack{
                     Text("Ganhou: \(combatViewModel.player2.winTurno)")
                         .foregroundColor(.red)
-                        .offset(y: 150)
+                        .offset(y: 200)
                     Text("Mana: \(combatViewModel.player2.mana)")
                         .foregroundColor(.red)
-                        .offset(y: 150)
+                        .offset(y: 200)
                     Image(combatViewModel.player2.image)
-                        .offset(y: 160)
+                        .offset(y: 170)
                 }
             }
             
@@ -89,7 +90,7 @@ struct CombatView: View {
                         }
                 }
             }
-            .offset(y: -50)
+            .offset(y: -150)
             .allowsHitTesting(combatViewModel.isInteractionEnabled)
             .frame(width: 300, height: 300)
             
