@@ -2,16 +2,20 @@ import SwiftUI
 
 struct CombatView: View {
     @StateObject private var combatViewModel = CombatViewModel()
-
+    
+    //Dar dismiss na CombatView
+    @Environment(\.presentationMode) var presentationMode
+    
     var body: some View {
         VStack {
             Spacer()
                 .frame(height: 120)
-
+            
             HStack {
                 Text("ROUND " + String(combatViewModel.round))
+                    .fontWeight(.bold)
             }.offset(y: 100)
-
+            
             if combatViewModel.isCountdownVisible {
                 Text("\(combatViewModel.countdown)")
                     .font(.largeTitle)
@@ -19,7 +23,7 @@ struct CombatView: View {
                     .frame(height: 10)
                     .offset(y: 200)
             }
-
+            
             HStack {
                 VStack{
                     Text("Ganhou: \(combatViewModel.player1.winTurno)")
@@ -62,7 +66,7 @@ struct CombatView: View {
                         .offset(y: 160)
                 }
             }
-
+            
             HStack {
                 CardComponent(image: Image("attack"))
                     .onTapGesture {
@@ -72,7 +76,7 @@ struct CombatView: View {
                 CardComponent(image: Image("defense"))
                     .onTapGesture {
                         combatViewModel.isSheetVisible = true
-
+                        
                     }
                 CardComponent(image: Image("recharge"))
                     .onTapGesture {
@@ -82,7 +86,7 @@ struct CombatView: View {
             .offset(y: -50)
             .allowsHitTesting(combatViewModel.isInteractionEnabled)
             .frame(width: 300, height: 300)
-
+            
         }
         .onAppear {
             combatViewModel.startCountdown()
@@ -91,10 +95,15 @@ struct CombatView: View {
         }) {
             SheetView(cards: combatViewModel.cards, selectedCard: $combatViewModel.selectedCard, isSheetVisible: $combatViewModel.isSheetVisible).background(ClearBackgroundView())
         }
+        
         //Alerta do final do jogo
         .alert(isPresented: $combatViewModel.isGameEndAlertPresented) {
-            Alert(title: Text("Fim do Jogo"), message: Text("O jogo acabou!"), dismissButton: .default(Text("OK")))
+            Alert(title: Text("Fim do Jogo"), message: Text("\(combatViewModel.getScore())"), dismissButton: .default(Text("OK"), action: {
+                presentationMode.wrappedValue.dismiss()
+            }))
         }
+
+
     }
 }
 
@@ -102,7 +111,7 @@ struct SheetView: View {
     var cards: Cards
     @Binding var selectedCard: String
     @Binding var isSheetVisible: Bool
-
+    
     var body: some View {
         VStack {
             HStack {
@@ -115,7 +124,7 @@ struct SheetView: View {
                         .aspectRatio(contentMode: .fit)
                         .frame(width: 200, height: 250)
                 }
-
+                
                 Button(action: {
                     selectedCard = cards.defense
                     isSheetVisible = false
@@ -125,7 +134,7 @@ struct SheetView: View {
                         .aspectRatio(contentMode: .fit)
                         .frame(width: 200, height: 250)
                 }
-
+                
                 Button(action: {
                     selectedCard = cards.recharge
                     isSheetVisible = false
@@ -150,14 +159,14 @@ struct ClearBackgroundView: UIViewRepresentable {
     func makeUIView(context: Context) -> UIView {
         return InnerView()
     }
-
+    
     func updateUIView(_ uiView: UIView, context: Context) {
     }
-
+    
     private class InnerView: UIView {
         override func didMoveToWindow() {
             super.didMoveToWindow()
-
+            
             superview?.superview?.backgroundColor = .clear
         }
     }

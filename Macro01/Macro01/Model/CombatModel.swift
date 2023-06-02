@@ -5,19 +5,24 @@ class CombatViewModel: ObservableObject {
     
     @Published var selectedCard: String = ""
     @Published var selectedCard2: String = ""
+   
     @Published var countdown: Int = 5
     @Published var isCountdownVisible = true
     @Published var isSheetVisible = false
     @Published var isInteractionEnabled = true
+    
+  
     
     var cards = Cards()
     var player1 = PlayerCombat(image: "jogador1")
     var player2 = PlayerCombat(image: "jogador2")
     
     //Variável do contador
-    @Published var round: Int =  0
+    @Published var round: Int =  1
     //Variável que controla a exibicao do alerta
     @Published var isGameEndAlertPresented = false
+    
+    @Published var result = false
     
     
     func startCountdown() {
@@ -161,16 +166,29 @@ class CombatViewModel: ObservableObject {
     
     
     // Incrementa a variável round em 1
-    // Incrementa a variável round em 1
     func incrementRound() {
         round += 1
     }
     
+    //Verifica se chegou no final dos rounds e chama aviso
     func checkGameEnd() {
         if round == 2 {
             isGameEndAlertPresented = true
         }
     }
+    
+    //Verifica o placar do jogo
+    func getScore() -> String {
+        if player1.winTurno > player2.winTurno {
+            return "\(player2.winTurno)\nPlayer 1 ganhou!"
+        } else if player1.winTurno < player2.winTurno {
+            return "\(player2.winTurno)\nPlayer 2 ganhou!"
+        } else {
+            return "Empate"
+        }
+    }
+
+
     
     
     
