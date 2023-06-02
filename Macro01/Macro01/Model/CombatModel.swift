@@ -1,11 +1,11 @@
 // CombatModel.swift
 import Foundation
 
+//MARK: MODEL DO COMBATE
 class CombatViewModel: ObservableObject {
     
-    @Published var selectedCard: String = ""
-    @Published var selectedCard2: String = ""
     @Published var countdown: Int = 5
+    @Published var turn: Int = 1
     @Published var isCountdownVisible = true
     @Published var isSheetVisible = false
     @Published var isInteractionEnabled = true
@@ -14,28 +14,47 @@ class CombatViewModel: ObservableObject {
     var player1 = PlayerCombat(image: "jogador1")
     var player2 = PlayerCombat(image: "jogador2")
     
+    //MARK: CONTADOR
     func startCountdown() {
         Timer.scheduledTimer(withTimeInterval: 1, repeats: true) { timer in
-            if self.countdown > 0 {
-                self.countdown -= 1
-            } else {
-                timer.invalidate()
-                self.selectedCard2 = self.cards.randomCard()
-                print(self.selectedCard2)
-                self.isSheetVisible = false
-                self.isInteractionEnabled = false
-                self.isCountdownVisible = false
-                self.compareCardsInCenter(card1: self.selectedCard, card2: self.selectedCard2)
-                
-                DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
-                    self.isInteractionEnabled = true
-                    self.selectedCard = ""
-                    self.countdown = 5
-                    self.isCountdownVisible = true
-                    self.startCountdown()
-                }
-            }
+            self.updateCountdown(timer)
         }
+    }
+    
+    //MARK: LÓGICA CONTADOR
+    private func updateCountdown(_ timer: Timer) {
+        if countdown > 0 {
+            countdown -= 1
+        } else {
+            timer.invalidate()
+            endTurn()
+        }
+    }
+    
+    //MARK: QUANDO O CONTADOR ACABA
+    private func endTurn() {
+        turn += 1
+        print("TURNO: \(turn)")
+        player2.selectedCard = cards.randomCard()
+        isSheetVisible = false
+        isInteractionEnabled = false
+        isCountdownVisible = false
+        
+        compareCardsInCenter(card1: player1.selectedCard, card2: player2.selectedCard)
+        
+        DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
+            self.resetTurn()
+        }
+    }
+    
+    //MARK: RESETANDO O CONTADOR
+    private func resetTurn() {
+        isInteractionEnabled = true
+        player1.replaceSelectedCardRandomly()
+        player1.selectedCard = ""
+        countdown = 5
+        isCountdownVisible = true
+        startCountdown()
     }
     
     //MARK: REFATORAR ISSO AQUI E COLOCAR EM UM OUTRO ARQUIVO DAQUI ATÉ....
@@ -64,7 +83,7 @@ class CombatViewModel: ObservableObject {
             break
         }
     }
-
+    
     func handleAttackVsAttack() {
         if player1.mana >= 1 && player2.mana >= 1 {
             player1LoseMana()
@@ -80,7 +99,7 @@ class CombatViewModel: ObservableObject {
             print("ATAQUE E ATAQUE SEM MANA OS DOIS NADA ACONTECE")
         }
     }
-
+    
     func handleAttackVsDefense() {
         if player1.mana >= 1 {
             player1LoseMana()
@@ -88,7 +107,7 @@ class CombatViewModel: ObservableObject {
             print("ATACOU SEM MANA. NADA ACONTECE")
         }
     }
-
+    
     func handleAttackVsRecharge() {
         if player1.mana >= 1 {
             player1Win()
@@ -96,21 +115,21 @@ class CombatViewModel: ObservableObject {
             player2RechargeMana()
         }
     }
-
+    
     func handleDefenseVsAttack() {
         if player2.mana >= 1 {
             player2LoseMana()
         }
     }
-
+    
     func handleDefenseVsDefense() {
         print("NADA ACONTECE OS DOIS DEFENDERAM")
     }
-
+    
     func handleDefenseVsRecharge() {
         player2RechargeMana()
     }
-
+    
     func handleRechargeVsAttack() {
         if player2.mana >= 1 {
             player2Win()
@@ -118,11 +137,11 @@ class CombatViewModel: ObservableObject {
             player1RechargeMana()
         }
     }
-
+    
     func handleRechargeVsDefense() {
         player1RechargeMana()
     }
-
+    
     func handleRechargeVsRecharge() {
         player1RechargeMana()
         player2RechargeMana()
@@ -138,9 +157,13 @@ class CombatViewModel: ObservableObject {
     
     private func player1Win() {
         player1.winTurno += 1
+        player1.mana = 0
+        player2.mana = 0
     }
     private func player2Win() {
         player2.winTurno += 1
+        player2.mana = 0
+        player1.mana = 0
     }
     
     private func player1RechargeMana() {
@@ -153,19 +176,35 @@ class CombatViewModel: ObservableObject {
 
 //MARK: ATÉ AQUI. SERÁ MELHOR SE ESSE BLOCO TODO DE CÓDIGO IR PARA OUTRA VIEW
 
+
+//MARK: MODEL JOGADOR
 class PlayerCombat: ObservableObject {
     var image: String
     var winTurno = 0
     @Published var mana: Int = 1
     @Published var cards: [String]
+    @Published var selectedCard = ""
     
-    init(image: String, mana: Int = 1, cards: [String] = ["attack", "defense", "recharge"]) {
+    
+    init(image: String, mana: Int = 1, cards: [String] = ["attack", "defense", "recharge"], selectedCard: String = "") {
         self.image = image
         self.mana = mana
         self.cards = cards
+        self.selectedCard = selectedCard
+    }
+    
+    //MARK: FUNCAO QUE PEGA CARTA SELECIONADA E SUBSTITUI ELA
+    func replaceSelectedCardRandomly() {
+        let index = cards.firstIndex(of: selectedCard)
+        guard let currentIndex = index else { return }
+        
+        let newCard = cards.randomElement() //esse random ta quebrado, depois tem ser substituido pelo oq a julinha fez
+        cards[currentIndex] = newCard!
+        selectedCard = newCard ?? ""
     }
 }
 
+//MARK: MODEL CARDS COM A LOGICA DA ALEATORIEDADE 
 struct Cards {
     let defense = "defense"
     let attack = "attack"

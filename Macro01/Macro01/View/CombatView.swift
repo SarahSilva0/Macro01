@@ -7,9 +7,10 @@
 
 import SwiftUI
 
+//MARK: VIEW DO COMBATE. ESSA VIEW PRECISA SER REFATORADA DEPOIS E DEIXADA MAIS RESPONSIVA
 struct CombatView: View {
+    
     @StateObject private var combatViewModel = CombatViewModel()
-
     
     var body: some View {
         VStack {
@@ -29,6 +30,7 @@ struct CombatView: View {
             if combatViewModel.isCountdownVisible {
                 Text("\(combatViewModel.countdown)")
                     .font(.largeTitle)
+                    .foregroundColor(.green)
                     .fontWeight(.bold)
                     .frame(height: 10)
                     .offset(y: 200)
@@ -37,14 +39,16 @@ struct CombatView: View {
             HStack {
                 VStack{
                     Text("Ganhou: \(combatViewModel.player1.winTurno)")
+                        .foregroundColor(.red)
                         .offset(y: 150)
                     Text("Mana: \(combatViewModel.player1.mana)")
+                        .foregroundColor(.red)
                         .offset(y: 150)
                     Image(combatViewModel.player1.image)
                         .offset(y: 150)
                 }
                 VStack {
-                    Image(combatViewModel.selectedCard)
+                    Image(combatViewModel.player1.selectedCard)
                         .resizable()
                         .aspectRatio(contentMode: .fit)
                         .frame(width: 120, height: 160)
@@ -54,7 +58,7 @@ struct CombatView: View {
                     .frame(width: 150)
                 VStack {
                     if !combatViewModel.isCountdownVisible{
-                        Image(combatViewModel.selectedCard2)
+                        Image(combatViewModel.player2.selectedCard)
                             .resizable()
                             .aspectRatio(contentMode: .fit)
                             .frame(width: 120, height: 160)
@@ -69,8 +73,10 @@ struct CombatView: View {
                 }
                 VStack{
                     Text("Ganhou: \(combatViewModel.player2.winTurno)")
+                        .foregroundColor(.red)
                         .offset(y: 150)
                     Text("Mana: \(combatViewModel.player2.mana)")
+                        .foregroundColor(.red)
                         .offset(y: 150)
                     Image(combatViewModel.player2.image)
                         .offset(y: 160)
@@ -78,78 +84,50 @@ struct CombatView: View {
             }
             
             HStack {
-                CardComponent(image: Image("attack"))
-                    .onTapGesture {
-                        combatViewModel.isSheetVisible = true
-                        //mudar a carta quando ela for jogada
-                    }
-                CardComponent(image: Image("defense"))
-                    .onTapGesture {
-                        combatViewModel.isSheetVisible = true
-                        
-                    }
-                CardComponent(image: Image("recharge"))
-                    .onTapGesture {
-                        combatViewModel.isSheetVisible = true
-                    }
+                ForEach(combatViewModel.player1.cards, id: \.self) { card in
+                        CardComponent(image: Image(card))
+                            .onTapGesture {
+                                combatViewModel.isSheetVisible = true
+                        }
+                }
             }
             .offset(y: -50)
             .allowsHitTesting(combatViewModel.isInteractionEnabled)
             .frame(width: 300, height: 300)
             
         }
+        .background(Color.white)
         .onAppear {
             combatViewModel.startCountdown()
+            print(combatViewModel.player1.selectedCard)
         }
         .sheet(isPresented: $combatViewModel.isSheetVisible, onDismiss: {
         }) {
-            SheetView(cards: combatViewModel.cards, selectedCard: $combatViewModel.selectedCard, isSheetVisible: $combatViewModel.isSheetVisible).background(ClearBackgroundView())
+            SheetView(combatViewModel: combatViewModel, isSheetVisible: $combatViewModel.isSheetVisible).background(ClearBackgroundView())
         }
     }
 }
 
+//MARK: SHEET VIEW EM QUE AS VIEWS APARECEM. PRECISA SER SEPARADA EM OUTRO ARQUIVO
 struct SheetView: View {
-    var cards: Cards
-    @Binding var selectedCard: String
+    @ObservedObject var combatViewModel: CombatViewModel
     @Binding var isSheetVisible: Bool
     
     var body: some View {
         VStack {
             HStack {
-                Button(action: {
-                    selectedCard = cards.attack
-                    isSheetVisible = false
-                }) {
-                    Image(cards.attack)
-                        .resizable()
-                        .aspectRatio(contentMode: .fit)
-                        .frame(width: 200, height: 250)
-                }
-                
-                Button(action: {
-                    selectedCard = cards.defense
-                    isSheetVisible = false
-                }) {
-                    Image(cards.defense)
-                        .resizable()
-                        .aspectRatio(contentMode: .fit)
-                        .frame(width: 200, height: 250)
-                }
-                
-                Button(action: {
-                    selectedCard = cards.recharge
-                    isSheetVisible = false
-                }) {
-                    Image(cards.recharge)
-                        .resizable()
-                        .aspectRatio(contentMode: .fit)
-                        .frame(width: 200, height: 250)
+                ForEach(combatViewModel.player1.cards, id: \.self) { card in
+                    CardComponent(image: Image(card))
+                        .onTapGesture {
+                            combatViewModel.player1.selectedCard = card
+                            print(combatViewModel.player1.selectedCard)
+                            isSheetVisible = false
+                        }
                 }
             }
         }
     }
 }
-
 
 struct CombatView_Previews: PreviewProvider {
     static var previews: some View {
@@ -157,6 +135,7 @@ struct CombatView_Previews: PreviewProvider {
     }
 }
 
+//MARK: ESSA STRUCT E PARA O FUNDO DA VIEW FICAR TRANSPARENTE
 struct ClearBackgroundView: UIViewRepresentable {
     func makeUIView(context: Context) -> UIView {
         return InnerView()
