@@ -26,31 +26,36 @@ class CombatViewModel: ObservableObject {
     
     
     func startCountdown() {
-        Timer.scheduledTimer(withTimeInterval: 1, repeats: true) { timer in
-            if self.countdown > 0 {
-                self.countdown -= 1
-            } else {
-                timer.invalidate()
-                self.selectedCard2 = self.cards.randomCard()
-                print(self.selectedCard2)
-                self.isSheetVisible = false
-                self.isInteractionEnabled = false
-                self.isCountdownVisible = false
-                self.compareCardsInCenter(card1: self.selectedCard, card2: self.selectedCard2)
-                
-                DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
-                    self.isInteractionEnabled = true
-                    self.selectedCard = ""
-                    self.countdown = 5
-                    self.isCountdownVisible = true
-                    self.checkGameEnd() //verifica se tem 5 round e chama o final
-                    self.incrementRound() // Chama função para incrementar o round
-                    self.startCountdown()
-                    
-                }
-            }
-        }
-    }
+           // Verificar se o jogo atingiu numero de rounds
+           if round > 1 {
+               self.gameEnd() // Chama o final
+               return
+           }
+           
+           Timer.scheduledTimer(withTimeInterval: 1, repeats: true) { timer in
+               if self.countdown > 0 {
+                   self.countdown -= 1
+               } else {
+                   timer.invalidate()
+                   self.selectedCard2 = self.cards.randomCard()
+                   print(self.selectedCard2)
+                   self.isSheetVisible = false
+                   self.isInteractionEnabled = false
+                   self.isCountdownVisible = false
+                   self.compareCardsInCenter(card1: self.selectedCard, card2: self.selectedCard2)
+                   
+                   DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
+                       self.isInteractionEnabled = true
+                       self.selectedCard = ""
+                       self.countdown = 5
+                       self.isCountdownVisible = true
+                       self.incrementRound() // chama função para incrementar o round
+                       self.startCountdown()
+                       
+                   }
+               }
+           }
+       }
     
     //MARK: REFATORAR ISSO AQUI E COLOCAR EM UM OUTRO ARQUIVO DAQUI ATÉ....
     
@@ -170,27 +175,24 @@ class CombatViewModel: ObservableObject {
         round += 1
     }
     
-    //Verifica se chegou no final dos rounds e chama aviso
-    func checkGameEnd() {
-        if round == 2 {
+    //Chama o aviso do final do jogo
+    func gameEnd() {
             isGameEndAlertPresented = true
-        }
+
     }
     
     //Verifica o placar do jogo
     func getScore() -> String {
         if player1.winTurno > player2.winTurno {
-            return "\(player2.winTurno)\nPlayer 1 ganhou!"
+            return "\(player2.winTurno) Player 1 ganhou!"
         } else if player1.winTurno < player2.winTurno {
-            return "\(player2.winTurno)\nPlayer 2 ganhou!"
+            return "\(player2.winTurno) Player 2 ganhou!"
         } else {
             return "Empate"
         }
     }
 
 
-    
-    
     
 }
 

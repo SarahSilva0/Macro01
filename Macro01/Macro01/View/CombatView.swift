@@ -98,14 +98,19 @@ struct CombatView: View {
         
         //Alerta do final do jogo
         .alert(isPresented: $combatViewModel.isGameEndAlertPresented) {
-            Alert(title: Text("Fim do Jogo"), message: Text("\(combatViewModel.getScore())"), dismissButton: .default(Text("OK"), action: {
+            Alert(title: Text("Fim do Jogo"),
+                  message: Text("\(combatViewModel.getScore())"),
+                  dismissButton: .default(Text("OK"), action: {
                 presentationMode.wrappedValue.dismiss()
             }))
         }
 
-
+        
     }
 }
+
+
+//MARK: ____________________________________________________________________
 
 struct SheetView: View {
     var cards: Cards
@@ -149,12 +154,8 @@ struct SheetView: View {
     }
 }
 
-struct CombatView_Previews: PreviewProvider {
-    static var previews: some View {
-        CombatView()
-    }
-}
 
+//MARK: ____________________________________________________________________
 struct ClearBackgroundView: UIViewRepresentable {
     func makeUIView(context: Context) -> UIView {
         return InnerView()
