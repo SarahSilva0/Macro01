@@ -35,7 +35,7 @@ class CombatViewModel: ObservableObject {
     private func endTurn() {
         turn += 1
         print("TURNO: \(turn)")
-        player2.selectedCard = cards.randomCard()
+        player2.selectedCard = self.player2.playCard()
         isSheetVisible = false
         isInteractionEnabled = false
         isCountdownVisible = false
@@ -195,12 +195,73 @@ class PlayerCombat: ObservableObject {
     
     //MARK: FUNCAO QUE PEGA CARTA SELECIONADA E SUBSTITUI ELA
     func replaceSelectedCardRandomly() {
-        let index = cards.firstIndex(of: selectedCard)
-        guard let currentIndex = index else { return }
-        
-        let newCard = cards.randomElement() //esse random ta quebrado, depois tem ser substituido pelo oq a julinha fez
-        cards[currentIndex] = newCard!
-        selectedCard = newCard ?? ""
+           let index = cards.firstIndex(of: selectedCard)
+           guard let currentIndex = index else { return }
+           
+           let cardsInstance = Cards()
+           let newCard = cardsInstance.randomCard() // Usando a função randomCard() na instância de Cards
+           cards[currentIndex] = newCard
+           selectedCard = newCard
+       }
+    
+    
+    //MARK: LOGICA BOT:
+    func playCard() -> String{
+        switch self.mana {
+            //se o mana for 0
+        case 0:
+            return noMana()
+            //se o mana for 1
+        case 1:
+            return withMana()
+            //se o mana for 2
+        case 2:
+            return twoManas()
+            //defaut é defesa porque defesa é a unica carta que pode jogar independente do cenario.
+        default:
+            return Cards().defense
+        }
+    }
+    
+    //Não pode ter +2 manas. Não pode usar carta de recarga
+    private func twoManas() -> String {
+        let randomIndex = Int.random(in: 0..<2)
+        switch randomIndex {
+        case 0:
+            return Cards().defense
+        case 1:
+            return Cards().attack
+        default:
+            return Cards().defense
+        }
+    }
+    
+    //Sem mana não ataca. Somente defende ou recarga.
+    private func noMana() -> String {
+        let randomIndex = Int.random(in: 0..<2)
+        switch randomIndex {
+        case 0:
+            return Cards().defense
+        case 1:
+            return Cards().recharge
+        default:
+            return Cards().defense
+        }
+    }
+    
+    //Com mais de um mana e menos de 2 pode usar qualquer uma aleatória.
+    private func withMana() -> String {
+        let randomIndex = Int.random(in: 0..<3)
+        switch randomIndex {
+        case 0:
+            return Cards().defense
+        case 1:
+            return Cards().recharge
+        case 2:
+            return Cards().attack
+        default:
+            return Cards().defense
+        }
     }
 }
 
@@ -211,16 +272,16 @@ struct Cards {
     let recharge = "recharge"
     
     func randomCard() -> String {
-        let randomIndex = Int.random(in: 0..<3)
-        switch randomIndex {
-        case 0:
-            return attack
-        case 1:
-            return defense
-        case 2:
-            return recharge
-        default:
-            return ""
-        }
-    }
+              let randomValue = Double.random(in: 0..<1)
+              
+              if randomValue < 0.4 { // 40% de chance para ataque
+                  return attack
+              } else if randomValue < 0.7 { // 30% de chance para recarga
+                  return recharge
+              } else { // 25% de chance para defesa
+                  return defense
+              }
+          }
 }
+
+
