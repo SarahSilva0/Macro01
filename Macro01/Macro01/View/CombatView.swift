@@ -11,6 +11,8 @@ import SwiftUI
 struct CombatView: View {
     
     @StateObject private var combatViewModel = CombatViewModel()
+    @Environment(\.presentationMode) var presentationMode
+    
     
     var body: some View {
         VStack {
@@ -18,14 +20,10 @@ struct CombatView: View {
                 .frame(height: 120)
             
             HStack {
-                Image("pontos")
-                Image("pontos")
-                Image("pontos")
-                    .resizable()
-                    .frame(width: 20, height: 20)
-                Image("pontos")
-                Image("pontos")
-            }.offset(y: 100)
+                Text("ROUND " + String(combatViewModel.turn))
+                    .fontWeight(.bold)
+            }
+            .offset(y: 100)
             
             if combatViewModel.isCountdownVisible {
                 Text("\(combatViewModel.countdown)")
@@ -85,9 +83,9 @@ struct CombatView: View {
             
             HStack {
                 ForEach(combatViewModel.player1.cards, id: \.self) { card in
-                        CardComponent(image: Image(card))
-                            .onTapGesture {
-                                combatViewModel.isSheetVisible = true
+                    CardComponent(image: Image(card))
+                        .onTapGesture {
+                            combatViewModel.isSheetVisible = true
                         }
                 }
             }
@@ -99,12 +97,18 @@ struct CombatView: View {
         .background(Color.white)
         .onAppear {
             combatViewModel.startCountdown()
-            print(combatViewModel.player1.selectedCard)
         }
         .sheet(isPresented: $combatViewModel.isSheetVisible, onDismiss: {
         }) {
             SheetView(combatViewModel: combatViewModel, isSheetVisible: $combatViewModel.isSheetVisible).background(ClearBackgroundView())
         }
+        .alert(isPresented: $combatViewModel.isGameEndAlertPresented) {
+                 Alert(title: Text("Fim do Jogo"),
+                       message: Text("\(combatViewModel.getScore())"),
+                       dismissButton: .default(Text("OK"), action: {
+                     presentationMode.wrappedValue.dismiss()
+                 }))
+             }
     }
 }
 

@@ -9,6 +9,7 @@ class CombatViewModel: ObservableObject {
     @Published var isCountdownVisible = true
     @Published var isSheetVisible = false
     @Published var isInteractionEnabled = true
+    @Published var isGameEndAlertPresented = false
     
     var cards = Cards()
     var player1 = PlayerCombat(image: "jogador1")
@@ -16,8 +17,15 @@ class CombatViewModel: ObservableObject {
     
     //MARK: CONTADOR
     func startCountdown() {
-        Timer.scheduledTimer(withTimeInterval: 1, repeats: true) { timer in
-            self.updateCountdown(timer)
+        
+        if turn > 5{
+            self.gameEnd()
+            return
+        }
+        else{
+            Timer.scheduledTimer(withTimeInterval: 1, repeats: true) { timer in
+                self.updateCountdown(timer)
+            }
         }
     }
     
@@ -33,8 +41,6 @@ class CombatViewModel: ObservableObject {
     
     //MARK: QUANDO O CONTADOR ACABA
     private func endTurn() {
-        turn += 1
-        print("TURNO: \(turn)")
         player2.selectedCard = self.player2.playCard()
         isSheetVisible = false
         isInteractionEnabled = false
@@ -44,6 +50,7 @@ class CombatViewModel: ObservableObject {
         
         DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
             self.resetTurn()
+            self.incrementRound()
         }
     }
     
@@ -56,6 +63,26 @@ class CombatViewModel: ObservableObject {
         isCountdownVisible = true
         startCountdown()
     }
+    
+    private func incrementRound(){
+        turn += 1
+    }
+    
+    func gameEnd(){
+        isGameEndAlertPresented = true
+    }
+    
+    //Verifica o placar do jogo
+    func getScore() -> String {
+        if player1.winTurno > player2.winTurno {
+            return "Player 1 ganhou!"
+        } else if player1.winTurno < player2.winTurno {
+            return "Player 2 ganhou!"
+        } else {
+            return "Empate"
+        }
+    }
+    
     
     //MARK: REFATORAR ISSO AQUI E COLOCAR EM UM OUTRO ARQUIVO DAQUI ATÉ....
     
@@ -194,15 +221,16 @@ class PlayerCombat: ObservableObject {
     }
     
     //MARK: FUNCAO QUE PEGA CARTA SELECIONADA E SUBSTITUI ELA
+    //MARK: MELHORAR AQUI DEPOIS
     func replaceSelectedCardRandomly() {
-           let index = cards.firstIndex(of: selectedCard)
-           guard let currentIndex = index else { return }
-           
-           let cardsInstance = Cards()
-           let newCard = cardsInstance.randomCard() // Usando a função randomCard() na instância de Cards
-           cards[currentIndex] = newCard
-           selectedCard = newCard
-       }
+        let index = cards.firstIndex(of: selectedCard)
+        guard let currentIndex = index else { return }
+        
+        let cardsInstance = Cards()
+        let newCard = cardsInstance.randomCard() // Usando a função randomCard() na instância de Cards
+        cards[currentIndex] = newCard
+        selectedCard = newCard
+    }
     
     
     //MARK: LOGICA BOT:
@@ -272,16 +300,16 @@ struct Cards {
     let recharge = "recharge"
     
     func randomCard() -> String {
-              let randomValue = Double.random(in: 0..<1)
-              
-              if randomValue < 0.4 { // 40% de chance para ataque
-                  return attack
-              } else if randomValue < 0.7 { // 30% de chance para recarga
-                  return recharge
-              } else { // 25% de chance para defesa
-                  return defense
-              }
-          }
+        let randomValue = Double.random(in: 0..<1)
+        
+        if randomValue < 0.4 { // 40% de chance para ataque
+            return attack
+        } else if randomValue < 0.7 { // 30% de chance para recarga
+            return recharge
+        } else { // 25% de chance para defesa
+            return defense
+        }
+    }
 }
 
 
