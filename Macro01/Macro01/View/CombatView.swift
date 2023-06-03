@@ -37,57 +37,66 @@ struct CombatView: View {
                             
                         }
                     }
-                    .frame(width: geometry.size.width * 0.2, height: geometry.size.height * 0.2)
+                    .frame(width: geometry.size.width * 0.1, height: geometry.size.height * 0.1)
                     .background(Color.white)
                     
-                    
-            
-                    
+                  
+                
                     HStack {
-                        VStack{
+                        VStack {
                             Text("Ganhou: \(combatViewModel.player1.winTurno)")
                                 .foregroundColor(.red)
-                                .offset(y: 200)
+                             
                             Text("Mana: \(combatViewModel.player1.mana)")
                                 .foregroundColor(.red)
-                                .offset(y: 200)
+                             
                             Image(combatViewModel.player1.image)
-                                .offset(y: 170)
+                             
                         }
+                        .background(.black)
+                        .frame(width: geometry.size.width * 0.2, height: geometry.size.height * 0.2)
+                       
+                        
                         VStack {
                             Image(combatViewModel.player1.selectedCard)
                                 .resizable()
                                 .aspectRatio(contentMode: .fit)
-                                .frame(width: 120, height: 160)
-                                .offset(y: 100)
+                                
                         }
-                        Spacer()
-                            .frame(width: 150)
+                        .frame(width: geometry.size.width * 0.2, height: geometry.size.height * 0.2)
+                        .background(.black)
+                       
+                        
                         VStack {
                             if !combatViewModel.isCountdownVisible{
                                 Image(combatViewModel.player2.selectedCard)
                                     .resizable()
                                     .aspectRatio(contentMode: .fit)
-                                    .frame(width: 120, height: 160)
-                                    .offset(y:100)
                             }
                             else{
                                 Image("")
                                     .resizable()
                                     .aspectRatio(contentMode: .fit)
-                                    .frame(width: 120, height: 160)
+    
                             }
                         }
+                        .frame(width: geometry.size.width * 0.2, height: geometry.size.height * 0.2)
+                        .background(.black)
+                        
+                        
                         VStack{
                             Text("Ganhou: \(combatViewModel.player2.winTurno)")
                                 .foregroundColor(.red)
-                                .offset(y: 200)
+                            
                             Text("Mana: \(combatViewModel.player2.mana)")
                                 .foregroundColor(.red)
-                                .offset(y: 200)
+                              
                             Image(combatViewModel.player2.image)
-                                .offset(y: 170)
+                         
                         }
+                        .frame(width: geometry.size.width * 0.2, height: geometry.size.height * 0.2)
+                        .background(.black)
+                        
                     }
                     
                     //CARTAS DO PLAYER 1
