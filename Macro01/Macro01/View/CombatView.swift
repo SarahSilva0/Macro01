@@ -15,87 +15,96 @@ struct CombatView: View {
     
     
     var body: some View {
-        VStack {
-            Spacer()
-                .frame(height: 120)
+        
+        GeometryReader { geometry in
             
-            HStack {
-                Text("ROUND " + String(combatViewModel.turn))
-                    .fontWeight(.bold)
-                    .offset(y: 100)
-            }
-            .offset(y: 100)
-            
-            if combatViewModel.isCountdownVisible {
-                Text("\(combatViewModel.countdown)")
-                    .font(.largeTitle)
-                    .foregroundColor(.green)
-                    .fontWeight(.bold)
-                    .frame(height: 10)
-                    .offset(y: 300)
-            }
-            
-            HStack {
-                VStack{
-                    Text("Ganhou: \(combatViewModel.player1.winTurno)")
-                        .foregroundColor(.red)
-                        .offset(y: 200)
-                    Text("Mana: \(combatViewModel.player1.mana)")
-                        .foregroundColor(.red)
-                        .offset(y: 200)
-                    Image(combatViewModel.player1.image)
-                        .offset(y: 170)
+            VStack {
+                HStack(alignment: .center) {
+                    Text("ROUND " + String(combatViewModel.turn))
+                        .fontWeight(.bold)
                 }
-                VStack {
-                    Image(combatViewModel.player1.selectedCard)
-                        .resizable()
-                        .aspectRatio(contentMode: .fit)
-                        .frame(width: 120, height: 160)
-                        .offset(y: 100)
-                }
-                Spacer()
-                    .frame(width: 150)
-                VStack {
-                    if !combatViewModel.isCountdownVisible{
-                        Image(combatViewModel.player2.selectedCard)
+                .frame(width: geometry.size.width * 0.2, height: geometry.size.height * 0.2)
+                .background(Color.yellow)
+                
+                
+                HStack {
+                    VStack{
+                        Text("Ganhou: \(combatViewModel.player1.winTurno)")
+                            .foregroundColor(.red)
+                            .offset(y: 200)
+                        Text("Mana: \(combatViewModel.player1.mana)")
+                            .foregroundColor(.red)
+                            .offset(y: 200)
+                        Image(combatViewModel.player1.image)
+                            .offset(y: 170)
+                    }
+                    VStack {
+                        Image(combatViewModel.player1.selectedCard)
                             .resizable()
                             .aspectRatio(contentMode: .fit)
                             .frame(width: 120, height: 160)
-                            .offset(y:100)
+                            .offset(y: 100)
                     }
-                    else{
-                        Image("")
-                            .resizable()
-                            .aspectRatio(contentMode: .fit)
-                            .frame(width: 120, height: 160)
-                    }
-                }
-                VStack{
-                    Text("Ganhou: \(combatViewModel.player2.winTurno)")
-                        .foregroundColor(.red)
-                        .offset(y: 200)
-                    Text("Mana: \(combatViewModel.player2.mana)")
-                        .foregroundColor(.red)
-                        .offset(y: 200)
-                    Image(combatViewModel.player2.image)
-                        .offset(y: 170)
-                }
-            }
-            
-            HStack {
-                ForEach(combatViewModel.player1.cards, id: \.self) { card in
-                    CardComponent(image: Image(card))
-                        .onTapGesture {
-                            combatViewModel.isSheetVisible = true
+                   
+                    Spacer()
+                    
+                    VStack {
+                        if !combatViewModel.isCountdownVisible{
+                            Image(combatViewModel.player2.selectedCard)
+                                .resizable()
+                                .aspectRatio(contentMode: .fit)
+                                .frame(width: 120, height: 160)
+                                .offset(y:100)
                         }
+                        else{
+                            Image("")
+                                .resizable()
+                                .aspectRatio(contentMode: .fit)
+                                .frame(width: 120, height: 160)
+                        }
+                    }
+                    VStack {
+                        Text("Ganhou: \(combatViewModel.player2.winTurno)")
+                            .foregroundColor(.red)
+                            .offset(y: 200)
+                        Text("Mana: \(combatViewModel.player2.mana)")
+                            .foregroundColor(.red)
+                            .offset(y: 200)
+                        Image(combatViewModel.player2.image)
+                            .offset(y: 170)
+                    }
                 }
-            }
-            .offset(y: -150)
-            .allowsHitTesting(combatViewModel.isInteractionEnabled)
-            .frame(width: 300, height: 300)
+                
+                //CONTAGEM
+                HStack {
+                    if combatViewModel.isCountdownVisible {
+                    Text("\(combatViewModel.countdown)")
+                        .font(.largeTitle)
+                        .foregroundColor(.green)
+                        .fontWeight(.bold)
+                    }
+                        
+                }
+                .frame(width: geometry.size.width * 0.05, height: geometry.size.height * 0.1)
+                .background(.white)
+                
+                
+                HStack {
+                    ForEach(combatViewModel.player1.cards, id: \.self) { card in
+                        CardComponent(image: Image(card))
+                            .onTapGesture {
+                                combatViewModel.isSheetVisible = true
+                            }
+                    }
+                }
+                .offset(y: -150)
+                .allowsHitTesting(combatViewModel.isInteractionEnabled)
+                .frame(width: 300, height: 300)
+                
+            } .ignoresSafeArea()
             
         }
-        .background(Color.white)
+        .background(Color.blue)
         .onAppear {
             combatViewModel.startCountdown()
         }
@@ -104,12 +113,12 @@ struct CombatView: View {
             SheetView(combatViewModel: combatViewModel, isSheetVisible: $combatViewModel.isSheetVisible).background(ClearBackgroundView())
         }
         .alert(isPresented: $combatViewModel.isGameEndAlertPresented) {
-                 Alert(title: Text("Fim do Jogo"),
-                       message: Text("\(combatViewModel.getScore())"),
-                       dismissButton: .default(Text("OK"), action: {
-                     presentationMode.wrappedValue.dismiss()
-                 }))
-             }
+            Alert(title: Text("Fim do Jogo"),
+                  message: Text("\(combatViewModel.getScore())"),
+                  dismissButton: .default(Text("OK"), action: {
+                presentationMode.wrappedValue.dismiss()
+            }))
+        }
     }
 }
 
