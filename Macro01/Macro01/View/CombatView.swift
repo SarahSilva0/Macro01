@@ -52,7 +52,7 @@ struct CombatView: View {
                             Text("Mana: \(combatViewModel.player1.mana)")
                                 .foregroundColor(.red)
                              
-                            Image(combatViewModel.player1.image)
+                            CharacterTextBox(character: "player1")
                              
                         }
                         .background(.black)
@@ -94,8 +94,8 @@ struct CombatView: View {
                             
                             Text("Mana: \(combatViewModel.player2.mana)")
                                 .foregroundColor(.red)
-                              
-                            Image(combatViewModel.player2.image)
+                            
+                            CharacterTextBox(character: "player1")
                          
                         }
                         .background(.black)
