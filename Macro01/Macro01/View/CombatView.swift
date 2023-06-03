@@ -85,8 +85,8 @@ struct CombatView: View {
                         .frame(width: geometry.size.width * 0.2, height: geometry.size.height * 0.2)
                         .background(.blue)
                         
-                        
                         Spacer()
+                        
                         //JOGADOR 2
                         VStack{
                             Text("Ganhou: \(combatViewModel.player2.winTurno)")
@@ -96,12 +96,12 @@ struct CombatView: View {
                                 .foregroundColor(.red)
                             
                             CharacterTextBox(character: "player1")
-                         
                         }
                         .background(.black)
                         .frame(width: geometry.size.width * 0.2, height: geometry.size.height * 0.2)
-                        
                     }
+                    
+                    Spacer(minLength: 100)
                     
                     //CARTAS DO PLAYER 1
                     HStack {
@@ -113,7 +113,8 @@ struct CombatView: View {
                         }
                     }
                     .allowsHitTesting(combatViewModel.isInteractionEnabled)
-                    .frame(width: 300, height: 300)
+                    .background(.white)
+                    .frame(width: geometry.size.width * 0.2, height: geometry.size.height * 0.2)
                     
                 }
                 
