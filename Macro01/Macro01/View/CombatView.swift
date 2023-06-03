@@ -24,11 +24,11 @@ struct CombatView: View {
                             .fontWeight(.bold)
                     }
                     .frame(width: geometry.size.width * 0.2, height: geometry.size.height * 0.2)
-                    .background(Color.yellow)
+//                    .background(Color.yellow)
                     
-                    Spacer (minLength: 100)
+                    Spacer (minLength: 70)
                     
-                    HStack (alignment: .center) {
+                    HStack (alignment: .top) {
                         if combatViewModel.isCountdownVisible {
                             Text("\(combatViewModel.countdown)")
                                 .font(.largeTitle)
@@ -38,7 +38,7 @@ struct CombatView: View {
                         }
                     }
                     .frame(width: geometry.size.width * 0.1, height: geometry.size.height * 0.1)
-                    .background(Color.white)
+//                    .background(Color.white)
                     
                   
                 
@@ -55,35 +55,41 @@ struct CombatView: View {
                             CharacterTextBox(character: "player1")
                              
                         }
-                        .background(.black)
+//                        .background(.black)
                         .frame(width: geometry.size.width * 0.2, height: geometry.size.height * 0.2)
                        
+                        Spacer ()
                         
-                        VStack {
-                            Image(combatViewModel.player1.selectedCard)
-                                .resizable()
-                                .aspectRatio(contentMode: .fit)
+                        HStack (spacing: 100) {
+                            //Seleçao Carta Player 1
+                            VStack {
+                                Image(combatViewModel.player1.selectedCard)
+                                    .resizable()
+                                    .aspectRatio(contentMode: .fill)
                                 
-                        }
-                        .frame(width: geometry.size.width * 0.2, height: geometry.size.height * 0.2)
-                        .background(.yellow)
-                       
+                            }
+                            .frame(width: geometry.size.width * 0.15, height: geometry.size.height * 0.15)
+                            
+                            
+                            //Seleçao Carta Player 1
+                            VStack {
+                                if !combatViewModel.isCountdownVisible{
+                                    Image(combatViewModel.player2.selectedCard)
+                                        .resizable()
+                                        .aspectRatio(contentMode: .fill)
+                                }
+                                else{
+                                    Image("")
+                                        .resizable()
+                                        .aspectRatio(contentMode: .fill)
+                                    
+                                }
+                            }
+                            .frame(width: geometry.size.width * 0.15, height: geometry.size.height * 0.15)
                         
-                        VStack {
-                            if !combatViewModel.isCountdownVisible{
-                                Image(combatViewModel.player2.selectedCard)
-                                    .resizable()
-                                    .aspectRatio(contentMode: .fit)
-                            }
-                            else{
-                                Image("")
-                                    .resizable()
-                                    .aspectRatio(contentMode: .fit)
-    
-                            }
                         }
-                        .frame(width: geometry.size.width * 0.2, height: geometry.size.height * 0.2)
-                        .background(.blue)
+                        .frame(width: geometry.size.width * 0.5, height: geometry.size.height * 0.3)
+//                            .background(.blue)
                         
                         Spacer()
                         
@@ -97,7 +103,7 @@ struct CombatView: View {
                             
                             CharacterTextBox(character: "player1")
                         }
-                        .background(.black)
+//                        .background(.black)
                         .frame(width: geometry.size.width * 0.2, height: geometry.size.height * 0.2)
                     }
                     
@@ -113,7 +119,7 @@ struct CombatView: View {
                         }
                     }
                     .allowsHitTesting(combatViewModel.isInteractionEnabled)
-                    .background(.white)
+//                    .background(.white)
                     .frame(width: geometry.size.width * 0.2, height: geometry.size.height * 0.2)
                     
                 }
@@ -122,7 +128,7 @@ struct CombatView: View {
                     combatViewModel.startCountdown()
                 }
                 .ignoresSafeArea()
-                .background(Color.gray)
+                .background(Color.white)
                 
                 
                 .sheet(isPresented: $combatViewModel.isSheetVisible, onDismiss: {
