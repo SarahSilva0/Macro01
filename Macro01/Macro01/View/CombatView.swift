@@ -7,12 +7,11 @@
 
 import SwiftUI
 
-//MARK: VIEW DO COMBATE. ESSA VIEW PRECISA SER REFATORADA DEPOIS E DEIXADA MAIS RESPONSIVA
+
 struct CombatView: View {
     
     @StateObject private var combatViewModel = CombatViewModel()
     @Environment(\.presentationMode) var presentationMode
-    
     
     var body: some View {
         VStack {
@@ -42,8 +41,11 @@ struct CombatView: View {
                     Text("Mana: \(combatViewModel.player1.mana)")
                         .foregroundColor(.red)
                         .offset(y: 150)
-                    Image(combatViewModel.player1.image)
-                        .offset(y: 150)
+                    
+                    
+                    //PLAYER 1
+                    //                    Image(combatViewModel.player1.image)
+                    //                        .offset(y: 150)
                 }
                 VStack {
                     Image(combatViewModel.player1.selectedCard)
@@ -76,8 +78,11 @@ struct CombatView: View {
                     Text("Mana: \(combatViewModel.player2.mana)")
                         .foregroundColor(.red)
                         .offset(y: 150)
-                    Image(combatViewModel.player2.image)
-                        .offset(y: 160)
+                    
+                    
+                    //PLAYER 2
+                    //                    Image(combatViewModel.player2.image)
+                    //                        .offset(y: 160)
                 }
             }
             
@@ -94,23 +99,11 @@ struct CombatView: View {
             .frame(width: 300, height: 300)
             
         }
-        .background(Color.white)
-        .onAppear {
-            combatViewModel.startCountdown()
-        }
-        .sheet(isPresented: $combatViewModel.isSheetVisible, onDismiss: {
-        }) {
-            SheetView(combatViewModel: combatViewModel, isSheetVisible: $combatViewModel.isSheetVisible).background(ClearBackgroundView())
-        }
-        .alert(isPresented: $combatViewModel.isGameEndAlertPresented) {
-                 Alert(title: Text("Fim do Jogo"),
-                       message: Text("\(combatViewModel.getScore())"),
-                       dismissButton: .default(Text("OK"), action: {
-                     presentationMode.wrappedValue.dismiss()
-                 }))
-             }
+        
     }
 }
+
+
 
 //MARK: SHEET VIEW EM QUE AS VIEWS APARECEM. PRECISA SER SEPARADA EM OUTRO ARQUIVO
 struct SheetView: View {
