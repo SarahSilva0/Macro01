@@ -43,6 +43,8 @@ struct CombatView: View {
                   
                 
                     HStack {
+                        
+                        //JOGADOR 1
                         VStack {
                             Text("Ganhou: \(combatViewModel.player1.winTurno)")
                                 .foregroundColor(.red)
@@ -64,7 +66,7 @@ struct CombatView: View {
                                 
                         }
                         .frame(width: geometry.size.width * 0.2, height: geometry.size.height * 0.2)
-                        .background(.black)
+                        .background(.yellow)
                        
                         
                         VStack {
@@ -81,9 +83,11 @@ struct CombatView: View {
                             }
                         }
                         .frame(width: geometry.size.width * 0.2, height: geometry.size.height * 0.2)
-                        .background(.black)
+                        .background(.blue)
                         
                         
+                        Spacer()
+                        //JOGADOR 2
                         VStack{
                             Text("Ganhou: \(combatViewModel.player2.winTurno)")
                                 .foregroundColor(.red)
@@ -94,8 +98,8 @@ struct CombatView: View {
                             Image(combatViewModel.player2.image)
                          
                         }
-                        .frame(width: geometry.size.width * 0.2, height: geometry.size.height * 0.2)
                         .background(.black)
+                        .frame(width: geometry.size.width * 0.2, height: geometry.size.height * 0.2)
                         
                     }
                     
