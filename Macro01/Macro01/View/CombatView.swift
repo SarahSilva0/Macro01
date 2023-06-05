@@ -113,49 +113,11 @@ struct CombatView: View {
     }
 }
 
-//MARK: SHEET VIEW EM QUE AS VIEWS APARECEM. PRECISA SER SEPARADA EM OUTRO ARQUIVO
-struct SheetView: View {
-    @ObservedObject var combatViewModel: CombatViewModel
-    @Binding var isSheetVisible: Bool
-    
-    var body: some View {
-        VStack {
-            HStack {
-                ForEach(combatViewModel.player1.cards, id: \.self) { card in
-                    CardComponent(image: Image(card))
-                        .onTapGesture {
-                            combatViewModel.player1.selectedCard = card
-                            print(combatViewModel.player1.selectedCard)
-                            isSheetVisible = false
-                        }
-                }
-            }
-        }
-    }
-}
-
 struct CombatView_Previews: PreviewProvider {
     static var previews: some View {
         CombatView()
     }
 }
 
-//MARK: ESSA STRUCT E PARA O FUNDO DA VIEW FICAR TRANSPARENTE
-struct ClearBackgroundView: UIViewRepresentable {
-    func makeUIView(context: Context) -> UIView {
-        return InnerView()
-    }
-    
-    func updateUIView(_ uiView: UIView, context: Context) {
-    }
-    
-    private class InnerView: UIView {
-        override func didMoveToWindow() {
-            super.didMoveToWindow()
-            
-            superview?.superview?.backgroundColor = .clear
-        }
-        
-    }
-}
+
 
