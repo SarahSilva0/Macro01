@@ -18,11 +18,11 @@ class CombatViewModel: ObservableObject {
     //MARK: CONTADOR
     func startCountdown() {
         
-        if turn > 5{
+        if turn > 5 {
             self.gameEnd()
             return
         }
-        else{
+        else {
             Timer.scheduledTimer(withTimeInterval: 1, repeats: true) { timer in
                 self.updateCountdown(timer)
             }
@@ -68,7 +68,7 @@ class CombatViewModel: ObservableObject {
         turn += 1
     }
     
-    private func gameEnd(){
+    private func gameEnd() {
         isGameEndAlertPresented = true
     }
     

@@ -16,14 +16,14 @@ struct CharacterTextBox: View {
     }
 
     var body: some View {
-        ZStack{
-            Circle()
-                .foregroundColor(.gray)
+//        ZStack{
+//            Circle()
+//                .foregroundColor(.gray)
 
             Image(character)
                 .resizable()
                 .scaledToFill()
-        }
+//        }
     }
 }
 

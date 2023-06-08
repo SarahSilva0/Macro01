@@ -54,6 +54,7 @@ class PlayerCombat: ObservableObject {
         }
     }
     
+    
     //Não pode ter +2 manas. Não pode usar carta de recarga
     private func twoManas() -> String {
         let randomIndex = Int.random(in: 0..<2)

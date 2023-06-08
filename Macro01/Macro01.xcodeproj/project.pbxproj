@@ -123,9 +123,9 @@
 				FA6F18592A1D301F00E76127 /* MainView.swift */,
 				FAFF07C62A251E4D00D5BA2B /* FisrtView .swift */,
 				FAEA1B992A2693C40007905A /* SecondView .swift */,
+				FA5BEDA82A2E2599001B0C07 /* SheetView.swift */,
 				FA1546DF2A26D15400C9EE2E /* CombatView.swift */,
 				EBCFE2DF2A1E863C002CABFF /* Componentes */,
-				FA5BEDA82A2E2599001B0C07 /* SheetView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
