@@ -113,8 +113,8 @@ struct CombatView: View {
                     HStack {
                         ForEach(combatViewModel.player1.cards, id: \.self) { card in
                             CardComponent(image: Image(card))
-                                .onTapGesture {
-                                    combatViewModel.isSheetVisible = true
+                                .onAppear {
+                                    combatViewModel.executeAfterCountdown()
                                 }
                         }
                     }

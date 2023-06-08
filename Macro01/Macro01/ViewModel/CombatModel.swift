@@ -4,7 +4,7 @@ import Foundation
 //MARK: MODEL DO COMBATE
 class CombatViewModel: ObservableObject {
     
-    @Published var countdown: Int = 5
+    @Published var countdown: Int = 3
     @Published var turn: Int = 1
     @Published var isCountdownVisible = true
     @Published var isSheetVisible = false
@@ -31,13 +31,24 @@ class CombatViewModel: ObservableObject {
     
     //MARK: LÓGICA CONTADOR
     private func updateCountdown(_ timer: Timer) {
-        if countdown > 0 {
+        if countdown > 1 {
             countdown -= 1
         } else {
             timer.invalidate()
             endTurn()
         }
     }
+    
+    
+    
+    //MARK: ABRE A SHEET AO FINAL DO CONTADOR
+    
+    func executeAfterCountdown() {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
+            self.isSheetVisible = true
+        }
+    }
+    
     
     //MARK: QUANDO O CONTADOR ACABA
     private func endTurn() {
