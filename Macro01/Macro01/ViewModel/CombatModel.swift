@@ -11,6 +11,7 @@ class CombatViewModel: ObservableObject {
     @Published var isInteractionEnabled = true
     @Published var isGameEndAlertPresented = false
 
+
     
     var cards = Cards()
     var player1 = PlayerCombat(image: "jogador1")
@@ -34,16 +35,21 @@ class CombatViewModel: ObservableObject {
         if countdown > 1 {
             countdown -= 1
         } else {
+           
             timer.invalidate()
+            //Se ele fica invisivel, o player2 joga uma carta
+//            countdownInvisible()
             openSheetView()
+            
         }
     }
+
     
     func openSheetView() {
         isSheetVisible = true
     }
 
-    func countdownVisible() {
+    func countdownInvisible() {
         isCountdownVisible = false
     }
     
@@ -51,7 +57,7 @@ class CombatViewModel: ObservableObject {
         player2.selectedCard = self.player2.playCard()
     }
     
-    
+  
     
     //MARK: QUANDO O CONTADOR ACABA
     func endTurn() {
@@ -95,6 +101,8 @@ class CombatViewModel: ObservableObject {
             return "Empate"
         }
     }
+    
+    
     
     
     //MARK: REFATORAR ISSO AQUI E COLOCAR EM UM OUTRO ARQUIVO DAQUI ATÉ....
@@ -215,7 +223,6 @@ class CombatViewModel: ObservableObject {
 }
 
 //MARK: ATÉ AQUI. SERÁ MELHOR SE ESSE BLOCO TODO DE CÓDIGO IR PARA OUTRA VIEW
-
 
 
 
