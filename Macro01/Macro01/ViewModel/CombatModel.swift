@@ -34,21 +34,29 @@ class CombatViewModel: ObservableObject {
             countdown -= 1
         } else {
             timer.invalidate()
-            endTurn()
+            countdownVisible()
+            openSheetView()
+            
+            
+//            endTurn()
         }
     }
     
-    
-    
-    
+    func openSheetView() {
+        isSheetVisible = true
+    }
+
+    func countdownVisible() {
+        isCountdownVisible = false
+    }
     
     
     //MARK: QUANDO O CONTADOR ACABA
     func endTurn() {
-        player2.selectedCard = self.player2.playCard()
+        
         isSheetVisible = false
         isInteractionEnabled = false
-        isCountdownVisible = false
+        player2.selectedCard = self.player2.playCard()
         
         compareCardsInCenter(card1: player1.selectedCard, card2: player2.selectedCard)
         

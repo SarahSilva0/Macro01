@@ -21,6 +21,7 @@ struct SheetView: View {
                             combatViewModel.player1.selectedCard = card
                             print(combatViewModel.player1.selectedCard)
                             isSheetVisible = false
+                            combatViewModel.endTurn()
                         }
                 }
             }
