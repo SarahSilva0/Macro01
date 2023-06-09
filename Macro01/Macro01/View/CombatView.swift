@@ -71,9 +71,9 @@ struct CombatView: View {
                             .frame(width: geometry.size.width * 0.15, height: geometry.size.height * 0.15)
                             
                             
-                            //Seleçao Carta Player 1
+                            //Seleçao Carta Player 2
                             VStack {
-                                if !combatViewModel.isCountdownVisible{
+                                if !combatViewModel.isCountdownVisible {
                                     Image(combatViewModel.player2.selectedCard)
                                         .resizable()
                                         .aspectRatio(contentMode: .fill)
@@ -145,11 +145,7 @@ struct CombatView: View {
     }
 //}
 
-struct CombatView_Previews: PreviewProvider {
-    static var previews: some View {
-        CombatView()
-    }
-}
+
 
 
 

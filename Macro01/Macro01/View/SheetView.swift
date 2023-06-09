@@ -19,8 +19,8 @@ struct SheetView: View {
                     CardComponent(image: Image(card))
                         .onTapGesture {
                             combatViewModel.player1.selectedCard = card
-                            print(combatViewModel.player1.selectedCard)
                             isSheetVisible = false
+                            combatViewModel.selectedCardPlayer2()
                             combatViewModel.endTurn()
                         }
                 }

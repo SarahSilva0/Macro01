@@ -10,6 +10,7 @@ class CombatViewModel: ObservableObject {
     @Published var isSheetVisible = false
     @Published var isInteractionEnabled = true
     @Published var isGameEndAlertPresented = false
+
     
     var cards = Cards()
     var player1 = PlayerCombat(image: "jogador1")
@@ -36,9 +37,6 @@ class CombatViewModel: ObservableObject {
             timer.invalidate()
             countdownVisible()
             openSheetView()
-            
-            
-//            endTurn()
         }
     }
     
@@ -50,15 +48,19 @@ class CombatViewModel: ObservableObject {
         isCountdownVisible = false
     }
     
+    func selectedCardPlayer2() {
+        player2.selectedCard = self.player2.playCard()
+    }
+    
+    
     
     //MARK: QUANDO O CONTADOR ACABA
     func endTurn() {
         
         isSheetVisible = false
         isInteractionEnabled = false
-        player2.selectedCard = self.player2.playCard()
-        
         compareCardsInCenter(card1: player1.selectedCard, card2: player2.selectedCard)
+    
         
         DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
             self.resetTurn()
