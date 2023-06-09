@@ -22,6 +22,7 @@ struct SheetView: View {
                             isSheetVisible = false
                             combatViewModel.selectedCardPlayer2()
                             combatViewModel.endTurn()
+                            combatViewModel.countdownVisible()
                         }
                 }
             }

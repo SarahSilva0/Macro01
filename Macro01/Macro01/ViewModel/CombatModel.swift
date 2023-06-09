@@ -35,7 +35,6 @@ class CombatViewModel: ObservableObject {
             countdown -= 1
         } else {
             timer.invalidate()
-            countdownVisible()
             openSheetView()
         }
     }
