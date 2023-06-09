@@ -4,7 +4,7 @@ import Foundation
 //MARK: MODEL DO COMBATE
 class CombatViewModel: ObservableObject {
     
-    @Published var countdown: Int = 5
+    @Published var countdown: Int = 3
     @Published var turn: Int = 1
     @Published var isCountdownVisible = true
     @Published var isSheetVisible = false
@@ -17,8 +17,7 @@ class CombatViewModel: ObservableObject {
     
     //MARK: CONTADOR
     func startCountdown() {
-        
-        if turn > 5{
+        if turn > 5 {
             self.gameEnd()
             return
         }
@@ -29,9 +28,9 @@ class CombatViewModel: ObservableObject {
         }
     }
     
-    //MARK: LÓGICA CONTADOR
-    private func updateCountdown(_ timer: Timer) {
-        if countdown > 0 {
+    //MARK: LÓGICA REGRESSIVA DO CONTADOR
+    func updateCountdown(_ timer: Timer) {
+        if countdown > 1 {
             countdown -= 1
         } else {
             timer.invalidate()
@@ -39,8 +38,13 @@ class CombatViewModel: ObservableObject {
         }
     }
     
+    
+    
+    
+    
+    
     //MARK: QUANDO O CONTADOR ACABA
-    private func endTurn() {
+    func endTurn() {
         player2.selectedCard = self.player2.playCard()
         isSheetVisible = false
         isInteractionEnabled = false
@@ -55,11 +59,11 @@ class CombatViewModel: ObservableObject {
     }
     
     //MARK: RESETANDO O CONTADOR
-    private func resetTurn() {
+    func resetTurn() {
         isInteractionEnabled = true
         player1.replaceSelectedCardRandomly()
         player1.selectedCard = ""
-        countdown = 5
+        countdown = 3 //Contagem regressiva a partir do 3
         isCountdownVisible = true
         startCountdown()
     }
