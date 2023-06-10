@@ -15,7 +15,7 @@ class PlayerCombat: ObservableObject {
     @Published var cards: [String]
     @Published var selectedCard = ""
     
-    //
+   
     init(image: String, mana: Int = 1, cards: [String] = ["attack", "defense", "recharge"], selectedCard: String = "") {
         self.image = image
         self.mana = mana
