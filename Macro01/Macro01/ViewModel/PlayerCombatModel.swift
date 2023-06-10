@@ -10,7 +10,7 @@ import Foundation
 //MARK: MODEL JOGADOR
 class PlayerCombat: ObservableObject {
     var image: String
-    var winTurno = 0
+    @Published var winTurno = 0
     @Published var mana: Int = 1
     @Published var cards: [String]
     @Published var selectedCard = ""
