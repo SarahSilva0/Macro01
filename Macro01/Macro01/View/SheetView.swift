@@ -28,6 +28,7 @@ struct SheetView: View {
                         isSheetVisible = false
                         combatViewModel.selectedCardPlayer2()
                         combatViewModel.endTurn()
+                        closeSheet()
                         
                     }
             }
@@ -66,7 +67,7 @@ struct SheetView: View {
                     countdownSheet -= 1
                 } else {
                     timer?.invalidate()
-                    timer = nil
+//                    timer = nil
                     
                     self.countdownSheet = 5
                     self.closeSheet()
@@ -85,8 +86,12 @@ struct SheetView: View {
     }
     
     func closeSheet() {
-           isSheetVisible = false
-       }
+        timer?.invalidate()
+        timer = nil
+        countdownSheet = 5
+        isSheetVisible = false
+    }
+
     
   
 }

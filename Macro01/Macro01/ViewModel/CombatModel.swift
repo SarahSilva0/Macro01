@@ -12,6 +12,7 @@ class CombatViewModel: ObservableObject {
     @Published var isGameEndAlertPresented = false
 
     @Published var countdownSheet: Int = 5
+    
 
     
     var cards = Cards()
@@ -38,36 +39,26 @@ class CombatViewModel: ObservableObject {
         } else {
            
             timer.invalidate()
-            countdownInvisible()
-            openSheetView()
+            isCountdownVisible = false
+            isSheetVisible = true
+            countdown = 3
             
         }
     }
 
-    
-    func openSheetView() {
-        isSheetVisible = true
-    }
 
-    func countdownInvisible() {
-        isCountdownVisible = false
-    }
-    
     func selectedCardPlayer2() {
         player2.selectedCard = self.player2.playCard()
     }
-    
 
-  
     
     //MARK: QUANDO O CONTADOR ACABA
     func endTurn() {
         
-        isSheetVisible = false
+//        isSheetVisible = false
         isInteractionEnabled = false
         compareCardsInCenter(card1: player1.selectedCard, card2: player2.selectedCard)
-    
-        
+       
         DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
             self.resetTurn()
             self.incrementRound()
@@ -77,8 +68,11 @@ class CombatViewModel: ObservableObject {
     //MARK: RESETANDO O CONTADOR
     func resetTurn() {
         isInteractionEnabled = true
-        player1.replaceSelectedCardRandomly()
+        
         player1.selectedCard = ""
+        player2.selectedCard = ""
+        
+        player1.replaceSelectedCardRandomly()
         countdown = 3 //Contagem regressiva a partir do 3
         isCountdownVisible = true
         startCountdown()
