@@ -7,30 +7,38 @@
 
 import SwiftUI
 
-struct ScoreView:View {
-   
-    let maxDots = 5 // Número máximo de bolinhas
-    let activeColor = Color.red // Cor da bolinha ativa
-    let inactiveColor = Color.gray // Cor da bolinha inativa
+import SwiftUI
 
-    let activeDotCount: Int // Número de bolinhas ativas
+struct ScoreView: View {
+    let maxDots = 5 // Bolinhas Total
+    let activeColor = Color.green // Cor da bolinha ativa
+    let inactiveColor = Color.gray // Cor da bolinha inativa
+    let centerDotSize: CGFloat = 30 // Tamanho da bolinha do centro
+
+    let player1Wins: Int // Vitórias do player 1
+    let player2Wins: Int // Vitórias do player 2
 
     var body: some View {
-        HStack(spacing: 8) {
-            ForEach(0..<maxDots) { index in
+        HStack(spacing: 15) {
+            // Bolinhas do lado esquerdo (player 1)
+            ForEach(0..<2) { index in
                 Circle()
-                    .fill(index < activeDotCount ? activeColor : inactiveColor)
-                    .frame(width: 10, height: 10)
+                    .fill(index < player1Wins ? activeColor : inactiveColor)
+                    .frame(width: 20, height: 20)
+            }
+            
+            // Bolinha do centro
+            Circle()
+                .fill((player1Wins >= 3 || player2Wins >= 3) ? activeColor : inactiveColor)
+                .frame(width: centerDotSize, height: centerDotSize)
+            
+            // Bolinhas do lado direito (player 2)
+            ForEach(0..<2) { index in
+                Circle()
+                    .fill(index < (2 - player2Wins) ? inactiveColor : activeColor)
+                    .frame(width: 20, height: 20)
             }
         }
     }
 }
-
-
-
-//struct ScoreView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        ScoreView(maxScore: 5, currentScore: 1)
-//    }
-//}
 

@@ -18,11 +18,9 @@ struct SheetView: View {
     //Controlar o estado do timer
     @State private var timer: Timer?
     
-    
     var body: some View {
         
         ZStack {
-            
             HStack {
                 ForEach(combatViewModel.player1.cards, id: \.self) { card in
                     CardComponent(image: Image(card))

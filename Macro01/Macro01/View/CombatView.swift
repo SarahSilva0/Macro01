@@ -19,8 +19,10 @@ struct CombatView: View {
             
             VStack {
                 HStack (alignment: .top) {
-                    ScoreView(activeDotCount: combatViewModel.player1.winTurno)
-                    ScoreView(activeDotCount: combatViewModel.player2.winTurno)
+                    //Placar
+                    ScoreView(player1Wins: combatViewModel.player1.winTurno,
+                              player2Wins: combatViewModel.player2.winTurno)
+            
                     
                     .frame(width: geometry.size.width * 0.2, height: geometry.size.height * 0.2)
                 }
@@ -44,9 +46,6 @@ struct CombatView: View {
                 HStack {
                     //JOGADOR 1
                     VStack {
-                        Text("Ganhou: \(combatViewModel.player1.winTurno)")
-                            .foregroundColor(.red)
-                        
                         Text("Mana: \(combatViewModel.player1.mana)")
                             .foregroundColor(.red)
                         
@@ -94,9 +93,6 @@ struct CombatView: View {
                     
                     //JOGADOR 2
                     VStack{
-                        Text("Ganhou: \(combatViewModel.player2.winTurno)")
-                            .foregroundColor(.red)
-                        
                         Text("Mana: \(combatViewModel.player2.mana)")
                             .foregroundColor(.red)
                         
