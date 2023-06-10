@@ -38,8 +38,7 @@ class CombatViewModel: ObservableObject {
         } else {
            
             timer.invalidate()
-            //Se ele fica invisivel, o player2 joga uma carta
-//            countdownInvisible()
+            countdownInvisible()
             openSheetView()
             
         }
