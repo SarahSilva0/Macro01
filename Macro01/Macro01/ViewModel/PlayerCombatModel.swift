@@ -28,7 +28,7 @@ class PlayerCombat: ObservableObject {
     func replaceSelectedCardRandomly() {
         let index = cards.firstIndex(of: selectedCard)
         guard let currentIndex = index else { return }
-        
+
         let cardsInstance = Cards()
         let newCard = cardsInstance.randomCard() // Usando a função randomCard() na instância de Cards
         cards[currentIndex] = newCard

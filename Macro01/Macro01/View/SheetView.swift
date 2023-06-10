@@ -28,11 +28,9 @@ struct SheetView: View {
                     CardComponent(image: Image(card))
                         .onTapGesture {
                             combatViewModel.player1.selectedCard = card
-                            isSheetVisible = false
                             combatViewModel.selectedCardPlayer2()
+                            self.closeSheet()
                             combatViewModel.endTurn()
-                            closeSheet()
-                            
                         }
                 }
                 
@@ -71,9 +69,6 @@ struct SheetView: View {
                 countdownSheet -= 1
             } else {
                 timer?.invalidate()
-                
-                
-                self.countdownSheet = 5
                 self.closeSheet()
                 //Falar que jogador 1 perdeu
                 combatViewModel.selectedCardPlayer2()

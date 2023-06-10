@@ -73,6 +73,7 @@ struct CombatView: View {
                             
                             //Seleçao Carta Player 2
                             VStack {
+                                //Mudei para o player2 Receber a carta quando a Sheet Fechar
                                 if !combatViewModel.isSheetVisible {
                                     Image(combatViewModel.player2.selectedCard)
                                         .resizable()

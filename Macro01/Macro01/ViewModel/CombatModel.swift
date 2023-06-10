@@ -54,8 +54,6 @@ class CombatViewModel: ObservableObject {
     
     //MARK: QUANDO O CONTADOR ACABA
     func endTurn() {
-        
-//        isSheetVisible = false
         isInteractionEnabled = false
         compareCardsInCenter(card1: player1.selectedCard, card2: player2.selectedCard)
        
@@ -67,13 +65,10 @@ class CombatViewModel: ObservableObject {
     
     //MARK: RESETANDO O CONTADOR
     func resetTurn() {
+        player1.replaceSelectedCardRandomly()
         isInteractionEnabled = true
-        
         player1.selectedCard = ""
         player2.selectedCard = ""
-        
-        player1.replaceSelectedCardRandomly()
-        countdown = 3 //Contagem regressiva a partir do 3
         isCountdownVisible = true
         startCountdown()
     }
