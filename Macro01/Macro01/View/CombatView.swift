@@ -73,7 +73,7 @@ struct CombatView: View {
                             
                             //Seleçao Carta Player 2
                             VStack {
-                                if !combatViewModel.isCountdownVisible {
+                                if !combatViewModel.isSheetVisible {
                                     Image(combatViewModel.player2.selectedCard)
                                         .resizable()
                                         .aspectRatio(contentMode: .fill)
@@ -130,7 +130,7 @@ struct CombatView: View {
                 
                 .sheet(isPresented: $combatViewModel.isSheetVisible, onDismiss: {
                 }) {
-                    SheetView(combatViewModel: combatViewModel, isSheetVisible: $combatViewModel.isSheetVisible).background(ClearBackgroundView())
+                    SheetView(combatViewModel: combatViewModel, isSheetVisible: $combatViewModel.isSheetVisible, countdownSheet: $combatViewModel.countdownSheet).background(ClearBackgroundView())
                 }
                 .alert(isPresented: $combatViewModel.isGameEndAlertPresented) {
                     Alert(title: Text("Fim do Jogo"),

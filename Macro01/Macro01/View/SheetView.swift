@@ -13,7 +13,10 @@ struct SheetView: View {
     @ObservedObject var combatViewModel: CombatViewModel
     @Binding var isSheetVisible: Bool
     
-    @State private var countdown: Int = 5
+    @Binding var countdownSheet: Int
+    
+    //Controlar o estado do timer
+    @State private var timer: Timer?
    
     
     var body: some View {
@@ -25,6 +28,7 @@ struct SheetView: View {
                         isSheetVisible = false
                         combatViewModel.selectedCardPlayer2()
                         combatViewModel.endTurn()
+                        
                     }
             }
             
@@ -34,11 +38,11 @@ struct SheetView: View {
                 ZStack(alignment: .bottom) {
                     RoundedRectangle(cornerRadius: 10)
                         .frame(width: 20, height: 100)
-                        .foregroundColor(.gray)
+                        .foregroundColor(Color(hex: "FFF2D9"))
                     
                     RoundedRectangle(cornerRadius: 10)
                         .frame(width: 20, height: 100 * countdownFraction())
-                        .foregroundColor(.green)
+                        .foregroundColor(Color(hex: "688869"))
                 
                 }
                 
@@ -46,30 +50,43 @@ struct SheetView: View {
             }
         }
         .onAppear {
-            startCountdown()
+            startCountdownSheet()
         }
     }
     
-    func startCountdown() {
-        var timer: Timer?
-        timer = Timer.scheduledTimer(withTimeInterval: 1, repeats: true) { [weak timer] _ in
-            if countdown > 0 {
-                countdown -= 1
-            } else {
+    
+    func startCountdownSheet() {
+            if timer != nil {
                 timer?.invalidate()
-                self.closeSheet()
+                timer = nil
+            }
+            
+            timer = Timer.scheduledTimer(withTimeInterval: 1, repeats: true) { _ in
+                if countdownSheet > 0 {
+                    countdownSheet -= 1
+                } else {
+                    timer?.invalidate()
+                    timer = nil
+                    
+                    self.countdownSheet = 5
+                    self.closeSheet()
+                    //Falar que jogador 1 perdeu
+                    combatViewModel.selectedCardPlayer2()
+                    combatViewModel.endTurn()
+                }
             }
         }
-    }
        
     
     func countdownFraction() -> CGFloat {
         let totalDuration: CGFloat = 5
-        let remainingTime: CGFloat = CGFloat(countdown)
+        let remainingTime: CGFloat = CGFloat(countdownSheet)
         return (totalDuration - remainingTime) / totalDuration
     }
     
     func closeSheet() {
            isSheetVisible = false
        }
+    
+  
 }

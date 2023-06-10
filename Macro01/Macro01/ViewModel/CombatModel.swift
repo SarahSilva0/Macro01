@@ -11,6 +11,7 @@ class CombatViewModel: ObservableObject {
     @Published var isInteractionEnabled = true
     @Published var isGameEndAlertPresented = false
 
+    @Published var countdownSheet: Int = 5
 
     
     var cards = Cards()
@@ -57,6 +58,7 @@ class CombatViewModel: ObservableObject {
         player2.selectedCard = self.player2.playCard()
     }
     
+
   
     
     //MARK: QUANDO O CONTADOR ACABA
