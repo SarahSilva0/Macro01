@@ -17,9 +17,10 @@ struct CombatView: View {
     var body: some View {
         GeometryReader { geometry in
             ZStack {
-//                    .aspectRatio(contentMode: .fill)
-//                    .ignoresSafeArea()
-
+                Image("background")
+                    .resizable()
+                    .aspectRatio(contentMode: .fill)
+                    .frame(width: geometry.size.width * 0.8, height: geometry.size.height * 0.8)
                 VStack {
                     HStack (alignment: .center) {
                         //Placar
@@ -38,7 +39,7 @@ struct CombatView: View {
                         if combatViewModel.isCountdownVisible {
                             Text("\(combatViewModel.countdown)")
                                 .font(.largeTitle)
-                                .foregroundColor(.black)
+                                .foregroundColor(Color (hex: "3C3634"))
                                 .fontWeight(.bold)
                             
                         }
@@ -120,14 +121,12 @@ struct CombatView: View {
                 }
             }
             .background (Color(hex: "3C3634"))
+            .ignoresSafeArea()
             
             .onAppear {
                 combatViewModel.startCountdown()
             }
-            .ignoresSafeArea()
-            .background(Color.white)
-            
-            
+
             .sheet(isPresented: $combatViewModel.isSheetVisible, onDismiss: {
             }) {
                 SheetView(combatViewModel: combatViewModel, isSheetVisible: $combatViewModel.isSheetVisible, countdownSheet: $combatViewModel.countdownSheet).background(ClearBackgroundView())
@@ -140,8 +139,6 @@ struct CombatView: View {
                 }))
             }
         }
-        
-        
     }
 }
 
