@@ -23,6 +23,23 @@ struct CombatView: View {
                     .frame(width: geometry.size.width * 0.8, height: geometry.size.height * 0.6)
                     .padding(.top, -20)
                 
+                HStack {
+                    HStack{
+                        CharacterTextBox(character: "player1")
+                    }
+//                    .background(.red)
+                    .frame(width: geometry.size.width * 0.2, height: geometry.size.height * 0.2)
+                    
+                    Spacer()
+                    
+                    HStack {
+                        CharacterTextBox(character: "player1")
+                    }
+//                    .background(.red)
+                    .frame(width: geometry.size.width * 0.2, height: geometry.size.height * 0.2)
+                    
+                }
+                
                 VStack {
                     HStack (alignment: .center) {
                         //Placar
@@ -30,7 +47,7 @@ struct CombatView: View {
                                   player2Wins: combatViewModel.player2.winTurno)
                     }
                     .frame(width: geometry.size.width * 0.2, height: geometry.size.height * 0.2)
-//                                        .background(Color.yellow)
+                    //                                        .background(Color.yellow)
                     
                     Spacer (minLength: 70)
                     
@@ -43,64 +60,49 @@ struct CombatView: View {
                         }
                     }
                     .frame(width: geometry.size.width * 0.1, height: geometry.size.height * 0.1)
-                    //                    .background(Color.white)
+                    .background(Color.white)
+                    
+                    //JOGADOR 1
                     
                     HStack {
-                        //JOGADOR 1
-                        VStack {
-                            CharacterTextBox(character: "player1")
-                            
-                        }
-                        .background(.red)
-                        .frame(width: geometry.size.width * 0.2, height: geometry.size.height * 0.2)
-                        
                         Spacer ()
-                
-                            HStack (alignment: .center){
-                                HStack (spacing: 100) {
-                                    //CARTA AO CENTRO DO PLAYER 1
-                                    VStack {
-                                        Image(combatViewModel.player1.selectedCard)
+                        HStack (alignment: .center){
+                            HStack (spacing: 100) {
+                                //CARTA AO CENTRO DO PLAYER 1
+                                VStack {
+                                    Image(combatViewModel.player1.selectedCard)
+                                        .resizable()
+                                        .aspectRatio(contentMode: .fill)
+                                }
+                                .frame(width: geometry.size.width * 0.13, height: geometry.size.height * 0.13)
+                                
+                                //CARTA AO CENTRO DO PLAYER 1
+                                VStack {
+                                    //Mudei para o player2 Receber a carta quando a Sheet Fechar
+                                    if !combatViewModel.isSheetVisible {
+                                        Image(combatViewModel.player2.selectedCard)
                                             .resizable()
                                             .aspectRatio(contentMode: .fill)
-                                        
                                     }
-                                    .frame(width: geometry.size.width * 0.13, height: geometry.size.height * 0.13)
-                                    
-                                    //CARTA AO CENTRO DO PLAYER 1
-                                    VStack {
-                                        //Mudei para o player2 Receber a carta quando a Sheet Fechar
-                                        if !combatViewModel.isSheetVisible {
-                                            Image(combatViewModel.player2.selectedCard)
-                                                .resizable()
-                                                .aspectRatio(contentMode: .fill)
-                                        }
-                                        else{
-                                            Image("")
-                                                .resizable()
-                                                .aspectRatio(contentMode: .fill)
-                                        }
+                                    else{
+                                        Image("")
+                                            .resizable()
+                                            .aspectRatio(contentMode: .fill)
                                     }
-                                    .frame(width: geometry.size.width * 0.13, height: geometry.size.height * 0.13)
                                 }
-                                .frame(width: geometry.size.width * 0.5, height: geometry.size.height * 0.3)
-                                
+                                .frame(width: geometry.size.width * 0.13, height: geometry.size.height * 0.13)
                             }
-    
+                            .frame(width: geometry.size.width * 0.5, height: geometry.size.height * 0.3)
+                        }
                         .background(.blue)
                         
                         Spacer()
-    
                         
                         //JOGADOR 2
-                        VStack {
-                            CharacterTextBox(character: "player1")
-                        }
-                        .background(.red)
-                       
-                        .frame(width: geometry.size.width * 0.2, height: geometry.size.height * 0.2)
+                        
                     }
-            
+                    
+                    
                     Spacer(minLength: 100)
                     
                     //CARTAS DO PLAYER 1
@@ -121,7 +123,7 @@ struct CombatView: View {
             .onAppear {
                 combatViewModel.startCountdown()
             }
-
+            
             .sheet(isPresented: $combatViewModel.isSheetVisible, onDismiss: {
             }) {
                 SheetView(combatViewModel: combatViewModel, isSheetVisible: $combatViewModel.isSheetVisible, countdownSheet: $combatViewModel.countdownSheet).background(ClearBackgroundView())
