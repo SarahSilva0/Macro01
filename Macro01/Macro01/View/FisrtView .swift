@@ -12,58 +12,67 @@ struct FirstView: View {
     
     var body: some View {
         GeometryReader { geometry in
-            VStack {
-                VStack{
-                    HStack(spacing: 20) {
-                        ButtonGenRound(action: {
-                            print("Configuração")
-                        },
-                                       image: "",
-                                       foregroundColor: Color.red,
-                                       backgroundColor: Color.red)
-                        .frame(width: buttonSize, height: buttonSize)
-                        
-                        ButtonGenRound(action: {
-                            print("Galeria")
-                        },
-                                       image: "",
-                                       foregroundColor: Color.red,
-                                       backgroundColor: Color.red)
-                        .frame(width: buttonSize, height: buttonSize)
-                        
-                        Spacer()
-                    }
-                    .padding(.leading)
-                }.frame(width: geometry.size.width * 0.9, height: geometry.size.height * 0.2)
-                
                 VStack {
-                    Text("Título")
-                        .font(.largeTitle)
-                        .fontWeight(.bold)
-                        .padding()
+                    VStack{
+                        HStack(spacing: 20) {
+                            ButtonGenRound(action: {
+                                print("Configuração")
+                            },
+                                           image: "",
+                                           foregroundColor: Color(hex: "FFF2D9"),
+                                           backgroundColor: Color(hex: "FFF2D9"))
+                            .frame(width: buttonSize, height: buttonSize)
+                            
+                            ButtonGenRound(action: {
+                                print("Galeria")
+                            },
+                                           image: "",
+                                           foregroundColor: Color(hex: "FFF2D9"),
+                                           backgroundColor: Color(hex: "FFF2D9"))
+                            .frame(width: buttonSize, height: buttonSize)
+                            
+                            Spacer()
+                        }
+                        .padding(.leading)
+                    }.frame(width: geometry.size.width * 0.9, height: geometry.size.height * 0.2)
                     
                     VStack {
-                        ButtonComponent(buttonText: "Modo História") {
-                            print("modo história")
-                        }
-                        NavigationLink(destination: CombatView()){
-                            Text("CO OP")
-                        }
+                        Text("Título")
+                            .font(.largeTitle)
+                            .fontWeight(.bold)
+                            .padding()
                         
-//                        ButtonComponent(buttonText: "Modo Co-op") {
-//                            print("modo co-op")
-//                        }
+                        VStack {
+                            NavigationLink(destination: SecondView()){
+                                Text("História")
+                                    .font(.title3)
+                                    .fontWeight(.bold)
+                                    .foregroundColor(.black)
+                                    .frame(width: 200, height: 20)
+                                    .padding()
+                                    .background(Color(hex: "FFF2D9"))
+                                    .cornerRadius(10)
+                                
+                            }
+                            
+                            NavigationLink(destination: CombatView()){
+                                Text("Jogo Livre")
+                                    .font(.title3)
+                                    .fontWeight(.bold)
+                                    .foregroundColor(.black)
+                                    .frame(width: 200, height: 20)
+                                    .padding()
+                                    .background(Color(hex: "FFF2D9"))
+                                    .cornerRadius(10)
+                            }
+                        }
+                        .padding()
                     }
-                    .padding()
-                }
-                .frame(width: geometry.size.width, height: geometry.size.height * 0.5)
+                }.frame(width: geometry.size.width, height: geometry.size.height, alignment: .center)
             }
         }
-        .frame(maxWidth: .infinity, maxHeight: .infinity)
-        .background(Color.white)
-        .edgesIgnoringSafeArea(.all)
+//        .background(Color(hex: "3C3634"))
     }
-}
 
 
 
