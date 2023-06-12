@@ -43,7 +43,7 @@ struct CombatView: View {
                     .frame(width: geometry.size.width * 0.2, height: geometry.size.height * 0.2)
                     //                                        .background(Color.yellow)
                     
-                    Spacer (minLength: 70)
+                    Spacer (minLength: 100)
                     
                     VStack {
                         VStack (alignment: .center){
