@@ -25,27 +25,6 @@ struct CombatView: View {
                 
                 
                 VStack {
-                    HStack {
-                        HStack{
-                            CharacterTextBox(character: "player1")
-                        }
-                        .padding(.bottom, -300)
-//                        .background(.red)
-                        .frame(width: geometry.size.width * 0.2, height: geometry.size.height * 0.2)
-                        
-                        Spacer()
-                        
-                        HStack {
-                            CharacterTextBox(character: "player1")
-                        }
-                        .padding(.bottom, -300)
-//                        .background(.red)
-                        .frame(width: geometry.size.width * 0.2, height: geometry.size.height * 0.2)
-                    }
-                }
-                
-                
-                VStack {
                     HStack (alignment: .center) {
                         //Placar
                         ScoreView(player1Wins: combatViewModel.player1.winTurno,
@@ -67,9 +46,9 @@ struct CombatView: View {
                     .frame(width: geometry.size.width * 0.1, height: geometry.size.height * 0.1)
                     //                    .background(Color.white)
                     
-                    HStack {
+                    VStack {
                         Spacer ()
-                        HStack (alignment: .center){
+                        VStack (alignment: .center){
                             HStack (spacing: 100) {
                                 //CARTA AO CENTRO DO PLAYER 1
                                 VStack {
@@ -96,13 +75,13 @@ struct CombatView: View {
                                 .frame(width: geometry.size.width * 0.13, height: geometry.size.height * 0.13)
                             }
                             .frame(width: geometry.size.width * 0.5, height: geometry.size.height * 0.3)
+                            .background(.blue)
+                      
                         }
-                        //                        .background(.blue)
-                        
-                        Spacer()
-                        
+//                        .background(.blue)
+
                     }
-                    
+            
                     Spacer(minLength: 100)
                     
                     //CARTAS DO PLAYER 1
@@ -114,6 +93,38 @@ struct CombatView: View {
                     .allowsHitTesting(combatViewModel.isInteractionEnabled)
                     //                    .background(.white)
                     .frame(width: geometry.size.width * 0.2, height: geometry.size.height * 0.2)
+                }
+             
+                HStack {
+                    ZStack {
+                        VStack {
+                            Spacer()
+                            CharacterCircle(sizeWidth: 180, sizeHeight: 180, colorHex: "FFC097")
+                        }
+                        .padding(.bottom, 50) // Mover o círculo para cima
+                      
+                        VStack {
+                            Spacer(minLength: 420)
+                            Character(character: "player1")
+                        }
+                        .frame(width: geometry.size.width * 0.30, height: geometry.size.height * 0.30)
+                    }
+                    
+                    Spacer(minLength: 100)
+                    
+                    ZStack {
+                        VStack {
+                            Spacer()
+                            CharacterCircle(sizeWidth: 180, sizeHeight: 180, colorHex: "89B9E5")
+                        }
+                        .padding(.bottom, 50) // Mover o círculo para cima
+                        
+                        VStack {
+                            Spacer(minLength: 420)
+                            Character(character: "player1")
+                        }
+                        .frame(width: geometry.size.width * 0.30, height: geometry.size.height * 0.30)
+                    }
                 }
             }
             .background (Color(hex: "3C3634"))
