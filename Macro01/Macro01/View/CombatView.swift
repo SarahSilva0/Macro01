@@ -48,59 +48,59 @@ struct CombatView: View {
                     HStack {
                         //JOGADOR 1
                         VStack {
-//                            Text("Mana: \(combatViewModel.player1.mana)")
-//                                .foregroundColor(.red)
                             CharacterTextBox(character: "player1")
                             
                         }
-                        //                        .background(.black)
+                        .background(.red)
                         .frame(width: geometry.size.width * 0.2, height: geometry.size.height * 0.2)
                         
                         Spacer ()
-                        
-                        HStack (spacing: 100) {
-                            //Seleçao Carta Player 1
-                            VStack {
-                                Image(combatViewModel.player1.selectedCard)
-                                    .resizable()
-                                    .aspectRatio(contentMode: .fill)
+                
+                            HStack (alignment: .center){
+                                HStack (spacing: 100) {
+                                    //CARTA AO CENTRO DO PLAYER 1
+                                    VStack {
+                                        Image(combatViewModel.player1.selectedCard)
+                                            .resizable()
+                                            .aspectRatio(contentMode: .fill)
+                                        
+                                    }
+                                    .frame(width: geometry.size.width * 0.13, height: geometry.size.height * 0.13)
+                                    
+                                    //CARTA AO CENTRO DO PLAYER 1
+                                    VStack {
+                                        //Mudei para o player2 Receber a carta quando a Sheet Fechar
+                                        if !combatViewModel.isSheetVisible {
+                                            Image(combatViewModel.player2.selectedCard)
+                                                .resizable()
+                                                .aspectRatio(contentMode: .fill)
+                                        }
+                                        else{
+                                            Image("")
+                                                .resizable()
+                                                .aspectRatio(contentMode: .fill)
+                                        }
+                                    }
+                                    .frame(width: geometry.size.width * 0.13, height: geometry.size.height * 0.13)
+                                }
+                                .frame(width: geometry.size.width * 0.5, height: geometry.size.height * 0.3)
                                 
                             }
-                            .frame(width: geometry.size.width * 0.15, height: geometry.size.height * 0.15)
-                            
-                            
-                            //Seleçao Carta Player 2
-                            VStack {
-                                //Mudei para o player2 Receber a carta quando a Sheet Fechar
-                                if !combatViewModel.isSheetVisible {
-                                    Image(combatViewModel.player2.selectedCard)
-                                        .resizable()
-                                        .aspectRatio(contentMode: .fill)
-                                }
-                                else{
-                                    Image("")
-                                        .resizable()
-                                        .aspectRatio(contentMode: .fill)
-                                }
-                            }
-                            .frame(width: geometry.size.width * 0.15, height: geometry.size.height * 0.15)
-                            
-                        }
-                        .frame(width: geometry.size.width * 0.5, height: geometry.size.height * 0.3)
-                        //                            .background(.blue)
+    
+                        .background(.blue)
                         
                         Spacer()
+    
                         
                         //JOGADOR 2
                         VStack {
-//                            Text("Mana: \(combatViewModel.player2.mana)")
-//                                .foregroundColor(.red)
                             CharacterTextBox(character: "player1")
                         }
-                        //                        .background(.black)
+                        .background(.red)
+                       
                         .frame(width: geometry.size.width * 0.2, height: geometry.size.height * 0.2)
                     }
-                    
+            
                     Spacer(minLength: 100)
                     
                     //CARTAS DO PLAYER 1
