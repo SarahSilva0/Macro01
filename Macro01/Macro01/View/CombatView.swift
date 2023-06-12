@@ -23,7 +23,17 @@ struct CombatView: View {
                     .frame(width: geometry.size.width * 0.8, height: geometry.size.height * 0.6)
                     .padding(.top, -20)
                 
-                
+                HStack (alignment: .center) {
+                    if combatViewModel.isCountdownVisible {
+                        Text("\(combatViewModel.countdown)")
+                            .font(.custom("Helvetica Neue", size: 50))
+                            .foregroundColor(Color (hex: "3C3634"))
+                            .fontWeight(.bold)
+                    }
+                }
+                .frame(width: geometry.size.width * 0.1, height: geometry.size.height * 0.1)
+//                                    .background(Color.white)
+            
                 VStack {
                     HStack (alignment: .center) {
                         //Placar
@@ -34,17 +44,6 @@ struct CombatView: View {
                     //                                        .background(Color.yellow)
                     
                     Spacer (minLength: 70)
-                    
-                    HStack (alignment: .top) {
-                        if combatViewModel.isCountdownVisible {
-                            Text("\(combatViewModel.countdown)")
-                                .font(.largeTitle)
-                                .foregroundColor(Color (hex: "3C3634"))
-                                .fontWeight(.bold)
-                        }
-                    }
-                    .frame(width: geometry.size.width * 0.1, height: geometry.size.height * 0.1)
-                    //                    .background(Color.white)
                     
                     VStack {
                         VStack (alignment: .center){
