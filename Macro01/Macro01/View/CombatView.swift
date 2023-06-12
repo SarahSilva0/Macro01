@@ -47,41 +47,37 @@ struct CombatView: View {
                     //                    .background(Color.white)
                     
                     VStack {
-                        Spacer ()
                         VStack (alignment: .center){
-                            HStack (spacing: 100) {
-                                //CARTA AO CENTRO DO PLAYER 1
-                                VStack {
-                                    Image(combatViewModel.player1.selectedCard)
-                                        .resizable()
-                                        .aspectRatio(contentMode: .fill)
-                                }
-                                .frame(width: geometry.size.width * 0.13, height: geometry.size.height * 0.13)
-                                
-                                //CARTA AO CENTRO DO PLAYER 1
-                                VStack {
-                                    //Mudei para o player2 Receber a carta quando a Sheet Fechar
-                                    if !combatViewModel.isSheetVisible {
-                                        Image(combatViewModel.player2.selectedCard)
+                                HStack (spacing: 100) {
+                                    //CARTA AO CENTRO DO PLAYER 1
+                                    VStack {
+                                        Image(combatViewModel.player1.selectedCard)
                                             .resizable()
                                             .aspectRatio(contentMode: .fill)
                                     }
-                                    else{
-                                        Image("")
-                                            .resizable()
-                                            .aspectRatio(contentMode: .fill)
+                                    .frame(width: geometry.size.width * 0.13, height: geometry.size.height * 0.13)
+                                    
+                                    //CARTA AO CENTRO DO PLAYER 1
+                                    VStack {
+                                        //Mudei para o player2 Receber a carta quando a Sheet Fechar
+                                        if !combatViewModel.isSheetVisible {
+                                            Image(combatViewModel.player2.selectedCard)
+                                                .resizable()
+                                                .aspectRatio(contentMode: .fill)
+                                        }
+                                        else{
+                                            Image("")
+                                                .resizable()
+                                                .aspectRatio(contentMode: .fill)
+                                        }
                                     }
+                                    .frame(width: geometry.size.width * 0.13, height: geometry.size.height * 0.13)
                                 }
-                                .frame(width: geometry.size.width * 0.13, height: geometry.size.height * 0.13)
-                            }
-                            .frame(width: geometry.size.width * 0.5, height: geometry.size.height * 0.3)
-                            .background(.blue)
-                      
+                                .frame(width: geometry.size.width * 0.5, height: geometry.size.height * 0.3)
+//                                .background(.blue)
                         }
-//                        .background(.blue)
-
                     }
-            
+                    
                     Spacer(minLength: 100)
                     
                     //CARTAS DO PLAYER 1
@@ -94,7 +90,7 @@ struct CombatView: View {
                     //                    .background(.white)
                     .frame(width: geometry.size.width * 0.2, height: geometry.size.height * 0.2)
                 }
-             
+                
                 HStack {
                     ZStack {
                         VStack {
@@ -102,7 +98,7 @@ struct CombatView: View {
                             CharacterCircle(sizeWidth: 180, sizeHeight: 180, colorHex: "FFC097")
                         }
                         .padding(.bottom, 50) // Mover o círculo para cima
-                      
+                        
                         VStack {
                             Spacer(minLength: 420)
                             Character(character: "player1")
