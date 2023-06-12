@@ -20,18 +20,17 @@ struct CombatView: View {
                 Image("background")
                     .resizable()
                     .aspectRatio(contentMode: .fill)
-                    .frame(width: geometry.size.width * 0.8, height: geometry.size.height * 0.8)
+                    .frame(width: geometry.size.width * 0.8, height: geometry.size.height * 0.6)
+                    .padding(.top, -20)
+                
                 VStack {
                     HStack (alignment: .center) {
                         //Placar
                         ScoreView(player1Wins: combatViewModel.player1.winTurno,
                                   player2Wins: combatViewModel.player2.winTurno)
-                        
-                        
-                        .frame(width: geometry.size.width * 0.2, height: geometry.size.height * 0.2)
                     }
                     .frame(width: geometry.size.width * 0.2, height: geometry.size.height * 0.2)
-                    //                    .background(Color.yellow)
+//                                        .background(Color.yellow)
                     
                     Spacer (minLength: 70)
                     
@@ -41,7 +40,6 @@ struct CombatView: View {
                                 .font(.largeTitle)
                                 .foregroundColor(Color (hex: "3C3634"))
                                 .fontWeight(.bold)
-                            
                         }
                     }
                     .frame(width: geometry.size.width * 0.1, height: geometry.size.height * 0.1)
@@ -50,9 +48,8 @@ struct CombatView: View {
                     HStack {
                         //JOGADOR 1
                         VStack {
-                            Text("Mana: \(combatViewModel.player1.mana)")
-                                .foregroundColor(.red)
-                            
+//                            Text("Mana: \(combatViewModel.player1.mana)")
+//                                .foregroundColor(.red)
                             CharacterTextBox(character: "player1")
                             
                         }
@@ -84,7 +81,6 @@ struct CombatView: View {
                                     Image("")
                                         .resizable()
                                         .aspectRatio(contentMode: .fill)
-                                    
                                 }
                             }
                             .frame(width: geometry.size.width * 0.15, height: geometry.size.height * 0.15)
@@ -96,10 +92,9 @@ struct CombatView: View {
                         Spacer()
                         
                         //JOGADOR 2
-                        VStack{
-                            Text("Mana: \(combatViewModel.player2.mana)")
-                                .foregroundColor(.red)
-                            
+                        VStack {
+//                            Text("Mana: \(combatViewModel.player2.mana)")
+//                                .foregroundColor(.red)
                             CharacterTextBox(character: "player1")
                         }
                         //                        .background(.black)
