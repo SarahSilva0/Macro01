@@ -23,12 +23,14 @@ struct CombatView: View {
                     .frame(width: geometry.size.width * 0.8, height: geometry.size.height * 0.6)
                     .padding(.top, -20)
                 
+                
                 VStack {
                     HStack {
                         HStack{
                             CharacterTextBox(character: "player1")
                         }
-                                            .background(.red)
+                        .padding(.bottom, -300)
+//                        .background(.red)
                         .frame(width: geometry.size.width * 0.2, height: geometry.size.height * 0.2)
                         
                         Spacer()
@@ -36,11 +38,12 @@ struct CombatView: View {
                         HStack {
                             CharacterTextBox(character: "player1")
                         }
-                                            .background(.red)
+                        .padding(.bottom, -300)
+//                        .background(.red)
                         .frame(width: geometry.size.width * 0.2, height: geometry.size.height * 0.2)
                     }
                 }
-
+                
                 
                 VStack {
                     HStack (alignment: .center) {
@@ -62,8 +65,8 @@ struct CombatView: View {
                         }
                     }
                     .frame(width: geometry.size.width * 0.1, height: geometry.size.height * 0.1)
-//                    .background(Color.white)
-            
+                    //                    .background(Color.white)
+                    
                     HStack {
                         Spacer ()
                         HStack (alignment: .center){
@@ -94,7 +97,7 @@ struct CombatView: View {
                             }
                             .frame(width: geometry.size.width * 0.5, height: geometry.size.height * 0.3)
                         }
-//                        .background(.blue)
+                        //                        .background(.blue)
                         
                         Spacer()
                         
