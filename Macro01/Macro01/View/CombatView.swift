@@ -23,22 +23,24 @@ struct CombatView: View {
                     .frame(width: geometry.size.width * 0.8, height: geometry.size.height * 0.6)
                     .padding(.top, -20)
                 
-                HStack {
-                    HStack{
-                        CharacterTextBox(character: "player1")
-                    }
-//                    .background(.red)
-                    .frame(width: geometry.size.width * 0.2, height: geometry.size.height * 0.2)
-                    
-                    Spacer()
-                    
+                VStack {
                     HStack {
-                        CharacterTextBox(character: "player1")
+                        HStack{
+                            CharacterTextBox(character: "player1")
+                        }
+                                            .background(.red)
+                        .frame(width: geometry.size.width * 0.2, height: geometry.size.height * 0.2)
+                        
+                        Spacer()
+                        
+                        HStack {
+                            CharacterTextBox(character: "player1")
+                        }
+                                            .background(.red)
+                        .frame(width: geometry.size.width * 0.2, height: geometry.size.height * 0.2)
                     }
-//                    .background(.red)
-                    .frame(width: geometry.size.width * 0.2, height: geometry.size.height * 0.2)
-                    
                 }
+
                 
                 VStack {
                     HStack (alignment: .center) {
@@ -60,10 +62,8 @@ struct CombatView: View {
                         }
                     }
                     .frame(width: geometry.size.width * 0.1, height: geometry.size.height * 0.1)
-                    .background(Color.white)
-                    
-                    //JOGADOR 1
-                    
+//                    .background(Color.white)
+            
                     HStack {
                         Spacer ()
                         HStack (alignment: .center){
@@ -94,14 +94,11 @@ struct CombatView: View {
                             }
                             .frame(width: geometry.size.width * 0.5, height: geometry.size.height * 0.3)
                         }
-                        .background(.blue)
+//                        .background(.blue)
                         
                         Spacer()
                         
-                        //JOGADOR 2
-                        
                     }
-                    
                     
                     Spacer(minLength: 100)
                     
@@ -114,7 +111,6 @@ struct CombatView: View {
                     .allowsHitTesting(combatViewModel.isInteractionEnabled)
                     //                    .background(.white)
                     .frame(width: geometry.size.width * 0.2, height: geometry.size.height * 0.2)
-                    
                 }
             }
             .background (Color(hex: "3C3634"))
