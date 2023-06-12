@@ -4,7 +4,7 @@ import Foundation
 //MARK: MODEL DO COMBATE
 class CombatViewModel: ObservableObject {
     
-    @Published var countdown: Int = 3
+    @Published var countdown: Int = 1
     @Published var turn: Int = 1
     @Published var isCountdownVisible = true
     @Published var isSheetVisible = false

@@ -19,36 +19,52 @@ struct SheetView: View {
     @State private var timer: Timer?
     
     var body: some View {
-        
-        ZStack {
-            HStack {
-                ForEach(combatViewModel.player1.cards, id: \.self) { card in
-                    CardComponent(image: Image(card))
-                        .onTapGesture {
-                            combatViewModel.player1.selectedCard = card
-                            combatViewModel.selectedCardPlayer2()
-                            self.closeSheet()
-                            combatViewModel.endTurn()
-                        }
-                }
-                
-            }
+        GeometryReader { geometry in
             
             VStack {
-                ZStack(alignment: .bottom) {
-                    RoundedRectangle(cornerRadius: 10)
-                        .frame(width: 15, height: 230)
-                        .foregroundColor(Color(hex: "FFF2D9"))
+                HStack {
+                    VStack {
+                        Circle()
+                            .frame(width: 50, height: 50)
+                            .foregroundColor(Color(hex: "FFF2D9"))
+                            .overlay(
+                                Text("\(combatViewModel.player1.mana)")
+                                    .font(.system(size: 30, weight: .bold))
+                                    .foregroundColor(.black)
+                            )
+                        Spacer()
+                    }
+                    .frame(height: geometry.size.height * 0.8)
+                    .padding(.trailing, 10)
                     
-                    RoundedRectangle(cornerRadius: 10)
-                        .frame(width: 15, height: 230 * countdownFraction())
-                        .foregroundColor(Color(hex: "688869"))
+                    ForEach(combatViewModel.player1.cards, id: \.self) { card in
+                        CardComponent(image: Image(card))
+                            .onTapGesture {
+                                combatViewModel.player1.selectedCard = card
+                                combatViewModel.selectedCardPlayer2()
+                                self.closeSheet()
+                                combatViewModel.endTurn()
+                            }
+                    }
+                    .padding(.trailing, 30)
+                    ZStack(alignment: .bottom) {
+                        RoundedRectangle(cornerRadius: 10)
+                            .frame(width: 15, height: 230)
+                            .foregroundColor(Color(hex: "FFF2D9"))
+                        
+                        RoundedRectangle(cornerRadius: 10)
+                            .frame(width: 15, height: 230 * countdownFraction())
+                            .foregroundColor(Color(hex: "688869"))
+                        
+                    }
                     
                 }
+                //Deixar Toda View Centralizada
+                .frame(width: geometry.size.width, height: geometry.size.height)
                 
             }
-            .padding(.leading, 480)
-           
+            .frame(width: geometry.size.width, height: geometry.size.height, alignment: .center)
+            
             .onAppear {
                 startCountdownSheet()
             }

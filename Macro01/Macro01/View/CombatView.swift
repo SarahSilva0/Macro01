@@ -39,6 +39,7 @@ struct CombatView: View {
                         //Placar
                         ScoreView(player1Wins: combatViewModel.player1.winTurno,
                                   player2Wins: combatViewModel.player2.winTurno)
+                        
                     }
                     .frame(width: geometry.size.width * 0.2, height: geometry.size.height * 0.2)
                     //                                        .background(Color.yellow)
