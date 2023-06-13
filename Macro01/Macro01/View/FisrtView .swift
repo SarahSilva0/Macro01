@@ -12,6 +12,13 @@ struct FirstView: View {
     
     var body: some View {
         GeometryReader { geometry in
+            ZStack{
+                Color.black
+                    .ignoresSafeArea()
+                Image("BG GERAL")
+                    .resizable()
+                    .aspectRatio(contentMode: .fill)
+                    .ignoresSafeArea(.all)
                 VStack {
                     VStack{
                         HStack(spacing: 20) {
@@ -55,7 +62,7 @@ struct FirstView: View {
                                 
                             }
                             
-                            NavigationLink(destination: CombatView()){
+                            NavigationLink(destination: DificultyView_()){
                                 Text("Jogo Livre")
                                     .font(.title3)
                                     .fontWeight(.bold)
@@ -68,11 +75,11 @@ struct FirstView: View {
                         }
                         .padding()
                     }
-                }.frame(width: geometry.size.width, height: geometry.size.height, alignment: .center)
-            }
+                }
+            }.frame(width: geometry.size.width, height: geometry.size.height, alignment: .center)
         }
-//        .background(Color(hex: "3C3634"))
     }
+}
 
 
 

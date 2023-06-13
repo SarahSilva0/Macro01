@@ -15,9 +15,17 @@ struct SecondView: View {
             VStack{
                 HStack(spacing: 30){
                     CardComponent(image: Image("personagem"))
-                        .background(Color.red)
+                        .frame( width: 173, height: 260)
+                        .background(Color(hex: "FFF2D9"))
+                        .cornerRadius(10)
                     CardComponent(image: Image("personagem"))
+                        .frame( width: 173, height: 260)
+                        .background(Color(hex: "FFF2D9"))
+                        .cornerRadius(10)
                     CardComponent(image: Image("personagem"))
+                        .frame( width: 173, height: 260)
+                        .background(Color(hex: "FFF2D9"))
+                        .cornerRadius(10)
                 }
             }
         }
