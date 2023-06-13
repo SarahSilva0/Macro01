@@ -9,31 +9,25 @@ import SwiftUI
 
 struct SecondView: View {
     var body: some View {
-        GeometryReader { geometry in
-            VStack {
-                VStack {
-                    ButtonGenRound(action: {
-                        print("botao")
-                    }, image: "",
-                    foregroundColor: Color.red,
-                    backgroundColor: Color.blue)
-                    .frame(width: geometry.size.width * 0.07, height: geometry.size.width * 0.07)
+        ZStack{
+            Color(hex: "3C3634")
+                .ignoresSafeArea()
+            VStack{
+                HStack(spacing: 30){
+                    CardComponent(image: Image("personagem"))
+                        .frame( width: 173, height: 260)
+                        .background(Color(hex: "FFF2D9"))
+                        .cornerRadius(10)
+                    CardComponent(image: Image("personagem"))
+                        .frame( width: 173, height: 260)
+                        .background(Color(hex: "FFF2D9"))
+                        .cornerRadius(10)
+                    CardComponent(image: Image("personagem"))
+                        .frame( width: 173, height: 260)
+                        .background(Color(hex: "FFF2D9"))
+                        .cornerRadius(10)
                 }
-                .frame(maxWidth: .infinity, alignment: .leading)
-                
-                VStack {
-                    HStack(spacing: geometry.size.width * 0.1) {
-                        CardComponent(image: Image("Imagem"))
-                        .frame(width: geometry.size.width * 0.25, height: geometry.size.width * 0.45)
-                        
-                        CardComponent(image: Image("cadeado"))
-                            .frame(width: geometry.size.width * 0.25, height: geometry.size.width * 0.45)
-                        
-                        CardComponent(image: Image("cadeado"))
-                            .frame(width: geometry.size.width * 0.25, height: geometry.size.width * 0.45)
-                    }
-                }
-            }.padding()
+            }
         }
     }
 }

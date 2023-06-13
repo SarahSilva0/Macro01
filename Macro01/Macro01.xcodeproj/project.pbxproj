@@ -30,6 +30,7 @@
 		FA6F18692A1D302000E76127 /* Macro01Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6F18682A1D302000E76127 /* Macro01Tests.swift */; };
 		FA6F18732A1D302000E76127 /* Macro01UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6F18722A1D302000E76127 /* Macro01UITests.swift */; };
 		FA6F18752A1D302000E76127 /* Macro01UITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6F18742A1D302000E76127 /* Macro01UITestsLaunchTests.swift */; };
+		FADCBAD32A3904510012C0FB /* DificultyView .swift in Sources */ = {isa = PBXBuildFile; fileRef = FADCBAD22A3904510012C0FB /* DificultyView .swift */; };
 		FAE3635C2A1E87C000643271 /* ButtonComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAE3635B2A1E87C000643271 /* ButtonComponent.swift */; };
 		FAE3635E2A1E90EA00643271 /* CardComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAE3635D2A1E90EA00643271 /* CardComponent.swift */; };
 		FAEA1B9A2A2693C40007905A /* SecondView .swift in Sources */ = {isa = PBXBuildFile; fileRef = FAEA1B992A2693C40007905A /* SecondView .swift */; };
@@ -81,6 +82,7 @@
 		FA6F186E2A1D302000E76127 /* Macro01UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Macro01UITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		FA6F18722A1D302000E76127 /* Macro01UITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Macro01UITests.swift; sourceTree = "<group>"; };
 		FA6F18742A1D302000E76127 /* Macro01UITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Macro01UITestsLaunchTests.swift; sourceTree = "<group>"; };
+		FADCBAD22A3904510012C0FB /* DificultyView .swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DificultyView .swift"; sourceTree = "<group>"; };
 		FAE3635B2A1E87C000643271 /* ButtonComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonComponent.swift; sourceTree = "<group>"; };
 		FAE3635D2A1E90EA00643271 /* CardComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardComponent.swift; sourceTree = "<group>"; };
 		FAEA1B992A2693C40007905A /* SecondView .swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SecondView .swift"; sourceTree = "<group>"; };
@@ -139,6 +141,7 @@
 				FAEA1B992A2693C40007905A /* SecondView .swift */,
 				FA1546DF2A26D15400C9EE2E /* CombatView.swift */,
 				FA5BEDA82A2E2599001B0C07 /* SheetView.swift */,
+				FADCBAD22A3904510012C0FB /* DificultyView .swift */,
 				EBCFE2DF2A1E863C002CABFF /* Componentes */,
 			);
 			path = View;
@@ -391,6 +394,7 @@
 				EBF1340B2A23FAA1000FA55E /* CardModel.swift in Sources */,
 				FA6F18582A1D301F00E76127 /* Macro01App.swift in Sources */,
 				EBCFE2E12A1E8670002CABFF /* BotaoGenRedondoView.swift in Sources */,
+				FADCBAD32A3904510012C0FB /* DificultyView .swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
