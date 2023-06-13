@@ -54,6 +54,7 @@ struct CombatView: View {
                                         Image(combatViewModel.player1.selectedCard)
                                             .resizable()
                                             .aspectRatio(contentMode: .fill)
+                                            .animation(.easeIn(duration: 0.3))
                                             .frame(width: geometry.size.width * 0.13, height: geometry.size.height * 0.13)
                                 }
                                 .animation(.easeIn(duration: 0.3))
