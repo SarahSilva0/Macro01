@@ -32,8 +32,8 @@ struct CombatView: View {
                     }
                 }
                 .frame(width: geometry.size.width * 0.1, height: geometry.size.height * 0.1)
-//                                    .background(Color.white)
-            
+                //                                    .background(Color.white)
+                
                 VStack {
                     HStack (alignment: .center) {
                         //Placar
@@ -48,39 +48,42 @@ struct CombatView: View {
                     
                     VStack {
                         VStack (alignment: .center){
-                                HStack (spacing: 100) {
-                                    //CARTA AO CENTRO DO PLAYER 1
-                                    VStack {
+                            HStack (spacing: 100) {
+                                //CARTA AO CENTRO DO PLAYER 1
+                                VStack {
                                         Image(combatViewModel.player1.selectedCard)
                                             .resizable()
                                             .aspectRatio(contentMode: .fill)
-                                    }
-                                    .frame(width: geometry.size.width * 0.13, height: geometry.size.height * 0.13)
-                                    
-                                    //CARTA AO CENTRO DO PLAYER 1
-                                    VStack {
-                                        //Mudei para o player2 Receber a carta quando a Sheet Fechar
-                                        if !combatViewModel.isSheetVisible {
-                                            Image(combatViewModel.player2.selectedCard)
-                                                .resizable()
-                                                .aspectRatio(contentMode: .fill)
-                                        }
-                                        else{
-                                            Image("")
-                                                .resizable()
-                                                .aspectRatio(contentMode: .fill)
-                                        }
-                                    }
-                                    .frame(width: geometry.size.width * 0.13, height: geometry.size.height * 0.13)
+                                            .frame(width: geometry.size.width * 0.13, height: geometry.size.height * 0.13)
                                 }
-                                .frame(width: geometry.size.width * 0.5, height: geometry.size.height * 0.3)
-//                                .background(.blue)
+                                .animation(.easeIn(duration: 0.3))
+                                .frame(width: geometry.size.width * 0.13, height: geometry.size.height * 0.13)
+                                
+                                //CARTA AO CENTRO DO PLAYER 1
+                                VStack {
+                                    //Mudei para o player2 Receber a carta quando a Sheet Fechar
+                                    if !combatViewModel.isSheetVisible {
+                                        Image(combatViewModel.player2.selectedCard)
+                                            .resizable()
+                                            .aspectRatio(contentMode: .fill)
+                                    }
+                                    else {
+                                        Image("")
+                                            .resizable()
+                                            .aspectRatio(contentMode: .fill)
+                                    }
+                                }
+                                .animation(.easeIn(duration: 0.3))
+                                .frame(width: geometry.size.width * 0.13, height: geometry.size.height * 0.13)
+                            }
+                            .frame(width: geometry.size.width * 0.5, height: geometry.size.height * 0.3)
+                            //                                .background(.blue)
                         }
                     }
                     
                     Spacer(minLength: 100)
                     
-                    //CARTAS DO PLAYER 1
+                    //CARTAS DO PLAYER 1 NO CENTRO
                     HStack {
                         ForEach(combatViewModel.player1.cards, id: \.self) { card in
                             CardComponent(image: Image(card))
@@ -88,6 +91,7 @@ struct CombatView: View {
                     }
                     .allowsHitTesting(combatViewModel.isInteractionEnabled)
                     //                    .background(.white)
+                    .animation(.easeIn(duration: 0.3))
                     .frame(width: geometry.size.width * 0.2, height: geometry.size.height * 0.2)
                 }
                 
