@@ -24,5 +24,6 @@ struct ButtonComponent: View {
                 .background(Color.blue)
                 .cornerRadius(10)
         }
+        .frame(width: 70, height: 70)
     }
 }

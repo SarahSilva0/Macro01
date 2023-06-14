@@ -16,38 +16,39 @@ struct CombatView: View {
     
     var body: some View {
         GeometryReader { geometry in
-            ZStack {
-                Image("background")
-                    .resizable()
-                    .aspectRatio(contentMode: .fill)
-                    .frame(width: geometry.size.width * 0.8, height: geometry.size.height * 0.6)
-                    .padding(.top, -20)
-                
-                HStack (alignment: .center) {
-                    if combatViewModel.isCountdownVisible {
-                        Text("\(combatViewModel.countdown)")
-                            .font(.custom("Helvetica Neue", size: 50))
-                            .foregroundColor(Color (hex: "3C3634"))
-                            .fontWeight(.bold)
-                    }
-                }
-                .frame(width: geometry.size.width * 0.1, height: geometry.size.height * 0.1)
-//                                    .background(Color.white)
-            
-                VStack {
-                    HStack (alignment: .center) {
-                        //Placar
-                        ScoreView(player1Wins: combatViewModel.player1.winTurno,
-                                  player2Wins: combatViewModel.player2.winTurno)
-                        
-                    }
-                    .frame(width: geometry.size.width * 0.2, height: geometry.size.height * 0.2)
-                    //                                        .background(Color.yellow)
+            VStack {
+                ZStack {
+                    Image("background")
+                        .resizable()
+                        .aspectRatio(contentMode: .fill)
+                        .frame(width: geometry.size.width * 0.8, height: geometry.size.height * 0.6)
+                        .padding(.top, -20)
                     
-                    Spacer (minLength: 100)
+                    HStack (alignment: .center) {
+                        if combatViewModel.isCountdownVisible {
+                            Text("\(combatViewModel.countdown)")
+                                .font(.custom("Helvetica Neue", size: 50))
+                                .foregroundColor(Color (hex: "3C3634"))
+                                .fontWeight(.bold)
+                        }
+                    }
+                    .frame(width: geometry.size.width * 0.1, height: geometry.size.height * 0.1)
+                    //                                    .background(Color.white)
                     
                     VStack {
-                        VStack (alignment: .center){
+                        HStack (alignment: .center) {
+                            //Placar
+                            ScoreView(player1Wins: combatViewModel.player1.winTurno,
+                                      player2Wins: combatViewModel.player2.winTurno)
+                            
+                        }
+                        .frame(width: geometry.size.width * 0.2, height: geometry.size.height * 0.2)
+                        //                                        .background(Color.yellow)
+                        
+                        Spacer (minLength: 100)
+                        
+                        VStack {
+                            VStack (alignment: .center){
                                 HStack (spacing: 100) {
                                     //CARTA AO CENTRO DO PLAYER 1
                                     VStack {
@@ -74,53 +75,66 @@ struct CombatView: View {
                                     .frame(width: geometry.size.width * 0.13, height: geometry.size.height * 0.13)
                                 }
                                 .frame(width: geometry.size.width * 0.5, height: geometry.size.height * 0.3)
-//                                .background(.blue)
+                                //                                .background(.blue)
+                            }
                         }
+                        
+                        Spacer(minLength: 100)
+                        
+                        //CARTAS DO PLAYER 1
+                        HStack {
+                            ForEach(combatViewModel.player1.cards, id: \.self) { card in
+                                CardComponent(image: Image(card))
+                            }
+                        }
+                        .allowsHitTesting(combatViewModel.isInteractionEnabled)
+                        //                    .background(.white)
+                        .frame(width: geometry.size.width * 0.2, height: geometry.size.height * 0.2)
                     }
                     
-                    Spacer(minLength: 100)
-                    
-                    //CARTAS DO PLAYER 1
                     HStack {
-                        ForEach(combatViewModel.player1.cards, id: \.self) { card in
-                            CardComponent(image: Image(card))
+                        ZStack {
+                            VStack {
+                                Spacer()
+                                CharacterCircle(sizeWidth: 180, sizeHeight: 180, colorHex: "FFC097")
+                            }
+                            .padding(.bottom, 50) // Mover o círculo para cima
+                            
+                            VStack {
+                                Spacer(minLength: 420)
+                                Character(character: "player1")
+                            }
+                            .frame(width: geometry.size.width * 0.30, height: geometry.size.height * 0.30)
                         }
-                    }
-                    .allowsHitTesting(combatViewModel.isInteractionEnabled)
-                    //                    .background(.white)
-                    .frame(width: geometry.size.width * 0.2, height: geometry.size.height * 0.2)
-                }
-                
-                HStack {
-                    ZStack {
-                        VStack {
-                            Spacer()
-                            CharacterCircle(sizeWidth: 180, sizeHeight: 180, colorHex: "FFC097")
-                        }
-                        .padding(.bottom, 50) // Mover o círculo para cima
                         
-                        VStack {
-                            Spacer(minLength: 420)
-                            Character(character: "player1")
-                        }
-                        .frame(width: geometry.size.width * 0.30, height: geometry.size.height * 0.30)
-                    }
-                    
-                    Spacer(minLength: 100)
-                    
-                    ZStack {
-                        VStack {
-                            Spacer()
-                            CharacterCircle(sizeWidth: 180, sizeHeight: 180, colorHex: "89B9E5")
-                        }
-                        .padding(.bottom, 50) // Mover o círculo para cima
+                        Spacer(minLength: 100)
                         
-                        VStack {
-                            Spacer(minLength: 420)
-                            Character(character: "player1")
+                        ZStack {
+                            VStack {
+                                Spacer()
+                                CharacterCircle(sizeWidth: 180, sizeHeight: 180, colorHex: "89B9E5")
+                            }
+                            .padding(.bottom, 50) // Mover o círculo para cima
+                            
+                            VStack {
+                                Spacer(minLength: 420)
+                                Character(character: "player1")
+                            }
+                            .frame(width: geometry.size.width * 0.30, height: geometry.size.height * 0.30)
                         }
-                        .frame(width: geometry.size.width * 0.30, height: geometry.size.height * 0.30)
                     }
+                    HStack{
+                        ButtonGenRound(action: {
+                            print("Galeria")
+                        },
+                                       image: "pause",
+                                       foregroundColor: Color(hex: "FFF2D9"),
+                                       backgroundColor: Color(hex: "FFF2D9"))
+                        .frame(width: 70, height: 70)
+                        Spacer()
+                    }
+                    .frame(width: geometry.size.width, height: geometry.size.height * 1.1, alignment: .topLeading)
+//                    .background(.yellow)
                 }
             }
             .background (Color(hex: "3C3634"))
@@ -142,6 +156,12 @@ struct CombatView: View {
                 }))
             }
         }
+    }
+}
+
+struct CombatView_Previews: PreviewProvider {
+    static var previews: some View {
+        CombatView()
     }
 }
 
