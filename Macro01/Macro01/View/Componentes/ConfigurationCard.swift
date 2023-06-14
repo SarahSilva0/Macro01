@@ -5,31 +5,39 @@ struct ConfigurationCard: View {
     
     var body: some View {
         VStack {
-            HStack {
+            Spacer()
+            HStack (alignment: .top) {
                 Text(title)
-                    .font(.system(size: 20))
+                    .font(.system(size: 25))
                     .fontWeight(.bold)
                     .frame(maxWidth: .infinity, alignment: .top)
                     .padding(.top, 20)
-                
+
+              
                 Button(action: {
                     // Ação a ser executada
                 }) {
-                    ZStack {
-                        Circle()
-                            .foregroundColor(.black)
-                            .frame(width: 40, height: 40)
-                        
-                        Image(systemName: "speaker.wave.2.fill")
-                            .font(.system(size: 20))
-                            .foregroundColor(Color(hex: "FFF2D9"))
+                  
+                    HStack (alignment: .center){
+                        ZStack {
+                            Circle()
+                                .foregroundColor(.black)
+                                .frame(width: 60, height: 60)
+                            
+                            Image(systemName: "speaker.wave.2.fill")
+                                .font(.system(size: 20))
+                                .foregroundColor(Color(hex: "FFF2D9"))
+                        }
                     }
+                
                 }
             }
+//            .background(.red)
+            .frame(width: 300, height: 300)
             
-            Spacer()
+            Spacer(minLength: 350)
         }
-        .frame(width: 360, height: 390)
+        .frame(width: 360, height: 490)
         .background(Color(hex: "FFF2D9"))
         .cornerRadius(10)
         .shadow(radius: 2)
