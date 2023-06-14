@@ -5,15 +5,12 @@ struct ConfigurationCard: View {
     
     var body: some View {
         VStack {
-            Spacer()
-            HStack (alignment: .top) {
+            HStack (alignment: .center) {
                 Text(title)
-                    .font(.system(size: 25))
+                    .font(.system(size: 20))
                     .fontWeight(.bold)
                     .frame(maxWidth: .infinity, alignment: .top)
-                    .padding(.top, 20)
-
-              
+                
                 Button(action: {
                     // Ação a ser executada
                 }) {
@@ -22,22 +19,21 @@ struct ConfigurationCard: View {
                         ZStack {
                             Circle()
                                 .foregroundColor(.black)
-                                .frame(width: 60, height: 60)
+                                .frame(width: 50, height: 50)
                             
                             Image(systemName: "speaker.wave.2.fill")
                                 .font(.system(size: 20))
                                 .foregroundColor(Color(hex: "FFF2D9"))
                         }
                     }
-                
                 }
             }
 //            .background(.red)
-            .frame(width: 300, height: 300)
+            .frame(width: 250, height: 250)
             
-            Spacer(minLength: 350)
+            Spacer(minLength: 300)
         }
-        .frame(width: 360, height: 490)
+        .frame(width: 260, height: 390)
         .background(Color(hex: "FFF2D9"))
         .cornerRadius(10)
         .shadow(radius: 2)
