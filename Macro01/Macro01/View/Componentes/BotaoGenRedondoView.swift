@@ -12,9 +12,8 @@ struct ButtonGenRound: View {
         Button(action: action) {
             Image(image)
                 .resizable()
-                .aspectRatio(contentMode: .fit)
+                .aspectRatio(contentMode: .fill)
                 .foregroundColor(foregroundColor)
-                .padding()
                 .background(backgroundColor)
                 .clipShape(Circle())
                
@@ -22,12 +21,3 @@ struct ButtonGenRound: View {
     }
 }
 
-//struct BotaoGenRedondo_Previews: PreviewProvider {
-//    static var previews: some View {
-//        ButtonGenRound(action: {},
-//                            image: "Saci",
-//                            foregroundColor: .white,
-//                            padding: 10,
-//                            backgroundColor: .blue)
-//    }
-//}

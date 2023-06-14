@@ -20,6 +20,7 @@ struct DificultyView_: View {
                         Text("Selecione o nível")
                             .font(.title2)
                             .fontWeight(.bold)
+                            .foregroundColor(.black)
                         HStack(spacing: 20){
                             NavigationLink(destination: CombatView()){
                                 Image("facil")
@@ -40,6 +41,7 @@ struct DificultyView_: View {
                         Text("Raya")
                             .font(.title3)
                             .fontWeight(.bold)
+                            .foregroundColor(.black)
                     }.frame(height: geo.size.height * 0.8, alignment: .bottom)
                 }.frame(width: geo.size.width, height: geo.size.height, alignment: .center)
                     

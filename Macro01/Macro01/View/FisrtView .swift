@@ -25,7 +25,7 @@ struct FirstView: View {
                             ButtonGenRound(action: {
                                 print("Configuração")
                             },
-                                           image: "",
+                                           image: "Configuração",
                                            foregroundColor: Color(hex: "FFF2D9"),
                                            backgroundColor: Color(hex: "FFF2D9"))
                             .frame(width: buttonSize, height: buttonSize)
@@ -33,7 +33,7 @@ struct FirstView: View {
                             ButtonGenRound(action: {
                                 print("Galeria")
                             },
-                                           image: "",
+                                           image: "Galeria",
                                            foregroundColor: Color(hex: "FFF2D9"),
                                            backgroundColor: Color(hex: "FFF2D9"))
                             .frame(width: buttonSize, height: buttonSize)
@@ -41,40 +41,26 @@ struct FirstView: View {
                             Spacer()
                         }
                         .padding(.leading)
-                    }.frame(width: geometry.size.width * 0.9, height: geometry.size.height * 0.2)
+                    }.frame(width: geometry.size.width * 0.9, height: geometry.size.height * 0.1)
                     
                     VStack {
-                        Text("Título")
-                            .font(.largeTitle)
-                            .fontWeight(.bold)
-                            .padding()
-                        
-                        VStack {
-                            NavigationLink(destination: SecondView()){
-                                Text("História")
-                                    .font(.title3)
-                                    .fontWeight(.bold)
-                                    .foregroundColor(.black)
-                                    .frame(width: 200, height: 20)
-                                    .padding()
-                                    .background(Color(hex: "FFF2D9"))
-                                    .cornerRadius(10)
-                                
-                            }
-                            
+                       Image("titulo")
+                            .resizable()
+                            .aspectRatio(contentMode: .fit)
+                            .padding(.vertical)
+        
                             NavigationLink(destination: DificultyView_()){
                                 Text("Jogo Livre")
                                     .font(.title3)
                                     .fontWeight(.bold)
                                     .foregroundColor(.black)
-                                    .frame(width: 200, height: 20)
+                                    .frame(width: 200, height: 15)
                                     .padding()
                                     .background(Color(hex: "FFF2D9"))
                                     .cornerRadius(10)
                             }
-                        }
-                        .padding()
-                    }
+                        
+                    }.frame(width: geometry.size.width * 0.7, height: geometry.size.height * 0.8, alignment: .center)
                 }
             }.frame(width: geometry.size.width, height: geometry.size.height, alignment: .center)
         }
