@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		1905A5342A1E8FB40010D8A9 /* TextBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1905A5332A1E8FB40010D8A9 /* TextBox.swift */; };
 		1905A5362A1E961D0010D8A9 /* SquareGallery.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1905A5352A1E961D0010D8A9 /* SquareGallery.swift */; };
+		19131DDF2A37A1AE0016727E /* TutorialView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19131DDE2A37A1AE0016727E /* TutorialView.swift */; };
 		193567A22A1E854200C7D34B /* Character.swift in Sources */ = {isa = PBXBuildFile; fileRef = 193567A12A1E854200C7D34B /* Character.swift */; };
 		EB2BC4E92A374A28008ACFD2 /* CharacterCircle.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB2BC4E82A374A28008ACFD2 /* CharacterCircle.swift */; };
 		EB82F3B02A33EEEF006D7011 /* ColorExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB82F3AF2A33EEEF006D7011 /* ColorExtensions.swift */; };
@@ -57,6 +58,7 @@
 /* Begin PBXFileReference section */
 		1905A5332A1E8FB40010D8A9 /* TextBox.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextBox.swift; sourceTree = "<group>"; };
 		1905A5352A1E961D0010D8A9 /* SquareGallery.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SquareGallery.swift; sourceTree = "<group>"; };
+		19131DDE2A37A1AE0016727E /* TutorialView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TutorialView.swift; sourceTree = "<group>"; };
 		193567A12A1E854200C7D34B /* Character.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Character.swift; sourceTree = "<group>"; };
 		EB2BC4E82A374A28008ACFD2 /* CharacterCircle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterCircle.swift; sourceTree = "<group>"; };
 		EB82F3AF2A33EEEF006D7011 /* ColorExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorExtensions.swift; sourceTree = "<group>"; };
@@ -137,6 +139,7 @@
 				FA6F18592A1D301F00E76127 /* MainView.swift */,
 				FAFF07C62A251E4D00D5BA2B /* FisrtView .swift */,
 				FAEA1B992A2693C40007905A /* SecondView .swift */,
+				19131DDE2A37A1AE0016727E /* TutorialView.swift */,
 				FA1546DF2A26D15400C9EE2E /* CombatView.swift */,
 				FA5BEDA82A2E2599001B0C07 /* SheetView.swift */,
 				EBCFE2DF2A1E863C002CABFF /* Componentes */,
@@ -388,6 +391,7 @@
 				FA5BEDA92A2E2599001B0C07 /* SheetView.swift in Sources */,
 				FA5BEDA32A2E2464001B0C07 /* CardsModel.swift in Sources */,
 				FA5BEDA12A2E2428001B0C07 /* PlayerCombatModel.swift in Sources */,
+				19131DDF2A37A1AE0016727E /* TutorialView.swift in Sources */,
 				EBF1340B2A23FAA1000FA55E /* CardModel.swift in Sources */,
 				FA6F18582A1D301F00E76127 /* Macro01App.swift in Sources */,
 				EBCFE2E12A1E8670002CABFF /* BotaoGenRedondoView.swift in Sources */,

@@ -49,6 +49,10 @@ struct FirstView: View {
                         NavigationLink(destination: CombatView()){
                             Text("CO OP")
                         }
+                        NavigationLink(destination: TutorialView()){
+                            Text("Tutorial")
+                        }
+                        
                         
 //                        ButtonComponent(buttonText: "Modo Co-op") {
 //                            print("modo co-op")
