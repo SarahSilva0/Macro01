@@ -21,6 +21,21 @@ struct CombatView: View {
                     .resizable()
                     .aspectRatio(contentMode: .fill)
                     .ignoresSafeArea()
+                
+                //CONTADOR DO CENTRO
+                VStack(alignment: .center) {
+                    Spacer ()
+                    if combatViewModel.isCountdownVisible {
+                        Text("\(combatViewModel.countdown)")
+                            .font(.custom("Helvetica Neue", size: 50))
+                            .foregroundColor(Color(hex: "3C3634"))
+                            .fontWeight(.bold)
+                    }
+                    Spacer()
+                }
+                .frame(width: geometry.size.width * 0.1, height: geometry.size.height * 0.1)
+                
+                //CARTA DOS PLAYERS
                 VStack {
                     VStack {
                         HStack (alignment: .top){
@@ -53,48 +68,40 @@ struct CombatView: View {
                         }
                     }
                     .frame(width: geometry.size.width * 0.32, height: geometry.size.height * 0.32)
-                    Spacer(minLength: 120)
-
-                    
-                    
-                }
-                
-                
-                VStack(alignment: .center) {
-                    Spacer ()
-                    if combatViewModel.isCountdownVisible {
-                        Text("\(combatViewModel.countdown)")
-                            .font(.custom("Helvetica Neue", size: 50))
-                            .foregroundColor(Color(hex: "3C3634"))
-                            .fontWeight(.bold)
-                    }
-                    Spacer()
-                }
-                .frame(width: geometry.size.width * 0.1, height: geometry.size.height * 0.1)
-                
+                   
+                    // PERSONAGENS
+                    HStack {
+                            Character(character: "player1")
+                            
+                            Spacer(minLength: 500)
+                            
+                            Character(character: "player2")
+                        }
+                        .frame(width: geometry.size.width * 0.4, height: geometry.size.height * 0.4)
             }
-            .frame(width: geometry.size.width, height: geometry.size.height, alignment: .center)
-            
-            
-            .onAppear {
-                combatViewModel.startCountdown()
-            }
-            
-            .sheet(isPresented: $combatViewModel.isSheetVisible, onDismiss: {
-            }) {
-                SheetView(combatViewModel: combatViewModel, isSheetVisible: $combatViewModel.isSheetVisible, countdownSheet: $combatViewModel.countdownSheet).background(ClearBackgroundView())
-            }
-            .alert(isPresented: $combatViewModel.isGameEndAlertPresented) {
-                Alert(title: Text("Fim do Jogo"),
-                      message: Text("\(combatViewModel.getScore())"),
-                      dismissButton: .default(Text("OK"), action: {
-                    presentationMode.wrappedValue.dismiss()
-                }))
-            }
-            
+        }
+        .frame(width: geometry.size.width, height: geometry.size.height, alignment: .center)
+        
+        
+        .onAppear {
+            combatViewModel.startCountdown()
+        }
+        
+        .sheet(isPresented: $combatViewModel.isSheetVisible, onDismiss: {
+        }) {
+            SheetView(combatViewModel: combatViewModel, isSheetVisible: $combatViewModel.isSheetVisible, countdownSheet: $combatViewModel.countdownSheet).background(ClearBackgroundView())
+        }
+        .alert(isPresented: $combatViewModel.isGameEndAlertPresented) {
+            Alert(title: Text("Fim do Jogo"),
+                  message: Text("\(combatViewModel.getScore())"),
+                  dismissButton: .default(Text("OK"), action: {
+                presentationMode.wrappedValue.dismiss()
+            }))
         }
         
     }
+    
+}
 }
 
 struct CombatView_Previews: PreviewProvider {
