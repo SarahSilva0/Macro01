@@ -24,7 +24,7 @@ struct CombatView: View {
                 
                 VStack (alignment: .trailing) {
                     ButtonGenRound(action: {
-                        print("Galeria")
+                        presentationMode.wrappedValue.dismiss() 
                     },
                                    image: "pause",
                                    foregroundColor: Color(hex: "FFF2D9"),
@@ -82,7 +82,6 @@ struct CombatView: View {
                             Image("")
                                 .resizable()
                                 .aspectRatio(contentMode: .fill)
-                            //                                .frame(width: geometry.size.width * 0.13, height: geometry.size.height * 0.1)
                         }
                     }
                     .frame(width: geometry.size.width * 0.2, height: geometry.size.height * 0.2)
