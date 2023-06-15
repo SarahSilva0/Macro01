@@ -22,6 +22,19 @@ struct CombatView: View {
                     .aspectRatio(contentMode: .fill)
                     .ignoresSafeArea()
                 
+                VStack (alignment: .trailing) {
+                    ButtonGenRound(action: {
+                        print("Galeria")
+                    },
+                                   image: "pause",
+                                   foregroundColor: Color(hex: "FFF2D9"),
+                                   backgroundColor: Color(hex: "FFF2D9"))
+                    .frame(width: 40, height: 40)
+                }
+                .padding(.top, -180)
+                .padding(.trailing, 730)
+                
+                
                 //CONTADOR DO CENTRO
                 VStack(alignment: .center) {
                     Spacer ()
@@ -32,10 +45,10 @@ struct CombatView: View {
                             .fontWeight(.bold)
                     }
                     Spacer()
+                    
                 }
                 .frame(width: geometry.size.width * 0.1, height: geometry.size.height * 0.1)
                 
-              
                 
                 //CARTA DOS PLAYERS
                 VStack {
@@ -69,7 +82,7 @@ struct CombatView: View {
                             Image("")
                                 .resizable()
                                 .aspectRatio(contentMode: .fill)
-//                                .frame(width: geometry.size.width * 0.13, height: geometry.size.height * 0.1)
+                            //                                .frame(width: geometry.size.width * 0.13, height: geometry.size.height * 0.1)
                         }
                     }
                     .frame(width: geometry.size.width * 0.2, height: geometry.size.height * 0.2)
@@ -114,6 +127,7 @@ struct CombatView: View {
                     presentationMode.wrappedValue.dismiss()
                 }))
             }
+                .navigationBarHidden(true)
             
         }
         
