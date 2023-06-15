@@ -35,6 +35,8 @@ struct CombatView: View {
                 }
                 .frame(width: geometry.size.width * 0.1, height: geometry.size.height * 0.1)
                 
+              
+                
                 //CARTA DOS PLAYERS
                 VStack {
                     VStack {
@@ -68,40 +70,53 @@ struct CombatView: View {
                         }
                     }
                     .frame(width: geometry.size.width * 0.32, height: geometry.size.height * 0.32)
-                   
+                    
                     // PERSONAGENS
                     HStack {
-                            Character(character: "player1")
-                            
-                            Spacer(minLength: 500)
-                            
-                            Character(character: "player2")
+                        Character(character: "player1")
+                        
+                        Spacer()
+                        
+                        //CARTAS DO PLAYER 1
+                        HStack {
+                            ForEach(combatViewModel.player1.cards, id: \.self) { card in
+                                CardComponent(image: Image(card))
+                            }
+                            .frame(width: geometry.size.width * 0.13, height: geometry.size.height * 0.1)
+                            .allowsHitTesting(combatViewModel.isInteractionEnabled)
                         }
-                        .frame(width: geometry.size.width * 0.4, height: geometry.size.height * 0.4)
+                        .frame(width: geometry.size.width * 0.6, height: geometry.size.height * 0.6)
+                        .padding(.bottom, -160)
+
+                        Spacer(minLength: 20)
+                        
+                        Character(character: "player2")
+                    }
+                    .frame(width: geometry.size.width * 0.4, height: geometry.size.height * 0.4)
+                }
             }
-        }
-        .frame(width: geometry.size.width, height: geometry.size.height, alignment: .center)
-        
-        
-        .onAppear {
-            combatViewModel.startCountdown()
-        }
-        
-        .sheet(isPresented: $combatViewModel.isSheetVisible, onDismiss: {
-        }) {
-            SheetView(combatViewModel: combatViewModel, isSheetVisible: $combatViewModel.isSheetVisible, countdownSheet: $combatViewModel.countdownSheet).background(ClearBackgroundView())
-        }
-        .alert(isPresented: $combatViewModel.isGameEndAlertPresented) {
-            Alert(title: Text("Fim do Jogo"),
-                  message: Text("\(combatViewModel.getScore())"),
-                  dismissButton: .default(Text("OK"), action: {
-                presentationMode.wrappedValue.dismiss()
-            }))
+            .frame(width: geometry.size.width, height: geometry.size.height, alignment: .center)
+            
+            
+            .onAppear {
+                combatViewModel.startCountdown()
+            }
+            
+            .sheet(isPresented: $combatViewModel.isSheetVisible, onDismiss: {
+            }) {
+                SheetView(combatViewModel: combatViewModel, isSheetVisible: $combatViewModel.isSheetVisible, countdownSheet: $combatViewModel.countdownSheet).background(ClearBackgroundView())
+            }
+            .alert(isPresented: $combatViewModel.isGameEndAlertPresented) {
+                Alert(title: Text("Fim do Jogo"),
+                      message: Text("\(combatViewModel.getScore())"),
+                      dismissButton: .default(Text("OK"), action: {
+                    presentationMode.wrappedValue.dismiss()
+                }))
+            }
+            
         }
         
     }
-    
-}
 }
 
 struct CombatView_Previews: PreviewProvider {

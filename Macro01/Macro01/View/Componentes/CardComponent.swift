@@ -8,7 +8,7 @@ struct CardComponent: View {
         image
             .resizable()
             .aspectRatio(contentMode: .fit)
-            .frame(width: 120, height: 160)
+            .frame(width: 110, height: 110)
        
     }
 }
