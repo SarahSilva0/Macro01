@@ -9,12 +9,12 @@ import SwiftUI
 
 struct DificultyView_: View {
     var body: some View {
-        ZStack{
+        GeometryReader { geo in
+        ZStack {
             Image("BG Galeria")
                 .resizable()
                 .aspectRatio(contentMode: .fill)
                 .ignoresSafeArea()
-            GeometryReader { geo in
                 VStack{
                     VStack(alignment: .center){
                         Text("Selecione o nível")
@@ -27,7 +27,6 @@ struct DificultyView_: View {
                                     .resizable()
                                     .aspectRatio(contentMode: .fit)
                             }
-                            
                             Image("intermediario")
                                 .resizable()
                                 .aspectRatio(contentMode: .fit)
