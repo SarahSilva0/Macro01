@@ -53,13 +53,13 @@ struct CombatView: View {
                 //CARTA DOS PLAYERS
                 VStack {
                     VStack {
-                        HStack (alignment: .top){
+                        VStack{
                             //PLACAR
                             ScoreView(player1Wins: combatViewModel.player1.winTurno,
                                       player2Wins: combatViewModel.player2.winTurno)
                         }
-                        .background(.black)
                         .frame(width: geometry.size.width * 0.4, height: geometry.size.height * 0.4)
+                        .padding(20)
                         Spacer()
                     }
                     .padding(.top, -65)
