@@ -19,6 +19,13 @@ class CombatViewModel: ObservableObject {
     var player1 = PlayerCombat(image: "jogador1")
     var player2 = PlayerCombat(image: "jogador2")
     
+    //MARK: Difficulty instancias
+    @Published var easyDiff = DifficultyModel(imageInitial: "", imageSillhoute: "", imageWin: "", winCard: "", selectdedLevel: false)
+    @Published var mediumDiff = DifficultyModel(imageInitial: "", imageSillhoute: "", imageWin: "", winCard: "", selectdedLevel: false)
+    @Published var hardDiff = DifficultyModel(imageInitial: "", imageSillhoute: "", imageWin: "", winCard: "", selectdedLevel: false)
+
+    
+    
     //MARK: CONTADOR
     func startCountdown() {
         if turn > 5 {

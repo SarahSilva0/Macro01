@@ -30,6 +30,7 @@
 		FA6F18692A1D302000E76127 /* Macro01Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6F18682A1D302000E76127 /* Macro01Tests.swift */; };
 		FA6F18732A1D302000E76127 /* Macro01UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6F18722A1D302000E76127 /* Macro01UITests.swift */; };
 		FA6F18752A1D302000E76127 /* Macro01UITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6F18742A1D302000E76127 /* Macro01UITestsLaunchTests.swift */; };
+		FAA898DA2A3BAA740052B998 /* DifficultyModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA898D92A3BAA740052B998 /* DifficultyModel.swift */; };
 		FADCBAD32A3904510012C0FB /* DificultyView .swift in Sources */ = {isa = PBXBuildFile; fileRef = FADCBAD22A3904510012C0FB /* DificultyView .swift */; };
 		FAE3635C2A1E87C000643271 /* ButtonComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAE3635B2A1E87C000643271 /* ButtonComponent.swift */; };
 		FAE3635E2A1E90EA00643271 /* CardComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAE3635D2A1E90EA00643271 /* CardComponent.swift */; };
@@ -82,6 +83,7 @@
 		FA6F186E2A1D302000E76127 /* Macro01UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Macro01UITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		FA6F18722A1D302000E76127 /* Macro01UITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Macro01UITests.swift; sourceTree = "<group>"; };
 		FA6F18742A1D302000E76127 /* Macro01UITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Macro01UITestsLaunchTests.swift; sourceTree = "<group>"; };
+		FAA898D92A3BAA740052B998 /* DifficultyModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DifficultyModel.swift; sourceTree = "<group>"; };
 		FADCBAD22A3904510012C0FB /* DificultyView .swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DificultyView .swift"; sourceTree = "<group>"; };
 		FAE3635B2A1E87C000643271 /* ButtonComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonComponent.swift; sourceTree = "<group>"; };
 		FAE3635D2A1E90EA00643271 /* CardComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardComponent.swift; sourceTree = "<group>"; };
@@ -129,6 +131,7 @@
 				FA5BEDA02A2E2428001B0C07 /* PlayerCombatModel.swift */,
 				FA5BEDA22A2E2464001B0C07 /* CardsModel.swift */,
 				FAF5E95F2A2814CB00155C76 /* CombatModel.swift */,
+				FAA898D92A3BAA740052B998 /* DifficultyModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -381,6 +384,7 @@
 				FA5BEDA72A2E2559001B0C07 /* ClearBackground.swift in Sources */,
 				EBFE58CB2A3506F40042A319 /* ScoreView.swift in Sources */,
 				FAE3635C2A1E87C000643271 /* ButtonComponent.swift in Sources */,
+				FAA898DA2A3BAA740052B998 /* DifficultyModel.swift in Sources */,
 				1905A5342A1E8FB40010D8A9 /* TextBox.swift in Sources */,
 				193567A22A1E854200C7D34B /* Character.swift in Sources */,
 				1905A5362A1E961D0010D8A9 /* SquareGallery.swift in Sources */,
