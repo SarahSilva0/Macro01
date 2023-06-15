@@ -54,6 +54,7 @@ class CombatViewModel: ObservableObject {
     }
 
 
+    //MARK: FUNCAO EM QUE O PLAYER 2 JOGA AS CARTAS
     func selectedCardPlayer2() {
         player2.selectedCard = self.player2.playCard()
     }

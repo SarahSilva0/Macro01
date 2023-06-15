@@ -36,7 +36,7 @@ class PlayerCombat: ObservableObject {
     }
     
     
-    //MARK: LOGICA BOT:
+    //MARK: LOGICA BOT: PODE SER USADA COM ESQUELETO PARA AS OUTROS NIVEIS
     func playCard() -> String{
         switch self.mana {
             //se o mana for 0
