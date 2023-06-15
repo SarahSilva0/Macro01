@@ -20,9 +20,8 @@ struct SheetView: View {
     
     var body: some View {
         GeometryReader { geometry in
-            
             VStack {
-                HStack {
+                HStack (alignment: .center) {
                     VStack {
                         Circle()
                             .frame(width: 50, height: 50)
@@ -55,14 +54,10 @@ struct SheetView: View {
                         RoundedRectangle(cornerRadius: 10)
                             .frame(width: 15, height: 230 * countdownFraction())
                             .foregroundColor(Color(hex: "688869"))
-                        
                     }
                     
                 }
-                //Deixar Toda View Centralizada
-                .frame(width: geometry.size.width, height: geometry.size.height)
-                
-            }
+            } //Deixar Toda View Centralizada
             .frame(width: geometry.size.width, height: geometry.size.height, alignment: .center)
             
             .onAppear {
