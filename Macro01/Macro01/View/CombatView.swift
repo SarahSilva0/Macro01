@@ -15,120 +15,156 @@ struct CombatView: View {
     
     
     var body: some View {
-        GeometryReader { geometry in
-            ZStack {
-                Image("backgroundOne")
-                    .resizable()
-                    .aspectRatio(contentMode: .fill)
-                    .ignoresSafeArea()
-                
-                VStack (alignment: .trailing) {
-                    ButtonGenRound(action: {
-                        presentationMode.wrappedValue.dismiss() 
-                    },
-                                   image: "pause",
-                                   foregroundColor: Color(hex: "FFF2D9"),
-                                   backgroundColor: Color(hex: "FFF2D9"))
-                    .frame(width: 40, height: 40)
+        ZStack {
+            Image("backgroundOne")
+                .resizable()
+                .aspectRatio(contentMode: .fill)
+                .ignoresSafeArea()
+            
+            VStack {
+                if combatViewModel.isCountdownVisible {
+                    Text("\(combatViewModel.countdown)")
+                        .font(.custom("Helvetica Neue", size: 50))
+                        .foregroundColor(Color(hex: "3C3634"))
+                        .fontWeight(.bold)
                 }
-                .padding(.top, -180)
-                .padding(.trailing, 730)
                 
-                
-                //CONTADOR DO CENTRO
-                VStack(alignment: .center) {
-                    Spacer ()
-                    if combatViewModel.isCountdownVisible {
-                        Text("\(combatViewModel.countdown)")
-                            .font(.custom("Helvetica Neue", size: 50))
-                            .foregroundColor(Color(hex: "3C3634"))
-                            .fontWeight(.bold)
+            }
+            
+            GeometryReader { geometry in
+                VStack {
+                    //CARTA DOS PLAYERS
+                    VStack {
+                        //PLACAR
+                        ScoreView(player1Wins: combatViewModel.player1.winTurno,
+                                  player2Wins: combatViewModel.player2.winTurno)
+                        .padding(.bottom)
+                        
                     }
+                    .frame(width: geometry.size.width * 0.25, height: geometry.size.height * 0.25, alignment: .center)
                     Spacer()
                     
-                }
-                .frame(width: geometry.size.width * 0.1, height: geometry.size.height * 0.1)
-                
-                
-                //CARTA DOS PLAYERS
-                VStack {
                     VStack {
-                        VStack{
-                            //PLACAR
-                            ScoreView(player1Wins: combatViewModel.player1.winTurno,
-                                      player2Wins: combatViewModel.player2.winTurno)
-                        }
-                        .frame(width: geometry.size.width * 0.4, height: geometry.size.height * 0.4)
-                        .padding(20)
-                        Spacer()
-                    }
-                    .padding(.top, -65)
-                    
-                    //CARTAS AO CENTRO
-                    HStack (alignment: .center){
-                        Image(combatViewModel.player1.selectedCard)
-                            .resizable()
-                            .aspectRatio(contentMode: .fill)
-                            .frame(width: geometry.size.width * 0.135, height: geometry.size.height * 0.1)
-                        
-                        Spacer(minLength: 130)
-                        
-                        if !combatViewModel.isSheetVisible {
-                            Image(combatViewModel.player2.selectedCard)
+                        //CARTAS AO CENTRO
+                        HStack (alignment: .center){
+                            Image(combatViewModel.player1.selectedCard)
                                 .resizable()
                                 .aspectRatio(contentMode: .fill)
-                                .frame(width: geometry.size.width * 0.135, height: geometry.size.height * 0.1)
-                        } else {
-                            Image("")
-                                .resizable()
-                                .aspectRatio(contentMode: .fill)
+                                .frame(height: geometry.size.height * 0.4)
+                            
+                            Spacer(minLength: 130)
+                            
+                            if !combatViewModel.isSheetVisible {
+                                Image(combatViewModel.player2.selectedCard)
+                                    .resizable()
+                                    .aspectRatio(contentMode: .fill)
+                                    .frame(height: geometry.size.height * 0.4)
+                            } else {
+                                Image("")
+                                    .resizable()
+                                    .aspectRatio(contentMode: .fill)
+                            }
                         }
-                    }
-                    .frame(width: geometry.size.width * 0.2, height: geometry.size.height * 0.2)
-                    
-                    // PERSONAGENS
-                    HStack {
-                        Character(character: "player1")
+                        .frame(width: geometry.size.width * 0.2, height: geometry.size.height * 0.4, alignment: .bottom)
+                        //                    .background(.red)
                         
-                        Spacer()
+                        // CARTASSSSSSSSSS
+                        
+                        //                            Character(character: "player1")
+                        
+                        
+                        //                        Spacer()
                         
                         //CARTAS DO PLAYER 1
-                        HStack (alignment: .center) {
-                            ForEach(combatViewModel.player1.cards, id: \.self) { card in
-                                CardComponent(image: Image(card))
-                            }
-                            .frame(width: geometry.size.width * 0.13, height: geometry.size.height * 0.1)
-                            .allowsHitTesting(combatViewModel.isInteractionEnabled)
-                        }
-                        .frame(width: geometry.size.width * 0.6, height: geometry.size.height * 0.6)
-                        .padding(.bottom, -160)
+                        //                        HStack (alignment: .center) {
+                        //                            ForEach(combatViewModel.player1.cards, id: \.self) { card in
+                        //                                CardComponent(image: Image(card))
+                        //                            }
+                        //                            .frame(width: geometry.size.width * 0.13, height: geometry.size.height * 0.1)
+                        //                            .allowsHitTesting(combatViewModel.isInteractionEnabled)
+                        //                        }
+                        //                        .frame(width: geometry.size.width * 0.6, height: geometry.size.height * 0.6, alignment: .bottom)
                         
-                        Character(character: "player2")
+                        
+                        
+                        //                            Character(character: "player2")
+                        
+                        //                    .background(.green)
                     }
-                    .frame(width: geometry.size.width * 0.4, height: geometry.size.height * 0.4)
+                    .frame( height: geometry.size.height * 0.5, alignment: .bottom)
+                    
+                    
+                    VStack {
+                        Text("oioioioioioio")
+                    }
+                    .frame(height: geometry.size.height * 0.25)
+                    
+                }
+                .frame(width: geometry.size.width, height: geometry.size.height, alignment: .center)
+                
+                ZStack {
+                    VStack{
+                        HStack{
+                            ButtonGenRound(action: {
+                                presentationMode.wrappedValue.dismiss()
+                            },
+                                           image: "pause",
+                                           foregroundColor: Color(hex: "FFF2D9"),
+                                           backgroundColor: Color(hex: "FFF2D9"))
+                            .frame(width: 40, height: 40)
+                            .padding(.all)
+                            
+                            
+                        }
+                        .frame(width: geometry.size.width, height: geometry.size.height * 0.5, alignment: .topLeading)
+                        
+                        HStack {
+                            VStack {
+                                
+                                
+                                
+                                
+                                
+                                Character(character: "player1")
+                                    .frame(width: geometry.size.width * 0.2, height: geometry.size.height * 0.25)
+                            }
+                            
+                            
+                            Spacer()
+                            
+                            VStack {
+                                
+                                Character(character: "player2")
+                                    .frame(width: geometry.size.width * 0.2, height: geometry.size.height * 0.32)
+                            }
+                            
+                            
+                        }
+                        .ignoresSafeArea()
+                        .frame(width: geometry.size.width, height: geometry.size.height * 0.5, alignment: .bottom)
+                        
+                    }
                 }
             }
-            .frame(width: geometry.size.width, height: geometry.size.height, alignment: .center)
-            
-            
-            .onAppear {
-                combatViewModel.startCountdown()
-            }
-            
-            .sheet(isPresented: $combatViewModel.isSheetVisible, onDismiss: {
-            }) {
-                SheetView(combatViewModel: combatViewModel, isSheetVisible: $combatViewModel.isSheetVisible, countdownSheet: $combatViewModel.countdownSheet).background(ClearBackgroundView())
-            }
-            .alert(isPresented: $combatViewModel.isGameEndAlertPresented) {
-                Alert(title: Text("Fim do Jogo"),
-                      message: Text("\(combatViewModel.getScore())"),
-                      dismissButton: .default(Text("OK"), action: {
-                    presentationMode.wrappedValue.dismiss()
-                }))
-            }
-                .navigationBarHidden(true)
-            
         }
+        
+        
+        .onAppear {
+            combatViewModel.startCountdown()
+        }
+        
+        .sheet(isPresented: $combatViewModel.isSheetVisible, onDismiss: {
+        }) {
+            SheetView(combatViewModel: combatViewModel, isSheetVisible: $combatViewModel.isSheetVisible, countdownSheet: $combatViewModel.countdownSheet).background(ClearBackgroundView())
+        }
+        .alert(isPresented: $combatViewModel.isGameEndAlertPresented) {
+            Alert(title: Text("Fim do Jogo"),
+                  message: Text("\(combatViewModel.getScore())"),
+                  dismissButton: .default(Text("OK"), action: {
+                presentationMode.wrappedValue.dismiss()
+            }))
+        }
+        .navigationBarHidden(true)
         
     }
 }
@@ -138,6 +174,8 @@ struct CombatView_Previews: PreviewProvider {
         CombatView()
     }
 }
+
+
 
 
 
