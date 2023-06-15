@@ -52,10 +52,11 @@ struct CombatView: View {
                     .padding(.top, -65)
                     
                     //CARTAS AO CENTRO
-                    HStack {
+                    HStack (alignment: .center){
                         Image(combatViewModel.player1.selectedCard)
                             .resizable()
                             .aspectRatio(contentMode: .fill)
+                            .frame(width: geometry.size.width * 0.135, height: geometry.size.height * 0.1)
                         
                         Spacer(minLength: 130)
                         
@@ -63,13 +64,15 @@ struct CombatView: View {
                             Image(combatViewModel.player2.selectedCard)
                                 .resizable()
                                 .aspectRatio(contentMode: .fill)
+                                .frame(width: geometry.size.width * 0.135, height: geometry.size.height * 0.1)
                         } else {
                             Image("")
                                 .resizable()
                                 .aspectRatio(contentMode: .fill)
+//                                .frame(width: geometry.size.width * 0.13, height: geometry.size.height * 0.1)
                         }
                     }
-                    .frame(width: geometry.size.width * 0.32, height: geometry.size.height * 0.32)
+                    .frame(width: geometry.size.width * 0.2, height: geometry.size.height * 0.2)
                     
                     // PERSONAGENS
                     HStack {
@@ -78,7 +81,7 @@ struct CombatView: View {
                         Spacer()
                         
                         //CARTAS DO PLAYER 1
-                        HStack {
+                        HStack (alignment: .center) {
                             ForEach(combatViewModel.player1.cards, id: \.self) { card in
                                 CardComponent(image: Image(card))
                             }
@@ -87,8 +90,6 @@ struct CombatView: View {
                         }
                         .frame(width: geometry.size.width * 0.6, height: geometry.size.height * 0.6)
                         .padding(.bottom, -160)
-
-                        Spacer(minLength: 20)
                         
                         Character(character: "player2")
                     }
