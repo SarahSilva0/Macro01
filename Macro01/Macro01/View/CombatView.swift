@@ -10,7 +10,7 @@ import SwiftUI
 //MARK: VIEW DO COMBATE. ESSA VIEW PRECISA SER REFATORADA DEPOIS E DEIXADA MAIS RESPONSIVA
 struct CombatView: View {
     
-    @StateObject private var combatViewModel = CombatViewModel()
+    @ObservedObject var combatViewModel: CombatViewModel // AQUI FOI MUDADO PARA OBSERVEVED, PQ TODA VEZ QUE EU CHAMAVA ESSA VIEW, UM STATE NOVO ESTAVA SENDO FEITO DO MEU OBJETO COM OS VALORES DEFAULT. ISSO ESTAVA IMPEDINDO NA LÓGICA DE CHAMAR A DIFFICULTY VIEW E IMPEDIRIA NA LÓGICA DA GALERIA, JÁ QUE SEMPRE QUE EU CHAMASSE ESSA VIEW, EU IRIA RESETAR OS VALORES E PERDER A CARTA QUE EU ARMAZENEI NO MEU OBJETO.
     @Environment(\.presentationMode) var presentationMode
     
     
@@ -25,6 +25,11 @@ struct CombatView: View {
                 VStack (alignment: .trailing) {
                     ButtonGenRound(action: {
                         print("Galeria")
+                        combatViewModel.easyDiff.selectdedLevel = false
+                        presentationMode.wrappedValue.dismiss()
+                        //PRECISA LEMBRAR DE DEIXAR FALSE O SELECTED
+                        // E RESETAR O TURNO QUANDO O JOGADOR SAIR
+                        
                     },
                                    image: "pause",
                                    foregroundColor: Color(hex: "FFF2D9"),
@@ -113,7 +118,7 @@ struct CombatView: View {
             
             
             .onAppear {
-                combatViewModel.startCountdown()
+                combatViewModel.startCountdown()            
             }
             
             .sheet(isPresented: $combatViewModel.isSheetVisible, onDismiss: {
@@ -124,21 +129,23 @@ struct CombatView: View {
                 Alert(title: Text("Fim do Jogo"),
                       message: Text("\(combatViewModel.getScore())"),
                       dismissButton: .default(Text("OK"), action: {
+                    combatViewModel.gameReset()
+                    combatViewModel.isGameEndAlertPresented = false
                     presentationMode.wrappedValue.dismiss()
                 }))
             }
-                .navigationBarHidden(true)
+            .navigationBarHidden(true)
             
         }
         
     }
 }
 
-struct CombatView_Previews: PreviewProvider {
-    static var previews: some View {
-        CombatView()
-    }
-}
+//struct CombatView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        CombatView()
+//    }
+//}
 
 
 

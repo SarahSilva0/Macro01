@@ -14,12 +14,14 @@ class DifficultyModel{
     var imageWin: String
     var winCard: String
     var selectdedLevel: Bool
+    var winLevel: Bool
     
-    init(imageInitial: String, imageSillhoute: String, imageWin: String, winCard: String, selectdedLevel: Bool) {
+    init(imageInitial: String, imageSillhoute: String, imageWin: String, winCard: String, selectdedLevel: Bool, winLevel: Bool) {
         self.imageInitial = imageInitial
         self.imageSillhoute = imageSillhoute
         self.imageWin = imageWin
         self.winCard = winCard
         self.selectdedLevel = selectdedLevel
+        self.winLevel = winLevel
     }
 }

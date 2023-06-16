@@ -49,7 +49,7 @@ struct FirstView: View {
                             .aspectRatio(contentMode: .fit)
                             .padding(.vertical)
         
-                            NavigationLink(destination: DificultyView_()){
+                            NavigationLink(destination: DificultyView_(combatViewModel: CombatViewModel())){
                                 Text("Jogo Livre")
                                     .font(.title3)
                                     .fontWeight(.bold)

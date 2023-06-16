@@ -8,13 +8,18 @@
 import SwiftUI
 
 struct DificultyView_: View {
+    
+    @State private var shouldNavigate = false
+    @ObservedObject var combatViewModel: CombatViewModel
+
+    
     var body: some View {
         GeometryReader { geo in
-        ZStack {
-            Image("BG Galeria")
-                .resizable()
-                .aspectRatio(contentMode: .fill)
-                .ignoresSafeArea()
+            ZStack {
+                Image("BG Galeria")
+                    .resizable()
+                    .aspectRatio(contentMode: .fill)
+                    .ignoresSafeArea()
                 VStack{
                     VStack(alignment: .center){
                         Text("Selecione o nível")
@@ -22,11 +27,24 @@ struct DificultyView_: View {
                             .fontWeight(.bold)
                             .foregroundColor(.black)
                         HStack(spacing: 20){
-                            NavigationLink(destination: CombatView()){
-                                Image("facil")
-                                    .resizable()
-                                    .aspectRatio(contentMode: .fit)
+                            Button {
+                                combatViewModel.easyDiff.selectdedLevel.toggle()
+                                print("BOTAAAAAAAO\(combatViewModel.easyDiff.selectdedLevel)")
+                                shouldNavigate.toggle()
+                                
+                            } label: {
+                                if combatViewModel.easyDiff.winLevel == true{
+                                    Image(combatViewModel.easyDiff.imageWin)
+                                        .resizable()
+                                        .aspectRatio(contentMode: .fit)
+                                }
+                                else{
+                                    Image(combatViewModel.easyDiff.imageSillhoute)
+                                        .resizable()
+                                        .aspectRatio(contentMode: .fit)
+                                }
                             }
+                            
                             Image("intermediario")
                                 .resizable()
                                 .aspectRatio(contentMode: .fit)
@@ -43,14 +61,20 @@ struct DificultyView_: View {
                             .foregroundColor(.black)
                     }.frame(height: geo.size.height * 0.8, alignment: .bottom)
                 }.frame(width: geo.size.width, height: geo.size.height, alignment: .center)
-                    
+                
+            }.sheet(isPresented: $shouldNavigate){
+                CombatView(combatViewModel: combatViewModel) // Passando a mesma instância de combatViewModel
+
+            }
+            .onAppear{
+                print("AQUIIIIIIIIIIIIIIIIIIIIIIIIII \(combatViewModel.easyDiff.selectdedLevel)")
             }
         }
     }
 }
 
-struct DificultyView__Previews: PreviewProvider {
-    static var previews: some View {
-        DificultyView_()
-    }
-}
+//struct DificultyView__Previews: PreviewProvider {
+//    static var previews: some View {
+//        DificultyView_()
+//    }
+//}

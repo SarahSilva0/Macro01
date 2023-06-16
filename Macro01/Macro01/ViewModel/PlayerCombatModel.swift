@@ -15,7 +15,7 @@ class PlayerCombat: ObservableObject {
     @Published var cards: [String]
     @Published var selectedCard = ""
     
-   
+    
     init(image: String, mana: Int = 1, cards: [String] = ["attack", "defense", "recharge"], selectedCard: String = "") {
         self.image = image
         self.mana = mana
@@ -23,31 +23,19 @@ class PlayerCombat: ObservableObject {
         self.selectedCard = selectedCard
     }
     
-    //MARK: FUNCAO QUE PEGA CARTA SELECIONADA E SUBSTITUI ELA
-    //MARK: MELHORAR AQUI DEPOIS
-    func replaceSelectedCardRandomly() {
-        let index = cards.firstIndex(of: selectedCard)
-        guard let currentIndex = index else { return }
-
-        let cardsInstance = Cards()
-        let newCard = cardsInstance.randomCard() // Usando a função randomCard() na instância de Cards
-        cards[currentIndex] = newCard
-        selectedCard = newCard
-    }
+    //MARK: LOGICA JOGADOR FACIL:
     
-    
-    //MARK: LOGICA BOT: PODE SER USADA COM ESQUELETO PARA AS OUTROS NIVEIS
-    func playCard() -> String{
-        switch self.mana {
+    func playCardPlayerEasy() -> String{
+        switch mana {
             //se o mana for 0
         case 0:
-            return noMana()
+            return noManaPlayerEasy()
             //se o mana for 1
         case 1:
-            return withMana()
+            return withManaPlayerEasy()
             //se o mana for 2
         case 2:
-            return twoManas()
+            return twoManasPlayerEasy()
             //defaut é defesa porque defesa é a unica carta que pode jogar independente do cenario.
         default:
             return Cards().defense
@@ -55,43 +43,50 @@ class PlayerCombat: ObservableObject {
     }
     
     //Não pode ter +2 manas. Não pode usar carta de recarga
-    private func twoManas() -> String {
-        let randomIndex = Int.random(in: 0..<2)
-        switch randomIndex {
-        case 0:
-            return Cards().defense
-        case 1:
-            return Cards().attack
-        default:
-            return Cards().defense
-        }
+    private func twoManasPlayerEasy() -> String {
+        let randomValue = Double.random(in: 0..<1)
+
+            if randomValue < 0.8 { // 80% de chance para ataque
+                return Cards().attack
+            } else { // 20% de chance para defesa
+                return Cards().defense
+            }
     }
     
     //Sem mana não ataca. Somente defende ou recarga.
-    private func noMana() -> String {
-        let randomIndex = Int.random(in: 0..<2)
-        switch randomIndex {
-        case 0:
-            return Cards().defense
-        case 1:
-            return Cards().recharge
-        default:
-            return Cards().defense
-        }
+    private func noManaPlayerEasy() -> String {
+        let randomValue = Double.random(in: 0..<1)
+
+            if randomValue < 0.8 { // 80% de chance para recarga
+                return Cards().recharge
+            } else { // 20% de chance para defesa
+                return Cards().defense
+            }
     }
     
     //Com mais de um mana e menos de 2 pode usar qualquer uma aleatória.
-    private func withMana() -> String {
-        let randomIndex = Int.random(in: 0..<3)
-        switch randomIndex {
-        case 0:
-            return Cards().defense
-        case 1:
-            return Cards().recharge
-        case 2:
+    private func withManaPlayerEasy() -> String {
+        let randomValue = Double.random(in: 0..<1)
+
+        if randomValue < 0.8 { // 80% de chance para ataque
             return Cards().attack
-        default:
+        } else if randomValue < 0.9 { // 10% de chance para recarga
+            return Cards().recharge
+        } else { // 10% de chance para defesa
             return Cards().defense
         }
+
     }
+    
+    func replaceSelectedCardRandomly() {
+        let index = self.cards.firstIndex(of: self.selectedCard)
+        guard let currentIndex = index else { return }
+        
+        let newCard = playCardPlayerEasy()
+        self.cards[currentIndex] = newCard
+        self.selectedCard = newCard
+    }
+  
 }
+
+    

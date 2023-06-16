@@ -10,28 +10,34 @@ class CombatViewModel: ObservableObject {
     @Published var isSheetVisible = false
     @Published var isInteractionEnabled = true
     @Published var isGameEndAlertPresented = false
-
+    
     @Published var countdownSheet: Int = 5
     
-
+    
     
     var cards = Cards()
     var player1 = PlayerCombat(image: "jogador1")
     var player2 = PlayerCombat(image: "jogador2")
     
     //MARK: Difficulty instancias
-    @Published var easyDiff = DifficultyModel(imageInitial: "", imageSillhoute: "", imageWin: "", winCard: "", selectdedLevel: false)
-    @Published var mediumDiff = DifficultyModel(imageInitial: "", imageSillhoute: "", imageWin: "", winCard: "", selectdedLevel: false)
-    @Published var hardDiff = DifficultyModel(imageInitial: "", imageSillhoute: "", imageWin: "", winCard: "", selectdedLevel: false)
-
+    @Published var easyDiff = DifficultyModel(imageInitial: "", imageSillhoute: "facil", imageWin: "easyWin", winCard: "", selectdedLevel: false, winLevel: false)
+    @Published var mediumDiff = DifficultyModel(imageInitial: "", imageSillhoute: "", imageWin: "", winCard: "", selectdedLevel: false, winLevel: false)
+    @Published var hardDiff = DifficultyModel(imageInitial: "", imageSillhoute: "", imageWin: "", winCard: "", selectdedLevel: false, winLevel: false)
+    
     
     
     //MARK: CONTADOR
     func startCountdown() {
-        if turn > 5 {
+    
+        if player1.winTurno == 3{
             self.gameEnd()
             return
         }
+        else if player2.winTurno == 3 {
+            self.gameEnd()
+            return
+        }
+        
         else{
             Timer.scheduledTimer(withTimeInterval: 1, repeats: true) { timer in
                 self.updateCountdown(timer)
@@ -44,7 +50,7 @@ class CombatViewModel: ObservableObject {
         if countdown > 1 {
             countdown -= 1
         } else {
-           
+            
             timer.invalidate()
             isCountdownVisible = false
             isSheetVisible = true
@@ -52,19 +58,19 @@ class CombatViewModel: ObservableObject {
             
         }
     }
-
-
+    
+    
     //MARK: FUNCAO EM QUE O PLAYER 2 JOGA AS CARTAS
     func selectedCardPlayer2() {
-        player2.selectedCard = self.player2.playCard()
+        player2.selectedCard = self.playCardEasyBot()
     }
-
+    
     
     //MARK: QUANDO O CONTADOR ACABA
     func endTurn() {
         isInteractionEnabled = false
         compareCardsInCenter(card1: player1.selectedCard, card2: player2.selectedCard)
-       
+        
         DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
             self.resetTurn()
             self.incrementRound()
@@ -73,12 +79,13 @@ class CombatViewModel: ObservableObject {
     
     //MARK: RESETANDO O CONTADOR
     func resetTurn() {
-        player1.replaceSelectedCardRandomly()
+        self.player1.replaceSelectedCardRandomly()// essa função substitui a carta que o jogador joga
         isInteractionEnabled = true
         player1.selectedCard = ""
         player2.selectedCard = ""
         isCountdownVisible = true
         startCountdown()
+        print("MANA DO JOGADOR 2 \(player2.mana)")
     }
     
     private func incrementRound(){
@@ -89,9 +96,22 @@ class CombatViewModel: ObservableObject {
         isGameEndAlertPresented = true
     }
     
+    
+    //AQUI ESTOU RESETANDO MEU JOGO. JÁ QUE O OBJETO NÃO É INSTANCIADO DE NOVO COM O STATEOBJECT, OS VALORES PERMANECEM. ESSA FUNÇÃO COM CERTEZA PRECISA SER MELHORADA.
+    func gameReset(){
+        self.turn = 0
+        self.countdown = 3
+        self.player1.winTurno = 0
+        self.player2.winTurno = 0
+        self.player1.mana = 1
+        self.player2.mana = 1
+        self.player1.cards = ["attack", "defense", "recharge"]
+    }
+    
     //MARK: MOSTRAR O PLACAR DO JOGO
     func getScore() -> String {
         if player1.winTurno > player2.winTurno {
+            winLevel()
             return "Player 1 ganhou!"
         } else if player1.winTurno < player2.winTurno {
             return "Player 2 ganhou!"
@@ -100,10 +120,17 @@ class CombatViewModel: ObservableObject {
         }
     }
     
+    //AQUI É OQ ACONTECE SE O PLAYER1 GANHAR O LEVEL.
+    func winLevel(){
+        if easyDiff.selectdedLevel == true{
+            easyDiff.winLevel = true
+            //Aqui também ele receberia a carta que será mostrada na galeria
+        }
+        else{
+            //LOIGICA DOS OUTROS NIVEIS
+        }
+    }
     
-    
-    
-    //MARK: REFATORAR ISSO AQUI E COLOCAR EM UM OUTRO ARQUIVO DAQUI ATÉ....
     
     func compareCardsInCenter(card1: String, card2: String) {
         switch (card1, card2) {
@@ -218,9 +245,64 @@ class CombatViewModel: ObservableObject {
     private func player2RechargeMana() {
         player2.mana += 1
     }
+    
+    
+    //MARK: LOGICA BOT FACIL
+    
+    //MARK: LOGICA BOT: PODE SER USADA COM ESQUELETO PARA AS OUTROS NIVEIS
+    func playCardEasyBot() -> String{
+        switch player2.mana {
+            //se o mana for 0
+        case 0:
+            return noManaEasyBot()
+            //se o mana for 1
+        case 1:
+            return withManaEasyBot()
+            //se o mana for 2
+        case 2:
+            return twoManasEasyBot()
+            //defaut é defesa porque defesa é a unica carta que pode jogar independente do cenario.
+        default:
+            return Cards().defense
+        }
+    }
+    
+    //Não pode ter +2 manas. Não pode usar carta de recarga
+    private func twoManasEasyBot() -> String {
+        let randomValue = Double.random(in: 0..<1)
+        if randomValue < 0.8 { // 80% de chance para ataque
+            return Cards().attack
+        } else { // 20% de chance para defesa
+            return Cards().defense
+        }
+    }
+    
+    
+    //Sem mana não ataca. Somente defende ou recarga.
+    private func noManaEasyBot() -> String {
+        let randomValue = Double.random(in: 0..<1)
+        if randomValue < 0.9 { // 90% de chance para recarga
+            return Cards().recharge
+        } else { // 10% de chance para defesa
+            return Cards().defense
+        }
+    }
+    
+    //Com mais de um mana e menos de 2 pode usar qualquer uma aleatória.
+    private func withManaEasyBot() -> String {
+        let randomValue = Double.random(in: 0..<1)
+        if randomValue < 0.6 { // 60% de chance para recarga
+            return Cards().recharge
+        } else if randomValue < 0.8 { // 20% de chance para ataque
+            return Cards().attack
+        } else { // 20% de chance para outros tipos de carta
+            return Cards().defense
+        }
+    }
+    
+    
 }
 
-//MARK: ATÉ AQUI. SERÁ MELHOR SE ESSE BLOCO TODO DE CÓDIGO IR PARA OUTRA VIEW
 
 
 
