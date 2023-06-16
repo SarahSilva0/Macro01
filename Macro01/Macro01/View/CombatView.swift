@@ -33,19 +33,15 @@ struct CombatView: View {
             
             GeometryReader { geometry in
                 VStack {
-                    //CARTA DOS PLAYERS
                     VStack {
-                        //PLACAR
                         ScoreView(player1Wins: combatViewModel.player1.winTurno,
                                   player2Wins: combatViewModel.player2.winTurno)
                         .padding(.bottom)
-                        
                     }
                     .frame(width: geometry.size.width * 0.25, height: geometry.size.height * 0.22, alignment: .center)
                     Spacer()
                     
                     VStack {
-                        //CARTAS AO CENTRO
                         HStack (alignment: .center){
                             Image(combatViewModel.player1.selectedCard)
                                 .resizable()
@@ -68,20 +64,15 @@ struct CombatView: View {
                         .frame(width: geometry.size.width * 0.2, height: geometry.size.height * 0.6, alignment: .bottom)
                     }
                     .frame(height: geometry.size.height * 0.5, alignment: .bottom)
-//                    .background(.yellow)
 
                         HStack {
                             ForEach(combatViewModel.player1.cards, id: \.self) { card in
                                 CardComponent(image: Image(card))
                             }
                             .frame(width: geometry.size.width * 0.12, height: geometry.size.height * 0.12, alignment: .top)
-                            
-                            //VERIFICAR SE ESTÁ NO LUGAR CORRETIO
-                            .allowsHitTesting(combatViewModel.isInteractionEnabled)
+                        
                         }
                         .frame(width: geometry.size.width * 0.2, height: geometry.size.height * 0.25, alignment: .bottom)
-//                        .background(.red)
-
                 }
                 .frame(width: geometry.size.width, height: geometry.size.height, alignment: .center)
                 

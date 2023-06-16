@@ -4,7 +4,6 @@
 //
 //  Created by Sarah dos Santos Silva on 05/06/23.
 //
-
 import SwiftUI
 
 //MARK: SHEET VIEW EM QUE AS VIEWS APARECEM. PRECISA SER SEPARADA EM OUTRO ARQUIVO
@@ -14,30 +13,34 @@ struct SheetView: View {
     @Binding var isSheetVisible: Bool
     
     @Binding var countdownSheet: Int
-    
     //Controlar o estado do timer
+    
     @State private var timer: Timer?
     
     var body: some View {
         GeometryReader { geometry in
-            VStack {
-                HStack (alignment: .center) {
-                    VStack {
-                        Circle()
-                            .frame(width: 50, height: 50)
-                            .foregroundColor(Color(hex: "FFF2D9"))
-                            .overlay(
-                                Text("\(combatViewModel.player1.mana)")
-                                    .font(.system(size: 30, weight: .bold))
-                                    .foregroundColor(.black)
-                            )
-                        Spacer()
-                    }
-                    .frame(height: geometry.size.height * 0.8)
-                    .padding(.trailing, 10)
-                    
+            
+          
+            
+            VStack  {
+                Spacer()
+                Circle()
+                    .frame(width: 45, height: 45)
+                    .foregroundColor(Color(hex: "FFF2D9"))
+                    .overlay(
+                        Text("\(combatViewModel.player1.mana)")
+                            .font(.system(size: 30, weight: .bold))
+                            .foregroundColor(.black)
+                    )
+                Spacer()
+            }
+            .frame(width: geometry.size.width * 0.02, height: geometry.size.height * 0.2)
+//            .background(.red)
+            HStack {
+                HStack {
                     ForEach(combatViewModel.player1.cards, id: \.self) { card in
                         CardComponent(image: Image(card))
+                            .frame(width: geometry.size.width * 0.29, height: geometry.size.height * 0.1, alignment: .leading)
                             .onTapGesture {
                                 combatViewModel.player1.selectedCard = card
                                 combatViewModel.selectedCardPlayer2()
@@ -45,20 +48,27 @@ struct SheetView: View {
                                 combatViewModel.endTurn()
                             }
                     }
-                    .padding(.trailing, 30)
-                    ZStack(alignment: .bottom) {
-                        RoundedRectangle(cornerRadius: 10)
-                            .frame(width: 15, height: 230)
-                            .foregroundColor(Color(hex: "FFF2D9"))
-                        
-                        RoundedRectangle(cornerRadius: 10)
-                            .frame(width: 15, height: 230 * countdownFraction())
-                            .foregroundColor(Color(hex: "688869"))
-                    }
-                    
                 }
-            } //Deixar Toda View Centralizada
-            .frame(width: geometry.size.width, height: geometry.size.height, alignment: .center)
+                .frame(width: geometry.size.width * 0.85, height: geometry.size.height * 0.8)
+//                .background(.yellow)
+                    
+                    HStack {
+                        ZStack(alignment: .bottomLeading) {
+                            RoundedRectangle(cornerRadius: 10)
+                                .frame(width: 15, height: 230)
+                                .foregroundColor(Color(hex: "FFF2D9"))
+                            
+                            RoundedRectangle(cornerRadius: 10)
+                                .frame(width: 15, height: 230 * (1 - countdownFraction()))
+                                .foregroundColor(Color(hex: "688869"))
+                        }
+                        
+                    }
+                    .frame(width: geometry.size.width * 0.06, height: geometry.size.height * 0.1,alignment: .trailing)
+//                    .background(.red)
+            
+            }
+            .frame(width: geometry.size.width * 1, height: geometry.size.height, alignment: .trailing)
             
             .onAppear {
                 startCountdownSheet()
@@ -99,7 +109,7 @@ struct SheetView: View {
         countdownSheet = 5
         isSheetVisible = false
     }
-    
-    
-    
 }
+
+
+

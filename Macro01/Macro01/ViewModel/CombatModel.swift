@@ -4,11 +4,11 @@ import Foundation
 //MARK: MODEL DO COMBATE
 class CombatViewModel: ObservableObject {
     
-    @Published var countdown: Int = 3
+    @Published var countdown: Int = 0
     @Published var turn: Int = 1
     @Published var isCountdownVisible = true
     @Published var isSheetVisible = false
-    @Published var isInteractionEnabled = true
+//    @Published var isInteractionEnabled = true
     @Published var isGameEndAlertPresented = false
 
     @Published var countdownSheet: Int = 5
@@ -54,7 +54,7 @@ class CombatViewModel: ObservableObject {
     
     //MARK: QUANDO O CONTADOR ACABA
     func endTurn() {
-        isInteractionEnabled = false
+
         compareCardsInCenter(card1: player1.selectedCard, card2: player2.selectedCard)
        
         DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
@@ -66,7 +66,6 @@ class CombatViewModel: ObservableObject {
     //MARK: RESETANDO O CONTADOR
     func resetTurn() {
         player1.replaceSelectedCardRandomly()
-        isInteractionEnabled = true
         player1.selectedCard = ""
         player2.selectedCard = ""
         isCountdownVisible = true
