@@ -41,7 +41,7 @@ struct CombatView: View {
                         .padding(.bottom)
                         
                     }
-                    .frame(width: geometry.size.width * 0.25, height: geometry.size.height * 0.25, alignment: .center)
+                    .frame(width: geometry.size.width * 0.25, height: geometry.size.height * 0.22, alignment: .center)
                     Spacer()
                     
                     VStack {
@@ -65,40 +65,23 @@ struct CombatView: View {
                                     .aspectRatio(contentMode: .fill)
                             }
                         }
-                        .frame(width: geometry.size.width * 0.2, height: geometry.size.height * 0.4, alignment: .bottom)
-                        //                    .background(.red)
-                        
-                        // CARTASSSSSSSSSS
-                        
-                        //                            Character(character: "player1")
-                        
-                        
-                        //                        Spacer()
-                        
-                        //CARTAS DO PLAYER 1
-                        //                        HStack (alignment: .center) {
-                        //                            ForEach(combatViewModel.player1.cards, id: \.self) { card in
-                        //                                CardComponent(image: Image(card))
-                        //                            }
-                        //                            .frame(width: geometry.size.width * 0.13, height: geometry.size.height * 0.1)
-                        //                            .allowsHitTesting(combatViewModel.isInteractionEnabled)
-                        //                        }
-                        //                        .frame(width: geometry.size.width * 0.6, height: geometry.size.height * 0.6, alignment: .bottom)
-                        
-                        
-                        
-                        //                            Character(character: "player2")
-                        
-                        //                    .background(.green)
+                        .frame(width: geometry.size.width * 0.2, height: geometry.size.height * 0.6, alignment: .bottom)
                     }
-                    .frame( height: geometry.size.height * 0.5, alignment: .bottom)
-                    
-                    
-                    VStack {
-                        Text("oioioioioioio")
-                    }
-                    .frame(height: geometry.size.height * 0.25)
-                    
+                    .frame(height: geometry.size.height * 0.5, alignment: .bottom)
+//                    .background(.yellow)
+
+                        HStack {
+                            ForEach(combatViewModel.player1.cards, id: \.self) { card in
+                                CardComponent(image: Image(card))
+                            }
+                            .frame(width: geometry.size.width * 0.12, height: geometry.size.height * 0.12, alignment: .top)
+                            
+                            //VERIFICAR SE ESTÁ NO LUGAR CORRETIO
+                            .allowsHitTesting(combatViewModel.isInteractionEnabled)
+                        }
+                        .frame(width: geometry.size.width * 0.2, height: geometry.size.height * 0.25, alignment: .bottom)
+//                        .background(.red)
+
                 }
                 .frame(width: geometry.size.width, height: geometry.size.height, alignment: .center)
                 
@@ -120,39 +103,26 @@ struct CombatView: View {
                         
                         HStack {
                             VStack {
-                                
-                                
-                                
-                                
-                                
                                 Character(character: "player1")
                                     .frame(width: geometry.size.width * 0.2, height: geometry.size.height * 0.25)
                             }
                             
-                            
                             Spacer()
                             
                             VStack {
-                                
                                 Character(character: "player2")
                                     .frame(width: geometry.size.width * 0.2, height: geometry.size.height * 0.32)
                             }
-                            
-                            
                         }
                         .ignoresSafeArea()
                         .frame(width: geometry.size.width, height: geometry.size.height * 0.5, alignment: .bottom)
-                        
                     }
                 }
             }
         }
-        
-        
         .onAppear {
             combatViewModel.startCountdown()
         }
-        
         .sheet(isPresented: $combatViewModel.isSheetVisible, onDismiss: {
         }) {
             SheetView(combatViewModel: combatViewModel, isSheetVisible: $combatViewModel.isSheetVisible, countdownSheet: $combatViewModel.countdownSheet).background(ClearBackgroundView())
@@ -165,7 +135,6 @@ struct CombatView: View {
             }))
         }
         .navigationBarHidden(true)
-        
     }
 }
 
