@@ -20,8 +20,6 @@ struct SheetView: View {
     var body: some View {
         GeometryReader { geometry in
             
-          
-            
             VStack  {
                 Spacer()
                 Circle()
@@ -34,8 +32,8 @@ struct SheetView: View {
                     )
                 Spacer()
             }
-            .frame(width: geometry.size.width * 0.02, height: geometry.size.height * 0.2)
-//            .background(.red)
+            .frame(width: geometry.size.width * 0.03, height: geometry.size.height * 0.2)
+            
             HStack {
                 HStack {
                     ForEach(combatViewModel.player1.cards, id: \.self) { card in

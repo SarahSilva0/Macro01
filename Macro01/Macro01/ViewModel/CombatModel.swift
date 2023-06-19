@@ -4,16 +4,12 @@ import Foundation
 //MARK: MODEL DO COMBATE
 class CombatViewModel: ObservableObject {
     
-    @Published var countdown: Int = 0
+    @Published var countdown: Int = 3
     @Published var turn: Int = 1
     @Published var isCountdownVisible = true
     @Published var isSheetVisible = false
-//    @Published var isInteractionEnabled = true
     @Published var isGameEndAlertPresented = false
-
     @Published var countdownSheet: Int = 5
-    
-
     
     var cards = Cards()
     var player1 = PlayerCombat(image: "jogador1")
@@ -90,10 +86,6 @@ class CombatViewModel: ObservableObject {
             return "Empate"
         }
     }
-    
-    
-    
-    
     //MARK: REFATORAR ISSO AQUI E COLOCAR EM UM OUTRO ARQUIVO DAQUI ATÉ....
     
     func compareCardsInCenter(card1: String, card2: String) {

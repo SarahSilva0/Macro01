@@ -21,6 +21,7 @@ struct CombatView: View {
                 .aspectRatio(contentMode: .fill)
                 .ignoresSafeArea()
             
+            //MARK: CONTADOR DO CENTRO DA TELA
             VStack {
                 if combatViewModel.isCountdownVisible {
                     Text("\(combatViewModel.countdown)")
@@ -33,6 +34,7 @@ struct CombatView: View {
             
             GeometryReader { geometry in
                 VStack {
+                    //MARK: PLACAR
                     VStack {
                         ScoreView(player1Wins: combatViewModel.player1.winTurno,
                                   player2Wins: combatViewModel.player2.winTurno)
@@ -42,7 +44,8 @@ struct CombatView: View {
                     Spacer()
                     
                     VStack {
-                        HStack (alignment: .center){
+                        //MARK: CARTA JOGADA NO CENTRO PELO PLAYER 1
+                        HStack (alignment: .center) {
                             Image(combatViewModel.player1.selectedCard)
                                 .resizable()
                                 .aspectRatio(contentMode: .fill)
@@ -64,20 +67,22 @@ struct CombatView: View {
                         .frame(width: geometry.size.width * 0.2, height: geometry.size.height * 0.6, alignment: .bottom)
                     }
                     .frame(height: geometry.size.height * 0.5, alignment: .bottom)
-
+                    
+                    //MARK: AS 3 CARTAS DO PLAYER 1 NA PARTE DEBAIXO
                         HStack {
                             ForEach(combatViewModel.player1.cards, id: \.self) { card in
                                 CardComponent(image: Image(card))
                             }
-                            .frame(width: geometry.size.width * 0.12, height: geometry.size.height * 0.12, alignment: .top)
+                            .frame(width: geometry.size.width * 0.1, height: geometry.size.height * 0.1)
                         
                         }
-                        .frame(width: geometry.size.width * 0.2, height: geometry.size.height * 0.25, alignment: .bottom)
+                        .frame(width: geometry.size.width * 0.4, height: geometry.size.height * 0.4, alignment: .bottom)
                 }
                 .frame(width: geometry.size.width, height: geometry.size.height, alignment: .center)
                 
                 ZStack {
                     VStack{
+                        //MARK: BOTÃO DE PAUSE
                         HStack{
                             ButtonGenRound(action: {
                                 presentationMode.wrappedValue.dismiss()
@@ -87,12 +92,11 @@ struct CombatView: View {
                                            backgroundColor: Color(hex: "FFF2D9"))
                             .frame(width: 40, height: 40)
                             .padding(.all)
-                            
-                            
                         }
                         .frame(width: geometry.size.width, height: geometry.size.height * 0.5, alignment: .topLeading)
                         
                         HStack {
+                            //MARK: PERSONAGEM PLAYER 1
                             VStack {
                                 Character(character: "player1")
                                     .frame(width: geometry.size.width * 0.2, height: geometry.size.height * 0.25)
@@ -100,6 +104,7 @@ struct CombatView: View {
                             
                             Spacer()
                             
+                            //MARK: PERSONAGEM PLAYER 2
                             VStack {
                                 Character(character: "player2")
                                     .frame(width: geometry.size.width * 0.2, height: geometry.size.height * 0.32)
