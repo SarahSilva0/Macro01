@@ -69,16 +69,18 @@ struct CombatView: View {
                     .frame(height: geometry.size.height * 0.5, alignment: .bottom)
                     
                     //MARK: AS 3 CARTAS DO PLAYER 1 NA PARTE DEBAIXO
-                        HStack {
+                  
+                    HStack {
                             ForEach(combatViewModel.player1.cards, id: \.self) { card in
                                 CardComponent(image: Image(card))
                             }
                             .frame(width: geometry.size.width * 0.1, height: geometry.size.height * 0.1)
                         
                         }
-                        .frame(width: geometry.size.width * 0.4, height: geometry.size.height * 0.4, alignment: .bottom)
+                        .frame(width: geometry.size.width * 0.2, height: geometry.size.height * 0.2, alignment: .bottom)
                 }
-                .frame(width: geometry.size.width, height: geometry.size.height, alignment: .center)
+                //AQUI MEXE NA ALTURA DAS CARTAS EM RELACAO AS CARTAS DO CENTRO
+                .frame(width: geometry.size.width, height: geometry.size.height * 1.1, alignment: .center)
                 
                 ZStack {
                     VStack{
