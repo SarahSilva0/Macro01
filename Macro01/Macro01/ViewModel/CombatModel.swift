@@ -62,7 +62,7 @@ class CombatViewModel: ObservableObject {
     
     //MARK: FUNCAO EM QUE O PLAYER 2 JOGA AS CARTAS
     func selectedCardPlayer2() {
-        player2.selectedCard = self.playCardEasyBot()
+        player2.selectedCard = self.playCardHardBot()
     }
     
     
@@ -122,8 +122,8 @@ class CombatViewModel: ObservableObject {
     
     //AQUI É OQ ACONTECE SE O PLAYER1 GANHAR O LEVEL.
     func winLevel(){
-        if easyDiff.selectdedLevel == true{
-            easyDiff.winLevel = true
+        if hardDiff.selectdedLevel == true{
+            hardDiff.winLevel = true
             //Aqui também ele receberia a carta que será mostrada na galeria
         }
         else{
@@ -301,6 +301,88 @@ class CombatViewModel: ObservableObject {
     }
     
     
+    
+    //MARK: LOGICA BOT HARD
+    
+    //MARK: LOGICA BOT: PODE SER USADA COM ESQUELETO PARA AS OUTROS NIVEIS
+    func playCardHardBot() -> String{
+        switch player2.mana {
+            //se o mana for 0
+        case 0:
+            return noManaHardBot()
+            //se o mana for 1
+        case 1:
+            return withManaHardBot()
+            //se o mana for 2
+        case 2:
+            return twoManasHardBot()
+            //defaut é defesa porque defesa é a unica carta que pode jogar independente do cenario.
+        default:
+            return Cards().defense
+        }
+    }
+    
+    //Não pode ter +2 manas. Não pode usar carta de recarga
+    private func twoManasHardBot() -> String {
+        print("MANA DO PLAYER 1 ANTES: \(player1.mana)")
+        let randomValue = Double.random(in: 0..<1)
+        print("VALOR ALEATORIO: \(randomValue)")
+        if player1.mana <= 1 && player1.selectedCard == "recharge" {
+            if randomValue <= 0.45 {
+                print("VALOR ALEATORIO: \(randomValue)")
+                player1.mana = player1.mana < 1 ? 0 : 1
+                player1.selectedCard = "block" //Carta efeito nulo
+                print("MANA DO PLAYER 1 DEPOIS: \(player1.mana)")
+            }
+        }
+        if randomValue < 0.8 { // 80% de chance para ataque
+            return Cards().attack
+        } else { // 20% de chance para defesa
+            return Cards().defense
+        }
+    }
+    
+    //Sem mana não ataca. Somente defende ou recarga.
+    private func noManaHardBot() -> String {
+        print("MANA DO PLAYER 1 ANTES: \(player1.mana)")
+        let randomValue = Double.random(in: 0..<1)
+        print("VALOR ALEATORIO: \(randomValue)")
+        if player1.mana <= 1 && player1.selectedCard == "recharge" {
+            if randomValue <= 0.45 {
+                print("VALOR ALEATORIO: \(randomValue)")
+                player1.mana = player1.mana == 0 ? 0 : 1
+                player1.selectedCard = "block" //Carta efeito nulo
+                print("MANA DO PLAYER 1 DEPOIS: \(player1.mana)")
+            }
+        }
+        if randomValue < 0.9 { // 90% de chance para recarga
+            return Cards().recharge
+        } else { // 10% de chance para defesa
+            return Cards().defense
+        }
+    }
+    
+    //Com mais de um mana e menos de 2 pode usar qualquer uma aleatória.
+    private func withManaHardBot() -> String {
+        print("MANA DO PLAYER 1 ANTES: \(player1.mana)")
+        let randomValue = Double.random(in: 0..<1)
+        print("VALOR ALEATORIO: \(randomValue)")
+        if player1.mana <= 1 && player1.selectedCard == "recharge" {
+            if randomValue <= 0.45 {
+                print("VALOR ALEATORIO: \(randomValue)")
+                player1.mana = player1.mana < 1 ? 0 : 1
+                player1.selectedCard = "block" //Carta efeito nulo
+                print("MANA DO PLAYER 1 DEPOIS: \(player1.mana)")
+            }
+        }
+        if randomValue < 0.6 { // 60% de chance para recarga
+            return Cards().recharge
+        } else if randomValue < 0.8 { // 20% de chance para ataque
+            return Cards().attack
+        } else { // 20% de chance para outros tipos de carta
+            return Cards().defense
+        }
+    }
 }
 
 

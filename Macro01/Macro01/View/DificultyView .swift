@@ -28,18 +28,18 @@ struct DificultyView_: View {
                             .foregroundColor(.black)
                         HStack(spacing: 20){
                             Button {
-                                combatViewModel.easyDiff.selectdedLevel.toggle()
-                                print("BOTAAAAAAAO\(combatViewModel.easyDiff.selectdedLevel)")
+                                combatViewModel.hardDiff.selectdedLevel.toggle()
+                                print("BOTAAAAAAAO\(combatViewModel.hardDiff.selectdedLevel)")
                                 shouldNavigate.toggle()
                                 
                             } label: {
-                                if combatViewModel.easyDiff.winLevel == true{
-                                    Image(combatViewModel.easyDiff.imageWin)
+                                if combatViewModel.hardDiff.winLevel == true{
+                                    Image(combatViewModel.hardDiff.imageWin)
                                         .resizable()
                                         .aspectRatio(contentMode: .fit)
                                 }
                                 else{
-                                    Image(combatViewModel.easyDiff.imageSillhoute)
+                                    Image(combatViewModel.hardDiff.imageSillhoute)
                                         .resizable()
                                         .aspectRatio(contentMode: .fit)
                                 }
