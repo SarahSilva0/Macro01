@@ -22,7 +22,7 @@ class CombatViewModel: ObservableObject {
     //MARK: Difficulty instancias
     @Published var easyDiff = DifficultyModel(imageInitial: "", imageSillhoute: "facil", imageWin: "easyWin", winCard: "", selectdedLevel: false, winLevel: false)
     @Published var mediumDiff = DifficultyModel(imageInitial: "", imageSillhoute: "", imageWin: "", winCard: "", selectdedLevel: false, winLevel: false)
-    @Published var hardDiff = DifficultyModel(imageInitial: "", imageSillhoute: "", imageWin: "", winCard: "", selectdedLevel: false, winLevel: false)
+    @Published var hardDiff = DifficultyModel(imageInitial: "", imageSillhoute: "hardBlock", imageWin: "hardWin", winCard: "", selectdedLevel: false, winLevel: false)
     
     
     
@@ -62,9 +62,13 @@ class CombatViewModel: ObservableObject {
     
     //MARK: FUNCAO EM QUE O PLAYER 2 JOGA AS CARTAS
     func selectedCardPlayer2() {
-        player2.selectedCard = self.playCardHardBot()
+        if easyDiff.selectdedLevel == true {
+            player2.selectedCard = self.playCardEasyBot()
+        }
+        if hardDiff.selectdedLevel == true {
+            player2.selectedCard = self.playCardHardBot()
+        }
     }
-    
     
     //MARK: QUANDO O CONTADOR ACABA
     func endTurn() {
@@ -122,12 +126,15 @@ class CombatViewModel: ObservableObject {
     
     //AQUI É OQ ACONTECE SE O PLAYER1 GANHAR O LEVEL.
     func winLevel(){
-        if hardDiff.selectdedLevel == true{
-            hardDiff.winLevel = true
+        if easyDiff.selectdedLevel == true{
+            easyDiff.winLevel = true
             //Aqui também ele receberia a carta que será mostrada na galeria
         }
         else{
             //LOIGICA DOS OUTROS NIVEIS
+            if hardDiff.selectdedLevel == true {
+                hardDiff.winLevel = true
+            }
         }
     }
     
@@ -303,8 +310,6 @@ class CombatViewModel: ObservableObject {
     
     
     //MARK: LOGICA BOT HARD
-    
-    //MARK: LOGICA BOT: PODE SER USADA COM ESQUELETO PARA AS OUTROS NIVEIS
     func playCardHardBot() -> String{
         switch player2.mana {
             //se o mana for 0
@@ -350,7 +355,7 @@ class CombatViewModel: ObservableObject {
         if player1.mana <= 1 && player1.selectedCard == "recharge" {
             if randomValue <= 0.45 {
                 print("VALOR ALEATORIO: \(randomValue)")
-                player1.mana = player1.mana == 0 ? 0 : 1
+                player1.mana = player1.mana < 1 ? 0 : 1 //se a mana for
                 player1.selectedCard = "block" //Carta efeito nulo
                 print("MANA DO PLAYER 1 DEPOIS: \(player1.mana)")
             }

@@ -28,18 +28,18 @@ struct DificultyView_: View {
                             .foregroundColor(.black)
                         HStack(spacing: 20){
                             Button {
-                                combatViewModel.hardDiff.selectdedLevel.toggle()
-                                print("BOTAAAAAAAO\(combatViewModel.hardDiff.selectdedLevel)")
+                                combatViewModel.easyDiff.selectdedLevel.toggle()
+                                print("BOTAAAAAAAO\(combatViewModel.easyDiff.selectdedLevel)")
                                 shouldNavigate.toggle()
                                 
                             } label: {
-                                if combatViewModel.hardDiff.winLevel == true{
-                                    Image(combatViewModel.hardDiff.imageWin)
+                                if combatViewModel.easyDiff.winLevel == true{
+                                    Image(combatViewModel.easyDiff.imageWin)
                                         .resizable()
                                         .aspectRatio(contentMode: .fit)
                                 }
                                 else{
-                                    Image(combatViewModel.hardDiff.imageSillhoute)
+                                    Image(combatViewModel.easyDiff.imageSillhoute)
                                         .resizable()
                                         .aspectRatio(contentMode: .fit)
                                 }
@@ -49,9 +49,30 @@ struct DificultyView_: View {
                                 .resizable()
                                 .aspectRatio(contentMode: .fit)
                             
-                            Image("dificil")
-                                .resizable()
-                                .aspectRatio(contentMode: .fit)
+                            Button {
+                                combatViewModel.hardDiff.selectdedLevel.toggle()
+                                print("BOTAO DIFICIIIL\(combatViewModel.hardDiff.selectdedLevel)")
+                                shouldNavigate.toggle()
+                                
+                            } label: {
+                                if combatViewModel.mediumDiff.winLevel == false {
+                                    Image("dificil")
+                                        .resizable()
+                                        .aspectRatio(contentMode: .fit)
+                                }
+                                else {
+                                    if combatViewModel.hardDiff.winLevel == true{
+                                        Image(combatViewModel.hardDiff.imageWin)
+                                            .resizable()
+                                            .aspectRatio(contentMode: .fit)
+                                    }
+                                    else{
+                                        Image(combatViewModel.hardDiff.imageSillhoute)
+                                            .resizable()
+                                            .aspectRatio(contentMode: .fit)
+                                    }
+                                }
+                            }.disabled(!combatViewModel.easyDiff.winLevel)
                         }
                         .frame(width: geo.size.width * 0.6)
                         .padding(.vertical) // mudar aqui caso não de certo
