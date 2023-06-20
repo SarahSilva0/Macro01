@@ -10,7 +10,7 @@ import SwiftUI
 //MARK: VIEW DO COMBATE. ESSA VIEW PRECISA SER REFATORADA DEPOIS E DEIXADA MAIS RESPONSIVA
 struct CombatView: View {
     
-    @StateObject private var combatViewModel = CombatViewModel()
+    @ObservedObject var combatViewModel: CombatViewModel
     @Environment(\.presentationMode) var presentationMode
     
     
@@ -128,6 +128,8 @@ struct CombatView: View {
             Alert(title: Text("Fim do Jogo"),
                   message: Text("\(combatViewModel.getScore())"),
                   dismissButton: .default(Text("OK"), action: {
+                combatViewModel.gameReset()
+                combatViewModel.isGameEndAlertPresented = false
                 presentationMode.wrappedValue.dismiss()
             }))
         }
@@ -135,11 +137,11 @@ struct CombatView: View {
     }
 }
 
-struct CombatView_Previews: PreviewProvider {
-    static var previews: some View {
-        CombatView()
-    }
-}
+//struct CombatView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        CombatView()
+//    }
+//}
 
 
 

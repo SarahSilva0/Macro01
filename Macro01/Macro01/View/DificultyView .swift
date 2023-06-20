@@ -72,9 +72,3 @@ struct DificultyView_: View {
         }
     }
 }
-
-//struct DificultyView__Previews: PreviewProvider {
-//    static var previews: some View {
-//        DificultyView_()
-//    }
-//}
