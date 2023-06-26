@@ -1,3 +1,10 @@
+//
+//  DificultyView .swift
+//  Macro01
+//
+//  Created by Sarah dos Santos Silva on 13/06/23.
+//
+
 import SwiftUI
 
 struct DificultyView_: View {
@@ -37,10 +44,26 @@ struct DificultyView_: View {
                                         .aspectRatio(contentMode: .fit)
                                 }
                             }
+                        
                             
-                            Image("intermediario")
-                                .resizable()
-                                .aspectRatio(contentMode: .fit)
+                            Button {
+                                combatViewModel.mediumDiff.selectdedLevel.toggle()
+                                print("BOTAAAAAAAO\(combatViewModel.mediumDiff.selectdedLevel)")
+                                shouldNavigate.toggle()
+                                
+                            } label: {
+                            if combatViewModel.mediumDiff.winLevel == true {
+                                Image(combatViewModel.mediumDiff.imageWin)
+                                    .resizable()
+                                    .aspectRatio(contentMode: .fit)
+                            } else {
+                                Image(combatViewModel.mediumDiff.imageSillhoute)
+                                    .resizable()
+                                    .aspectRatio(contentMode: .fit)
+                            }
+                            
+                        }
+                            
                             
                             Image("dificil")
                                 .resizable()
@@ -65,3 +88,5 @@ struct DificultyView_: View {
         }
     }
 }
+
+
