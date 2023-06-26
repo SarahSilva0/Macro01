@@ -122,7 +122,7 @@ struct CombatView: View {
         }
         .sheet(isPresented: $combatViewModel.isSheetVisible, onDismiss: {
         }) {
-            SheetView(combatViewModel: combatViewModel, isSheetVisible: $combatViewModel.isSheetVisible, countdownSheet: $combatViewModel.countdownSheet)
+            SheetView(combatViewModel: combatViewModel, isSheetVisible: $combatViewModel.isSheetVisible, countdownSheet: $combatViewModel.countdownSheet).background(ClearBackgroundView())
         }
         .alert(isPresented: $combatViewModel.isGameEndAlertPresented) {
             Alert(title: Text("Fim do Jogo"),
