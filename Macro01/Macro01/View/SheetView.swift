@@ -22,7 +22,8 @@ struct SheetView: View {
             
             ZStack {
                 Color(.black)
-                    .opacity(0.7)
+                    .opacity(0.65)
+                
                 VStack {
                     Spacer()
                     Circle()
