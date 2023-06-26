@@ -19,7 +19,9 @@ class CombatViewModel: ObservableObject {
     
     //MARK: Difficulty instancias
     @Published var easyDiff = DifficultyModel(imageInitial: "", imageSillhoute: "facil", imageWin: "easyWin", winCard: "", selectdedLevel: false, winLevel: false)
-    @Published var mediumDiff = DifficultyModel(imageInitial: "", imageSillhoute: "facil", imageWin: "", winCard: "", selectdedLevel: false, winLevel: false)
+    
+    @Published var mediumDiff = DifficultyModel(imageInitial: "", imageSillhoute: "facil", imageWin: "intermediaryWin", winCard: "", selectdedLevel: true, winLevel: true)
+    
     @Published var hardDiff = DifficultyModel(imageInitial: "", imageSillhoute: "", imageWin: "", winCard: "", selectdedLevel: false, winLevel: false)
     
     
@@ -301,23 +303,23 @@ class CombatViewModel: ObservableObject {
     
     //MARK: LÓGICA BOT INTERMEDIÁRIO
     
-        func playCardIntermediaryBot() -> String {
+        func playCardMediumBot() -> String {
             switch player2.mana {
                 // se o mana for 0
             case 0:
-                return  noManaIntermediaryBot()
+                return  noManaMediumBot()
                 //se o mana for 1
             case 1:
-                return withManaIntermediaryBot()
+                return withManaMediumBot()
             case 2:
-                return twoManaIntermediaryBot()
+                return twoManaMediumBot()
             default:
                 return Cards().defense
             }
         }
    
     
-    private func twoManaIntermediaryBot() -> String {
+    private func twoManaMediumBot() -> String {
         let randomValue = Double.random(in: 0..<1)
         
         if randomValue < 0.6 {
@@ -327,7 +329,7 @@ class CombatViewModel: ObservableObject {
         }
     }
     
-    private func noManaIntermediaryBot() -> String {
+    private func noManaMediumBot() -> String {
         let randomValue = Double.random(in: 0..<1)
        
         if randomValue < 0.7 {
@@ -337,7 +339,7 @@ class CombatViewModel: ObservableObject {
         }
     }
     
-    private func withManaIntermediaryBot() -> String {
+    private func withManaMediumBot() -> String {
         let randomValue = Double.random(in: 0..<1)
         
         if randomValue < 0.4 {
