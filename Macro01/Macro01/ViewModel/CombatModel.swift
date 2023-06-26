@@ -28,7 +28,7 @@ class CombatViewModel: ObservableObject {
     
     //MARK: CONTADOR
     func startCountdown() {
-    
+        
         if player1.winTurno == 3{
             self.gameEnd()
             return
@@ -300,6 +300,55 @@ class CombatViewModel: ObservableObject {
         }
     }
     
+    //MARK: LÓGICA BOT INTERMEDIÁRIO
+    
+        func playCardIntermediaryBot() -> String {
+            switch player2.mana {
+                // se o mana for 0
+            case 0:
+                return  noManaIntermediaryBot()
+                //se o mana for 1
+            case 1:
+                return withManaIntermediaryBot()
+            case 2:
+                return twoManaIntermediaryBot()
+            default:
+                return Cards().defense
+            }
+        }
+   
+    
+    private func twoManaIntermediaryBot() -> String {
+        let randomValue = Double.random(in: 0..<1)
+        
+        if randomValue < 0.6 {
+            return Cards().attack
+        } else {
+            return Cards().defense
+        }
+    }
+    
+    private func noManaIntermediaryBot() -> String {
+        let randomValue = Double.random(in: 0..<1)
+       
+        if randomValue < 0.7 {
+            return Cards().recharge
+        } else {
+            return Cards().defense
+        }
+    }
+    
+    private func withManaIntermediaryBot() -> String {
+        let randomValue = Double.random(in: 0..<1)
+        
+        if randomValue < 0.4 {
+            return Cards().recharge
+        } else if randomValue < 0.6 {
+            return Cards().attack
+        } else {
+            return Cards().defense
+        }
+    }
     
 }
 
