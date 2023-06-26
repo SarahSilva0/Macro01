@@ -303,9 +303,3 @@ class CombatViewModel: ObservableObject {
     
 }
 
-
-
-
-
-
-

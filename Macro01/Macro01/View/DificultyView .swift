@@ -1,10 +1,3 @@
-//
-//  DificultyView .swift
-//  Macro01
-//
-//  Created by Sarah dos Santos Silva on 13/06/23.
-//
-
 import SwiftUI
 
 struct DificultyView_: View {
