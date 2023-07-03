@@ -8,24 +8,28 @@ struct ConfigurationCardView: View {
                 Color(.black)
                     .opacity(0.65)
                 VStack {
-                    VStack {
-                        HStack {
-                            Text("Configuração")
-                                .font(.system(size: 20))
-                                .fontWeight(.bold)
-                            
-                            Button(action: {
-                                print("SOM")
-                            }) {
-                                Image("sound")
-                                    .resizable()
-                                    .aspectRatio( contentMode: .fit)
-                                    .frame(width: 44,height: 44)
+                        ZStack {
+                            HStack {
+                                Text("Configuração")
+                                    .font(.system(size: 20))
+                                    .fontWeight(.bold)
                             }
-                           
+                            
+                            HStack {
+                                Spacer()
+                                
+                                Button(action: {
+                                    print("SOM")
+                                }) {
+                                    Image("sound")
+                                        .resizable()
+                                        .aspectRatio( contentMode: .fit)
+                                        .frame(width: 44,height: 44)
+                                }
+                            }
+                            .frame(width: geometry.size.width * 0.38)
                         }
-                        
-                    }
+
                     
                     VStack {
                         TransparentConfigurationButton(text: "Tutorial", icon: "book") {
