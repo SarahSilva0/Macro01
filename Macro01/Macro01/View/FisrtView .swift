@@ -1,14 +1,8 @@
-//
-//  FisrtView .swift
-//  Macro01
-//
-//  Created by Sarah dos Santos Silva on 29/05/23.
-//
-
 import SwiftUI
 
 struct FirstView: View {
     @ScaledMetric(relativeTo: .body) var buttonSize: CGFloat = 50
+    @State private var showConfiguration = false
     
     var body: some View {
         GeometryReader { geometry in
@@ -23,26 +17,28 @@ struct FirstView: View {
                     VStack{
                         HStack(spacing: 20) {
                             ButtonGenRound(action: {
-                                ConfigurationCard(title: "Configuração")
-                                print("Configuração")
+                                withAnimation {
+                                    showConfiguration = true
+                                }
                             },
-                                           image: String("config"),
-                                           foregroundColor: Color(hex: "FFF2D9"),
-                                           backgroundColor: Color(hex: "FFF2D9"))
+                            image: "config",
+                            foregroundColor: Color(hex: "FFF2D9"),
+                            backgroundColor: Color(hex: "FFF2D9"))
                             .frame(width: buttonSize, height: buttonSize)
                             
                             ButtonGenRound(action: {
                                 print("Galeria")
                             },
-                                           image: "",
-                                           foregroundColor: Color(hex: "FFF2D9"),
-                                           backgroundColor: Color(hex: "FFF2D9"))
+                            image: "",
+                            foregroundColor: Color(hex: "FFF2D9"),
+                            backgroundColor: Color(hex: "FFF2D9"))
                             .frame(width: buttonSize, height: buttonSize)
                             
                             Spacer()
                         }
                         .padding(.leading)
-                    }.frame(width: geometry.size.width * 0.9, height: geometry.size.height * 0.2)
+                    }
+                    .frame(width: geometry.size.width * 0.9, height: geometry.size.height * 0.2)
                     
                     VStack {
                         Text("Título")
@@ -77,14 +73,26 @@ struct FirstView: View {
                         .padding()
                     }
                 }
-            }.frame(width: geometry.size.width, height: geometry.size.height, alignment: .center)
+            }
+            .frame(width: geometry.size.width, height: geometry.size.height, alignment: .center)
+            .overlay(
+                Group {
+                    if showConfiguration {
+                        ConfigurationCardView()
+                            .transition(.move(edge: .leading))
+                    }
+                }
+                .onAppear {
+                    withAnimation {
+                        showConfiguration = false
+                    }
+                }
+            )
         }
     }
 }
 
-
-
-struct FisrtView__Previews: PreviewProvider {
+struct FirstView_Previews: PreviewProvider {
     static var previews: some View {
         FirstView()
     }

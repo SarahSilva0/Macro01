@@ -5,7 +5,7 @@ struct SettingsView: View {
         GeometryReader { geometry in
             VStack {
                 ZStack {
-                    ConfigurationCard(title: "Configuração")
+                    ConfigurationCardView()
                     VStack {
                         Spacer()
                         TransparentConfigurationButton(text: "Tutorial")
