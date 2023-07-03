@@ -8,19 +8,23 @@ struct ConfigurationCardView: View {
                 Color(.black)
                     .opacity(0.65)
                 VStack {
-                    HStack {
-                        Text("Configuração")
-                            .font(.system(size: 20))
-                            .fontWeight(.bold)
-                        
-                        Button(action: {
-                            print("SOM")
-                        }) {
-                            Image("sound")
-                                .resizable()
-                                .aspectRatio( contentMode: .fit)
-                                .frame(width: 44,height: 44)
+                    VStack {
+                        HStack {
+                            Text("Configuração")
+                                .font(.system(size: 20))
+                                .fontWeight(.bold)
+                            
+                            Button(action: {
+                                print("SOM")
+                            }) {
+                                Image("sound")
+                                    .resizable()
+                                    .aspectRatio( contentMode: .fit)
+                                    .frame(width: 44,height: 44)
+                            }
+                           
                         }
+                        
                     }
                     
                     VStack {
