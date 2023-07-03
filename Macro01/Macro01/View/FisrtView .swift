@@ -78,7 +78,7 @@ struct FirstView: View {
             .overlay(
                 Group {
                     if showConfiguration {
-                        ConfigurationCardView()
+                        ConfigurationCardView().background(ClearBackgroundView())
                             .transition(.move(edge: .leading))
                     }
                 }

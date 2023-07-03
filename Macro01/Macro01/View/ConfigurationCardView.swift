@@ -5,6 +5,8 @@ struct ConfigurationCardView: View {
     var body: some View {
         GeometryReader { geometry in
             ZStack {
+                Color(.black)
+                    .opacity(0.65)
                 VStack {
                     HStack {
                         Text("Configuração")
@@ -43,6 +45,7 @@ struct ConfigurationCardView: View {
                 .shadow(radius: 2)
                 
             }
+            .ignoresSafeArea()
             .frame(width: geometry.size.width, height: geometry.size.height)
         }
     }
