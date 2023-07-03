@@ -12,19 +12,12 @@ struct ConfigurationCardView: View {
                             .fontWeight(.bold)
                         
                         Button(action: {
-                            // Ação a ser executada
+                            print("SOM")
                         }) {
-                            HStack {
-                                ZStack {
-                                    Circle()
-                                        .foregroundColor(.black)
-                                        .frame(width: 44, height: 44)
-                                    
-                                    Image(systemName: "speaker.wave.2.fill")
-                                        .font(.system(size: 20))
-                                        .foregroundColor(Color(hex: "FFF2D9"))
-                                }
-                            }
+                                    Image("sound")
+                                        .resizable()
+                                        .aspectRatio( contentMode: .fit)
+                                        .frame(width: 44,height: 44)
                         }
                     }
                     
