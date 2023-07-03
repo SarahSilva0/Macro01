@@ -23,9 +23,10 @@ struct FirstView: View {
                     VStack{
                         HStack(spacing: 20) {
                             ButtonGenRound(action: {
+                                ConfigurationCard(title: "Configuração")
                                 print("Configuração")
                             },
-                                           image: "",
+                                           image: String("config"),
                                            foregroundColor: Color(hex: "FFF2D9"),
                                            backgroundColor: Color(hex: "FFF2D9"))
                             .frame(width: buttonSize, height: buttonSize)
