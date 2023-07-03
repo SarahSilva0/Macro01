@@ -14,10 +14,10 @@ struct ConfigurationCardView: View {
                         Button(action: {
                             print("SOM")
                         }) {
-                                    Image("sound")
-                                        .resizable()
-                                        .aspectRatio( contentMode: .fit)
-                                        .frame(width: 44,height: 44)
+                            Image("sound")
+                                .resizable()
+                                .aspectRatio( contentMode: .fit)
+                                .frame(width: 44,height: 44)
                         }
                     }
                     
