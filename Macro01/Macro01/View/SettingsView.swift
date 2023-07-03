@@ -8,12 +8,12 @@ struct SettingsView: View {
                     ConfigurationCardView()
                     VStack {
                         Spacer()
-                        TransparentConfigurationButton(text: "Tutorial")
-                            .padding(.bottom, 20)
-                        TransparentConfigurationButton(text: "Tutorial")
-                            .padding(.bottom, 20)
-                        TransparentConfigurationButton(text: "Tutorial")
-                            .padding(.bottom, 20)
+//                        TransparentConfigurationButton(text: "Tutorial", icon: <#String#>)
+//                            .padding(.bottom, 20)
+//                        TransparentConfigurationButton(text: "Tutorial", icon: <#String#>)
+//                            .padding(.bottom, 20)
+//                        TransparentConfigurationButton(text: "Tutorial")
+//                            .padding(.bottom, 20)
                     }
                   
                 }

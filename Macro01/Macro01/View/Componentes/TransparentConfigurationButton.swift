@@ -9,28 +9,32 @@ import SwiftUI
 
 struct TransparentConfigurationButton: View {
     let text: String
+    let icon: String
     
     var body: some View {
         ZStack {
-            RoundedRectangle(cornerRadius: 10)
-                .frame(width: 300, height: 50)
-                .foregroundColor(Color.gray.opacity(0.5))
+            RoundedRectangle(cornerRadius: 5)
+                .frame(width: 280, height: 35)
+                .foregroundColor(Color.gray.opacity(0.2))
             
-            HStack(spacing: 10) {
-                Circle()
-                    .foregroundColor(.black)
-                    .frame(width: 35, height: 35)
-                
+            HStack {
+                Image(icon)
+                    .resizable()
+                    .aspectRatio( contentMode: .fit)
+                    .frame(width: 25,height: 25)
+                    
+                    
                 Text(text)
-                    .font(.system(size: 20))
+                    .font(.system(size: 15))
                     .foregroundColor(.black)
             }
         }
+        
     }
 }
 
 struct TransparentConfigurationButton_Previews: PreviewProvider {
     static var previews: some View {
-        TransparentConfigurationButton(text: "Tutorial")
+        TransparentConfigurationButton(text: "Tutorial", icon: "email")
     }
 }
