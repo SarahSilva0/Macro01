@@ -9,6 +9,7 @@ struct ConfigurationCardView: View {
                     .opacity(0.65)
                
                     VStack  {
+                        
                         ZStack {
                             HStack  {
                                 Text("Configuração")
@@ -17,6 +18,7 @@ struct ConfigurationCardView: View {
                             }
                             
                             HStack  {
+                                
                                 Spacer()
                                 
                                 Button(action: {
@@ -28,10 +30,12 @@ struct ConfigurationCardView: View {
                                         .frame(width: 44,height: 44)
                                 }
                             }
-                            .frame(width: geometry.size.width * 0.38)
+                           
+                            .frame(width: geometry.size.width * 0.38, height: geometry.size.height * 0.2)
                         }
-                        //                        .background(.red)
                         
+                        Spacer()
+                            .frame(height: geometry.size.height * 0.1)
                         
                         VStack {
                             TransparentConfigurationButton(text: "Tutorial", icon: "book") {
@@ -47,9 +51,11 @@ struct ConfigurationCardView: View {
                                 print("email")
                             }
                         }
-                        
+//                        .background(.red)
+                        Spacer()
+                            
                     }
-                    .frame(width: geometry.size.width * 0.4, height: geometry.size.height)
+                    .frame(width: geometry.size.width * 0.4)
                     .background(Color(hex: "FFF2D9"))
                     .cornerRadius(10)
                     .shadow(radius: 2)
