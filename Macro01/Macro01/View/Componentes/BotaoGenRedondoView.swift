@@ -22,12 +22,3 @@ struct ButtonGenRound: View {
     }
 }
 
-//struct BotaoGenRedondo_Previews: PreviewProvider {
-//    static var previews: some View {
-//        ButtonGenRound(action: {},
-//                            image: "Saci",
-//                            foregroundColor: .white,
-//                            padding: 10,
-//                            backgroundColor: .blue)
-//    }
-//}
