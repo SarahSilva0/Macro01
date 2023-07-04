@@ -7,7 +7,7 @@ struct FirstView: View {
     var body: some View {
         NavigationView {
             GeometryReader { geometry in
-                ZStack{
+                ZStack {
                     Color.black
                         .ignoresSafeArea()
                     Image("BG GERAL")
@@ -79,9 +79,14 @@ struct FirstView: View {
                 .overlay(
                     Group {
                         if showConfiguration {
-                            ConfigurationCardView()
+                            ConfigurationCardView(isPresented: $showConfiguration)
                                 .background(ClearBackgroundView())
                                 .transition(.move(edge: .leading))
+                                .onTapGesture {
+                                    withAnimation {
+                                        showConfiguration = false
+                                    }
+                                }
                         }
                     }
                     .onAppear {

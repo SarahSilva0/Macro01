@@ -2,11 +2,10 @@ import SwiftUI
 
 struct ConfigurationCardView: View {
     @ScaledMetric(relativeTo: .body) var buttonSize: CGFloat = 50
-    @Environment(\.presentationMode) var presentationMode
+    @Binding var isPresented: Bool
     
     var body: some View {
         GeometryReader { geometry in
-           
             ZStack {
                 Color(.black)
                     .opacity(0.65)
@@ -15,20 +14,17 @@ struct ConfigurationCardView: View {
                     VStack {
                         HStack {
                             ButtonGenRound(action: {
-                                self.dismissView()
-                                print("Oiii")
+                                isPresented = false
                             },
-                            image: "sound",
-                            foregroundColor: (Color(hex: "FFF2D9")),
-                            backgroundColor: (Color(hex: "FFF2D9")))
-                            
+                                           image: "out",
+                                           foregroundColor: (Color(hex: "FFF2D9")),
+                                           backgroundColor: (Color(hex: "FFF2D9")))
                             .frame(width: buttonSize, height: buttonSize)
                             Spacer()
                         }
                     }
                 }
                 .frame(width: geometry.size.width * 0.9, height: geometry.size.height * 0.2)
-                
                 
                 HStack {
                     VStack  {
@@ -57,7 +53,6 @@ struct ConfigurationCardView: View {
                         VStack {
                             TransparentConfigurationButton(text: "Tutorial", icon: "book") {
                                 print("Tutorial")
-                                self.dismissView()
                             }
                             TransparentConfigurationButton(text: "Sobre", icon: "info") {
                                 print("Sobre")
@@ -71,7 +66,6 @@ struct ConfigurationCardView: View {
                         }
                         .frame(width: geometry.size.width * 0.4, height: geometry.size.height * 0.5)
                         Spacer()
-                        
                     }
                     .frame(width: geometry.size.width * 0.4)
                     .background(Color(hex: "FFF2D9"))
@@ -81,22 +75,19 @@ struct ConfigurationCardView: View {
             }
             .ignoresSafeArea()
             .frame(width: geometry.size.width, height: geometry.size.height)
+            .transition(.move(edge: .leading))
+            .animation(.easeOut(duration: 0.50)) // ARRUMAR DEPRECIACAO
+            .onDisappear {
+                DispatchQueue.main.async {
+                    isPresented = false
+                }
+            }
         }
-        
     }
-   
-    private func dismissView() {
-           self.presentationMode.wrappedValue.dismiss()
-       }
 }
 
 struct ConfigurationCard_Previews: PreviewProvider {
     static var previews: some View {
-        ConfigurationCardView()
+        ConfigurationCardView(isPresented: .constant(true))
     }
 }
-
-
-
-
-
