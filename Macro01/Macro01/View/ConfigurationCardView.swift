@@ -51,7 +51,7 @@ struct ConfigurationCardView: View {
                                 print("email")
                             }
                         }
-//                        .background(.red)
+                        .frame(width: geometry.size.width * 0.4, height: geometry.size.height * 0.5)
                         Spacer()
                             
                     }

@@ -16,30 +16,27 @@ struct TransparentConfigurationButton: View {
         
         GeometryReader { geometry in
             Button(action: action) {
-                ZStack {
-                    RoundedRectangle(cornerRadius: 5)
-                        .frame(width: 280, height: 35)
-                        .foregroundColor(Color.gray.opacity(0.2))
+                    ZStack {
+                        RoundedRectangle(cornerRadius: 5)
+                            .frame(width: 280, height: 35)
+                            .foregroundColor(Color.gray.opacity(0.2))
                     
-                    HStack {
-                        Image(icon)
-                            .resizable()
-                            .aspectRatio( contentMode: .fit)
-                            .frame(width: 25,height: 25)
-                        Spacer()
+                        HStack {
+                            Image(icon)
+                                .resizable()
+                                .aspectRatio( contentMode: .fit)
+                                .frame(width: 25,height: 25)
+                            Spacer()
+                        }
+                        .frame(width: geometry.size.width * 0.9)
+                    
+                        HStack {
+                            Text(text)
+                                .font(.system(size: 15))
+                                .foregroundColor(.black)
+                        }
                     }
-                    .frame(width: geometry.size.width * 0.9)
-                    
-                    Spacer()
-                    
-                    HStack {
-                        Text(text)
-                            .font(.system(size: 15))
-                            .foregroundColor(.black)
-                    }
-
-                }
-                .frame(width: geometry.size.width, height: geometry.size.height)
+                    .frame(width: geometry.size.width, height: geometry.size.height * 0.4)
             }
         }
         
