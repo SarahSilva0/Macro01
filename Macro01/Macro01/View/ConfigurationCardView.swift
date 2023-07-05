@@ -4,6 +4,7 @@ struct ConfigurationCardView: View {
     @ScaledMetric(relativeTo: .body) var buttonSize: CGFloat = 50
     @Binding var isPresented: Bool
     
+    
     var body: some View {
         GeometryReader { geometry in
             ZStack {
@@ -11,20 +12,27 @@ struct ConfigurationCardView: View {
                     .opacity(0.65)
                 
                 VStack {
-                    VStack {
-                        HStack {
-                            ButtonGenRound(action: {
+                    HStack {
+                        ButtonGenRound(action: {
+                            withAnimation {
                                 isPresented = false
-                            },
-                                           image: "out",
-                                           foregroundColor: (Color(hex: "FFF2D9")),
-                                           backgroundColor: (Color(hex: "FFF2D9")))
-                            .frame(width: buttonSize, height: buttonSize)
-                            Spacer()
-                        }
+                            }
+                            
+                        },
+                        image: "out",
+                        foregroundColor: (Color(hex: "FFF2D9")),
+                        backgroundColor: (Color(hex: "FFF2D9")))
+                        .frame(width: buttonSize, height: buttonSize)
+                      
+                        Spacer()
+                        
                     }
+                    Spacer()
+                        .frame(width: geometry.size.width * 0.01, height: geometry.size.height * 0.69)
+                        .background(.white)
+                    
                 }
-                .frame(width: geometry.size.width * 0.9, height: geometry.size.height * 0.2)
+                .frame(width: geometry.size.width * 0.86, height: geometry.size.height * 0.1)
                 
                 HStack {
                     VStack  {
@@ -76,7 +84,8 @@ struct ConfigurationCardView: View {
             .ignoresSafeArea()
             .frame(width: geometry.size.width, height: geometry.size.height)
             .transition(.move(edge: .leading))
-            .animation(.easeOut(duration: 0.50)) // ARRUMAR DEPRECIACAO
+            .animation(.easeOut(duration: 4), value: false)
+            
             .onDisappear {
                 DispatchQueue.main.async {
                     isPresented = false
