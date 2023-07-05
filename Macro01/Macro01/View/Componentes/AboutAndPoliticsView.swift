@@ -1,18 +1,26 @@
+//
+//  AboutAndPoliticsView.swift
+//  Macro01
+//
+//  Created by Higor  Lo Castro on 05/07/23.
+//
+
 import SwiftUI
 
-struct ConfigurationCardView: View {
+import SwiftUI
+
+struct AboutAndPoliticsView: View {
     @ScaledMetric(relativeTo: .body) var buttonSize: CGFloat = 50
     @Binding var isPresented: Bool
     
-    @State private var showAbout = false
-
+    var title: String
+    var text: String
     
     var body: some View {
         GeometryReader { geometry in
             ZStack {
                 Color(.black)
                     .opacity(0.65)
-                    .onTapGesture {}
                 
                 VStack {
                     HStack {
@@ -32,7 +40,7 @@ struct ConfigurationCardView: View {
                     }
                     Spacer()
                         .frame(width: geometry.size.width * 0.01, height: geometry.size.height * 0.69)
-                     
+                        .background(.white)
                     
                 }
                 .frame(width: geometry.size.width * 0.86, height: geometry.size.height * 0.1)
@@ -41,7 +49,7 @@ struct ConfigurationCardView: View {
                     VStack  {
                         ZStack {
                             HStack  {
-                                Text("Configuração")
+                                Text(title)
                                     .font(.system(size: 20))
                                     .fontWeight(.bold)
                             }
@@ -62,23 +70,10 @@ struct ConfigurationCardView: View {
                             .frame(height: geometry.size.height * 0.1)
                         
                         VStack {
-                            TransparentConfigurationButton(text: "Tutorial", icon: "book") {
-                                print("Tutorial")
-                            }
-                            TransparentConfigurationButton(text: "Sobre", icon: "info") {
-                                
-                                withAnimation {
-                                    isPresented = false
-                                }
-                            }
-                            TransparentConfigurationButton(text: "Políticas de Privacidade", icon: "info") {
-                                withAnimation {
-                                    isPresented = false
-                                }
-                            }
-                            TransparentConfigurationButton(text: "Suporte", icon: "email") {
-                                print("email")
-                            }
+                            Text(text)
+                                  .font(Font.custom("SF Pro", size: 16))
+                                  .multilineTextAlignment(.center)
+                    
                         }
                         .frame(width: geometry.size.width * 0.4, height: geometry.size.height * 0.5)
                         Spacer()
@@ -103,8 +98,4 @@ struct ConfigurationCardView: View {
     }
 }
 
-struct ConfigurationCard_Previews: PreviewProvider {
-    static var previews: some View {
-        ConfigurationCardView(isPresented: .constant(true))
-    }
-}
+
