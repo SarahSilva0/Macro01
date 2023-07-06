@@ -89,6 +89,7 @@ struct FirstView: View {
                                 }
                         }
                     }
+                 
                     .onAppear {
                         withAnimation {
                             showConfiguration = false

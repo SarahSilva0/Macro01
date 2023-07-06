@@ -5,6 +5,7 @@ struct ConfigurationCardView: View {
    
     @Binding var isPresented: Bool
     @State private var showAbout = false
+    @State private var showPolicyAndPrivacy = false
 
     
     var body: some View {
@@ -66,7 +67,7 @@ struct ConfigurationCardView: View {
                                 showAbout = true
                             }
                             TransparentConfigurationButton(text: "Políticas de Privacidade", icon: "info") {
-                               
+                               showPolicyAndPrivacy = true
                             }
                             TransparentConfigurationButton(text: "Suporte", icon: "email") {
                                 print("email")
@@ -87,6 +88,9 @@ struct ConfigurationCardView: View {
             .animation(.easeOut(duration: 4), value: false)
             .sheet(isPresented: $showAbout) {
                 AboutView(isPresented: $showAbout)
+            }
+            .sheet(isPresented: $showPolicyAndPrivacy) {
+                PolicyAndPrivacyView(isPresented: $showPolicyAndPrivacy)
             }
             .onDisappear {
                 DispatchQueue.main.async {

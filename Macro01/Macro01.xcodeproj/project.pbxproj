@@ -20,7 +20,7 @@
 		EBF1340B2A23FAA1000FA55E /* CardModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBF1340A2A23FAA1000FA55E /* CardModel.swift */; };
 		EBF1340D2A23FAF0000FA55E /* DeckModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBF1340C2A23FAF0000FA55E /* DeckModel.swift */; };
 		EBFE58CB2A3506F40042A319 /* ScoreView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBFE58CA2A3506F40042A319 /* ScoreView.swift */; };
-		EBFFC5B22A562E1A0026B745 /* AboutAndPoliticsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBFFC5B12A562E1A0026B745 /* AboutAndPoliticsView.swift */; };
+		EBFFC5B22A562E1A0026B745 /* AboutAndPolitics.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBFFC5B12A562E1A0026B745 /* AboutAndPolitics.swift */; };
 		EBFFC5B42A562F820026B745 /* AboutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBFFC5B32A562F820026B745 /* AboutView.swift */; };
 		EBFFC5B62A562FB50026B745 /* PolicyAndPrivacyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBFFC5B52A562FB50026B745 /* PolicyAndPrivacyView.swift */; };
 		FA1546E02A26D15400C9EE2E /* CombatView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA1546DF2A26D15400C9EE2E /* CombatView.swift */; };
@@ -74,7 +74,7 @@
 		EBF1340A2A23FAA1000FA55E /* CardModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardModel.swift; sourceTree = "<group>"; };
 		EBF1340C2A23FAF0000FA55E /* DeckModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeckModel.swift; sourceTree = "<group>"; };
 		EBFE58CA2A3506F40042A319 /* ScoreView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreView.swift; sourceTree = "<group>"; };
-		EBFFC5B12A562E1A0026B745 /* AboutAndPoliticsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutAndPoliticsView.swift; sourceTree = "<group>"; };
+		EBFFC5B12A562E1A0026B745 /* AboutAndPolitics.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutAndPolitics.swift; sourceTree = "<group>"; };
 		EBFFC5B32A562F820026B745 /* AboutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutView.swift; sourceTree = "<group>"; };
 		EBFFC5B52A562FB50026B745 /* PolicyAndPrivacyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PolicyAndPrivacyView.swift; sourceTree = "<group>"; };
 		FA1546DF2A26D15400C9EE2E /* CombatView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CombatView.swift; sourceTree = "<group>"; };
@@ -166,7 +166,7 @@
 				1905A5332A1E8FB40010D8A9 /* TextBox.swift */,
 				EB2BC4E82A374A28008ACFD2 /* CharacterCircle.swift */,
 				EBA3837D2A3A55ED00303587 /* TransparentConfigurationButton.swift */,
-				EBFFC5B12A562E1A0026B745 /* AboutAndPoliticsView.swift */,
+				EBFFC5B12A562E1A0026B745 /* AboutAndPolitics.swift */,
 				1905A5352A1E961D0010D8A9 /* SquareGallery.swift */,
 				EBFE58CA2A3506F40042A319 /* ScoreView.swift */,
 				193567A12A1E854200C7D34B /* Character.swift */,
@@ -396,7 +396,7 @@
 				FAFF07C72A251E4D00D5BA2B /* FisrtView .swift in Sources */,
 				FA5BEDA72A2E2559001B0C07 /* ClearBackground.swift in Sources */,
 				EBFFC5B42A562F820026B745 /* AboutView.swift in Sources */,
-				EBFFC5B22A562E1A0026B745 /* AboutAndPoliticsView.swift in Sources */,
+				EBFFC5B22A562E1A0026B745 /* AboutAndPolitics.swift in Sources */,
 				EBFE58CB2A3506F40042A319 /* ScoreView.swift in Sources */,
 				EBA3837E2A3A55ED00303587 /* TransparentConfigurationButton.swift in Sources */,
 				FAE3635C2A1E87C000643271 /* ButtonComponent.swift in Sources */,

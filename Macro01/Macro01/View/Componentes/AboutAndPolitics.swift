@@ -9,7 +9,7 @@ import SwiftUI
 
 import SwiftUI
 
-struct AboutAndPoliticsView: View {
+struct AboutAndPolitics: View {
     @ScaledMetric(relativeTo: .body) var buttonSize: CGFloat = 50
     @Binding var isPresented: Bool
     
