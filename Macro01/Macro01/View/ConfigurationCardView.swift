@@ -2,8 +2,8 @@ import SwiftUI
 
 struct ConfigurationCardView: View {
     @ScaledMetric(relativeTo: .body) var buttonSize: CGFloat = 50
+   
     @Binding var isPresented: Bool
-    
     @State private var showAbout = false
 
     
@@ -20,7 +20,6 @@ struct ConfigurationCardView: View {
                             withAnimation {
                                 isPresented = false
                             }
-                            
                         },
                         image: "out",
                         foregroundColor: (Color(hex: "FFF2D9")),
@@ -32,8 +31,6 @@ struct ConfigurationCardView: View {
                     }
                     Spacer()
                         .frame(width: geometry.size.width * 0.01, height: geometry.size.height * 0.69)
-                     
-                    
                 }
                 .frame(width: geometry.size.width * 0.86, height: geometry.size.height * 0.1)
                 
@@ -66,15 +63,10 @@ struct ConfigurationCardView: View {
                                 print("Tutorial")
                             }
                             TransparentConfigurationButton(text: "Sobre", icon: "info") {
-                                
-                                withAnimation {
-                                    isPresented = false
-                                }
+                                showAbout = true
                             }
                             TransparentConfigurationButton(text: "Políticas de Privacidade", icon: "info") {
-                                withAnimation {
-                                    isPresented = false
-                                }
+                               
                             }
                             TransparentConfigurationButton(text: "Suporte", icon: "email") {
                                 print("email")
@@ -93,7 +85,9 @@ struct ConfigurationCardView: View {
             .frame(width: geometry.size.width, height: geometry.size.height)
             .transition(.move(edge: .leading))
             .animation(.easeOut(duration: 4), value: false)
-            
+            .sheet(isPresented: $showAbout) {
+                AboutView(isPresented: $showAbout)
+            }
             .onDisappear {
                 DispatchQueue.main.async {
                     isPresented = false
