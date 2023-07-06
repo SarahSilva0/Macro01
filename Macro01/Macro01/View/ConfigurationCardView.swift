@@ -66,11 +66,13 @@ struct ConfigurationCardView: View {
                             TransparentConfigurationButton(text: "Sobre", icon: "info") {
                                 showAbout = true
                             }
-                            TransparentConfigurationButton(text: "Políticas de Privacidade", icon: "info") {
-                               showPolicyAndPrivacy = true
-                            }
+                            
                             TransparentConfigurationButton(text: "Suporte", icon: "email") {
                                 print("email")
+                            }
+                            
+                            TransparentConfigurationButton(text: "Políticas de Privacidade", icon: "info") {
+                               showPolicyAndPrivacy = true
                             }
                         }
                         .frame(width: geometry.size.width * 0.4, height: geometry.size.height * 0.5)
