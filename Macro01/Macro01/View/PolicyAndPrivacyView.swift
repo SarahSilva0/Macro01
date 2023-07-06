@@ -35,12 +35,14 @@ struct PolicyAndPrivacyView: View {
                 .frame(width: geometry.size.width * 0.86, height: geometry.size.height * 0.1)
                 
                     VStack {
-                        Spacer()
-                                Text("Política e Privacidade")
-                                    .font(.system(size: 20))
-                                    .fontWeight(.bold)
-                        Spacer()
-
+                        
+                        HStack  {
+                            Text("Política e Privacidade")
+                                .font(.system(size: 20))
+                                .fontWeight(.bold)
+                        }
+                        .frame(width: geometry.size.width, height: geometry.size.height * 0.15)
+                    
                             Text("""
                              Este aplicativo é mantido e operado por Higor Crisostomo, Julia Mendes, Sarah dos Santos Silva e Thiago Akira Nakayama.
                              

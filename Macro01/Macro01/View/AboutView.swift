@@ -36,18 +36,21 @@ struct AboutView: View {
                     }
                     Spacer()
                         .frame(width: geometry.size.width * 0.01, height: geometry.size.height * 0.69)
-                        .background(.white)
                     
                 }
                 .frame(width: geometry.size.width * 0.86, height: geometry.size.height * 0.1)
+                Spacer()
                 
                     VStack {
-                        Spacer()
-                                Text("Sobre")
-                                    .font(.system(size: 20))
-                                    .fontWeight(.bold)
-                        Spacer()
+                        HStack  {
+                            Text("Sobre")
+                                .font(.system(size: 20))
+                                .fontWeight(.bold)
+                        }
+                        .frame(width: geometry.size.width, height: geometry.size.height * 0.15)
 
+                        HStack {
+                            
                             Text("""
                              Folkard é um jogo de cartas com tema
                              folclórico, onde seu objetivo é duelar contra
@@ -55,11 +58,13 @@ struct AboutView: View {
                              cartas!
                              """
                             )
-                                  .font(Font.custom("SF Pro", size: 12))
-                                  .multilineTextAlignment(.center)
-                                  .lineSpacing(5)
+                            .font(Font.custom("SF Pro", size: 12))
+                            .multilineTextAlignment(.center)
+                            .lineSpacing(5)
+                        }
+                        .frame(width: geometry.size.width, height: geometry.size.height * 0.7)
                         Spacer()
-                    
+                            .background(.red)
                     }
                     .frame(width: geometry.size.width * 0.4)
                     .background(Color(hex: "FFF2D9"))
