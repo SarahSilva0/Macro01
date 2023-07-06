@@ -55,13 +55,8 @@ struct AboutAndPolitics: View {
                             }
                             
                             HStack  {
-                                Spacer()
-                                ButtonGenRound(action: {
-                                    print("SOM")
-                                },
-                                               image: "sound",
-                                               foregroundColor: (Color(hex: "FFF2D9")),
-                                               backgroundColor: (Color(hex: "FFF2D9")))
+//                                Spacer()
+                              
                             }
                             .frame(width: geometry.size.width * 0.38, height: geometry.size.height * 0.2)
                         }

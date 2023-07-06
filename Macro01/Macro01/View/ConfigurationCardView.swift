@@ -86,11 +86,12 @@ struct ConfigurationCardView: View {
             .frame(width: geometry.size.width, height: geometry.size.height)
             .transition(.move(edge: .leading))
             .animation(.easeOut(duration: 4), value: false)
+            
             .sheet(isPresented: $showAbout) {
-                AboutView(isPresented: $showAbout)
+                AboutView(isPresented: $showAbout).background(ClearBackgroundView())
             }
             .sheet(isPresented: $showPolicyAndPrivacy) {
-                PolicyAndPrivacyView(isPresented: $showPolicyAndPrivacy)
+                PolicyAndPrivacyView(isPresented: $showPolicyAndPrivacy).background(ClearBackgroundView())
             }
             .onDisappear {
                 DispatchQueue.main.async {
