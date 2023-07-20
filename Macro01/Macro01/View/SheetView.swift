@@ -25,18 +25,21 @@ struct SheetView: View {
                     .opacity(0.65)
                 
                 VStack {
-                    Spacer()
-                    Circle()
-                        .frame(width: 45, height: 45)
-                        .foregroundColor(Color(hex: "FFF2D9"))
-                        .overlay(
-                            Text("\(combatViewModel.player1.mana)")
-                                .font(.system(size: 30, weight: .bold))
-                                .foregroundColor(.black)
-                        )
+                    HStack {
+                        Circle()
+                            .frame(width: 45, height: 45)
+                            .foregroundColor(Color(hex: "FFF2D9"))
+                            .overlay(
+                                Text("\(combatViewModel.player1.mana)")
+                                    .font(.system(size: 30, weight: .bold))
+                                    .foregroundColor(.black)
+                            )
+                        Spacer()
+                    }
+                    .frame(width: geometry.size.width * 1.03, height: geometry.size.height * 0.1)
                     Spacer()
                 }
-                .frame(width: geometry.size.width * 0.03, height: geometry.size.height * 0.2)
+                .frame(width: geometry.size.width * 0.1, height: geometry.size.height * 0.98)
                 
                 HStack {
                     HStack {
