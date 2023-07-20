@@ -12,7 +12,7 @@ struct ButtonGenRound: View {
         Button(action: action) {
             Image(image)
                 .resizable()
-                .aspectRatio(contentMode: .fill)
+                .aspectRatio(contentMode: .fit)
                 .foregroundColor(foregroundColor)
                 .background(backgroundColor)
                 .clipShape(Circle())
