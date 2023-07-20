@@ -5,6 +5,13 @@
 //  Created by Sarah dos Santos Silva on 29/05/23.
 //
 
+//
+//  FisrtView .swift
+//  Macro01
+//
+//  Created by Sarah dos Santos Silva on 29/05/23.
+//
+
 import SwiftUI
 
 struct FirstView: View {
@@ -23,7 +30,7 @@ struct FirstView: View {
                     VStack{
                         HStack(spacing: 20) {
                             ButtonGenRound(action: {
-                                print("config")
+                                print("Configuração")
                             },
                                            image: "config",
                                            foregroundColor: Color(hex: "FFF2D9"),
@@ -74,4 +81,3 @@ struct FisrtView__Previews: PreviewProvider {
         FirstView()
     }
 }
-

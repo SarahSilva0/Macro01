@@ -12,7 +12,6 @@ struct ButtonGenRound: View {
                 .resizable()
                 .aspectRatio(contentMode: .fill)
                 .foregroundColor(foregroundColor)
-                .padding()
                 .background(backgroundColor)
                 .clipShape(Circle())
                
