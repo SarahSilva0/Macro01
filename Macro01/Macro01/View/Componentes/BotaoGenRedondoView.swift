@@ -1,7 +1,5 @@
 import SwiftUI
 
-
-
 struct ButtonGenRound: View {
     let action: () -> Void
     let image: String
@@ -14,10 +12,10 @@ struct ButtonGenRound: View {
                 .resizable()
                 .aspectRatio(contentMode: .fit)
                 .foregroundColor(foregroundColor)
+                .padding()
                 .background(backgroundColor)
                 .clipShape(Circle())
                
         }
     }
 }
-

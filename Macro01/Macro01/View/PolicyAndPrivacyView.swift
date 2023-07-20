@@ -34,11 +34,11 @@ struct PolicyAndPrivacyView: View {
                         
                     }
                     Spacer()
-                        .frame(width: geometry.size.width * 0.01, height: geometry.size.height * 0.69)
+                        .frame(width: geometry.size.width * 0.01, height: geometry.size.height * 0.677)
                         .background(.white)
                     
                 }
-                .frame(width: geometry.size.width * 0.86, height: geometry.size.height * 0.1)
+                .frame(width: geometry.size.width * 0.859, height: geometry.size.height * 0.1)
                 
                     VStack {
                         
