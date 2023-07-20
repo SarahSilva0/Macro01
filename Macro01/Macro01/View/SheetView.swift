@@ -20,35 +20,41 @@ struct SheetView: View {
     var body: some View {
         GeometryReader { geometry in
             
-            VStack  {
-                Spacer()
-                Circle()
-                    .frame(width: 45, height: 45)
-                    .foregroundColor(Color(hex: "FFF2D9"))
-                    .overlay(
-                        Text("\(combatViewModel.player1.mana)")
-                            .font(.system(size: 30, weight: .bold))
-                            .foregroundColor(.black)
-                    )
-                Spacer()
-            }
-            .frame(width: geometry.size.width * 0.03, height: geometry.size.height * 0.2)
-            
-            HStack {
-                HStack {
-                    ForEach(combatViewModel.player1.cards, id: \.self) { card in
-                        CardComponent(image: Image(card))
-                            .frame(width: geometry.size.width * 0.29, height: geometry.size.height * 0.1, alignment: .leading)
-                            .onTapGesture {
-                                combatViewModel.player1.selectedCard = card
-                                combatViewModel.selectedCardPlayer2()
-                                self.closeSheet()
-                                combatViewModel.endTurn()
-                            }
+            ZStack {
+                Color(.black)
+                    .opacity(0.65)
+                
+                VStack {
+                    HStack {
+                        Circle()
+                            .frame(width: 45, height: 45)
+                            .foregroundColor(Color(hex: "FFF2D9"))
+                            .overlay(
+                                Text("\(combatViewModel.player1.mana)")
+                                    .font(.system(size: 30, weight: .bold))
+                                    .foregroundColor(.black)
+                            )
+                        Spacer()
                     }
+                    .frame(width: geometry.size.width * 1.03, height: geometry.size.height * 0.1)
+                    Spacer()
                 }
-                .frame(width: geometry.size.width * 0.85, height: geometry.size.height * 0.8)
-//                .background(.yellow)
+                .frame(width: geometry.size.width * 0.1, height: geometry.size.height * 0.98)
+                
+                HStack {
+                    HStack {
+                        ForEach(combatViewModel.player1.cards, id: \.self) { card in
+                            CardComponent(image: Image(card))
+                                .frame(width: geometry.size.width * 0.29, height: geometry.size.height * 0.1, alignment: .leading)
+                                .onTapGesture {
+                                    combatViewModel.player1.selectedCard = card
+                                    combatViewModel.selectedCardPlayer2()
+                                    self.closeSheet()
+                                    combatViewModel.endTurn()
+                                }
+                        }
+                    }
+                    .frame(width: geometry.size.width * 0.85, height: geometry.size.height * 0.8)
                     
                     HStack {
                         ZStack(alignment: .bottomLeading) {
@@ -63,10 +69,11 @@ struct SheetView: View {
                         
                     }
                     .frame(width: geometry.size.width * 0.06, height: geometry.size.height * 0.1,alignment: .trailing)
-//                    .background(.red)
-            
+                    
+                }
+                .frame(width: geometry.size.width * 1, height: geometry.size.height, alignment: .trailing)
             }
-            .frame(width: geometry.size.width * 1, height: geometry.size.height, alignment: .trailing)
+            .ignoresSafeArea(.all)
             
             .onAppear {
                 startCountdownSheet()
