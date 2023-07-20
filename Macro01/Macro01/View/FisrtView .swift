@@ -75,8 +75,8 @@ struct FirstView: View {
                                     .onTapGesture {
                                         withAnimation {
                                             showConfiguration = false
-                                        }
                                     }
+                                }
                             }
                         }
                         .onAppear {
@@ -86,10 +86,14 @@ struct FirstView: View {
                         }
                     )
                 }
+                .navigationBarHidden(true)
             }
             .frame(width: geometry.size.width, height: geometry.size.height, alignment: .center)
+            
         }
+
     }
+        
 }
 
 struct FisrtView__Previews: PreviewProvider {
