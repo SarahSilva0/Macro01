@@ -65,9 +65,30 @@ struct DificultyView_: View {
                         }
                             
                             
-                            Image("dificil")
-                                .resizable()
-                                .aspectRatio(contentMode: .fit)
+                            Button {
+                                combatViewModel.hardDiff.selectdedLevel.toggle()
+                                print("BOTAO DIFICIIIL\(combatViewModel.hardDiff.selectdedLevel)")
+                                shouldNavigate.toggle()
+                                
+                            } label: {
+                                if combatViewModel.mediumDiff.winLevel == false {
+                                    Image("dificil")
+                                        .resizable()
+                                        .aspectRatio(contentMode: .fit)
+                                }
+                                else {
+                                    if combatViewModel.hardDiff.winLevel == true{
+                                        Image(combatViewModel.hardDiff.imageWin)
+                                            .resizable()
+                                            .aspectRatio(contentMode: .fit)
+                                    }
+                                    else{
+                                        Image(combatViewModel.hardDiff.imageSillhoute)
+                                            .resizable()
+                                            .aspectRatio(contentMode: .fit)
+                                    }
+                                }
+                            }.disabled(!combatViewModel.easyDiff.winLevel)
                         }
                         .frame(width: geo.size.width * 0.6)
                         .padding(.vertical) // mudar aqui caso não de certo

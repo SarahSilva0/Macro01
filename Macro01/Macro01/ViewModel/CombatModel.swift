@@ -13,22 +13,22 @@ class CombatViewModel: ObservableObject {
     
     @Published var countdownSheet: Int = 5
     
+    
+    
     var cards = Cards()
     var player1 = PlayerCombat(image: "jogador1")
     var player2 = PlayerCombat(image: "jogador2")
     
     //MARK: Difficulty instancias
     @Published var easyDiff = DifficultyModel(imageInitial: "", imageSillhoute: "facil", imageWin: "easyWin", winCard: "", selectdedLevel: false, winLevel: false)
-    
-    @Published var mediumDiff = DifficultyModel(imageInitial: "", imageSillhoute: "facil", imageWin: "intermediaryWin", winCard: "", selectdedLevel: false, winLevel: false)
-    
-    @Published var hardDiff = DifficultyModel(imageInitial: "", imageSillhoute: "", imageWin: "", winCard: "", selectdedLevel: false, winLevel: false)
+    @Published var mediumDiff = DifficultyModel(imageInitial: "", imageSillhoute: "", imageWin: "", winCard: "", selectdedLevel: false, winLevel: false)
+    @Published var hardDiff = DifficultyModel(imageInitial: "", imageSillhoute: "hardBlock", imageWin: "hardWin", winCard: "", selectdedLevel: false, winLevel: false)
     
     
     
     //MARK: CONTADOR
     func startCountdown() {
-        
+    
         if player1.winTurno == 3{
             self.gameEnd()
             return
@@ -62,9 +62,13 @@ class CombatViewModel: ObservableObject {
     
     //MARK: FUNCAO EM QUE O PLAYER 2 JOGA AS CARTAS
     func selectedCardPlayer2() {
-        player2.selectedCard = self.playCardEasyBot()
+        if easyDiff.selectdedLevel == true {
+            player2.selectedCard = self.playCardEasyBot()
+        }
+        if hardDiff.selectdedLevel == true {
+            player2.selectedCard = self.playCardHardBot()
+        }
     }
-    
     
     //MARK: QUANDO O CONTADOR ACABA
     func endTurn() {
@@ -121,16 +125,18 @@ class CombatViewModel: ObservableObject {
     }
     
     //AQUI É OQ ACONTECE SE O PLAYER1 GANHAR O LEVEL.
-    func winLevel() {
-        if easyDiff.selectdedLevel == true {
+    func winLevel(){
+        if easyDiff.selectdedLevel == true{
             easyDiff.winLevel = true
-            // Aqui ele receberia a carta que será mostrada na galeria
-        } else if mediumDiff.selectdedLevel == true {
-            mediumDiff.winLevel = true
-            // Aqui ele receberia a carta que será mostrada na galeria
+            //Aqui também ele receberia a carta que será mostrada na galeria
+        }
+        else{
+            //LOIGICA DOS OUTROS NIVEIS
+            if hardDiff.selectdedLevel == true {
+                hardDiff.winLevel = true
+            }
         }
     }
-    
     
     
     func compareCardsInCenter(card1: String, card2: String) {
@@ -301,56 +307,87 @@ class CombatViewModel: ObservableObject {
         }
     }
     
-    //MARK: LÓGICA BOT INTERMEDIÁRIO
     
-        func playCardMediumBot() -> String {
-            switch player2.mana {
-                // se o mana for 0
-            case 0:
-                return  noManaMediumBot()
-                //se o mana for 1
-            case 1:
-                return withManaMediumBot()
-            case 2:
-                return twoManaMediumBot()
-            default:
-                return Cards().defense
+    
+    //MARK: LOGICA BOT HARD
+    func playCardHardBot() -> String{
+        switch player2.mana {
+            //se o mana for 0
+        case 0:
+            return noManaHardBot()
+            //se o mana for 1
+        case 1:
+            return withManaHardBot()
+            //se o mana for 2
+        case 2:
+            return twoManasHardBot()
+            //defaut é defesa porque defesa é a unica carta que pode jogar independente do cenario.
+        default:
+            return Cards().defense
+        }
+    }
+    
+    //Não pode ter +2 manas. Não pode usar carta de recarga
+    private func twoManasHardBot() -> String {
+        print("MANA DO PLAYER 1 ANTES: \(player1.mana)")
+        let randomValue = Double.random(in: 0..<1)
+        print("VALOR ALEATORIO: \(randomValue)")
+        if player1.mana <= 1 && player1.selectedCard == "recharge" {
+            if randomValue <= 0.45 {
+                print("VALOR ALEATORIO: \(randomValue)")
+                player1.mana = player1.mana < 1 ? 0 : 1
+                player1.selectedCard = "block" //Carta efeito nulo
+                print("MANA DO PLAYER 1 DEPOIS: \(player1.mana)")
             }
         }
-   
-    
-    private func twoManaMediumBot() -> String {
-        let randomValue = Double.random(in: 0..<1)
-        
-        if randomValue < 0.6 {
+        if randomValue < 0.8 { // 80% de chance para ataque
             return Cards().attack
-        } else {
+        } else { // 20% de chance para defesa
             return Cards().defense
         }
     }
     
-    private func noManaMediumBot() -> String {
+    //Sem mana não ataca. Somente defende ou recarga.
+    private func noManaHardBot() -> String {
+        print("MANA DO PLAYER 1 ANTES: \(player1.mana)")
         let randomValue = Double.random(in: 0..<1)
-       
-        if randomValue < 0.7 {
+        print("VALOR ALEATORIO: \(randomValue)")
+        if player1.mana <= 1 && player1.selectedCard == "recharge" {
+            if randomValue <= 0.45 {
+                print("VALOR ALEATORIO: \(randomValue)")
+                player1.mana = player1.mana < 1 ? 0 : 1 //se a mana for
+                player1.selectedCard = "block" //Carta efeito nulo
+                print("MANA DO PLAYER 1 DEPOIS: \(player1.mana)")
+            }
+        }
+        if randomValue < 0.9 { // 90% de chance para recarga
             return Cards().recharge
-        } else {
+        } else { // 10% de chance para defesa
             return Cards().defense
         }
     }
     
-    private func withManaMediumBot() -> String {
+    //Com mais de um mana e menos de 2 pode usar qualquer uma aleatória.
+    private func withManaHardBot() -> String {
+        print("MANA DO PLAYER 1 ANTES: \(player1.mana)")
         let randomValue = Double.random(in: 0..<1)
-        
-        if randomValue < 0.4 {
+        print("VALOR ALEATORIO: \(randomValue)")
+        if player1.mana <= 1 && player1.selectedCard == "recharge" {
+            if randomValue <= 0.45 {
+                print("VALOR ALEATORIO: \(randomValue)")
+                player1.mana = player1.mana < 1 ? 0 : 1
+                player1.selectedCard = "block" //Carta efeito nulo
+                print("MANA DO PLAYER 1 DEPOIS: \(player1.mana)")
+            }
+        }
+        if randomValue < 0.6 { // 60% de chance para recarga
             return Cards().recharge
-        } else if randomValue < 0.6 {
+        } else if randomValue < 0.8 { // 20% de chance para ataque
             return Cards().attack
-        } else {
+        } else { // 20% de chance para outros tipos de carta
             return Cards().defense
         }
     }
-    
 }
 
 
