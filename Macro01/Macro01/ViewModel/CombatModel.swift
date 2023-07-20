@@ -21,14 +21,14 @@ class CombatViewModel: ObservableObject {
     
     //MARK: Difficulty instancias
     @Published var easyDiff = DifficultyModel(imageInitial: "", imageSillhoute: "facil", imageWin: "easyWin", winCard: "", selectdedLevel: false, winLevel: false)
-    @Published var mediumDiff = DifficultyModel(imageInitial: "", imageSillhoute: "", imageWin: "", winCard: "", selectdedLevel: false, winLevel: false)
+    @Published var mediumDiff = DifficultyModel(imageInitial: "intermediario", imageSillhoute: "", imageWin: "easyWin", winCard: "", selectdedLevel: false, winLevel: false)
     @Published var hardDiff = DifficultyModel(imageInitial: "", imageSillhoute: "hardBlock", imageWin: "hardWin", winCard: "", selectdedLevel: false, winLevel: false)
     
     
     
     //MARK: CONTADOR
     func startCountdown() {
-    
+        
         if player1.winTurno == 3{
             self.gameEnd()
             return
@@ -60,12 +60,20 @@ class CombatViewModel: ObservableObject {
     }
     
     
-    //MARK: FUNCAO EM QUE O PLAYER 2 JOGA AS CARTAS
+    //MARK: FUNCAO EM QUE O PLAYER 2 JOGA AS CARTAS - MELHORAR ISSO AQUI
     func selectedCardPlayer2() {
         if easyDiff.selectdedLevel == true {
+            print("FACILLLL DIFICULDADE")
             player2.selectedCard = self.playCardEasyBot()
         }
+        
+        if mediumDiff.selectdedLevel == true {
+            print("MEDIO DIFICULDADEEEEEE")
+            player2.selectedCard = self.playCardMediumBot()
+        }
+        
         if hardDiff.selectdedLevel == true {
+            print("DIFICIL DIFICUDADEEEE")
             player2.selectedCard = self.playCardHardBot()
         }
     }
@@ -83,7 +91,25 @@ class CombatViewModel: ObservableObject {
     
     //MARK: RESETANDO O CONTADOR
     func resetTurn() {
-        self.player1.replaceSelectedCardRandomly()// essa função substitui a carta que o jogador joga
+//        self.player1.replaceSelectedCardRandomly()// essa função substitui a carta que o jogador joga
+        //MELHORAR ISSO AQUI
+        if easyDiff.selectdedLevel == true {
+            print("FACILLLL DIFICULDADE JOGADOR")
+            self.player1.replaceSelectedCardRandomlyEasy()
+        }
+        
+        if mediumDiff.selectdedLevel == true {
+            print("MEDIO DIFICULDADEEEEEE JOGADOOOOR")
+            self.player1.replaceSelectedCardRandomlyEasy()
+
+        }
+        
+        if hardDiff.selectdedLevel == true {
+            print("DIFICIL DIFICUDADEEEE JOGADOOOOR")
+            self.player1.replaceSelectedCardRandomlyHard()
+
+        }
+        
         isInteractionEnabled = true
         player1.selectedCard = ""
         player2.selectedCard = ""
@@ -125,16 +151,18 @@ class CombatViewModel: ObservableObject {
     }
     
     //AQUI É OQ ACONTECE SE O PLAYER1 GANHAR O LEVEL.
+    
+    //MELHORAR ISSO AQUI
     func winLevel(){
         if easyDiff.selectdedLevel == true{
             easyDiff.winLevel = true
             //Aqui também ele receberia a carta que será mostrada na galeria
         }
-        else{
-            //LOIGICA DOS OUTROS NIVEIS
-            if hardDiff.selectdedLevel == true {
-                hardDiff.winLevel = true
-            }
+        if mediumDiff.selectdedLevel == true{
+            mediumDiff.winLevel = true
+        }
+        if hardDiff.selectdedLevel == true{
+            hardDiff.winLevel = true
         }
     }
     
@@ -388,7 +416,59 @@ class CombatViewModel: ObservableObject {
             return Cards().defense
         }
     }
+    
+    //MARK: LÓGICA BOT INTERMEDIÁRIO
+    
+    func playCardMediumBot() -> String {
+        switch player2.mana {
+            // se o mana for 0
+        case 0:
+            return  noManaMediumBot()
+            //se o mana for 1
+        case 1:
+            return withManaMediumBot()
+        case 2:
+            return twoManaMediumBot()
+        default:
+            return Cards().defense
+        }
+    }
+    
+    
+    private func twoManaMediumBot() -> String {
+        let randomValue = Double.random(in: 0..<1)
+        
+        if randomValue < 0.6 {
+            return Cards().attack
+        } else {
+            return Cards().defense
+        }
+    }
+    
+    private func noManaMediumBot() -> String {
+        let randomValue = Double.random(in: 0..<1)
+        
+        if randomValue < 0.7 {
+            return Cards().recharge
+        } else {
+            return Cards().defense
+        }
+    }
+    
+    private func withManaMediumBot() -> String {
+        let randomValue = Double.random(in: 0..<1)
+        
+        if randomValue < 0.4 {
+            return Cards().recharge
+        } else if randomValue < 0.6 {
+            return Cards().attack
+        } else {
+            return Cards().defense
+        }
+    }
+    
 }
+
 
 
 

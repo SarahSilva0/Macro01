@@ -78,11 +78,11 @@ class PlayerCombat: ObservableObject {
 
     }
     
-    func replaceSelectedCardRandomly() {
+    func replaceSelectedCardRandomlyEasy() {
         let index = self.cards.firstIndex(of: self.selectedCard)
         guard let currentIndex = index else { return }
         
-        let newCard = playCardPlayerHard()
+        let newCard = playCardPlayerEasy()
         self.cards[currentIndex] = newCard
         self.selectedCard = newCard
     }
@@ -140,6 +140,15 @@ class PlayerCombat: ObservableObject {
             return Cards().defense
         }
 
+    }
+    
+    func replaceSelectedCardRandomlyHard() {
+        let index = self.cards.firstIndex(of: self.selectedCard)
+        guard let currentIndex = index else { return }
+        
+        let newCard = playCardPlayerHard()
+        self.cards[currentIndex] = newCard
+        self.selectedCard = newCard
     }
     
 }
