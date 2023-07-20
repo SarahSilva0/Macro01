@@ -10,7 +10,7 @@ struct ButtonGenRound: View {
         Button(action: action) {
             Image(image)
                 .resizable()
-                .aspectRatio(contentMode: .fit)
+                .aspectRatio(contentMode: .fill)
                 .foregroundColor(foregroundColor)
                 .padding()
                 .background(backgroundColor)
