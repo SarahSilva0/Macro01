@@ -1,8 +1,8 @@
 //
-//  SwiftUIView.swift
+//  CardComponentMainScreen.swift
 //  Macro01
 //
-//  Created by Higor  Lo Castro on 26/06/23.
+//  Created by Higor  Lo Castro on 20/06/23.
 //
 
 import SwiftUI
@@ -18,7 +18,6 @@ struct CardComponentMainScreen: View {
        
     }
 }
-
 
 
 
