@@ -7,8 +7,6 @@
 
 import SwiftUI
 
-import SwiftUI
-
 struct ConfigurationCardView: View {
     @ScaledMetric(relativeTo: .body) var buttonSize: CGFloat = 50
    
