@@ -8,12 +8,12 @@
 import SwiftUI
 
 struct ConfigurationCardView: View {
-    @ScaledMetric(relativeTo: .body) var buttonSize: CGFloat = 50
-   
+    @ScaledMetric(relativeTo: .body) var buttonSize: CGFloat = 30
+    
     @Binding var isPresented: Bool
     @State private var showAbout = false
     @State private var showPolicyAndPrivacy = false
-
+    
     
     var body: some View {
         GeometryReader { geometry in
@@ -29,16 +29,16 @@ struct ConfigurationCardView: View {
                                 isPresented = false
                             }
                         },
-                        image: "out",
-                        foregroundColor: (Color(hex: "FFF2D9")),
-                        backgroundColor: (Color(hex: "FFF2D9")))
-                        .frame(width: buttonSize, height: buttonSize)
-                      
+                                       image: "out",
+                                       foregroundColor: (Color(hex: "FFF2D9")),
+                                       backgroundColor: (Color(hex: "FFF2D9")))
+                                       .frame(width: buttonSize, height: buttonSize)
+                    
                         Spacer()
                         
                     }
                     Spacer()
-                        .frame(width: geometry.size.width * 0.01, height: geometry.size.height * 0.67)
+                        .frame(width: geometry.size.width * 0.01, height: geometry.size.height * 0.69)
                 }
                 .frame(width: geometry.size.width * 0.86, height: geometry.size.height * 0.1)
                 
@@ -59,6 +59,8 @@ struct ConfigurationCardView: View {
                                                image: "sound",
                                                foregroundColor: (Color(hex: "FFF2D9")),
                                                backgroundColor: (Color(hex: "FFF2D9")))
+                                .frame(width: buttonSize, height: buttonSize)
+                                
                             }
                             .frame(width: geometry.size.width * 0.38, height: geometry.size.height * 0.2)
                         }
@@ -79,7 +81,7 @@ struct ConfigurationCardView: View {
                             }
                             
                             TransparentConfigurationButton(text: "Políticas de Privacidade", icon: "info") {
-                               showPolicyAndPrivacy = true
+                                showPolicyAndPrivacy = true
                             }
                         }
                         .frame(width: geometry.size.width * 0.4, height: geometry.size.height * 0.5)
@@ -90,23 +92,39 @@ struct ConfigurationCardView: View {
                     .cornerRadius(10)
                     .shadow(radius: 2)
                 }
+                
             }
             .ignoresSafeArea()
-            .frame(width: geometry.size.width, height: geometry.size.height)
+            .frame(width: geometry.size.width, height: geometry.size.height )
+            
+
+            
             .transition(.move(edge: .leading))
             .animation(.easeOut(duration: 4), value: false)
             
-            .sheet(isPresented: $showAbout) {
-                AboutView(isPresented: $showAbout).background(ClearBackgroundView())
-            }
-            .sheet(isPresented: $showPolicyAndPrivacy) {
-                PolicyAndPrivacyView(isPresented: $showPolicyAndPrivacy).background(ClearBackgroundView())
-            }
             .onDisappear {
                 DispatchQueue.main.async {
                     isPresented = false
                 }
             }
+            
+            .sheet(isPresented: $showAbout) {
+                AboutView(isPresented: $showAbout).background(ClearBackgroundView())
+                
+            }
+            .sheet(isPresented: $showPolicyAndPrivacy) {
+                PolicyAndPrivacyView(isPresented: $showPolicyAndPrivacy).background(ClearBackgroundView())
+                
+            }
+           
         }
+        
+    }
+       
+}
+    
+struct ConfigurationCard_Previews: PreviewProvider {
+    static var previews: some View {
+        ConfigurationCardView(isPresented: .constant(true))
     }
 }

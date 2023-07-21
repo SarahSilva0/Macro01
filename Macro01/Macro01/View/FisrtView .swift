@@ -28,7 +28,7 @@ struct FirstView: View {
                                     showConfiguration = true
                                 }
                             },
-                            image: "config",
+                            image: "Configuração",
                             foregroundColor: Color(hex: "FFF2D9"),
                             backgroundColor: Color(hex: "FFF2D9"))
                             .frame(width: buttonSize, height: buttonSize)
@@ -89,7 +89,6 @@ struct FirstView: View {
                 .navigationBarHidden(true)
             }
             .frame(width: geometry.size.width, height: geometry.size.height, alignment: .center)
-            
         }
 
     }
