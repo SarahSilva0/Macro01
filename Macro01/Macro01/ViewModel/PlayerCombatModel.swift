@@ -87,7 +87,7 @@ class PlayerCombat: ObservableObject {
         self.selectedCard = newCard
     }
     
-    
+    //MARK: LOGICA JOGADOR HARD
     
     func playCardPlayerHard() -> String{
         switch mana {
