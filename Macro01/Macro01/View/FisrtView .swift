@@ -46,7 +46,7 @@ struct FirstView: View {
                             }
                             .padding(.leading)
                         }
-                        .frame(width: geometry.size.width * 0.9, height: geometry.size.height * 0.1)
+                        .frame(width: geometry.size.width * 0.9, height: geometry.size.height * 0.2)
                         
                         VStack {
                             Image("titulo")
@@ -106,9 +106,3 @@ struct FisrtView__Previews: PreviewProvider {
 }
 
 
-
-//
-//}
-//    .navigationBarHidden(true)
-//}
-//}

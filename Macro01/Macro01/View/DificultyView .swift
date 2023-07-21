@@ -64,7 +64,6 @@ struct DificultyView_: View {
                             
                         }
                             
-                            
                             Image("dificil")
                                 .resizable()
                                 .aspectRatio(contentMode: .fit)
