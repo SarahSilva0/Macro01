@@ -13,7 +13,10 @@
 		EB2BC4E92A374A28008ACFD2 /* CharacterCircle.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB2BC4E82A374A28008ACFD2 /* CharacterCircle.swift */; };
 		EB82F3B02A33EEEF006D7011 /* ColorExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB82F3AF2A33EEEF006D7011 /* ColorExtensions.swift */; };
 		EB99BB582A49F78000DCCE73 /* CardComponentMainScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB99BB572A49F78000DCCE73 /* CardComponentMainScreen.swift */; };
-		EB86C90F2A421F81009CFA31 /* CardComponentMainScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB86C90E2A421F81009CFA31 /* CardComponentMainScreen.swift */; };
+		EBC6883E2A69BAD80072E706 /* PolicyAndPrivacyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBC6883D2A69BAD80072E706 /* PolicyAndPrivacyView.swift */; };
+		EBC688402A69BAF30072E706 /* AboutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBC6883F2A69BAF30072E706 /* AboutView.swift */; };
+		EBC688422A69BB3B0072E706 /* ConfigurationCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBC688412A69BB3B0072E706 /* ConfigurationCardView.swift */; };
+		EBC688442A69BB7D0072E706 /* TransparentConfigurationButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBC688432A69BB7D0072E706 /* TransparentConfigurationButton.swift */; };
 		EBCFE2E12A1E8670002CABFF /* BotaoGenRedondoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBCFE2E02A1E8670002CABFF /* BotaoGenRedondoView.swift */; };
 		EBE41B962A228D8400262C00 /* GameTableModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBE41B952A228D8400262C00 /* GameTableModel.swift */; };
 		EBF134092A23FA7F000FA55E /* PlayerModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBF134082A23FA7F000FA55E /* PlayerModel.swift */; };
@@ -64,8 +67,12 @@
 		193567A12A1E854200C7D34B /* Character.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Character.swift; sourceTree = "<group>"; };
 		EB2BC4E82A374A28008ACFD2 /* CharacterCircle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterCircle.swift; sourceTree = "<group>"; };
 		EB82F3AF2A33EEEF006D7011 /* ColorExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorExtensions.swift; sourceTree = "<group>"; };
-		EB99BB572A49F78000DCCE73 /* CardComponentMainScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardComponentMainScreen.swift; sourceTree = "<group>"; };
 		EB86C90E2A421F81009CFA31 /* CardComponentMainScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardComponentMainScreen.swift; sourceTree = "<group>"; };
+		EB99BB572A49F78000DCCE73 /* CardComponentMainScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardComponentMainScreen.swift; sourceTree = "<group>"; };
+		EBC6883D2A69BAD80072E706 /* PolicyAndPrivacyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PolicyAndPrivacyView.swift; sourceTree = "<group>"; };
+		EBC6883F2A69BAF30072E706 /* AboutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutView.swift; sourceTree = "<group>"; };
+		EBC688412A69BB3B0072E706 /* ConfigurationCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigurationCardView.swift; sourceTree = "<group>"; };
+		EBC688432A69BB7D0072E706 /* TransparentConfigurationButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransparentConfigurationButton.swift; sourceTree = "<group>"; };
 		EBCFE2E02A1E8670002CABFF /* BotaoGenRedondoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BotaoGenRedondoView.swift; sourceTree = "<group>"; };
 		EBE41B952A228D8400262C00 /* GameTableModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameTableModel.swift; sourceTree = "<group>"; };
 		EBF134082A23FA7F000FA55E /* PlayerModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerModel.swift; sourceTree = "<group>"; };
@@ -147,6 +154,9 @@
 				FAFF07C62A251E4D00D5BA2B /* FisrtView .swift */,
 				FAEA1B992A2693C40007905A /* SecondView .swift */,
 				FA1546DF2A26D15400C9EE2E /* CombatView.swift */,
+				EBC688412A69BB3B0072E706 /* ConfigurationCardView.swift */,
+				EBC6883D2A69BAD80072E706 /* PolicyAndPrivacyView.swift */,
+				EBC6883F2A69BAF30072E706 /* AboutView.swift */,
 				FA5BEDA82A2E2599001B0C07 /* SheetView.swift */,
 				FADCBAD22A3904510012C0FB /* DificultyView .swift */,
 				EBCFE2DF2A1E863C002CABFF /* Componentes */,
@@ -159,6 +169,7 @@
 			children = (
 				1905A5332A1E8FB40010D8A9 /* TextBox.swift */,
 				EB2BC4E82A374A28008ACFD2 /* CharacterCircle.swift */,
+				EBC688432A69BB7D0072E706 /* TransparentConfigurationButton.swift */,
 				EB99BB572A49F78000DCCE73 /* CardComponentMainScreen.swift */,
 				1905A5352A1E961D0010D8A9 /* SquareGallery.swift */,
 				EBFE58CA2A3506F40042A319 /* ScoreView.swift */,
@@ -314,7 +325,7 @@
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 1410;
-				LastUpgradeCheck = 1410;
+				LastUpgradeCheck = 1420;
 				TargetAttributes = {
 					FA6F18532A1D301F00E76127 = {
 						CreatedOnToolsVersion = 14.1;
@@ -383,11 +394,13 @@
 				EB99BB582A49F78000DCCE73 /* CardComponentMainScreen.swift in Sources */,
 				FA1546E02A26D15400C9EE2E /* CombatView.swift in Sources */,
 				FAE3635E2A1E90EA00643271 /* CardComponent.swift in Sources */,
+				EBC688402A69BAF30072E706 /* AboutView.swift in Sources */,
 				EB82F3B02A33EEEF006D7011 /* ColorExtensions.swift in Sources */,
 				EB2BC4E92A374A28008ACFD2 /* CharacterCircle.swift in Sources */,
 				EBF134092A23FA7F000FA55E /* PlayerModel.swift in Sources */,
 				FA6F185A2A1D301F00E76127 /* MainView.swift in Sources */,
 				FAFF07C72A251E4D00D5BA2B /* FisrtView .swift in Sources */,
+				EBC688442A69BB7D0072E706 /* TransparentConfigurationButton.swift in Sources */,
 				FA5BEDA72A2E2559001B0C07 /* ClearBackground.swift in Sources */,
 				EBFE58CB2A3506F40042A319 /* ScoreView.swift in Sources */,
 				FAE3635C2A1E87C000643271 /* ButtonComponent.swift in Sources */,
@@ -397,11 +410,12 @@
 				1905A5362A1E961D0010D8A9 /* SquareGallery.swift in Sources */,
 				FAEA1B9A2A2693C40007905A /* SecondView .swift in Sources */,
 				FAF5E9602A2814CB00155C76 /* CombatModel.swift in Sources */,
+				EBC6883E2A69BAD80072E706 /* PolicyAndPrivacyView.swift in Sources */,
+				EBC688422A69BB3B0072E706 /* ConfigurationCardView.swift in Sources */,
 				EBF1340D2A23FAF0000FA55E /* DeckModel.swift in Sources */,
 				EBE41B962A228D8400262C00 /* GameTableModel.swift in Sources */,
 				FA5BEDA92A2E2599001B0C07 /* SheetView.swift in Sources */,
 				FA5BEDA32A2E2464001B0C07 /* CardsModel.swift in Sources */,
-				EB86C90F2A421F81009CFA31 /* CardComponentMainScreen.swift in Sources */,
 				FA5BEDA12A2E2428001B0C07 /* PlayerCombatModel.swift in Sources */,
 				EBF1340B2A23FAA1000FA55E /* CardModel.swift in Sources */,
 				FA6F18582A1D301F00E76127 /* Macro01App.swift in Sources */,

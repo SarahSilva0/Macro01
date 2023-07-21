@@ -1,7 +1,5 @@
 import SwiftUI
 
-
-
 struct ButtonGenRound: View {
     let action: () -> Void
     let image: String
@@ -20,4 +18,3 @@ struct ButtonGenRound: View {
         }
     }
 }
-
