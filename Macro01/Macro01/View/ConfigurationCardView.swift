@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct ConfigurationCardView: View {
-    @ScaledMetric(relativeTo: .body) var buttonSize: CGFloat = 30
+    @ScaledMetric(relativeTo: .body) var buttonSize: CGFloat = 50
     
     @Binding var isPresented: Bool
     @State private var showAbout = false
@@ -38,9 +38,9 @@ struct ConfigurationCardView: View {
                         
                     }
                     Spacer()
-                        .frame(width: geometry.size.width * 0.01, height: geometry.size.height * 0.69)
+                        .frame(width: geometry.size.width * 0.01, height: geometry.size.height * 0.853)
                 }
-                .frame(width: geometry.size.width * 0.86, height: geometry.size.height * 0.1)
+                .frame(width: geometry.size.width * 0.858, height: geometry.size.height * 0.1)
                 
                 HStack {
                     VStack  {
@@ -59,7 +59,7 @@ struct ConfigurationCardView: View {
                                                image: "sound",
                                                foregroundColor: (Color(hex: "FFF2D9")),
                                                backgroundColor: (Color(hex: "FFF2D9")))
-                                .frame(width: buttonSize, height: buttonSize)
+                                .frame(width: 30, height: 30)
                                 
                             }
                             .frame(width: geometry.size.width * 0.38, height: geometry.size.height * 0.2)

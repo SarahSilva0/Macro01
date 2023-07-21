@@ -34,7 +34,7 @@ struct PolicyAndPrivacyView: View {
                         
                     }
                     Spacer()
-                        .frame(width: geometry.size.width * 0.01, height: geometry.size.height * 0.677)
+                        .frame(width: geometry.size.width * 0.01, height: geometry.size.height * 0.85)
                         .background(.white)
                     
                 }
