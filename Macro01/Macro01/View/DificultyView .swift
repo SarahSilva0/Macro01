@@ -23,7 +23,7 @@ struct DificultyView_: View {
                 VStack{
                     VStack(alignment: .center){
                         Text("Selecione o nível")
-                            .font(.title2)
+                            .font(.custom("CooperBlack-StdItal", size: 24))
                             .fontWeight(.bold)
                             .foregroundColor(.black)
                         HStack(spacing: 20){
