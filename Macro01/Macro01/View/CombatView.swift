@@ -28,7 +28,7 @@ struct CombatView: View {
                    
                         .font(.custom("CooperBlack-StdItal", size: 75))
                         .foregroundColor(Color(hex: "3C3634"))
-//                        .fontWeight(.bold)
+
                 }
                 
             }
