@@ -42,6 +42,10 @@ struct SheetView: View {
                 .frame(width: geometry.size.width * 0.1, height: geometry.size.height * 0.98)
                 
                 HStack {
+                    Text("Escolha uma carta")
+                        .font(Font.custom("CooperBlackStd", size: 30))
+                        (Color(hex: "FFF2D9"))
+                    
                     HStack {
                         ForEach(combatViewModel.player1.cards, id: \.self) { card in
                             CardComponent(image: Image(card))

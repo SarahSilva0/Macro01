@@ -25,7 +25,7 @@ struct CombatView: View {
             VStack {
                 if combatViewModel.isCountdownVisible {
                     Text("\(combatViewModel.countdown)")
-                        .font(Font.custom("CooperBlackStd-Italic", size: 75))
+                        .font(Font.custom("CooperBlackStd", size: 75))
                         .foregroundColor(Color(hex: "3C3634"))
                         .bold()
                 }

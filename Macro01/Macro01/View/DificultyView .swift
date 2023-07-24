@@ -23,7 +23,7 @@ struct DificultyView_: View {
                 VStack{
                     VStack(alignment: .center){
                         Text("Selecione o nível")
-                            .font(.title2)
+                            .font(Font.custom("CooperBlackStd", size: 25))
                             .fontWeight(.bold)
                             .foregroundColor(.black)
                         HStack(spacing: 20){
@@ -99,7 +99,7 @@ struct DificultyView_: View {
                         .frame(width: geo.size.width * 0.6)
                         .padding(.vertical) // mudar aqui caso não de certo
                         Text("Raya")
-                            .font(.title3)
+                            .font(Font.custom("CooperBlackStd", size: 25))
                             .fontWeight(.bold)
                             .foregroundColor(.black)
                     }.frame(height: geo.size.height * 0.8, alignment: .bottom)

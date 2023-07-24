@@ -5,6 +5,7 @@
 	<key>UIAppFonts</key>
 	<array>
 		<string>CooperBlack-StdItal.otf</string>
+		<string>cooper-std-black.otf</string>
 	</array>
 	<key>UIApplicationSceneManifest</key>
 	<dict>
