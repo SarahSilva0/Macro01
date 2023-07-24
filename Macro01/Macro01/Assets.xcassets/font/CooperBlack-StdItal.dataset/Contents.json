@@ -2,7 +2,8 @@
   "data" : [
     {
       "filename" : "CooperBlack-StdItal.otf",
-      "idiom" : "universal"
+      "idiom" : "universal",
+      "universal-type-identifier" : "public.opentype-font"
     }
   ],
   "info" : {
