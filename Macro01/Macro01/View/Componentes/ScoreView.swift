@@ -9,7 +9,8 @@ import SwiftUI
 
 struct ScoreView: View {
     let maxDots = 5 // Bolinhas Total
-    let activeColor = Color.green // Cor da bolinha ativa
+    let activeColorPlayOne = Color(hex: "88BD8E")
+    let activeColorPlayTwo = Color(hex: "C27C7C")
     let inactiveColor = Color(hex: "FFF2D9") // Cor da bolinha inativa
     let centerDotSize: CGFloat = 30 // Tamanho da bolinha do centro
     
@@ -21,19 +22,19 @@ struct ScoreView: View {
             // Bolinhas do lado esquerdo
             ForEach(0..<2) { index in
                 Circle()
-                    .fill(index < player1Wins ? activeColor : inactiveColor)
+                    .fill(index < player1Wins ? activeColorPlayOne : inactiveColor)
                     .frame(width: 20, height: 20)
             }
             
             // Bolinha do centro
             Circle()
-                .fill((player1Wins >= 3 || player2Wins >= 3) ? activeColor : inactiveColor)
+                .fill((player1Wins >= 3 || player2Wins >= 3) ? activeColorPlayOne : inactiveColor)
                 .frame(width: centerDotSize, height: centerDotSize)
             
             // Bolinhas do lado direito
             ForEach(0..<2) { index in
                 Circle()
-                    .fill((index == 0 && player2Wins >= 2) || (index == 1 && player2Wins >= 1) ? activeColor : inactiveColor)
+                    .fill((index == 0 && player2Wins >= 2) || (index == 1 && player2Wins >= 1) ? activeColorPlayTwo : inactiveColor)
                     .frame(width: 20, height: 20)
             }
         }
