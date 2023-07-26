@@ -42,23 +42,26 @@ struct SheetView: View {
                 .frame(width: geometry.size.width * 0.1, height: geometry.size.height * 0.98)
                 
                 HStack {
-                    Text("Escolha uma carta")
-                        .font(Font.custom("CooperBlackStd", size: 30))
-                        (Color(hex: "FFF2D9"))
                     
-                    HStack {
-                        ForEach(combatViewModel.player1.cards, id: \.self) { card in
-                            CardComponent(image: Image(card))
-                                .frame(width: geometry.size.width * 0.29, height: geometry.size.height * 0.1, alignment: .leading)
-                                .onTapGesture {
-                                    combatViewModel.player1.selectedCard = card
-                                    combatViewModel.selectedCardPlayer2()
-                                    self.closeSheet()
-                                    combatViewModel.endTurn()
-                                }
+                    VStack {
+                        Text("Escolha uma carta")
+                            .font(Font.custom("CooperBlackStd", size: 30))
+                            .foregroundColor(Color(hex: "FFF2D9"))
+                          
+                        HStack {
+                            ForEach(combatViewModel.player1.cards, id: \.self) { card in
+                                CardComponent(image: Image(card))
+                                    .frame(width: geometry.size.width * 0.29, height: geometry.size.height * 0.1, alignment: .leading)
+                                    .onTapGesture {
+                                        combatViewModel.player1.selectedCard = card
+                                        combatViewModel.selectedCardPlayer2()
+                                        self.closeSheet()
+                                        combatViewModel.endTurn()
+                                    }
+                            }
                         }
+                        .frame(width: geometry.size.width * 0.85, height: geometry.size.height * 0.8)
                     }
-                    .frame(width: geometry.size.width * 0.85, height: geometry.size.height * 0.8)
                     
                     HStack {
                         ZStack(alignment: .bottomLeading) {
