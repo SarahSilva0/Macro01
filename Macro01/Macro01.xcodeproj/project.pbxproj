@@ -10,6 +10,8 @@
 		1905A5342A1E8FB40010D8A9 /* TextBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1905A5332A1E8FB40010D8A9 /* TextBox.swift */; };
 		1905A5362A1E961D0010D8A9 /* SquareGallery.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1905A5352A1E961D0010D8A9 /* SquareGallery.swift */; };
 		193567A22A1E854200C7D34B /* Character.swift in Sources */ = {isa = PBXBuildFile; fileRef = 193567A12A1E854200C7D34B /* Character.swift */; };
+		EB067CA02A6EFA3F003F35F6 /* CooperBlack-StdItal.otf in Resources */ = {isa = PBXBuildFile; fileRef = EB067C9F2A6EFA3F003F35F6 /* CooperBlack-StdItal.otf */; };
+		EB067CA22A6EFDF8003F35F6 /* cooper-std-black.otf in Resources */ = {isa = PBXBuildFile; fileRef = EB067CA12A6EFDF8003F35F6 /* cooper-std-black.otf */; };
 		EB2BC4E92A374A28008ACFD2 /* CharacterCircle.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB2BC4E82A374A28008ACFD2 /* CharacterCircle.swift */; };
 		EB82F3B02A33EEEF006D7011 /* ColorExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB82F3AF2A33EEEF006D7011 /* ColorExtensions.swift */; };
 		EB99BB582A49F78000DCCE73 /* CardComponentMainScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB99BB572A49F78000DCCE73 /* CardComponentMainScreen.swift */; };
@@ -65,6 +67,8 @@
 		1905A5332A1E8FB40010D8A9 /* TextBox.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextBox.swift; sourceTree = "<group>"; };
 		1905A5352A1E961D0010D8A9 /* SquareGallery.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SquareGallery.swift; sourceTree = "<group>"; };
 		193567A12A1E854200C7D34B /* Character.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Character.swift; sourceTree = "<group>"; };
+		EB067C9F2A6EFA3F003F35F6 /* CooperBlack-StdItal.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "CooperBlack-StdItal.otf"; sourceTree = "<group>"; };
+		EB067CA12A6EFDF8003F35F6 /* cooper-std-black.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "cooper-std-black.otf"; sourceTree = "<group>"; };
 		EB2BC4E82A374A28008ACFD2 /* CharacterCircle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterCircle.swift; sourceTree = "<group>"; };
 		EB82F3AF2A33EEEF006D7011 /* ColorExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorExtensions.swift; sourceTree = "<group>"; };
 		EB86C90E2A421F81009CFA31 /* CardComponentMainScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardComponentMainScreen.swift; sourceTree = "<group>"; };
@@ -78,6 +82,7 @@
 		EBF134082A23FA7F000FA55E /* PlayerModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerModel.swift; sourceTree = "<group>"; };
 		EBF1340A2A23FAA1000FA55E /* CardModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardModel.swift; sourceTree = "<group>"; };
 		EBF1340C2A23FAF0000FA55E /* DeckModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeckModel.swift; sourceTree = "<group>"; };
+		EBF592832A6DE47500EBAB04 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		EBFE58CA2A3506F40042A319 /* ScoreView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreView.swift; sourceTree = "<group>"; };
 		FA1546DF2A26D15400C9EE2E /* CombatView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CombatView.swift; sourceTree = "<group>"; };
 		FA5BEDA02A2E2428001B0C07 /* PlayerCombatModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerCombatModel.swift; sourceTree = "<group>"; };
@@ -128,6 +133,24 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		EB067C982A6EF576003F35F6 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				EB067C9A2A6EF5B4003F35F6 /* Font */,
+				FA6F185B2A1D302000E76127 /* Assets.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		EB067C9A2A6EF5B4003F35F6 /* Font */ = {
+			isa = PBXGroup;
+			children = (
+				EB067C9F2A6EFA3F003F35F6 /* CooperBlack-StdItal.otf */,
+				EB067CA12A6EFDF8003F35F6 /* cooper-std-black.otf */,
+			);
+			path = Font;
+			sourceTree = "<group>";
+		};
 		EB82F3B12A33EF44006D7011 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
@@ -224,13 +247,14 @@
 		FA6F18562A1D301F00E76127 /* Macro01 */ = {
 			isa = PBXGroup;
 			children = (
+				EB067C982A6EF576003F35F6 /* Resources */,
+				EBF592832A6DE47500EBAB04 /* Info.plist */,
 				EB82F3B12A33EF44006D7011 /* Extensions */,
 				FA6F18572A1D301F00E76127 /* Macro01App.swift */,
 				FA5BEDA52A2E2512001B0C07 /* Helper */,
 				EBE41B942A228B4600262C00 /* Model */,
 				EBCD66342A1EADA800157CBF /* ViewModel */,
 				EBCFE2DE2A1E8628002CABFF /* View */,
-				FA6F185B2A1D302000E76127 /* Assets.xcassets */,
 				FA6F185D2A1D302000E76127 /* Preview Content */,
 			);
 			path = Macro01;
@@ -365,6 +389,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EB067CA02A6EFA3F003F35F6 /* CooperBlack-StdItal.otf in Resources */,
+				EB067CA22A6EFDF8003F35F6 /* cooper-std-black.otf in Resources */,
 				FA6F185F2A1D302000E76127 /* Preview Assets.xcassets in Resources */,
 				FA6F185C2A1D302000E76127 /* Assets.xcassets in Resources */,
 			);
@@ -582,10 +608,9 @@
 				DEVELOPMENT_TEAM = V29KX432S7;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_FILE = Macro01/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationLandscapeRight UIInterfaceOrientationLandscapeLeft";
 				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -611,10 +636,9 @@
 				DEVELOPMENT_TEAM = V29KX432S7;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_FILE = Macro01/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationLandscapeRight UIInterfaceOrientationLandscapeLeft";
 				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
