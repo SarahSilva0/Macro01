@@ -64,39 +64,35 @@ struct FirstView: View {
                                     .background(Color(hex: "FFF2D9"))
                                     .cornerRadius(10)
                             }
-                            
-                            NavigationLink(destination: TutorialView()) {
-                                                        Text("Tutorial")
-                                                    }
                         }
                         .padding()
                     }
                 }
-            
-            .frame(width: geometry.size.width, height: geometry.size.height, alignment: .center)
-            .overlay(
-                Group {
-                    if showConfiguration {
-                        ConfigurationCardView(isPresented: $showConfiguration)
-                            .background(ClearBackgroundView())
-                            .transition(.move(edge: .leading))
-                            .onTapGesture {
-                                withAnimation {
-                                    showConfiguration = false
-                                }
-                            }
-                    }
-                }
                 
-                    .onAppear {
-                        withAnimation {
-                            showConfiguration = false
+                .frame(width: geometry.size.width, height: geometry.size.height, alignment: .center)
+                .overlay(
+                    Group {
+                        if showConfiguration {
+                            ConfigurationCardView(isPresented: $showConfiguration)
+                                .background(ClearBackgroundView())
+                                .transition(.move(edge: .leading))
+                                .onTapGesture {
+                                    withAnimation {
+                                        showConfiguration = false
+                                    }
+                                }
                         }
                     }
-            )
+                    
+                        .onAppear {
+                            withAnimation {
+                                showConfiguration = false
+                            }
+                        }
+                )
+            }
+            .navigationBarHidden(true)
         }
-        .navigationBarHidden(true)
-    }
     }
 }
 
