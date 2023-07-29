@@ -12,6 +12,7 @@
 		193567A22A1E854200C7D34B /* Character.swift in Sources */ = {isa = PBXBuildFile; fileRef = 193567A12A1E854200C7D34B /* Character.swift */; };
 		EB067CA02A6EFA3F003F35F6 /* CooperBlack-StdItal.otf in Resources */ = {isa = PBXBuildFile; fileRef = EB067C9F2A6EFA3F003F35F6 /* CooperBlack-StdItal.otf */; };
 		EB067CA22A6EFDF8003F35F6 /* cooper-std-black.otf in Resources */ = {isa = PBXBuildFile; fileRef = EB067CA12A6EFDF8003F35F6 /* cooper-std-black.otf */; };
+		19A41CB52A3A443D00C2D9A7 /* TutorialView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19A41CB42A3A443D00C2D9A7 /* TutorialView.swift */; };
 		EB2BC4E92A374A28008ACFD2 /* CharacterCircle.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB2BC4E82A374A28008ACFD2 /* CharacterCircle.swift */; };
 		EB82F3B02A33EEEF006D7011 /* ColorExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB82F3AF2A33EEEF006D7011 /* ColorExtensions.swift */; };
 		EB99BB582A49F78000DCCE73 /* CardComponentMainScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB99BB572A49F78000DCCE73 /* CardComponentMainScreen.swift */; };
@@ -43,7 +44,7 @@
 		FAE3635E2A1E90EA00643271 /* CardComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAE3635D2A1E90EA00643271 /* CardComponent.swift */; };
 		FAEA1B9A2A2693C40007905A /* SecondView .swift in Sources */ = {isa = PBXBuildFile; fileRef = FAEA1B992A2693C40007905A /* SecondView .swift */; };
 		FAF5E9602A2814CB00155C76 /* CombatModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF5E95F2A2814CB00155C76 /* CombatModel.swift */; };
-		FAFF07C72A251E4D00D5BA2B /* FisrtView .swift in Sources */ = {isa = PBXBuildFile; fileRef = FAFF07C62A251E4D00D5BA2B /* FisrtView .swift */; };
+		FAFF07C72A251E4D00D5BA2B /* FirstView .swift in Sources */ = {isa = PBXBuildFile; fileRef = FAFF07C62A251E4D00D5BA2B /* FirstView .swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -69,6 +70,7 @@
 		193567A12A1E854200C7D34B /* Character.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Character.swift; sourceTree = "<group>"; };
 		EB067C9F2A6EFA3F003F35F6 /* CooperBlack-StdItal.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "CooperBlack-StdItal.otf"; sourceTree = "<group>"; };
 		EB067CA12A6EFDF8003F35F6 /* cooper-std-black.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "cooper-std-black.otf"; sourceTree = "<group>"; };
+		19A41CB42A3A443D00C2D9A7 /* TutorialView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TutorialView.swift; sourceTree = "<group>"; };
 		EB2BC4E82A374A28008ACFD2 /* CharacterCircle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterCircle.swift; sourceTree = "<group>"; };
 		EB82F3AF2A33EEEF006D7011 /* ColorExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorExtensions.swift; sourceTree = "<group>"; };
 		EB86C90E2A421F81009CFA31 /* CardComponentMainScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardComponentMainScreen.swift; sourceTree = "<group>"; };
@@ -105,7 +107,7 @@
 		FAE3635D2A1E90EA00643271 /* CardComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardComponent.swift; sourceTree = "<group>"; };
 		FAEA1B992A2693C40007905A /* SecondView .swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SecondView .swift"; sourceTree = "<group>"; };
 		FAF5E95F2A2814CB00155C76 /* CombatModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CombatModel.swift; sourceTree = "<group>"; };
-		FAFF07C62A251E4D00D5BA2B /* FisrtView .swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FisrtView .swift"; sourceTree = "<group>"; };
+		FAFF07C62A251E4D00D5BA2B /* FirstView .swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FirstView .swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -174,7 +176,8 @@
 			isa = PBXGroup;
 			children = (
 				FA6F18592A1D301F00E76127 /* MainView.swift */,
-				FAFF07C62A251E4D00D5BA2B /* FisrtView .swift */,
+				FAFF07C62A251E4D00D5BA2B /* FirstView .swift */,
+				19A41CB42A3A443D00C2D9A7 /* TutorialView.swift */,
 				FAEA1B992A2693C40007905A /* SecondView .swift */,
 				FA1546DF2A26D15400C9EE2E /* CombatView.swift */,
 				EBC688412A69BB3B0072E706 /* ConfigurationCardView.swift */,
@@ -427,7 +430,9 @@
 				FA6F185A2A1D301F00E76127 /* MainView.swift in Sources */,
 				FAFF07C72A251E4D00D5BA2B /* FisrtView .swift in Sources */,
 				EBC688442A69BB7D0072E706 /* TransparentConfigurationButton.swift in Sources */,
+				FAFF07C72A251E4D00D5BA2B /* FirstView .swift in Sources */,
 				FA5BEDA72A2E2559001B0C07 /* ClearBackground.swift in Sources */,
+				19A41CB52A3A443D00C2D9A7 /* TutorialView.swift in Sources */,
 				EBFE58CB2A3506F40042A319 /* ScoreView.swift in Sources */,
 				FAE3635C2A1E87C000643271 /* ButtonComponent.swift in Sources */,
 				FAA898DA2A3BAA740052B998 /* DifficultyModel.swift in Sources */,

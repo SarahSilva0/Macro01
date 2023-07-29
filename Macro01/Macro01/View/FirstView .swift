@@ -64,6 +64,10 @@ struct FirstView: View {
                                     .background(Color(hex: "FFF2D9"))
                                     .cornerRadius(10)
                             }
+                            
+                            NavigationLink(destination: TutorialView()) {
+                                                        Text("Tutorial")
+                                                    }
                         }
                         .padding()
                     }
