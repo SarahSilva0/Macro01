@@ -25,7 +25,6 @@ struct Cards {
 
 
 struct Card: Equatable, Hashable{
-    let imageName: String
     let type: Cards.CardType
     let name: String
 
@@ -36,6 +35,5 @@ struct Card: Equatable, Hashable{
         // Por exemplo, se as imagens estão armazenadas com nomes padronizados, você pode fazer algo como:
         // self.imageName = "\(name)_image" (considerando que as imagens se chamem "nomedacarta_image")
         // Caso as imagens tenham nomes específicos, você pode associar manualmente cada nome à imagem correspondente.
-        self.imageName = "" // Defina aqui a lógica para associar o nome à imagem correta.
     }
 }

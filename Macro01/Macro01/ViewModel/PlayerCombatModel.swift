@@ -116,7 +116,7 @@ class PlayerCombat: ObservableObject {
         if randomValue < 0.9 { // 90% de chance para ataque
             return Card(type: .attack, name: "attackSaci")
         } else { // 10% de chance para defesa
-            return Card(type: .defense, name: "attackSaci")
+            return Card(type: .defense, name: "defenseSaci")
         }
     }
 

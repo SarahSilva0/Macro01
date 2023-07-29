@@ -10,6 +10,8 @@ class CombatViewModel: ObservableObject {
     @Published var isSheetVisible = false
     @Published var isInteractionEnabled = true
     @Published var isGameEndAlertPresented = false
+    @Published var isPaused = false
+
     
     @Published var countdownSheet: Int = 5
     
@@ -56,18 +58,18 @@ class CombatViewModel: ObservableObject {
     
     //MARK: LÓGICA REGRESSIVA DO CONTADOR
     func updateCountdown(_ timer: Timer) {
-        if countdown > 1 {
-            countdown -= 1
-        } else {
-            
-            timer.invalidate()
-            isCountdownVisible = false
-            isSheetVisible = true
-            countdown = 3
-            
-        }
-    }
-    
+          // Verifique se o contador está pausado antes de decrementá-lo
+          if !isPaused {
+              if countdown > 1 {
+                  countdown -= 1
+              } else {
+                  timer.invalidate()
+                  isCountdownVisible = false
+                  isSheetVisible = true
+                  countdown = 3
+              }
+          }
+      }
     
     //MARK: FUNCAO EM QUE O PLAYER 2 JOGA AS CARTAS - MELHORAR ISSO AQUI
     func selectedCardPlayer2() {
@@ -148,7 +150,8 @@ class CombatViewModel: ObservableObject {
             Card(type: .attack, name: "attackSaci"),
             Card(type: .defense, name: "defenseSaci"),
             Card(type: .recharge, name: "rechargeSaci")
-        ]    }
+        ]
+    }
     
     //MARK: MOSTRAR O PLACAR DO JOGO
     func getScore() -> String {
@@ -278,13 +281,13 @@ class CombatViewModel: ObservableObject {
     
     private func player1Win() {
         player1.winTurno += 1
-        player1.mana = 0
-        player2.mana = 0
+        player1.mana = 1
+        player2.mana = 1
     }
     private func player2Win() {
         player2.winTurno += 1
-        player2.mana = 0
-        player1.mana = 0
+        player2.mana = 1
+        player1.mana = 1
     }
     
     private func player1RechargeMana() {

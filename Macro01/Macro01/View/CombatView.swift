@@ -86,7 +86,9 @@ struct CombatView: View {
                         //MARK: BOTÃO DE PAUSE
                         HStack{
                             ButtonGenRound(action: {
-                                presentationMode.wrappedValue.dismiss()
+                                print("pause")
+                                combatViewModel.isPaused.toggle()
+                                print(combatViewModel.isPaused)
                             },
                                            image: "pause",
                                            foregroundColor: Color(hex: "FFF2D9"),
