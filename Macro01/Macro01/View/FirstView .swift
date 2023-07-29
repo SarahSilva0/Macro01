@@ -10,6 +10,8 @@ import SwiftUI
 struct FirstView: View {
     @ScaledMetric(relativeTo: .body) var buttonSize: CGFloat = 50
     @State private var showConfiguration = false
+    @State private var showGaleria = false
+
     
     var body: some View {
         NavigationView {
@@ -36,6 +38,7 @@ struct FirstView: View {
                                 
                                 ButtonGenRound(action: {
                                     print("Galeria")
+                                    showGaleria = true
                                 },
                                                image: "Galeria",
                                                foregroundColor: Color(hex: "FFF2D9"),
@@ -92,6 +95,9 @@ struct FirstView: View {
                 )
             }
             .navigationBarHidden(true)
+            .sheet(isPresented: $showGaleria){
+                GaleriaSaciView()
+            }
         }
     }
 }

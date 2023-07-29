@@ -13,6 +13,7 @@ struct ConfigurationCardView: View {
     @Binding var isPresented: Bool
     @State private var showAbout = false
     @State private var showPolicyAndPrivacy = false
+    @State private var showTutorial = false
     
     
     var body: some View {
@@ -71,6 +72,7 @@ struct ConfigurationCardView: View {
                         VStack {
                             TransparentConfigurationButton(text: "Tutorial", icon: "book") {
                                 print("Tutorial")
+                                showTutorial = true
                             }
                             TransparentConfigurationButton(text: "Sobre", icon: "info") {
                                 showAbout = true
@@ -115,6 +117,9 @@ struct ConfigurationCardView: View {
             .sheet(isPresented: $showPolicyAndPrivacy) {
                 PolicyAndPrivacyView(isPresented: $showPolicyAndPrivacy).background(ClearBackgroundView())
                 
+            }
+            .sheet(isPresented: $showTutorial){
+                TutorialView()
             }
            
         }

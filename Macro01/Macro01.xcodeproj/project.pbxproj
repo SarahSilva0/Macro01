@@ -10,9 +10,9 @@
 		1905A5342A1E8FB40010D8A9 /* TextBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1905A5332A1E8FB40010D8A9 /* TextBox.swift */; };
 		1905A5362A1E961D0010D8A9 /* SquareGallery.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1905A5352A1E961D0010D8A9 /* SquareGallery.swift */; };
 		193567A22A1E854200C7D34B /* Character.swift in Sources */ = {isa = PBXBuildFile; fileRef = 193567A12A1E854200C7D34B /* Character.swift */; };
+		19A41CB52A3A443D00C2D9A7 /* TutorialView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19A41CB42A3A443D00C2D9A7 /* TutorialView.swift */; };
 		EB067CA02A6EFA3F003F35F6 /* CooperBlack-StdItal.otf in Resources */ = {isa = PBXBuildFile; fileRef = EB067C9F2A6EFA3F003F35F6 /* CooperBlack-StdItal.otf */; };
 		EB067CA22A6EFDF8003F35F6 /* cooper-std-black.otf in Resources */ = {isa = PBXBuildFile; fileRef = EB067CA12A6EFDF8003F35F6 /* cooper-std-black.otf */; };
-		19A41CB52A3A443D00C2D9A7 /* TutorialView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19A41CB42A3A443D00C2D9A7 /* TutorialView.swift */; };
 		EB2BC4E92A374A28008ACFD2 /* CharacterCircle.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB2BC4E82A374A28008ACFD2 /* CharacterCircle.swift */; };
 		EB82F3B02A33EEEF006D7011 /* ColorExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB82F3AF2A33EEEF006D7011 /* ColorExtensions.swift */; };
 		EB99BB582A49F78000DCCE73 /* CardComponentMainScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB99BB572A49F78000DCCE73 /* CardComponentMainScreen.swift */; };
@@ -39,6 +39,8 @@
 		FA6F18732A1D302000E76127 /* Macro01UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6F18722A1D302000E76127 /* Macro01UITests.swift */; };
 		FA6F18752A1D302000E76127 /* Macro01UITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6F18742A1D302000E76127 /* Macro01UITestsLaunchTests.swift */; };
 		FAA898DA2A3BAA740052B998 /* DifficultyModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA898D92A3BAA740052B998 /* DifficultyModel.swift */; };
+		FAD5EE612A74E4FE004A4C78 /* ViewComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD5EE602A74E4FE004A4C78 /* ViewComponent.swift */; };
+		FAD5EE632A75224E004A4C78 /* GaleriaSaciView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD5EE622A75224E004A4C78 /* GaleriaSaciView.swift */; };
 		FADCBAD32A3904510012C0FB /* DificultyView .swift in Sources */ = {isa = PBXBuildFile; fileRef = FADCBAD22A3904510012C0FB /* DificultyView .swift */; };
 		FAE3635C2A1E87C000643271 /* ButtonComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAE3635B2A1E87C000643271 /* ButtonComponent.swift */; };
 		FAE3635E2A1E90EA00643271 /* CardComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAE3635D2A1E90EA00643271 /* CardComponent.swift */; };
@@ -68,9 +70,9 @@
 		1905A5332A1E8FB40010D8A9 /* TextBox.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextBox.swift; sourceTree = "<group>"; };
 		1905A5352A1E961D0010D8A9 /* SquareGallery.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SquareGallery.swift; sourceTree = "<group>"; };
 		193567A12A1E854200C7D34B /* Character.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Character.swift; sourceTree = "<group>"; };
+		19A41CB42A3A443D00C2D9A7 /* TutorialView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TutorialView.swift; sourceTree = "<group>"; };
 		EB067C9F2A6EFA3F003F35F6 /* CooperBlack-StdItal.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "CooperBlack-StdItal.otf"; sourceTree = "<group>"; };
 		EB067CA12A6EFDF8003F35F6 /* cooper-std-black.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "cooper-std-black.otf"; sourceTree = "<group>"; };
-		19A41CB42A3A443D00C2D9A7 /* TutorialView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TutorialView.swift; sourceTree = "<group>"; };
 		EB2BC4E82A374A28008ACFD2 /* CharacterCircle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterCircle.swift; sourceTree = "<group>"; };
 		EB82F3AF2A33EEEF006D7011 /* ColorExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorExtensions.swift; sourceTree = "<group>"; };
 		EB86C90E2A421F81009CFA31 /* CardComponentMainScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardComponentMainScreen.swift; sourceTree = "<group>"; };
@@ -102,6 +104,8 @@
 		FA6F18722A1D302000E76127 /* Macro01UITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Macro01UITests.swift; sourceTree = "<group>"; };
 		FA6F18742A1D302000E76127 /* Macro01UITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Macro01UITestsLaunchTests.swift; sourceTree = "<group>"; };
 		FAA898D92A3BAA740052B998 /* DifficultyModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DifficultyModel.swift; sourceTree = "<group>"; };
+		FAD5EE602A74E4FE004A4C78 /* ViewComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewComponent.swift; sourceTree = "<group>"; };
+		FAD5EE622A75224E004A4C78 /* GaleriaSaciView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GaleriaSaciView.swift; sourceTree = "<group>"; };
 		FADCBAD22A3904510012C0FB /* DificultyView .swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DificultyView .swift"; sourceTree = "<group>"; };
 		FAE3635B2A1E87C000643271 /* ButtonComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonComponent.swift; sourceTree = "<group>"; };
 		FAE3635D2A1E90EA00643271 /* CardComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardComponent.swift; sourceTree = "<group>"; };
@@ -183,6 +187,7 @@
 				EBC688412A69BB3B0072E706 /* ConfigurationCardView.swift */,
 				EBC6883D2A69BAD80072E706 /* PolicyAndPrivacyView.swift */,
 				EBC6883F2A69BAF30072E706 /* AboutView.swift */,
+				FAD5EE622A75224E004A4C78 /* GaleriaSaciView.swift */,
 				FA5BEDA82A2E2599001B0C07 /* SheetView.swift */,
 				FADCBAD22A3904510012C0FB /* DificultyView .swift */,
 				EBCFE2DF2A1E863C002CABFF /* Componentes */,
@@ -204,6 +209,7 @@
 				EB86C90E2A421F81009CFA31 /* CardComponentMainScreen.swift */,
 				FAE3635B2A1E87C000643271 /* ButtonComponent.swift */,
 				EBCFE2E02A1E8670002CABFF /* BotaoGenRedondoView.swift */,
+				FAD5EE602A74E4FE004A4C78 /* ViewComponent.swift */,
 			);
 			path = Componentes;
 			sourceTree = "<group>";
@@ -426,9 +432,10 @@
 				EBC688402A69BAF30072E706 /* AboutView.swift in Sources */,
 				EB82F3B02A33EEEF006D7011 /* ColorExtensions.swift in Sources */,
 				EB2BC4E92A374A28008ACFD2 /* CharacterCircle.swift in Sources */,
+				FAD5EE632A75224E004A4C78 /* GaleriaSaciView.swift in Sources */,
 				EBF134092A23FA7F000FA55E /* PlayerModel.swift in Sources */,
 				FA6F185A2A1D301F00E76127 /* MainView.swift in Sources */,
-				FAFF07C72A251E4D00D5BA2B /* FisrtView .swift in Sources */,
+				FAFF07C72A251E4D00D5BA2B /* FirstView .swift in Sources */,
 				EBC688442A69BB7D0072E706 /* TransparentConfigurationButton.swift in Sources */,
 				FAFF07C72A251E4D00D5BA2B /* FirstView .swift in Sources */,
 				FA5BEDA72A2E2559001B0C07 /* ClearBackground.swift in Sources */,
@@ -452,6 +459,7 @@
 				FA6F18582A1D301F00E76127 /* Macro01App.swift in Sources */,
 				EBCFE2E12A1E8670002CABFF /* BotaoGenRedondoView.swift in Sources */,
 				FADCBAD32A3904510012C0FB /* DificultyView .swift in Sources */,
+				FAD5EE612A74E4FE004A4C78 /* ViewComponent.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
