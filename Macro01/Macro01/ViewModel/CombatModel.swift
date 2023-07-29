@@ -15,9 +15,18 @@ class CombatViewModel: ObservableObject {
     
     
     
-    var cards = Cards()
-    var player1 = PlayerCombat(image: "jogador1")
-    var player2 = PlayerCombat(image: "jogador2")
+//    var cards = Cards()
+    
+    var player1 = PlayerCombat(image: "jogador1", cards: [
+           Card(type: .attack, name: "attack"),
+           Card(type: .defense, name: "defense"),
+           Card(type: .recharge, name: "recharge")
+       ])
+       var player2 = PlayerCombat(image: "jogador2", cards: [
+           Card(type: .attack, name: "attackIara"),
+           Card(type: .defense, name: "defenseIara"),
+           Card(type: .recharge, name: "rechargeIara")
+       ])
     
     //MARK: Difficulty instancias
     @Published var easyDiff = DifficultyModel(imageInitial: "", imageSillhoute: "facil", imageWin: "easyWin", winCard: "", selectdedLevel: false, winLevel: false)
@@ -111,8 +120,8 @@ class CombatViewModel: ObservableObject {
         }
         
         isInteractionEnabled = true
-        player1.selectedCard = ""
-        player2.selectedCard = ""
+        player1.selectedCard = Card(type: .empty, name: "")
+        player2.selectedCard = Card(type: .empty, name: "")
         isCountdownVisible = true
         startCountdown()
         print("MANA DO JOGADOR 2 \(player2.mana)")
@@ -135,8 +144,11 @@ class CombatViewModel: ObservableObject {
         self.player2.winTurno = 0
         self.player1.mana = 1
         self.player2.mana = 1
-        self.player1.cards = ["attack", "defense", "recharge"]
-    }
+        self.player1.cards = [
+            Card(type: .attack, name: "attackSaci"),
+            Card(type: .defense, name: "defenseSaci"),
+            Card(type: .recharge, name: "rechargeSaci")
+        ]    }
     
     //MARK: MOSTRAR O PLACAR DO JOGO
     func getScore() -> String {
@@ -167,30 +179,31 @@ class CombatViewModel: ObservableObject {
     }
     
     
-    func compareCardsInCenter(card1: String, card2: String) {
-        switch (card1, card2) {
-        case (cards.attack, cards.attack):
+    func compareCardsInCenter(card1: Card, card2: Card) {
+        switch (card1.type, card2.type) {
+        case (.attack, .attack):
             handleAttackVsAttack()
-        case (cards.attack, cards.defense):
+        case (.attack, .defense):
             handleAttackVsDefense()
-        case (cards.attack, cards.recharge):
+        case (.attack, .recharge):
             handleAttackVsRecharge()
-        case (cards.defense, cards.attack):
+        case (.defense, .attack):
             handleDefenseVsAttack()
-        case (cards.defense, cards.defense):
+        case (.defense, .defense):
             handleDefenseVsDefense()
-        case (cards.defense, cards.recharge):
+        case (.defense, .recharge):
             handleDefenseVsRecharge()
-        case (cards.recharge, cards.attack):
+        case (.recharge, .attack):
             handleRechargeVsAttack()
-        case (cards.recharge, cards.defense):
+        case (.recharge, .defense):
             handleRechargeVsDefense()
-        case (cards.recharge, cards.recharge):
+        case (.recharge, .recharge):
             handleRechargeVsRecharge()
         default:
             break
         }
     }
+
     
     private func handleAttackVsAttack() {
         if player1.mana >= 1 && player2.mana >= 1 {
@@ -285,185 +298,148 @@ class CombatViewModel: ObservableObject {
     //MARK: LOGICA BOT FACIL
     
     //MARK: LOGICA BOT: PODE SER USADA COM ESQUELETO PARA AS OUTROS NIVEIS
-    func playCardEasyBot() -> String{
+    func playCardEasyBot() -> Card {
         switch player2.mana {
-            //se o mana for 0
+        //se o mana for 0
         case 0:
             return noManaEasyBot()
-            //se o mana for 1
+        //se o mana for 1
         case 1:
             return withManaEasyBot()
-            //se o mana for 2
+        //se o mana for 2
         case 2:
             return twoManasEasyBot()
-            //defaut é defesa porque defesa é a unica carta que pode jogar independente do cenario.
+        //defaut é defesa porque defesa é a unica carta que pode jogar independente do cenario.
         default:
-            return Cards().defense
+            return Card(type: .defense, name: "defenseIara")
         }
     }
     
-    //Não pode ter +2 manas. Não pode usar carta de recarga
-    private func twoManasEasyBot() -> String {
-        let randomValue = Double.random(in: 0..<1)
-        if randomValue < 0.8 { // 80% de chance para ataque
-            return Cards().attack
-        } else { // 20% de chance para defesa
-            return Cards().defense
-        }
-    }
-    
-    
-    //Sem mana não ataca. Somente defende ou recarga.
-    private func noManaEasyBot() -> String {
+    private func noManaEasyBot() -> Card {
         let randomValue = Double.random(in: 0..<1)
         if randomValue < 0.9 { // 90% de chance para recarga
-            return Cards().recharge
+            return Card(type: .recharge, name: "rechargeIara")
         } else { // 10% de chance para defesa
-            return Cards().defense
+            return Card(type: .defense, name: "defenseIara")
         }
     }
-    
-    //Com mais de um mana e menos de 2 pode usar qualquer uma aleatória.
-    private func withManaEasyBot() -> String {
+
+    private func withManaEasyBot() -> Card {
         let randomValue = Double.random(in: 0..<1)
         if randomValue < 0.6 { // 60% de chance para recarga
-            return Cards().recharge
+            return Card(type: .recharge, name: "rechargeIara")
         } else if randomValue < 0.8 { // 20% de chance para ataque
-            return Cards().attack
+            return Card(type: .attack, name: "attackIara")
         } else { // 20% de chance para outros tipos de carta
-            return Cards().defense
+            return Card(type: .defense, name: "defenseIara")
         }
     }
+
+    private func twoManasEasyBot() -> Card {
+        let randomValue = Double.random(in: 0..<1)
+        if randomValue < 0.8 { // 80% de chance para ataque
+            return Card(type: .attack, name: "attackIara")
+        } else { // 20% de chance para defesa
+            return Card(type: .defense, name: "defenseIara")
+        }
+    }
+
     
     
     
     //MARK: LOGICA BOT HARD
-    func playCardHardBot() -> String{
+    func playCardHardBot() -> Card {
         switch player2.mana {
-            //se o mana for 0
+        //se o mana for 0
         case 0:
             return noManaHardBot()
-            //se o mana for 1
+        //se o mana for 1
         case 1:
             return withManaHardBot()
-            //se o mana for 2
+        //se o mana for 2
         case 2:
             return twoManasHardBot()
-            //defaut é defesa porque defesa é a unica carta que pode jogar independente do cenario.
+        //defaut é defesa porque defesa é a unica carta que pode jogar independente do cenario.
         default:
-            return Cards().defense
+            return Card(type: .defense, name: "defenseIara")
         }
     }
     
-    //Não pode ter +2 manas. Não pode usar carta de recarga
-    private func twoManasHardBot() -> String {
-        print("MANA DO PLAYER 1 ANTES: \(player1.mana)")
+    private func noManaHardBot() -> Card {
         let randomValue = Double.random(in: 0..<1)
-        print("VALOR ALEATORIO: \(randomValue)")
-        if player1.mana <= 1 && player1.selectedCard == "recharge" {
-            if randomValue <= 0.45 {
-                print("VALOR ALEATORIO: \(randomValue)")
-                player1.mana = player1.mana < 1 ? 0 : 1
-                player1.selectedCard = "block" //Carta efeito nulo
-                print("MANA DO PLAYER 1 DEPOIS: \(player1.mana)")
-            }
+        if randomValue < 0.5 { // 50% de chance para recarga
+            return Card(type: .recharge, name: "rechargeIara")
+        } else { // 50% de chance para defesa
+            return Card(type: .defense, name: "defenseIara")
         }
-        if randomValue < 0.8 { // 80% de chance para ataque
-            return Cards().attack
+    }
+
+    private func withManaHardBot() -> Card {
+        let randomValue = Double.random(in: 0..<1)
+        if randomValue < 0.7 { // 70% de chance para ataque
+            return Card(type: .attack, name: "attackIara")
+        } else if randomValue < 0.8 { // 10% de chance para recarga
+            return Card(type: .recharge, name: "rechargeIara")
         } else { // 20% de chance para defesa
-            return Cards().defense
+            return Card(type: .defense, name: "defenseIara")
         }
     }
-    
-    //Sem mana não ataca. Somente defende ou recarga.
-    private func noManaHardBot() -> String {
-        print("MANA DO PLAYER 1 ANTES: \(player1.mana)")
+
+    private func twoManasHardBot() -> Card {
         let randomValue = Double.random(in: 0..<1)
-        print("VALOR ALEATORIO: \(randomValue)")
-        if player1.mana <= 1 && player1.selectedCard == "recharge" {
-            if randomValue <= 0.45 {
-                print("VALOR ALEATORIO: \(randomValue)")
-                player1.mana = player1.mana < 1 ? 0 : 1 //se a mana for
-                player1.selectedCard = "block" //Carta efeito nulo
-                print("MANA DO PLAYER 1 DEPOIS: \(player1.mana)")
-            }
-        }
-        if randomValue < 0.9 { // 90% de chance para recarga
-            return Cards().recharge
+        if randomValue < 0.9 { // 90% de chance para ataque
+            return Card(type: .attack, name: "attackIara")
         } else { // 10% de chance para defesa
-            return Cards().defense
+            return Card(type: .defense, name: "defenseIara")
         }
     }
-    
-    //Com mais de um mana e menos de 2 pode usar qualquer uma aleatória.
-    private func withManaHardBot() -> String {
-        print("MANA DO PLAYER 1 ANTES: \(player1.mana)")
-        let randomValue = Double.random(in: 0..<1)
-        print("VALOR ALEATORIO: \(randomValue)")
-        if player1.mana <= 1 && player1.selectedCard == "recharge" {
-            if randomValue <= 0.45 {
-                print("VALOR ALEATORIO: \(randomValue)")
-                player1.mana = player1.mana < 1 ? 0 : 1
-                player1.selectedCard = "block" //Carta efeito nulo
-                print("MANA DO PLAYER 1 DEPOIS: \(player1.mana)")
-            }
-        }
-        if randomValue < 0.6 { // 60% de chance para recarga
-            return Cards().recharge
-        } else if randomValue < 0.8 { // 20% de chance para ataque
-            return Cards().attack
-        } else { // 20% de chance para outros tipos de carta
-            return Cards().defense
-        }
-    }
+
     
     //MARK: LÓGICA BOT INTERMEDIÁRIO
     
-    func playCardMediumBot() -> String {
+    func playCardMediumBot() -> Card {
         switch player2.mana {
-            // se o mana for 0
+        // se o mana for 0
         case 0:
-            return  noManaMediumBot()
-            //se o mana for 1
+            return noManaMediumBot()
+        //se o mana for 1
         case 1:
             return withManaMediumBot()
         case 2:
             return twoManaMediumBot()
         default:
-            return Cards().defense
+            return Card(type: .defense, name: "defenseIara")
         }
     }
-    
-    
-    private func twoManaMediumBot() -> String {
+
+    // ...
+
+    private func noManaMediumBot() -> Card {
         let randomValue = Double.random(in: 0..<1)
-        
-        if randomValue < 0.6 {
-            return Cards().attack
-        } else {
-            return Cards().defense
+        if randomValue < 0.7 { // 70% de chance para recarga
+            return Card(type: .recharge, name: "nome_da_carta_recarga")
+        } else { // 30% de chance para defesa
+            return Card(type: .defense, name: "nome_da_carta_defesa")
         }
     }
-    
-    private func noManaMediumBot() -> String {
+
+    private func withManaMediumBot() -> Card {
         let randomValue = Double.random(in: 0..<1)
-        
-        if randomValue < 0.7 {
-            return Cards().recharge
-        } else {
-            return Cards().defense
+        if randomValue < 0.4 { // 40% de chance para recarga
+            return Card(type: .recharge, name: "nome_da_carta_recarga")
+        } else if randomValue < 0.6 { // 20% de chance para ataque
+            return Card(type: .attack, name: "nome_da_carta_ataque")
+        } else { // 40% de chance para defesa
+            return Card(type: .defense, name: "nome_da_carta_defesa")
         }
     }
-    
-    private func withManaMediumBot() -> String {
+
+    private func twoManaMediumBot() -> Card {
         let randomValue = Double.random(in: 0..<1)
-        
-        if randomValue < 0.4 {
-            return Cards().recharge
-        } else if randomValue < 0.6 {
-            return Cards().attack
-        } else {
-            return Cards().defense
+        if randomValue < 0.6 { // 60% de chance para ataque
+            return Card(type: .attack, name: "nome_da_carta_ataque")
+        } else { // 40% de chance para defesa
+            return Card(type: .defense, name: "nome_da_carta_defesa")
         }
     }
     

@@ -9,8 +9,33 @@ import Foundation
 
 //MARK: MODEL CARDS COM A LOGICA DA ALEATORIEDADE
 struct Cards {
-    let defense = "defense"
-    let attack = "attack"
-    let recharge = "recharge"
+    let type: CardType
 
+    enum CardType: String {
+        case attack
+        case defense
+        case recharge
+        case empty
+    }
+
+    init(type: CardType) {
+        self.type = type
+    }
+}
+
+
+struct Card: Equatable, Hashable{
+    let imageName: String
+    let type: Cards.CardType
+    let name: String
+
+    init(type: Cards.CardType, name: String) {
+        self.type = type
+        self.name = name
+        // Implemente aqui a lógica para associar o nome da carta à imagem.
+        // Por exemplo, se as imagens estão armazenadas com nomes padronizados, você pode fazer algo como:
+        // self.imageName = "\(name)_image" (considerando que as imagens se chamem "nomedacarta_image")
+        // Caso as imagens tenham nomes específicos, você pode associar manualmente cada nome à imagem correspondente.
+        self.imageName = "" // Defina aqui a lógica para associar o nome à imagem correta.
+    }
 }

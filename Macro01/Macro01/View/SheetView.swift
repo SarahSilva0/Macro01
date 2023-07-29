@@ -50,7 +50,7 @@ struct SheetView: View {
                           
                         HStack {
                             ForEach(combatViewModel.player1.cards, id: \.self) { card in
-                                CardComponent(image: Image(card))
+                                CardComponent(image: Image(card.name))
                                     .frame(width: geometry.size.width * 0.29, height: geometry.size.height * 0.1, alignment: .leading)
                                     .onTapGesture {
                                         combatViewModel.player1.selectedCard = card
