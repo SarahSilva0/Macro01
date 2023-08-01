@@ -450,29 +450,29 @@ class CombatViewModel: ObservableObject {
     private func noManaMediumBot() -> Card {
         let randomValue = Double.random(in: 0..<1)
         if randomValue < 0.7 { // 70% de chance para recarga
-            return Card(type: .recharge, name: "nome_da_carta_recarga")
+            return Card(type: .recharge, name: "rechargeIara")
         } else { // 30% de chance para defesa
-            return Card(type: .defense, name: "nome_da_carta_defesa")
+            return Card(type: .defense, name: "defenseIara")
         }
     }
 
     private func withManaMediumBot() -> Card {
         let randomValue = Double.random(in: 0..<1)
         if randomValue < 0.4 { // 40% de chance para recarga
-            return Card(type: .recharge, name: "nome_da_carta_recarga")
+            return Card(type: .recharge, name: "rechargeIara")
         } else if randomValue < 0.6 { // 20% de chance para ataque
-            return Card(type: .attack, name: "nome_da_carta_ataque")
+            return Card(type: .attack, name: "attackIara")
         } else { // 40% de chance para defesa
-            return Card(type: .defense, name: "nome_da_carta_defesa")
+            return Card(type: .defense, name: "defenseIara")
         }
     }
 
     private func twoManaMediumBot() -> Card {
         let randomValue = Double.random(in: 0..<1)
         if randomValue < 0.6 { // 60% de chance para ataque
-            return Card(type: .attack, name: "nome_da_carta_ataque")
+            return Card(type: .attack, name: "attackIara")
         } else { // 40% de chance para defesa
-            return Card(type: .defense, name: "nome_da_carta_defesa")
+            return Card(type: .defense, name: "defenseIara")
         }
     }
     
