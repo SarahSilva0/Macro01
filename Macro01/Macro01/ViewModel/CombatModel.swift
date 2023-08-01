@@ -369,30 +369,60 @@ class CombatViewModel: ObservableObject {
     }
     
     private func noManaHardBot() -> Card {
+        print("MANA DO PLAYER 1 ANTES: \(player1.mana)")
         let randomValue = Double.random(in: 0..<1)
-        if randomValue < 0.5 { // 50% de chance para recarga
+        print("VALOR ALEATORIO: \(randomValue)")
+        if player1.mana <= 1 && player1.selectedCard == Card(type: .recharge, name: "rechargeSaci") {
+            if randomValue <= 0.45 {
+                print("VALOR ALEATORIO: \(randomValue)")
+                player1.mana = player1.mana < 1 ? 0 : 1 //se a mana for
+                player1.selectedCard = Card(type: .block, name: "block") //Carta efeito nulo
+                print("MANA DO PLAYER 1 DEPOIS: \(player1.mana)")
+            }
+        }
+        if randomValue < 0.9 { // 90% de chance para recarga
             return Card(type: .recharge, name: "rechargeIara")
-        } else { // 50% de chance para defesa
+        } else { // 10% de chance para defesa
             return Card(type: .defense, name: "defenseIara")
         }
     }
 
     private func withManaHardBot() -> Card {
+        print("MANA DO PLAYER 1 ANTES: \(player1.mana)")
         let randomValue = Double.random(in: 0..<1)
-        if randomValue < 0.7 { // 70% de chance para ataque
-            return Card(type: .attack, name: "attackIara")
-        } else if randomValue < 0.8 { // 10% de chance para recarga
+        print("VALOR ALEATORIO: \(randomValue)")
+        if player1.mana <= 1 && player1.selectedCard == Card(type: .recharge, name: "rechargeSaci") {
+            if randomValue <= 0.45 {
+                print("VALOR ALEATORIO: \(randomValue)")
+                player1.mana = player1.mana < 1 ? 0 : 1
+                player1.selectedCard = Card(type: .block, name: "block") //Carta efeito nulo
+                print("MANA DO PLAYER 1 DEPOIS: \(player1.mana)")
+            }
+        }
+        if randomValue < 0.6 { // 60% de chance para recarga
             return Card(type: .recharge, name: "rechargeIara")
-        } else { // 20% de chance para defesa
+        } else if randomValue < 0.8 { // 20% de chance para ataque
+            return Card(type: .attack, name: "attackIara")
+        } else { // 20% de chance para outros tipos de carta
             return Card(type: .defense, name: "defenseIara")
         }
     }
-
+    
     private func twoManasHardBot() -> Card {
+        print("MANA DO PLAYER 1 ANTES: \(player1.mana)")
         let randomValue = Double.random(in: 0..<1)
-        if randomValue < 0.9 { // 90% de chance para ataque
+        print("VALOR ALEATORIO: \(randomValue)")
+        if player1.mana <= 1 && player1.selectedCard == Card(type: .recharge, name: "rechargeSaci"){
+            if randomValue <= 0.45 {
+                print("VALOR ALEATORIO: \(randomValue)")
+                player1.mana = player1.mana < 1 ? 0 : 1
+                player1.selectedCard = Card(type: .block, name: "block") //Carta efeito nulo
+                print("MANA DO PLAYER 1 DEPOIS: \(player1.mana)")
+            }
+        }
+        if randomValue < 0.8 { // 80% de chance para ataque
             return Card(type: .attack, name: "attackIara")
-        } else { // 10% de chance para defesa
+        } else { // 20% de chance para defesa
             return Card(type: .defense, name: "defenseIara")
         }
     }

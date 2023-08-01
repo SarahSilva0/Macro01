@@ -16,6 +16,7 @@ struct Cards {
         case defense
         case recharge
         case empty
+        case block
     }
 
     init(type: CardType) {

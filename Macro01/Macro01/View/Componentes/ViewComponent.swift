@@ -24,6 +24,7 @@ struct ViewComponent: View {
 
                 Image(Images[count])
                     .resizable()
+                    .aspectRatio(contentMode: .fill)
                     .frame(width: 672, height: 336)
                     .padding(EdgeInsets(top: 38, leading: 86, bottom: 16, trailing: 86))
 
