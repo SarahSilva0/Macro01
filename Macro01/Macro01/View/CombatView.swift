@@ -65,6 +65,7 @@ struct CombatView: View {
                         }
                         .frame(width: geometry.size.width * 0.3, height: geometry.size.height * 0.7, alignment: .center)
                     }
+                    .animation(.easeIn(duration: 0.3))
                     .frame(height: geometry.size.height * 0.5, alignment: .bottom)
                     
                     //MARK: AS 3 CARTAS DO PLAYER 1 NA PARTE DEBAIXO
@@ -77,6 +78,7 @@ struct CombatView: View {
                         }
                         .frame(width: geometry.size.width * 0.13, height: geometry.size.height * 0.1)
                     }
+                    .animation(.linear(duration: 0.3))
                     .frame(width: geometry.size.width * 0.2, height: geometry.size.height * 0.2, alignment: .bottom)
                    
                 }
