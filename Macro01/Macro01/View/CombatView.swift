@@ -29,7 +29,6 @@ struct CombatView: View {
                         .foregroundColor(Color(hex: "3C3634"))
                         .fontWeight(.bold)
                 }
-                
             }
             
             GeometryReader { geometry in
@@ -70,13 +69,16 @@ struct CombatView: View {
                     
                     //MARK: AS 3 CARTAS DO PLAYER 1 NA PARTE DEBAIXO
                     HStack {
-                            ForEach(combatViewModel.player1.cards, id: \.self) { card in
+                        ForEach(combatViewModel.player1.cards, id: \.self) { card in
+                            
+                            withAnimation(.easeOut(duration: 1.0)) {
                                 CardComponentMainScreen(image: Image(card))
                             }
-                            .frame(width: geometry.size.width * 0.13, height: geometry.size.height * 0.1)
-                        
                         }
-                        .frame(width: geometry.size.width * 0.2, height: geometry.size.height * 0.2, alignment: .bottom)
+                        .frame(width: geometry.size.width * 0.13, height: geometry.size.height * 0.1)
+                    }
+                    .frame(width: geometry.size.width * 0.2, height: geometry.size.height * 0.2, alignment: .bottom)
+                   
                 }
                 //AQUI MEXE NA ALTURA DAS CARTAS EM RELACAO AS CARTAS DO CENTRO
                 .frame(width: geometry.size.width, height: geometry.size.height * 1.1, alignment: .center)
@@ -136,10 +138,3 @@ struct CombatView: View {
         .navigationBarHidden(true)
     }
 }
-
-
-
-
-
-
-
