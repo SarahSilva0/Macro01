@@ -12,6 +12,8 @@ struct CombatView: View {
     
     @ObservedObject var combatViewModel: CombatViewModel
     @Environment(\.presentationMode) var presentationMode
+    @Environment(\.presentations) var presentations
+
     
     
     var body: some View {
@@ -70,13 +72,13 @@ struct CombatView: View {
                     
                     //MARK: AS 3 CARTAS DO PLAYER 1 NA PARTE DEBAIXO
                     HStack {
-                            ForEach(combatViewModel.player1.cards, id: \.self) { card in
-                                CardComponentMainScreen(image: Image(card.name))
-                            }
-                            .frame(width: geometry.size.width * 0.13, height: geometry.size.height * 0.1)
-                        
+                        ForEach(combatViewModel.player1.cards, id: \.self) { card in
+                            CardComponentMainScreen(image: Image(card.name))
                         }
-                        .frame(width: geometry.size.width * 0.2, height: geometry.size.height * 0.2, alignment: .bottom)
+                        .frame(width: geometry.size.width * 0.13, height: geometry.size.height * 0.1)
+                        
+                    }
+                    .frame(width: geometry.size.width * 0.2, height: geometry.size.height * 0.2, alignment: .bottom)
                 }
                 //AQUI MEXE NA ALTURA DAS CARTAS EM RELACAO AS CARTAS DO CENTRO
                 .frame(width: geometry.size.width, height: geometry.size.height * 1.1, alignment: .center)
@@ -87,7 +89,7 @@ struct CombatView: View {
                         HStack{
                             ButtonGenRound(action: {
                                 print("pause")
-                                combatViewModel.isPaused.toggle()
+                                combatViewModel.isPaused = true
                                 print(combatViewModel.isPaused)
                             },
                                            image: "pause",
@@ -95,6 +97,13 @@ struct CombatView: View {
                                            backgroundColor: Color(hex: "FFF2D9"))
                             .frame(width: 40, height: 40)
                             .padding(.all)
+                        }
+                        .sheet(isPresented: $combatViewModel.isPaused){
+                            PausedView(isPresented: $combatViewModel.isPaused, combatViewModel: combatViewModel)
+                                .environment(\.presentations, presentations + [$combatViewModel.isPaused])
+                                
+                                .background(ClearBackgroundView())
+                            
                         }
                         .frame(width: geometry.size.width, height: geometry.size.height * 0.5, alignment: .topLeading)
                         

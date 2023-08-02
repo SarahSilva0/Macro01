@@ -11,6 +11,8 @@ struct DificultyView_: View {
     
     @State private var shouldNavigate = false
     @ObservedObject var combatViewModel: CombatViewModel
+    @Environment(\.presentations) private var presentations
+
 
     
     var body: some View {
@@ -31,7 +33,6 @@ struct DificultyView_: View {
                                 combatViewModel.mediumDiff.selectdedLevel = false
                                 combatViewModel.hardDiff.selectdedLevel = false
                                 combatViewModel.easyDiff.selectdedLevel = true
-                                print("BOTAAAAAAAO\(combatViewModel.easyDiff.selectdedLevel)")
                                 shouldNavigate.toggle()
                                 
                             } label: {
@@ -73,7 +74,6 @@ struct DificultyView_: View {
                                 combatViewModel.easyDiff.selectdedLevel = false
                                 combatViewModel.mediumDiff.selectdedLevel = false
                                 combatViewModel.hardDiff.selectdedLevel = true
-                                print("BOTAO DIFICIIIL\(combatViewModel.hardDiff.selectdedLevel)")
                                 shouldNavigate.toggle()
                                 
                             } label: {
@@ -105,12 +105,12 @@ struct DificultyView_: View {
                     }.frame(height: geo.size.height * 0.8, alignment: .bottom)
                 }.frame(width: geo.size.width, height: geo.size.height, alignment: .center)
                 
-            }.sheet(isPresented: $shouldNavigate){
-                CombatView(combatViewModel: combatViewModel) // Passando a mesma instância de combatViewModel
-
-            }
-            .onAppear{
-                print("AQUIIIIIIIIIIIIIIIIIIIIIIIIII \(combatViewModel.easyDiff.selectdedLevel)")
+            }.sheet(isPresented: $shouldNavigate, onDismiss: {
+                combatViewModel.startCountdown()
+                combatViewModel.gameReset()
+            }){
+                CombatView(combatViewModel: combatViewModel)
+                    .environment(\.presentations, presentations + [$shouldNavigate])
             }
         }
     }

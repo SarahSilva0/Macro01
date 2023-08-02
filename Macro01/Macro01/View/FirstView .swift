@@ -14,7 +14,6 @@ struct FirstView: View {
 
     
     var body: some View {
-        NavigationView {
             GeometryReader { geometry in
                 ZStack {
                     Color.black
@@ -37,7 +36,6 @@ struct FirstView: View {
                                 .frame(width: buttonSize, height: buttonSize)
                                 
                                 ButtonGenRound(action: {
-                                    print("Galeria")
                                     showGaleria = true
                                 },
                                                image: "Galeria",
@@ -98,7 +96,7 @@ struct FirstView: View {
             .sheet(isPresented: $showGaleria){
                 GaleriaSaciView()
             }
-        }
+        
     }
 }
 
