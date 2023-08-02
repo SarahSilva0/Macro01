@@ -14,8 +14,6 @@ struct CombatView: View {
     @Environment(\.presentationMode) var presentationMode
     @Environment(\.presentations) var presentations
 
-    
-    
     var body: some View {
         ZStack {
             Image("backgroundOne")
@@ -67,6 +65,7 @@ struct CombatView: View {
                             }
                         }
                         .frame(width: geometry.size.width * 0.3, height: geometry.size.height * 0.7, alignment: .center)
+                        .animation(.easeOut(duration: 0.3))
                     }
                     .frame(height: geometry.size.height * 0.5, alignment: .bottom)
                     
@@ -78,10 +77,13 @@ struct CombatView: View {
                         .frame(width: geometry.size.width * 0.13, height: geometry.size.height * 0.1)
                         
                     }
+                    .animation(.easeInOut(duration: 1.0))
                     .frame(width: geometry.size.width * 0.2, height: geometry.size.height * 0.2, alignment: .bottom)
+                    
                 }
                 //AQUI MEXE NA ALTURA DAS CARTAS EM RELACAO AS CARTAS DO CENTRO
                 .frame(width: geometry.size.width, height: geometry.size.height * 1.1, alignment: .center)
+        
                 
                 ZStack {
                     VStack{
