@@ -41,6 +41,8 @@ struct SheetView: View {
                 }
                 .frame(width: geometry.size.width * 0.1, height: geometry.size.height * 0.98)
                 
+                
+                
                 HStack {
                     
                     VStack {

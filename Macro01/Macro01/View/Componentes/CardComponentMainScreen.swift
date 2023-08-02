@@ -17,6 +17,7 @@ struct CardComponentMainScreen: View {
             .frame(width: 120, height: 120)
        
     }
+    
 }
 
 
