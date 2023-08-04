@@ -34,7 +34,7 @@ class CombatViewModel: ObservableObject {
     
     //MARK: Difficulty instancias
     @Published var easyDiff = DifficultyModel(imageInitial: "", imageSillhoute: "facil", imageWin: "easyWin", winCard: "", selectdedLevel: false, winLevel: false)
-    @Published var mediumDiff = DifficultyModel(imageInitial: "intermediario", imageSillhoute: "intermediario", imageWin: "easyWin", winCard: "", selectdedLevel: false, winLevel: false)
+    @Published var mediumDiff = DifficultyModel(imageInitial: "mediumBlockIara", imageSillhoute: "mediumIara", imageWin: "mediumWinIara", winCard: "", selectdedLevel: false, winLevel: false)
     @Published var hardDiff = DifficultyModel(imageInitial: "", imageSillhoute: "hardBlock", imageWin: "hardWin", winCard: "", selectdedLevel: false, winLevel: false)
     
     

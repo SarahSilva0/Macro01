@@ -62,9 +62,16 @@ struct DificultyView_: View {
                                     .resizable()
                                     .aspectRatio(contentMode: .fit)
                             } else {
-                                Image(combatViewModel.mediumDiff.imageSillhoute)
-                                    .resizable()
-                                    .aspectRatio(contentMode: .fit)
+                                if combatViewModel.easyDiff.winLevel == true{
+                                    Image(combatViewModel.mediumDiff.imageSillhoute)
+                                        .resizable()
+                                        .aspectRatio(contentMode: .fit)
+                                }
+                                else{
+                                    Image(combatViewModel.mediumDiff.imageInitial)
+                                        .resizable()
+                                        .aspectRatio(contentMode: .fit)
+                                }
                             }
                             
                         }.disabled(!combatViewModel.easyDiff.winLevel)
