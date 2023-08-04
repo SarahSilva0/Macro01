@@ -30,7 +30,7 @@ struct SheetView: View {
                             .frame(width: 45, height: 45)
                             .foregroundColor(Color(hex: "FFF2D9"))
                             .overlay(
-                                Text("\(combatViewModel.player1.mana)")
+                                Text("\(combatViewModel.SP.mana)")
                                     .font(.system(size: 30, weight: .bold))
                                     .foregroundColor(.black)
                             )
@@ -49,11 +49,11 @@ struct SheetView: View {
                             .foregroundColor(Color(hex: "FFF2D9"))
                           
                         HStack {
-                            ForEach(combatViewModel.player1.cards, id: \.self) { card in
+                            ForEach(combatViewModel.SP.cards, id: \.self) { card in
                                 CardComponent(image: Image(card.name))
                                     .frame(width: geometry.size.width * 0.29, height: geometry.size.height * 0.1, alignment: .leading)
                                     .onTapGesture {
-                                        combatViewModel.player1.selectedCard = card
+                                        combatViewModel.SP.selectedCard = card
                                         combatViewModel.selectedCardPlayer2()
                                         self.closeSheet()
                                         combatViewModel.endTurn()

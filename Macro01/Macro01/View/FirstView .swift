@@ -56,7 +56,7 @@ struct FirstView: View {
                                 .padding(.vertical)
                             
                             NavigationLink(destination: DificultyView_(combatViewModel: CombatViewModel())) {
-                                Text("Jogo Livre")
+                                Text("Jogar")
                                     .font(Font.custom("CooperBlackStd", size: 20))
                                     .fontWeight(.bold)
                                     .foregroundColor(.black)
