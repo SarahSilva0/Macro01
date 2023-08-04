@@ -22,6 +22,12 @@ struct FirstView: View {
                         .resizable()
                         .aspectRatio(contentMode: .fill)
                         .ignoresSafeArea(.all)
+                    
+                    Image("FolkardLogo")
+                        .resizable()
+                        .aspectRatio(contentMode: .fit)
+                        .frame(width: 300, height: 300)
+                    
                     VStack {
                         VStack {
                             HStack(spacing: 20) {
@@ -49,12 +55,9 @@ struct FirstView: View {
                         }
                         .frame(width: geometry.size.width * 0.9, height: geometry.size.height * 0.2)
                         
+                        Spacer()
+                        
                         VStack {
-                            Image("titulo")
-                                .resizable()
-                                .aspectRatio(contentMode: .fit)
-                                .padding(.vertical)
-                            
                             NavigationLink(destination: DificultyView_(combatViewModel: CombatViewModel())) {
                                 Text("Jogo Livre")
                                     .font(Font.custom("CooperBlackStd", size: 20))
@@ -66,7 +69,6 @@ struct FirstView: View {
                                     .cornerRadius(10)
                             }
                         }
-                        .padding()
                     }
                 }
                 .frame(width: geometry.size.width, height: geometry.size.height, alignment: .center)
@@ -83,7 +85,6 @@ struct FirstView: View {
                                 }
                         }
                     }
-                    
                         .onAppear {
                             withAnimation {
                                 showConfiguration = false
@@ -98,8 +99,6 @@ struct FirstView: View {
         
     }
 }
-
-
 
 
 struct FisrtView__Previews: PreviewProvider {

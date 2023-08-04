@@ -21,20 +21,19 @@ struct SplashScreen: View {
         
         GeometryReader { geometry  in
             ZStack {
-                Image("backgroundGeral")
+                Image("BG GERAL")
                     .resizable()
-                    .edgesIgnoringSafeArea(.all)
-                
+                    .aspectRatio(contentMode: .fill)
+                    .ignoresSafeArea(.all)
                 VStack {
                     if showHomeView {
                         MainView()
                     } else {
-                        VStack(){
+                        VStack {
                             Image("logoSplash")
                                 .resizable()
                                 .scaledToFit()
-                                .frame(width: 250, height: 250)
-                            
+                                .frame(width: 300, height: 300)
                         }
                         .scaleEffect(scale)
                         .opacity(opacity)
