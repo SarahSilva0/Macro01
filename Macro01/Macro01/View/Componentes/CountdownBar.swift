@@ -5,6 +5,7 @@
 //  Created by Higor  Lo Castro on 06/08/23.
 //
 
+
 import SwiftUI
 
 struct CountdownBar : View {
@@ -18,7 +19,7 @@ struct CountdownBar : View {
 
             RoundedRectangle(cornerRadius: 10)
                 .frame(width: 15, height: 230 * (1 - countdownFraction))
-                .foregroundColor(Color(hex: "688869"))
+                .foregroundColor(Color(hex: "#12e05e"))
         }
     }
 }

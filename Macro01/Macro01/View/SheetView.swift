@@ -1,3 +1,4 @@
+//
 //  SheetView.swift
 //  Macro01
 //
@@ -6,21 +7,23 @@
 import SwiftUI
 
 //MARK: SHEET VIEW EM QUE AS VIEWS APARECEM. PRECISA SER SEPARADA EM OUTRO ARQUIVO
-import SwiftUI
-
 struct SheetView: View {
+    
     @ObservedObject var combatViewModel: CombatViewModel
     @Binding var isSheetVisible: Bool
+    
     @Binding var countdownSheet: Int
     
+    
     @State private var timer: Timer?
-
+    
     var body: some View {
         GeometryReader { geometry in
+            
             ZStack {
                 Color(.black)
                     .opacity(0.65)
-
+                
                 VStack {
                     HStack {
                         Circle()
@@ -37,13 +40,14 @@ struct SheetView: View {
                     Spacer()
                 }
                 .frame(width: geometry.size.width * 0.1, height: geometry.size.height * 0.98)
-
+                
                 HStack {
+                    
                     VStack {
                         Text("Escolha uma carta")
                             .font(Font.custom("CooperBlackStd", size: 30))
                             .foregroundColor(Color(hex: "FFF2D9"))
-
+                          
                         HStack {
                             ForEach(combatViewModel.SP.cards, id: \.self) { card in
                                 CardComponent(image: Image(card.name))
@@ -58,47 +62,53 @@ struct SheetView: View {
                         }
                         .frame(width: geometry.size.width * 0.85, height: geometry.size.height * 0.8)
                     }
-
+                    
                     HStack {
-                        // Use o componente CountdownBar aqui
-                        CountdownBar(countdownFraction: countdownFraction())
+                        ZStack(alignment: .bottomLeading) {
+                            CountdownBar(countdownFraction: countdownFraction())
+                        }
+                        
                     }
-                    .frame(width: geometry.size.width * 0.06, height: geometry.size.height * 0.1, alignment: .trailing)
+                    .frame(width: geometry.size.width * 0.06, height: geometry.size.height * 0.1,alignment: .trailing)
+                    
                 }
                 .frame(width: geometry.size.width * 1, height: geometry.size.height, alignment: .trailing)
             }
             .ignoresSafeArea(.all)
+            
             .onAppear {
                 startCountdownSheet()
             }
         }
     }
-
+    
+    
     func startCountdownSheet() {
         if timer != nil {
             timer?.invalidate()
             timer = nil
         }
-
+        
         timer = Timer.scheduledTimer(withTimeInterval: 1, repeats: true) { _ in
             if countdownSheet > 0 {
                 countdownSheet -= 1
             } else {
                 timer?.invalidate()
                 self.closeSheet()
-                // Falar que jogador 1 perdeu
+                //Falar que jogador 1 perdeu
                 combatViewModel.selectedCardPlayer2()
                 combatViewModel.endTurn()
             }
         }
     }
-
+    
+    
     func countdownFraction() -> CGFloat {
         let totalDuration: CGFloat = 5
         let remainingTime: CGFloat = CGFloat(countdownSheet)
         return (totalDuration - remainingTime) / totalDuration
     }
-
+    
     func closeSheet() {
         timer?.invalidate()
         timer = nil
@@ -106,4 +116,6 @@ struct SheetView: View {
         isSheetVisible = false
     }
 }
- 
+
+
+
