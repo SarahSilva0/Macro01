@@ -109,6 +109,7 @@ struct SheetView: View {
         return (totalDuration - remainingTime) / totalDuration
     }
     
+    //O CONTADOR VOLTA A SER 5 E A BARRA FICA VERDE
     func closeSheet() {
         timer?.invalidate()
         timer = nil
