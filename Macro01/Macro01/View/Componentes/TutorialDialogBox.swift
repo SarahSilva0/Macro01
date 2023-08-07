@@ -26,14 +26,11 @@ struct TutorialDialogBox: View {
                             .font(.system(size: 15))
                     }
                     .frame(width: geometry.size.width * 1.5, height: geometry.size.height * 0.83)
-//                    .background(.red)
+                    .background(.red)
                 }
                 .frame(width: geometry.size.width * 0.45, height: geometry.size.height * 0.6)
                 .background(.blue)
                 Spacer()
-               
-                
-              
                 
             }
             .frame(width: 533, height: 105)

@@ -29,7 +29,6 @@ struct CombatView: View {
                         .foregroundColor(Color(hex: "3C3634"))
                         .bold()
                 }
-                
             }
             
             GeometryReader { geometry in
@@ -84,7 +83,6 @@ struct CombatView: View {
                 //AQUI MEXE NA ALTURA DAS CARTAS EM RELACAO AS CARTAS DO CENTRO
                 .frame(width: geometry.size.width, height: geometry.size.height * 1.1, alignment: .center)
         
-                
                 ZStack {
                     VStack{
                         //MARK: BOTÃO DE PAUSE

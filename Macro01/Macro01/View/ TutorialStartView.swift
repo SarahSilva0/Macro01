@@ -47,8 +47,6 @@ struct TutorialStartView: View {
         buttonRight: "buttonRight"
     )
     
-    
-    
     var body: some View {
         
         GeometryReader { geometry in
@@ -66,9 +64,7 @@ struct TutorialStartView: View {
                                     .font(.system(size: 30, weight: .bold))
                                     .foregroundColor(.black)
                             )
-                        
                             .frame(width: geometry.size.width * 0.15, height: geometry.size.height * 0.7)
-                        
                         
                         ForEach(tutorialCharacter.card, id: \.self) { card in
                             (Image(card))
@@ -79,6 +75,7 @@ struct TutorialStartView: View {
                         
                         Spacer()
                         
+                        //Contador provisório
                         ZStack(alignment: .bottomLeading) {
                             RoundedRectangle(cornerRadius: 10)
                                 .frame(width: 15, height: 230)
@@ -88,6 +85,7 @@ struct TutorialStartView: View {
                                 .frame(width: 15, height: 230 * (1 - countdownFraction()))
                                 .foregroundColor(Color(hex: "688869"))
                         }
+                        
                         Spacer()
                         
                         Button(action: {
@@ -102,16 +100,20 @@ struct TutorialStartView: View {
                     .frame(width: geometry.size.width , height: geometry.size.height * 0.7)
                     //                    .background(.white)
                     
-                
                     Spacer()
                     
-                    HStack {
+                    HStack (alignment: .bottom) {
+                        
+                        Spacer()
+                        
                         Character(character: tutorialCharacter.characterImage[0])
-                            .frame(width: geometry.size.width * 0.2, height: geometry.size.height * 0.25)
+                            .frame(width: geometry.size.width * 0.25, height: geometry.size.height * 0.3)
+                        
+                        Spacer()
                         
                         TutorialDialogBox(characterName: tutorialCharacter.charactersNames[0], dialogue: tutorialCharacter.dialoguePlayOne[6], colorBox: "FFC097")
                         
-                     
+                        Spacer()
                         
                         VStack {
                             ButtonComponentImage(action: {
@@ -121,10 +123,13 @@ struct TutorialStartView: View {
                             ButtonComponentImage(action: {
                                           print("oi")
                                       }, image: "buttonRight")
+                            
+                            Spacer()
                         }
                         
                     }
-                    .frame(width: geometry.size.width  , height: geometry.size.height * 0.3)
+                    .ignoresSafeArea()
+                    .frame(width: geometry.size.width, height: geometry.size.height * 0.28)
                 }
             }
             .frame(width: geometry.size.width, height: geometry.size.height)
