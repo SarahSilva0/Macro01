@@ -34,25 +34,33 @@ struct TutorialStartGenericView: View {
                                         .background(.blue)
                     
                     HStack {
-                        
-                        Character(character: tutorialCharacter.tutorialCharacterModel.characterImage[0])
-                            .frame(width: geometry.size.width * 0.25, height: geometry.size.height * 0.3)
-                        
-                        TutorialDialogBox(characterName: tutorialCharacter.tutorialCharacterModel.charactersNames[0],
-                            dialogue: tutorialCharacter.tutorialCharacterModel.dialoguePlayOne[6],
-                            colorBox: "FFC097")
-                        
-                        VStack {
-                            ButtonComponentImage(action: {
-                                          print("oi")
-                                      }, image: "buttonLeft")
-                            
-                            ButtonComponentImage(action: {
-                                          print("oi")
-                                      }, image: "buttonRight")
+                        HStack {
+                            Character(character: tutorialCharacter.tutorialCharacterModel.characterImage[0])
+                                .frame(width: geometry.size.width * 0.25, height: geometry.size.height * 0.1)
                         }
-                        .frame(width: geometry.size.width * 0.252, height: geometry.size.height * 0.2)
-
+                        .frame(width: geometry.size.width * 0.18, height: geometry.size.height * 0.1)
+                        
+                        Spacer()
+                        
+                        HStack {
+                            TutorialDialogBox(characterName: tutorialCharacter.tutorialCharacterModel.charactersNames[0],
+                                              dialogue: tutorialCharacter.tutorialCharacterModel.dialoguePlayOne[6],
+                                              colorBox: "FFC097")
+                        }
+                        .frame(width: geometry.size.width * 0.55, height: geometry.size.height * 0.3)
+                      
+                        
+                        HStack {
+                            VStack {
+                                ButtonComponentImage(action: {
+                                    print("oi")
+                                }, image: "buttonLeft")
+                                
+                                ButtonComponentImage(action: {
+                                    print("oi")
+                                }, image: "buttonRight")
+                            }
+                        }.frame(width: geometry.size.width * 0.3, height: geometry.size.height)
                     }
                     .ignoresSafeArea()
                     .frame(width: geometry.size.width, height: geometry.size.height * 0.28)

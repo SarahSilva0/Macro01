@@ -17,7 +17,7 @@ import SwiftUI
 
 import SwiftUI
 
-struct TutorialStartViewCards: View {
+struct TutorialStartCardsView: View {
     
   var tutorialCharacter = TutorialStartTableModel()
 var countdownSheet: Int

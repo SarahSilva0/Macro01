@@ -38,7 +38,7 @@ struct TutorialDialogBox: View {
                 .background(Color(hex: colorBox))
                 .cornerRadius(10)
             }
-            .frame(width: 547, height: 119)
+            .frame(width: 548, height: 120)
             .background(Image("backgroundGeral"))
             .cornerRadius(10)
         }
