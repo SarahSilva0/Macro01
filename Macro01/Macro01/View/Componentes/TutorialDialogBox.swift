@@ -15,18 +15,23 @@ struct TutorialDialogBox: View {
     var body: some View {
         GeometryReader { geometry in
             HStack {
-                VStack(alignment: .leading) {
-                    Text(characterName)
-                        .font(.system(size: 15))
-                        .fontWeight(.bold)
-                        .padding(.bottom, 1)
-                    
-                    Text(dialogue)
-                        .font(.system(size: 15))
+                HStack {
+                    VStack(alignment: .leading) {
+                        Text(characterName)
+                            .font(.system(size: 15))
+                            .fontWeight(.bold)
+                            .padding(.bottom, 1)
+                        
+                        Text(dialogue)
+                            .font(.system(size: 15))
+                    }
+                    .frame(width: geometry.size.width * 1.5, height: geometry.size.height * 0.83)
+//                    .background(.red)
                 }
-                .frame(width: geometry.size.width * 0.96, height: geometry.size.height * 0.83)
-                
-                .background(.red)
+                .frame(width: geometry.size.width * 0.45, height: geometry.size.height * 0.6)
+                .background(.blue)
+                Spacer()
+               
                 
               
                 
