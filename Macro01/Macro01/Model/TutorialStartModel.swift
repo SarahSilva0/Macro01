@@ -18,7 +18,6 @@ struct TutorialStarModel {
     var buttonLeft: String
     var buttonRight: String
     
-    
 }
              
 
