@@ -33,20 +33,14 @@ struct TutorialStartGenericView: View {
                     .frame(width: geometry.size.width * 0.7, height: geometry.size.height * 0.7)
                                         .background(.blue)
                     
-                    HStack (alignment: .bottom) {
-                        
-//                        Spacer()
+                    HStack {
                         
                         Character(character: tutorialCharacter.tutorialCharacterModel.characterImage[0])
                             .frame(width: geometry.size.width * 0.25, height: geometry.size.height * 0.3)
                         
-//                        Spacer()
-                        
                         TutorialDialogBox(characterName: tutorialCharacter.tutorialCharacterModel.charactersNames[0],
                             dialogue: tutorialCharacter.tutorialCharacterModel.dialoguePlayOne[6],
                             colorBox: "FFC097")
-                        
-//                        Spacer()
                         
                         VStack {
                             ButtonComponentImage(action: {
@@ -56,14 +50,12 @@ struct TutorialStartGenericView: View {
                             ButtonComponentImage(action: {
                                           print("oi")
                                       }, image: "buttonRight")
-                            
-//                            Spacer()
                         }
-                        
+                        .frame(width: geometry.size.width * 0.252, height: geometry.size.height * 0.2)
+
                     }
                     .ignoresSafeArea()
                     .frame(width: geometry.size.width, height: geometry.size.height * 0.28)
-                    .background(.yellow)
                 }
             }
             .frame(width: geometry.size.width, height: geometry.size.height)
