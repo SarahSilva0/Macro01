@@ -100,6 +100,7 @@ struct CombatView: View {
                             .frame(width: 40, height: 40)
                             .padding(.all)
                         }
+                        .disabled(!combatViewModel.endTurnButtonInteraction)
                         .sheet(isPresented: $combatViewModel.isPaused){
                             PausedView(isPresented: $combatViewModel.isPaused, combatViewModel: combatViewModel)
                                 .environment(\.presentations, presentations + [$combatViewModel.isPaused])

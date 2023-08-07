@@ -10,6 +10,7 @@ class CombatViewModel: ObservableObject {
     @Published var isSheetVisible = false
     @Published var isInteractionEnabled = true
     @Published var isGameEndAlertPresented = false
+    @Published var endTurnButtonInteraction = true
     @Published var isPaused = false
     var timer: Timer?
     
@@ -17,9 +18,6 @@ class CombatViewModel: ObservableObject {
     
     @Published var countdownSheet: Int = 5
     
-    
-    
-    //    var cards = Cards()
     
     var SP = PlayerCombat(image: "jogador1", cards: [
         Card(type: .attack, name: "attack"),
@@ -90,6 +88,7 @@ class CombatViewModel: ObservableObject {
     
     //MARK: QUANDO O CONTADOR ACABA
     func endTurn() {
+        self.endTurnButtonInteraction = false
         isInteractionEnabled = false
         compareCardsInCenter(card1: SP.selectedCard, card2: Raia.selectedCard)
         
@@ -101,6 +100,8 @@ class CombatViewModel: ObservableObject {
     
     //MARK: RESETANDO O CONTADOR
     func resetTurn() {
+        
+        self.endTurnButtonInteraction = true
         
         if RaiaDiff.selectdedLevel == true {
             print("MEDIO DIFICULDADEEEEEE JOGADOOOOR")
