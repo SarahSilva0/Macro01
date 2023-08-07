@@ -13,13 +13,24 @@ struct CombatView: View {
     @ObservedObject var combatViewModel: CombatViewModel
     @Environment(\.presentationMode) var presentationMode
     @Environment(\.presentations) var presentations
-
+    
     var body: some View {
         ZStack {
             Image("backgroundOne")
                 .resizable()
                 .aspectRatio(contentMode: .fill)
                 .ignoresSafeArea()
+            
+            if !combatViewModel.isCountdownVisible && !combatViewModel.isSheetVisible {
+                if combatViewModel.SP.winTurno == 3 || combatViewModel.Raia.winTurno == 3 {
+                    WinnerText(text: combatViewModel.checkGameWinner()[0], size: 50, paddingSize: 0)
+                    WinnerText(text: combatViewModel.checkGameWinner()[1], size: 15, paddingSize: 50)
+                }
+                else {
+                    WinnerText(text: combatViewModel.checkPlayerVictory()[0], size: 50, paddingSize: 0)
+                    WinnerText(text: combatViewModel.checkPlayerVictory()[1], size: 15, paddingSize: 50)
+                }
+            }
             
             //MARK: CONTADOR DO CENTRO DA TELA
             VStack {
@@ -29,7 +40,6 @@ struct CombatView: View {
                         .foregroundColor(Color(hex: "3C3634"))
                         .bold()
                 }
-                
             }
             
             GeometryReader { geometry in
@@ -50,6 +60,7 @@ struct CombatView: View {
                                 .resizable()
                                 .aspectRatio(contentMode: .fill)
                                 .frame(height: geometry.size.height * 0.4)
+                            
                             
                             Spacer(minLength: 130)
                             
@@ -83,7 +94,7 @@ struct CombatView: View {
                 }
                 //AQUI MEXE NA ALTURA DAS CARTAS EM RELACAO AS CARTAS DO CENTRO
                 .frame(width: geometry.size.width, height: geometry.size.height * 1.1, alignment: .center)
-        
+                
                 
                 ZStack {
                     VStack{
@@ -103,7 +114,7 @@ struct CombatView: View {
                         .sheet(isPresented: $combatViewModel.isPaused){
                             PausedView(isPresented: $combatViewModel.isPaused, combatViewModel: combatViewModel)
                                 .environment(\.presentations, presentations + [$combatViewModel.isPaused])
-                                
+                            
                                 .background(ClearBackgroundView())
                             
                         }

@@ -11,6 +11,7 @@ class CombatViewModel: ObservableObject {
     @Published var isInteractionEnabled = true
     @Published var isGameEndAlertPresented = false
     @Published var isPaused = false
+    @Published var checkWin = 0
     var timer: Timer?
     
     
@@ -39,7 +40,6 @@ class CombatViewModel: ObservableObject {
     
     //MARK: CONTADOR
     func startCountdown() {
-        
         if SP.winTurno == 3{
             self.gameEnd()
             return
@@ -161,32 +161,40 @@ class CombatViewModel: ObservableObject {
     }
     
     
-    func compareCardsInCenter(card1: Card, card2: Card) {
+func compareCardsInCenter(card1: Card, card2: Card) {
         switch (card1.type, card2.type) {
         case (.attack, .attack):
             handleAttackVsAttack()
+            checkWin = 0
         case (.attack, .defense):
             handleAttackVsDefense()
+            checkWin = 0
         case (.attack, .recharge):
             handleAttackVsRecharge()
+            checkWin = 1
         case (.defense, .attack):
             handleDefenseVsAttack()
+            checkWin = 0
         case (.defense, .defense):
             handleDefenseVsDefense()
+            checkWin = 0
         case (.defense, .recharge):
             handleDefenseVsRecharge()
+            checkWin = 0
         case (.recharge, .attack):
             handleRechargeVsAttack()
+            checkWin = 2
         case (.recharge, .defense):
             handleRechargeVsDefense()
+            checkWin = 0
         case (.recharge, .recharge):
             handleRechargeVsRecharge()
+            checkWin = 0
         default:
             break
         }
     }
-    
-    
+
     private func handleAttackVsAttack() {
         if SP.mana >= 1 && Raia.mana >= 1 {
             player1LoseMana()
@@ -323,6 +331,29 @@ class CombatViewModel: ObservableObject {
         }
     }
     
+    func checkPlayerVictory() -> [String] {
+        switch checkWin {
+        case 0:
+            return ["Empate!", "Continue tentando!"]
+        case 1:
+            return ["Parabéns!", "Você ganhou a rodada!"]
+        case 2:
+            return ["Cuidado!", "Você perdeu a rodada!"]
+        default:
+            return ["Empate!", "Continue tentando!"]
+        }
+    }
+    
+    func checkGameWinner() -> [String] {
+        switch getScore() {
+        case "Player 1 ganhou!":
+            return ["Vitória!", "Você venceu a partida"]
+        case "Player 2 ganhou!":
+            return ["Derrota!", "Infelizmente não foi dessa vez, vamos jogar de novo?"]
+        default:
+            return ["Empate"]
+        }
+    }
 }
 
 
