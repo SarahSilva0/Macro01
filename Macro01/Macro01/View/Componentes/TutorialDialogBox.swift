@@ -30,12 +30,12 @@ struct TutorialDialogBox: View {
                             .fontWeight(.bold)
                             .padding(.bottom, 1)
                             .frame(width: geometry.size.width * 0.95, height: geometry.size.height * 0.3, alignment: .leading)
-                            .background(.blue)
+                            
 
                         Text(dialogue)
                             .font(.system(size: 15))
                             .frame(width: geometry.size.width * 0.95, height: geometry.size.height * 0.6, alignment: .topLeading)
-                            .background(.red)
+                            
                     }
                 }
                 .cornerRadius(10)
