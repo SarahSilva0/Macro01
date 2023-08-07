@@ -13,7 +13,7 @@ struct SheetView: View {
     @Binding var isSheetVisible: Bool
     
     @Binding var countdownSheet: Int
-    //Controlar o estado do timer
+
     
     @State private var timer: Timer?
     

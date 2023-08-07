@@ -17,6 +17,9 @@
 		EB2BC4E92A374A28008ACFD2 /* CharacterCircle.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB2BC4E82A374A28008ACFD2 /* CharacterCircle.swift */; };
 		EB82F3B02A33EEEF006D7011 /* ColorExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB82F3AF2A33EEEF006D7011 /* ColorExtensions.swift */; };
 		EB99BB582A49F78000DCCE73 /* CardComponentMainScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB99BB572A49F78000DCCE73 /* CardComponentMainScreen.swift */; };
+		EBB6B0D52A80502F00F0F992 /* TutorialStartModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBB6B0D42A80502F00F0F992 /* TutorialStartModel.swift */; };
+		EBB6B0D72A80559400F0F992 /*  TutorialStartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBB6B0D62A80559400F0F992 /*  TutorialStartView.swift */; };
+		EBB6B0D92A8071FD00F0F992 /* TutorialDialogBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBB6B0D82A8071FD00F0F992 /* TutorialDialogBox.swift */; };
 		EBC6883E2A69BAD80072E706 /* PolicyAndPrivacyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBC6883D2A69BAD80072E706 /* PolicyAndPrivacyView.swift */; };
 		EBC688402A69BAF30072E706 /* AboutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBC6883F2A69BAF30072E706 /* AboutView.swift */; };
 		EBC688422A69BB3B0072E706 /* ConfigurationCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBC688412A69BB3B0072E706 /* ConfigurationCardView.swift */; };
@@ -44,7 +47,7 @@
 		FAD5EE632A75224E004A4C78 /* GaleriaSaciView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD5EE622A75224E004A4C78 /* GaleriaSaciView.swift */; };
 		FAD5EE652A7989F9004A4C78 /* PausedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD5EE642A7989F9004A4C78 /* PausedView.swift */; };
 		FADCBAD32A3904510012C0FB /* DificultyView .swift in Sources */ = {isa = PBXBuildFile; fileRef = FADCBAD22A3904510012C0FB /* DificultyView .swift */; };
-		FAE3635C2A1E87C000643271 /* ButtonComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAE3635B2A1E87C000643271 /* ButtonComponent.swift */; };
+		FAE3635C2A1E87C000643271 /* ButtonComponentButtonComponentImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAE3635B2A1E87C000643271 /* ButtonComponentButtonComponentImage.swift */; };
 		FAE3635E2A1E90EA00643271 /* CardComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAE3635D2A1E90EA00643271 /* CardComponent.swift */; };
 		FAEA1B9A2A2693C40007905A /* SecondView .swift in Sources */ = {isa = PBXBuildFile; fileRef = FAEA1B992A2693C40007905A /* SecondView .swift */; };
 		FAF5E9602A2814CB00155C76 /* CombatModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF5E95F2A2814CB00155C76 /* CombatModel.swift */; };
@@ -80,6 +83,9 @@
 		EB82F3AF2A33EEEF006D7011 /* ColorExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorExtensions.swift; sourceTree = "<group>"; };
 		EB86C90E2A421F81009CFA31 /* CardComponentMainScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardComponentMainScreen.swift; sourceTree = "<group>"; };
 		EB99BB572A49F78000DCCE73 /* CardComponentMainScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardComponentMainScreen.swift; sourceTree = "<group>"; };
+		EBB6B0D42A80502F00F0F992 /* TutorialStartModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TutorialStartModel.swift; sourceTree = "<group>"; };
+		EBB6B0D62A80559400F0F992 /*  TutorialStartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = " TutorialStartView.swift"; sourceTree = "<group>"; };
+		EBB6B0D82A8071FD00F0F992 /* TutorialDialogBox.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TutorialDialogBox.swift; sourceTree = "<group>"; };
 		EBC6883D2A69BAD80072E706 /* PolicyAndPrivacyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PolicyAndPrivacyView.swift; sourceTree = "<group>"; };
 		EBC6883F2A69BAF30072E706 /* AboutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutView.swift; sourceTree = "<group>"; };
 		EBC688412A69BB3B0072E706 /* ConfigurationCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigurationCardView.swift; sourceTree = "<group>"; };
@@ -111,7 +117,7 @@
 		FAD5EE622A75224E004A4C78 /* GaleriaSaciView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GaleriaSaciView.swift; sourceTree = "<group>"; };
 		FAD5EE642A7989F9004A4C78 /* PausedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PausedView.swift; sourceTree = "<group>"; };
 		FADCBAD22A3904510012C0FB /* DificultyView .swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DificultyView .swift"; sourceTree = "<group>"; };
-		FAE3635B2A1E87C000643271 /* ButtonComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonComponent.swift; sourceTree = "<group>"; };
+		FAE3635B2A1E87C000643271 /* ButtonComponentButtonComponentImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonComponentButtonComponentImage.swift; sourceTree = "<group>"; };
 		FAE3635D2A1E90EA00643271 /* CardComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardComponent.swift; sourceTree = "<group>"; };
 		FAEA1B992A2693C40007905A /* SecondView .swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SecondView .swift"; sourceTree = "<group>"; };
 		FAF5E95F2A2814CB00155C76 /* CombatModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CombatModel.swift; sourceTree = "<group>"; };
@@ -186,6 +192,7 @@
 				FA6F18592A1D301F00E76127 /* MainView.swift */,
 				EB242D1B2A7C1FBA00581BF7 /* SplashScreen.swift */,
 				FAFF07C62A251E4D00D5BA2B /* FirstView .swift */,
+				EBB6B0D62A80559400F0F992 /*  TutorialStartView.swift */,
 				19A41CB42A3A443D00C2D9A7 /* TutorialView.swift */,
 				FAEA1B992A2693C40007905A /* SecondView .swift */,
 				FA1546DF2A26D15400C9EE2E /* CombatView.swift */,
@@ -206,6 +213,7 @@
 			children = (
 				1905A5332A1E8FB40010D8A9 /* TextBox.swift */,
 				EB2BC4E82A374A28008ACFD2 /* CharacterCircle.swift */,
+				EBB6B0D82A8071FD00F0F992 /* TutorialDialogBox.swift */,
 				EBC688432A69BB7D0072E706 /* TransparentConfigurationButton.swift */,
 				EB99BB572A49F78000DCCE73 /* CardComponentMainScreen.swift */,
 				1905A5352A1E961D0010D8A9 /* SquareGallery.swift */,
@@ -213,7 +221,7 @@
 				193567A12A1E854200C7D34B /* Character.swift */,
 				FAE3635D2A1E90EA00643271 /* CardComponent.swift */,
 				EB86C90E2A421F81009CFA31 /* CardComponentMainScreen.swift */,
-				FAE3635B2A1E87C000643271 /* ButtonComponent.swift */,
+				FAE3635B2A1E87C000643271 /* ButtonComponentButtonComponentImage.swift */,
 				EBCFE2E02A1E8670002CABFF /* BotaoGenRedondoView.swift */,
 				FAD5EE602A74E4FE004A4C78 /* ViewComponent.swift */,
 			);
@@ -225,6 +233,7 @@
 			children = (
 				EBE41B952A228D8400262C00 /* GameTableModel.swift */,
 				EBF134082A23FA7F000FA55E /* PlayerModel.swift */,
+				EBB6B0D42A80502F00F0F992 /* TutorialStartModel.swift */,
 				EBF1340C2A23FAF0000FA55E /* DeckModel.swift */,
 				EBF1340A2A23FAA1000FA55E /* CardModel.swift */,
 			);
@@ -448,9 +457,10 @@
 				FA5BEDA72A2E2559001B0C07 /* ClearBackground.swift in Sources */,
 				19A41CB52A3A443D00C2D9A7 /* TutorialView.swift in Sources */,
 				EBFE58CB2A3506F40042A319 /* ScoreView.swift in Sources */,
-				FAE3635C2A1E87C000643271 /* ButtonComponent.swift in Sources */,
+				FAE3635C2A1E87C000643271 /* ButtonComponentButtonComponentImage.swift in Sources */,
 				FAA898DA2A3BAA740052B998 /* DifficultyModel.swift in Sources */,
 				1905A5342A1E8FB40010D8A9 /* TextBox.swift in Sources */,
+				EBB6B0D52A80502F00F0F992 /* TutorialStartModel.swift in Sources */,
 				193567A22A1E854200C7D34B /* Character.swift in Sources */,
 				1905A5362A1E961D0010D8A9 /* SquareGallery.swift in Sources */,
 				FAEA1B9A2A2693C40007905A /* SecondView .swift in Sources */,
@@ -461,11 +471,13 @@
 				EBE41B962A228D8400262C00 /* GameTableModel.swift in Sources */,
 				FA5BEDA92A2E2599001B0C07 /* SheetView.swift in Sources */,
 				FA5BEDA32A2E2464001B0C07 /* CardsModel.swift in Sources */,
+				EBB6B0D92A8071FD00F0F992 /* TutorialDialogBox.swift in Sources */,
 				FAD5EE652A7989F9004A4C78 /* PausedView.swift in Sources */,
 				FA5BEDA12A2E2428001B0C07 /* PlayerCombatModel.swift in Sources */,
 				EBF1340B2A23FAA1000FA55E /* CardModel.swift in Sources */,
 				FA6F18582A1D301F00E76127 /* Macro01App.swift in Sources */,
 				EBCFE2E12A1E8670002CABFF /* BotaoGenRedondoView.swift in Sources */,
+				EBB6B0D72A80559400F0F992 /*  TutorialStartView.swift in Sources */,
 				FADCBAD32A3904510012C0FB /* DificultyView .swift in Sources */,
 				FAD5EE612A74E4FE004A4C78 /* ViewComponent.swift in Sources */,
 			);
