@@ -14,7 +14,6 @@ struct SheetView: View {
     
     @Binding var countdownSheet: Int
     
-    
     @State private var timer: Timer?
     
     var body: some View {
@@ -36,7 +35,7 @@ struct SheetView: View {
                             )
                         Spacer()
                     }
-                    .frame(width: geometry.size.width * 1.03, height: geometry.size.height * 0.1)
+                    .frame(width: geometry.size.width * 1.06, height: geometry.size.height * 0.1)
                     Spacer()
                 }
                 .frame(width: geometry.size.width * 0.1, height: geometry.size.height * 0.98)
@@ -96,8 +95,11 @@ struct SheetView: View {
                 timer?.invalidate()
                 self.closeSheet()
                 //Falar que jogador 1 perdeu
+             
                 combatViewModel.selectedCardPlayer2()
                 combatViewModel.endTurn()
+                countdownSheet = 5
+                
             }
         }
     }
@@ -113,10 +115,12 @@ struct SheetView: View {
     func closeSheet() {
         timer?.invalidate()
         timer = nil
-        countdownSheet = 5
         isSheetVisible = false
     }
 }
+
+
+
 
 
 

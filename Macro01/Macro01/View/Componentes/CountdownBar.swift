@@ -24,9 +24,9 @@ struct CountdownBar : View {
     }
     
     func getBarColor() -> Color {
-        let greenColor = Color(hex: "#15e012")
-        let yellowColor = Color(hex: "#d6e012")
-        let redColor = Color(hex: "#e01212")
+        let greenColor = Color(hex: "78E478")
+        let yellowColor = Color(hex: "FAE15A")
+        let redColor = Color(hex: "FA5A5A")
         
         if countdownFraction >= 0.67 {
             return redColor
@@ -37,4 +37,8 @@ struct CountdownBar : View {
         }
     }
 }
+
+    
+
+
 
