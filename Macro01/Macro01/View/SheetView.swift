@@ -76,6 +76,7 @@ struct SheetView: View {
             .ignoresSafeArea(.all)
             
             .onAppear {
+                updateCounter()
                 startCountdownSheet()
             }
         }
@@ -95,11 +96,8 @@ struct SheetView: View {
                 timer?.invalidate()
                 self.closeSheet()
                 //Falar que jogador 1 perdeu
-             
                 combatViewModel.selectedCardPlayer2()
                 combatViewModel.endTurn()
-                countdownSheet = 5
-                
             }
         }
     }
@@ -116,6 +114,11 @@ struct SheetView: View {
         timer?.invalidate()
         timer = nil
         isSheetVisible = false
+    }
+    
+    func updateCounter() {
+        countdownSheet = 5
+        return
     }
 }
 
