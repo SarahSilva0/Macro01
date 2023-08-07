@@ -7,7 +7,7 @@ struct Macro01App: App {
         WindowGroup {
 //            SplashScreen()
 //            TutorialStartViewCards(countdownSheet: 5)
-            TutorialStartGenericView(countdownSheet: 5)
+            TutorialStartGenericView()
         }
     }
 }

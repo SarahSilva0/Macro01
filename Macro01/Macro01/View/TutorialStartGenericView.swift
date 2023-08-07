@@ -10,7 +10,6 @@ import SwiftUI
 struct TutorialStartGenericView: View {
     
     var tutorialCharacter = TutorialStartTableModel()
-    var countdownSheet: Int
 
     var body: some View {
         
@@ -69,13 +68,6 @@ struct TutorialStartGenericView: View {
             }
             .frame(width: geometry.size.width, height: geometry.size.height)
         }
-    }
-    
-    //Funcao para mover o contador
-    private func countdownFraction() -> CGFloat {
-        let totalDuration: CGFloat = 5
-        let remainingTime: CGFloat = CGFloat(countdownSheet)
-        return (totalDuration - remainingTime) / totalDuration
     }
 }
 
