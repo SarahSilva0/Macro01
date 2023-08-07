@@ -14,33 +14,34 @@ struct TutorialDialogBox: View {
 
     var body: some View {
         GeometryReader { geometry in
-            ZStack {
-                HStack {
-                    HStack {
-                        VStack(alignment: .leading) {
-                            Text(characterName)
-                                .font(.system(size: 15))
-                                .fontWeight(.bold)
-                                .padding(.bottom, 1)
-                            
-                            Text(dialogue)
-                                .font(.system(size: 15))
-                        }
-                        .frame(width: geometry.size.width * 1.5, height: geometry.size.height * 0.83)
-//                        .background(.red)
-                    }
-                    .frame(width: geometry.size.width * 0.39, height: geometry.size.height * 0.65)
-                    //                .background(.blue)
-                    Spacer()
+            VStack {
+                ZStack{
+                    Image("backgroundGeral")
+                        .resizable()
                     
+                    Rectangle()
+                        Color(hex: colorBox)
+                        .cornerRadius(10)
+                        .frame(width: geometry.size.width * 0.975, height: geometry.size.height * 0.90)
+                    
+                    VStack(spacing: 0){
+                        Text(characterName)
+                            .font(.system(size: 15))
+                            .fontWeight(.bold)
+                            .padding(.bottom, 1)
+                            .frame(width: geometry.size.width * 0.95, height: geometry.size.height * 0.3, alignment: .leading)
+                            .background(.blue)
+
+                        Text(dialogue)
+                            .font(.system(size: 15))
+                            .frame(width: geometry.size.width * 0.95, height: geometry.size.height * 0.6, alignment: .topLeading)
+                            .background(.red)
+                    }
                 }
-                .frame(width: 533, height: 105)
-                .background(Color(hex: colorBox))
                 .cornerRadius(10)
             }
-            .frame(width: 547, height: 119)
-            .background(Image("backgroundGeral"))
-            .cornerRadius(10)
+            .frame(width: geometry.size.width, height: geometry.size.height, alignment: .center)
+            
         }
     }
 }

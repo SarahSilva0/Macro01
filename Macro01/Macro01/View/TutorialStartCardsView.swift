@@ -2,17 +2,15 @@ import SwiftUI
 
 struct TutorialStartCardsView: View {
     
-var tutorialCharacter = TutorialStartTableModel()
-var countdownSheet: Int
+    var tutorialCharacter = TutorialStartTableModel()
+    var countdownSheet: Int
     
     var body: some View {
         
         GeometryReader { geometry in
-            ZStack {
-                Color.black
-                    .ignoresSafeArea()
-                
-                VStack {
+            VStack {
+                ZStack{
+                    Color.black
                     HStack {
                         Circle()
                             .frame(width: 45, height: 45)
@@ -49,52 +47,50 @@ var countdownSheet: Int
                         }
                         
                     }
-                    .frame(width: geometry.size.width , height: geometry.size.height * 0.7)
-                    //                    .background(.white)
+                    .frame(width: geometry.size.width , height: geometry.size.height * 0.5)
                     
-                    Spacer()
-                    
-                    HStack (alignment: .bottom) {
-                        
-                        Spacer()
-                        
+                    HStack {
                         Character(character: tutorialCharacter.tutorialCharacterModel.characterImage[0])
-                            .frame(width: geometry.size.width * 0.25, height: geometry.size.height * 0.3)
-                        
-//                        Spacer()
+                            .frame(width: geometry.size.width * 0.2)
+                            .background(.red)
                         
                         TutorialDialogBox(characterName: tutorialCharacter.tutorialCharacterModel.charactersNames[0],
-                            dialogue: tutorialCharacter.tutorialCharacterModel.dialoguePlayOne[6],
-                            colorBox: "FFC097")
-//
-//                        Spacer()
+                                          dialogue: tutorialCharacter.tutorialCharacterModel.dialoguePlayOne[6],
+                                          colorBox: "FFC097")
+                        .frame(width: geometry.size.width * 0.7)
                         
-                        HStack {
-                            VStack {
-                                ButtonComponentImage(action: {
-                                    print("oi")
-                                }, image: "btn-back")
-                                
-                                ButtonComponentImage(action: {
-                                    print("oi")
-                                }, image: "btn-next")
-                            }
+                        
+                        
+                        VStack {
+                            ButtonComponentImage(action: {
+                                print("oi")
+                            }, image: "NextLeft")
+                            
+                            ButtonComponentImage(action: {
+                                print("oi")
+                            }, image: "NextRight")
                         }
+                        .frame(width: geometry.size.width * 0.1)
+                        .background(.green)
                         
                     }
-                    .ignoresSafeArea()
-                    .frame(width: geometry.size.width, height: geometry.size.height * 0.28)
-                }
+                    .frame(width: geometry.size.width * 1, height: geometry.size.height * 0.3)
+
+                    
+                
+                .frame(width: geometry.size.width * 1.20, height: geometry.size.height * 0.1)
             }
-            .frame(width: geometry.size.width, height: geometry.size.height)
+            .ignoresSafeArea()
         }
+        .frame(width: geometry.size.width, height: geometry.size.height)
     }
-    
-    
-    //Funcao para mover o contador
-    private func countdownFraction() -> CGFloat {
-        let totalDuration: CGFloat = 5
-        let remainingTime: CGFloat = CGFloat(countdownSheet)
-        return (totalDuration - remainingTime) / totalDuration
-    }
+}
+
+
+//Funcao para mover o contador
+private func countdownFraction() -> CGFloat {
+    let totalDuration: CGFloat = 5
+    let remainingTime: CGFloat = CGFloat(countdownSheet)
+    return (totalDuration - remainingTime) / totalDuration
+}
 }
