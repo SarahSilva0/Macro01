@@ -19,6 +19,7 @@ struct TutorialStartGenericView: View {
                     .ignoresSafeArea()
                 
                 VStack {
+
                     HStack {
                         Button(action: {
                             print("oi")
@@ -29,25 +30,23 @@ struct TutorialStartGenericView: View {
                         }
                         
                     }
-                    .frame(width: geometry.size.width , height: geometry.size.height * 0.7)
-                    //                    .background(.white)
-                    
-                    Spacer()
+                    .frame(width: geometry.size.width * 0.7, height: geometry.size.height * 0.7)
+                                        .background(.blue)
                     
                     HStack (alignment: .bottom) {
                         
-                        Spacer()
+//                        Spacer()
                         
                         Character(character: tutorialCharacter.tutorialCharacterModel.characterImage[0])
                             .frame(width: geometry.size.width * 0.25, height: geometry.size.height * 0.3)
                         
-                        Spacer()
+//                        Spacer()
                         
                         TutorialDialogBox(characterName: tutorialCharacter.tutorialCharacterModel.charactersNames[0],
                             dialogue: tutorialCharacter.tutorialCharacterModel.dialoguePlayOne[6],
                             colorBox: "FFC097")
                         
-                        Spacer()
+//                        Spacer()
                         
                         VStack {
                             ButtonComponentImage(action: {
@@ -58,12 +57,13 @@ struct TutorialStartGenericView: View {
                                           print("oi")
                                       }, image: "buttonRight")
                             
-                            Spacer()
+//                            Spacer()
                         }
                         
                     }
                     .ignoresSafeArea()
                     .frame(width: geometry.size.width, height: geometry.size.height * 0.28)
+                    .background(.yellow)
                 }
             }
             .frame(width: geometry.size.width, height: geometry.size.height)
