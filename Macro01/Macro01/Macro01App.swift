@@ -6,7 +6,8 @@ struct Macro01App: App {
     var body: some Scene {
         WindowGroup {
 //            SplashScreen()
-            TutorialStartViewCards(countdownSheet: 5)
+//            TutorialStartViewCards(countdownSheet: 5)
+            TutorialStartGenericView(countdownSheet: 5)
         }
     }
 }

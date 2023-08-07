@@ -18,7 +18,7 @@
 		EB82F3B02A33EEEF006D7011 /* ColorExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB82F3AF2A33EEEF006D7011 /* ColorExtensions.swift */; };
 		EB99BB582A49F78000DCCE73 /* CardComponentMainScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB99BB572A49F78000DCCE73 /* CardComponentMainScreen.swift */; };
 		EBB6B0D52A80502F00F0F992 /* TutorialStartModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBB6B0D42A80502F00F0F992 /* TutorialStartModel.swift */; };
-		EBB6B0D72A80559400F0F992 /*  TutorialStartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBB6B0D62A80559400F0F992 /*  TutorialStartView.swift */; };
+		EBB6B0D72A80559400F0F992 /*  TutorialStartViewTutorialStartViewCards.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBB6B0D62A80559400F0F992 /*  TutorialStartViewTutorialStartViewCards.swift */; };
 		EBB6B0D92A8071FD00F0F992 /* TutorialDialogBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBB6B0D82A8071FD00F0F992 /* TutorialDialogBox.swift */; };
 		EBBF65232A81155D00B047E0 /* TutorialStartGenericView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBBF65222A81155D00B047E0 /* TutorialStartGenericView.swift */; };
 		EBBF65252A81169C00B047E0 /* TutorialStartTableModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBBF65242A81169C00B047E0 /* TutorialStartTableModel.swift */; };
@@ -86,7 +86,7 @@
 		EB86C90E2A421F81009CFA31 /* CardComponentMainScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardComponentMainScreen.swift; sourceTree = "<group>"; };
 		EB99BB572A49F78000DCCE73 /* CardComponentMainScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardComponentMainScreen.swift; sourceTree = "<group>"; };
 		EBB6B0D42A80502F00F0F992 /* TutorialStartModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TutorialStartModel.swift; sourceTree = "<group>"; };
-		EBB6B0D62A80559400F0F992 /*  TutorialStartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = " TutorialStartView.swift"; sourceTree = "<group>"; };
+		EBB6B0D62A80559400F0F992 /*  TutorialStartViewTutorialStartViewCards.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = " TutorialStartViewTutorialStartViewCards.swift"; sourceTree = "<group>"; };
 		EBB6B0D82A8071FD00F0F992 /* TutorialDialogBox.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TutorialDialogBox.swift; sourceTree = "<group>"; };
 		EBBF65222A81155D00B047E0 /* TutorialStartGenericView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TutorialStartGenericView.swift; sourceTree = "<group>"; };
 		EBBF65242A81169C00B047E0 /* TutorialStartTableModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TutorialStartTableModel.swift; sourceTree = "<group>"; };
@@ -196,7 +196,7 @@
 				FA6F18592A1D301F00E76127 /* MainView.swift */,
 				EB242D1B2A7C1FBA00581BF7 /* SplashScreen.swift */,
 				FAFF07C62A251E4D00D5BA2B /* FirstView .swift */,
-				EBB6B0D62A80559400F0F992 /*  TutorialStartView.swift */,
+				EBB6B0D62A80559400F0F992 /*  TutorialStartViewTutorialStartViewCards.swift */,
 				EBBF65222A81155D00B047E0 /* TutorialStartGenericView.swift */,
 				19A41CB42A3A443D00C2D9A7 /* TutorialView.swift */,
 				FAEA1B992A2693C40007905A /* SecondView .swift */,
@@ -485,7 +485,7 @@
 				EBF1340B2A23FAA1000FA55E /* CardModel.swift in Sources */,
 				FA6F18582A1D301F00E76127 /* Macro01App.swift in Sources */,
 				EBCFE2E12A1E8670002CABFF /* BotaoGenRedondoView.swift in Sources */,
-				EBB6B0D72A80559400F0F992 /*  TutorialStartView.swift in Sources */,
+				EBB6B0D72A80559400F0F992 /*  TutorialStartViewTutorialStartViewCards.swift in Sources */,
 				FADCBAD32A3904510012C0FB /* DificultyView .swift in Sources */,
 				FAD5EE612A74E4FE004A4C78 /* ViewComponent.swift in Sources */,
 			);

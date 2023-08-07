@@ -20,8 +20,7 @@ import SwiftUI
 struct TutorialStartViewCards: View {
     
   var tutorialCharacter = TutorialStartTableModel()
-    
-   var countdownSheet: Int
+var countdownSheet: Int
     
     var body: some View {
         
