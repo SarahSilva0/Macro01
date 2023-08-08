@@ -17,7 +17,7 @@ struct TutorialStartCardsView: View {
                         Image(tutorialData.tutorialData[currentIndex].imageCenter)
                             .resizable()
                             .aspectRatio(contentMode: .fit)
-                            .frame(height: geometry.size.height * 0.4)
+                            .frame(height: geometry.size.height * 0.5)
 
                     }
                     .frame(width: geometry.size.width * 0.7, height: geometry.size.height * 0.7, alignment: .center)
