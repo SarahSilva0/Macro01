@@ -16,8 +16,8 @@
 		EB242D1C2A7C1FBA00581BF7 /* SplashScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB242D1B2A7C1FBA00581BF7 /* SplashScreen.swift */; };
 		EB2BC4E92A374A28008ACFD2 /* CharacterCircle.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB2BC4E82A374A28008ACFD2 /* CharacterCircle.swift */; };
 		EB82F3B02A33EEEF006D7011 /* ColorExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB82F3AF2A33EEEF006D7011 /* ColorExtensions.swift */; };
-		EB8B913F2A818C2D00D8B6D1 /* TutorialStartModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB8B913E2A818C2D00D8B6D1 /* TutorialStartModel.swift */; };
-		EB8B91412A818C8200D8B6D1 /* TutorialStartTableModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB8B91402A818C8200D8B6D1 /* TutorialStartTableModel.swift */; };
+		EB8B913F2A818C2D00D8B6D1 /*  TutorialModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB8B913E2A818C2D00D8B6D1 /*  TutorialModel.swift */; };
+		EB8B91412A818C8200D8B6D1 /*  TutorialStartTableModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB8B91402A818C8200D8B6D1 /*  TutorialStartTableModel.swift */; };
 		EB8B91432A818CD100D8B6D1 /* TutorialStartCardsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB8B91422A818CD100D8B6D1 /* TutorialStartCardsView.swift */; };
 		EB8B91452A818DBF00D8B6D1 /* TutorialDialogBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB8B91442A818DBF00D8B6D1 /* TutorialDialogBox.swift */; };
 		EB99BB582A49F78000DCCE73 /* CardComponentMainScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB99BB572A49F78000DCCE73 /* CardComponentMainScreen.swift */; };
@@ -28,6 +28,7 @@
 		EBC688442A69BB7D0072E706 /* TransparentConfigurationButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBC688432A69BB7D0072E706 /* TransparentConfigurationButton.swift */; };
 		EBCFE2E12A1E8670002CABFF /* BotaoGenRedondoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBCFE2E02A1E8670002CABFF /* BotaoGenRedondoView.swift */; };
 		EBE41B962A228D8400262C00 /* GameTableModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBE41B952A228D8400262C00 /* GameTableModel.swift */; };
+		EBEC5D5F2A82B3FD00FF042F /* TutorialStep.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBEC5D5E2A82B3FD00FF042F /* TutorialStep.swift */; };
 		EBF134092A23FA7F000FA55E /* PlayerModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBF134082A23FA7F000FA55E /* PlayerModel.swift */; };
 		EBF1340B2A23FAA1000FA55E /* CardModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBF1340A2A23FAA1000FA55E /* CardModel.swift */; };
 		EBF1340D2A23FAF0000FA55E /* DeckModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBF1340C2A23FAF0000FA55E /* DeckModel.swift */; };
@@ -84,8 +85,8 @@
 		EB2BC4E82A374A28008ACFD2 /* CharacterCircle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterCircle.swift; sourceTree = "<group>"; };
 		EB82F3AF2A33EEEF006D7011 /* ColorExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorExtensions.swift; sourceTree = "<group>"; };
 		EB86C90E2A421F81009CFA31 /* CardComponentMainScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardComponentMainScreen.swift; sourceTree = "<group>"; };
-		EB8B913E2A818C2D00D8B6D1 /* TutorialStartModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TutorialStartModel.swift; sourceTree = "<group>"; };
-		EB8B91402A818C8200D8B6D1 /* TutorialStartTableModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TutorialStartTableModel.swift; sourceTree = "<group>"; };
+		EB8B913E2A818C2D00D8B6D1 /*  TutorialModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = " TutorialModel.swift"; sourceTree = "<group>"; };
+		EB8B91402A818C8200D8B6D1 /*  TutorialStartTableModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = " TutorialStartTableModel.swift"; sourceTree = "<group>"; };
 		EB8B91422A818CD100D8B6D1 /* TutorialStartCardsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TutorialStartCardsView.swift; sourceTree = "<group>"; };
 		EB8B91442A818DBF00D8B6D1 /* TutorialDialogBox.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TutorialDialogBox.swift; sourceTree = "<group>"; };
 		EB99BB572A49F78000DCCE73 /* CardComponentMainScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardComponentMainScreen.swift; sourceTree = "<group>"; };
@@ -96,6 +97,7 @@
 		EBC688432A69BB7D0072E706 /* TransparentConfigurationButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransparentConfigurationButton.swift; sourceTree = "<group>"; };
 		EBCFE2E02A1E8670002CABFF /* BotaoGenRedondoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BotaoGenRedondoView.swift; sourceTree = "<group>"; };
 		EBE41B952A228D8400262C00 /* GameTableModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameTableModel.swift; sourceTree = "<group>"; };
+		EBEC5D5E2A82B3FD00FF042F /* TutorialStep.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TutorialStep.swift; sourceTree = "<group>"; };
 		EBF134082A23FA7F000FA55E /* PlayerModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerModel.swift; sourceTree = "<group>"; };
 		EBF1340A2A23FAA1000FA55E /* CardModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardModel.swift; sourceTree = "<group>"; };
 		EBF1340C2A23FAF0000FA55E /* DeckModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeckModel.swift; sourceTree = "<group>"; };
@@ -237,8 +239,9 @@
 			isa = PBXGroup;
 			children = (
 				EBE41B952A228D8400262C00 /* GameTableModel.swift */,
-				EB8B913E2A818C2D00D8B6D1 /* TutorialStartModel.swift */,
-				EB8B91402A818C8200D8B6D1 /* TutorialStartTableModel.swift */,
+				EB8B913E2A818C2D00D8B6D1 /*  TutorialModel.swift */,
+				EB8B91402A818C8200D8B6D1 /*  TutorialStartTableModel.swift */,
+				EBEC5D5E2A82B3FD00FF042F /* TutorialStep.swift */,
 				EBF134082A23FA7F000FA55E /* PlayerModel.swift */,
 				EBF1340C2A23FAF0000FA55E /* DeckModel.swift */,
 				EBF1340A2A23FAA1000FA55E /* CardModel.swift */,
@@ -468,8 +471,8 @@
 				FAA898DA2A3BAA740052B998 /* DifficultyModel.swift in Sources */,
 				1905A5342A1E8FB40010D8A9 /* TextBox.swift in Sources */,
 				EB8B91452A818DBF00D8B6D1 /* TutorialDialogBox.swift in Sources */,
-				EB8B91412A818C8200D8B6D1 /* TutorialStartTableModel.swift in Sources */,
-				EB8B913F2A818C2D00D8B6D1 /* TutorialStartModel.swift in Sources */,
+				EB8B91412A818C8200D8B6D1 /*  TutorialStartTableModel.swift in Sources */,
+				EB8B913F2A818C2D00D8B6D1 /*  TutorialModel.swift in Sources */,
 				193567A22A1E854200C7D34B /* Character.swift in Sources */,
 				1905A5362A1E961D0010D8A9 /* SquareGallery.swift in Sources */,
 				FAEA1B9A2A2693C40007905A /* SecondView .swift in Sources */,
@@ -478,6 +481,7 @@
 				EBC688422A69BB3B0072E706 /* ConfigurationCardView.swift in Sources */,
 				EBF1340D2A23FAF0000FA55E /* DeckModel.swift in Sources */,
 				EBE41B962A228D8400262C00 /* GameTableModel.swift in Sources */,
+				EBEC5D5F2A82B3FD00FF042F /* TutorialStep.swift in Sources */,
 				FA5BEDA92A2E2599001B0C07 /* SheetView.swift in Sources */,
 				FA5BEDA32A2E2464001B0C07 /* CardsModel.swift in Sources */,
 				FAD5EE652A7989F9004A4C78 /* PausedView.swift in Sources */,
