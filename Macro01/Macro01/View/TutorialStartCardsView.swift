@@ -10,9 +10,8 @@ struct TutorialStartCardsView: View {
             
             ZStack {
                 Color.black.edgesIgnoringSafeArea(.all)
-            VStack(spacing: 0) {
                 
-                VStack {
+                VStack(spacing: 0) {
                     
                     VStack {
                         Image(tutorialData.tutorialData[currentIndex].imageCenter)
@@ -20,11 +19,8 @@ struct TutorialStartCardsView: View {
                             .aspectRatio(contentMode: .fit)
                     }
                     .frame(width: geometry.size.width * 0.15, height: geometry.size.height * 0.5, alignment: .center)
-                    
-                    
                     .frame(height: geometry.size.height * 0.7)
                     .ignoresSafeArea()
-                    
                     
                     HStack {
                         VStack{
@@ -48,6 +44,7 @@ struct TutorialStartCardsView: View {
                                 ButtonComponentImage(action: {
                                     decreaseIndex()
                                 }, image: "NextLeft")
+                                .opacity(currentIndex > 0 ? 1.0 : 0.0) // Controla a opacidade
                             }
                         }
                         .frame(width: geometry.size.width * 0.7, alignment: .trailing)
@@ -60,7 +57,6 @@ struct TutorialStartCardsView: View {
                 .frame(width: geometry.size.width, height: geometry.size.height, alignment: .center)
                 
             }
-        }
         }
     }
     
