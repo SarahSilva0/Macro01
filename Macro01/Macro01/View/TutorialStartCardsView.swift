@@ -15,11 +15,12 @@ struct TutorialStartCardsView: View {
                             Color.black
                         }
                         
-                        HStack {
-                            Image
+                        VStack {
+                            Image(tutorialCharacter.tutorialCharacterModel.imageCenter[0])
+                                .resizable()
+                                .aspectRatio(contentMode: .fit)
                         }
-                        
-                        
+                        .frame(width: geometry.size.width * 0.15, height: geometry.size.height * 0.5, alignment: .center)
                         
                         
                     }
