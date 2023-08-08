@@ -7,13 +7,10 @@
 import Foundation
 
 struct TutorialStartModel {
-
+    
+    var imageCenter : [String]
     var characterImage : [String]
-    var card :[String]
     var charactersNames: [String]
     var dialoguePlayOne: [String]
     var dialoguePlayTwo: [String]
-    var buttonLeft: String
-    var buttonRight: String
-    
 }
