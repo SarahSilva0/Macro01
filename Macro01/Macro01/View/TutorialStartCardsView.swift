@@ -3,7 +3,7 @@ import SwiftUI
 struct TutorialStartCardsView: View {
     
     var tutorialData = TutorialData()
-    
+    @State private var currentIndex = 0
     
     var body: some View {
         GeometryReader { geometry in
@@ -14,9 +14,8 @@ struct TutorialStartCardsView: View {
                 
                 VStack {
                     
-                    
                     VStack {
-                        Image(tutorialData.tutorialData[0].imageCenter)
+                        Image(tutorialData.tutorialData[currentIndex].imageCenter)
                             .resizable()
                             .aspectRatio(contentMode: .fit)
                     }
@@ -29,26 +28,26 @@ struct TutorialStartCardsView: View {
                     
                     HStack {
                         VStack{
-                            Character(character: tutorialData.tutorialData[0].characterImage)
+                            Character(character: tutorialData.tutorialData[currentIndex].characterImage)
                         }
                         .frame(width: geometry.size.width * 0.3)
                         .ignoresSafeArea()
                         
                         HStack (spacing: 0) {
                             TutorialDialogBox(
-                                characterName: tutorialData.tutorialData[0].charactersName,
-                                dialogue: tutorialData.tutorialData[0].dialogue,
+                                characterName: tutorialData.tutorialData[currentIndex].charactersName,
+                                dialogue: tutorialData.tutorialData[currentIndex].dialogue,
                                 colorBox: "FFC097")
                             .frame(width: geometry.size.width * 0.7)
                             
                             VStack {
                                 ButtonComponentImage(action: {
-                                    print("oi")
-                                }, image: "NextLeft")
+                                    increaseIndex()
+                                }, image: "NextRight")
                                 
                                 ButtonComponentImage(action: {
-                                    print("oi")
-                                }, image: "NextRight")
+                                    decreaseIndex()
+                                }, image: "NextLeft")
                             }
                         }
                         .frame(width: geometry.size.width * 0.7, alignment: .trailing)
@@ -63,5 +62,13 @@ struct TutorialStartCardsView: View {
             }
         }
         }
+    }
+    
+    private func increaseIndex() {
+        currentIndex = min(currentIndex + 1, tutorialData.tutorialData.count - 1)
+    }
+    
+    private func decreaseIndex() {
+        currentIndex = max(currentIndex - 1, 0)
     }
 }
