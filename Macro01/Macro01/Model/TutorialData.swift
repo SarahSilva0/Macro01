@@ -4,14 +4,14 @@
 //  Created by Higor  Lo Castro on 07/08/23.
 //
 
-class TutorialStartTableModel {
-    let tutorialSteps: [TutorialModel]
+class TutorialData {
+    let tutorialData: [TutorialModel]
 
     init() {
         let tutorialViewOneData = TutorialModel(
             charactersName: "SP",
             characterImage: "playerSaci",
-            imageCenter: "",
+            imageCenter: "score",
             dialogue: "Oi, tudo Bem?"
         )
 
@@ -22,7 +22,7 @@ class TutorialStartTableModel {
             dialogue: "Seja bem-vindo ao torneio Folkard, meu nome é Sallo Pereira, mas meus amigos me chamam de SP, então pode me chamar assim."
         )
 
-        tutorialSteps = [tutorialViewOneData, tutorialViewTwoData]
+        tutorialData = [tutorialViewOneData, tutorialViewTwoData]
     }
 }
 

@@ -2,44 +2,43 @@ import SwiftUI
 
 struct TutorialStartCardsView: View {
     
-    var tutorialCharacter = TutorialStartTableModel()
-    var countdownSheet: Int
+    var tutorialData = TutorialData()
+    
     
     var body: some View {
         GeometryReader { geometry in
             
+            ZStack {
+                Color.black.edgesIgnoringSafeArea(.all)
             VStack(spacing: 0) {
+                
+                VStack {
                     
-                    VStack{
-                        ZStack{
-                            Color.black
-                        }
-                        
-                        VStack {
-                            Image(tutorialCharacter.tutorialCharacterModel.imageCenter[0])
-                                .resizable()
-                                .aspectRatio(contentMode: .fit)
-                        }
-                        .frame(width: geometry.size.width * 0.15, height: geometry.size.height * 0.5, alignment: .center)
-                        
-                        
+                    
+                    VStack {
+                        Image(tutorialData.tutorialData[0].imageCenter)
+                            .resizable()
+                            .aspectRatio(contentMode: .fit)
                     }
+                    .frame(width: geometry.size.width * 0.15, height: geometry.size.height * 0.5, alignment: .center)
+                    
+                    
                     .frame(height: geometry.size.height * 0.7)
                     .ignoresSafeArea()
                     
                     
                     HStack {
                         VStack{
-                            Character(character: tutorialCharacter.tutorialCharacterModel.characterImage[0])
+                            Character(character: tutorialData.tutorialData[0].characterImage)
                         }
                         .frame(width: geometry.size.width * 0.3)
                         .ignoresSafeArea()
                         
-                        
                         HStack (spacing: 0) {
-                            TutorialDialogBox(characterName: tutorialCharacter.tutorialCharacterModel.charactersNames[0],
-                                              dialogue: tutorialCharacter.tutorialCharacterModel.dialoguePlayOne[1],
-                                              colorBox: "FFC097")
+                            TutorialDialogBox(
+                                characterName: tutorialData.tutorialData[0].charactersName,
+                                dialogue: tutorialData.tutorialData[0].dialogue,
+                                colorBox: "FFC097")
                             .frame(width: geometry.size.width * 0.7)
                             
                             VStack {
@@ -57,59 +56,12 @@ struct TutorialStartCardsView: View {
                     }
                     .frame(width: geometry.size.width * 1, height: geometry.size.height * 0.3, alignment: .center)
                     .background(.black)
+                    
+                }
+                .frame(width: geometry.size.width, height: geometry.size.height, alignment: .center)
                 
             }
-            .frame(width: geometry.size.width, height: geometry.size.height, alignment: .center)
-           
+        }
         }
     }
-    
-    
-    //Funcao para mover o contador
-    private func countdownFraction() -> CGFloat {
-        let totalDuration: CGFloat = 5
-        let remainingTime: CGFloat = CGFloat(countdownSheet)
-        return (totalDuration - remainingTime) / totalDuration
-    }
 }
-
-
-
-
-//                    HStack {
-//                        Circle()
-//                            .frame(width: 45, height: 45)
-//                            .foregroundColor(Color(hex: "FFF2D9"))
-//                            .overlay(
-//                                Text("1")
-//                                    .font(.system(size: 30, weight: .bold))
-//                                    .foregroundColor(.black)
-//                            )
-//                            .frame(width: geometry.size.width * 0.15, height: geometry.size.height * 0.7)
-//
-//                        ForEach(tutorialCharacter.tutorialCharacterModel.card, id: \.self) { card in
-//                            (Image(card))
-//                                .resizable()
-//                                .aspectRatio(contentMode: .fit)
-//                                .frame(width: geometry.size.width * 0.22, height: geometry.size.height * 0.5)
-//                        }
-//
-//                        Spacer()
-//
-//                        //Contador provisório
-//                        ZStack {
-//                            CountdownBar(countdownFraction: countdownFraction())
-//                        }
-//
-//                        Spacer()
-//
-//                        Button(action: {
-//                            print("oi")
-//                        }) {
-//                            Text("Pular Tutorial")
-//                                .font(.system(size: 12))
-//                                .foregroundColor(Color.white)
-//                        }
-//
-//                    }
-//                    .frame(width: geometry.size.width , height: geometry.size.height * 0.5)
