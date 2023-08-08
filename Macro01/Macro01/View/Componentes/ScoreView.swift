@@ -19,8 +19,6 @@ struct ScoreView: View {
             
             // Bolinha do centro
             Circle()
-//                .fill((player1Wins >= 3 || player2Wins >= 3) ? Color(hex: "88BD8E") : inactiveColor)
-            
                 .fill(player1Wins >= 3 ? Color(hex: "88BD8E") : (player2Wins >= 3 ? Color(hex: "C27C7C") : inactiveColor))
                 .frame(width: centerDotSize, height: centerDotSize)
             

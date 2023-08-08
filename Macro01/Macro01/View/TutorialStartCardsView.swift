@@ -15,7 +15,9 @@ struct TutorialStartCardsView: View {
                             Color.black
                         }
                         
-                        // AQUI AQUI AQUI AQUI
+                        HStack {
+                            Image
+                        }
                         
                         
                         
@@ -35,7 +37,7 @@ struct TutorialStartCardsView: View {
                         
                         HStack (spacing: 0) {
                             TutorialDialogBox(characterName: tutorialCharacter.tutorialCharacterModel.charactersNames[0],
-                                              dialogue: tutorialCharacter.tutorialCharacterModel.dialoguePlayOne[6],
+                                              dialogue: tutorialCharacter.tutorialCharacterModel.dialoguePlayOne[1],
                                               colorBox: "FFC097")
                             .frame(width: geometry.size.width * 0.7)
                             

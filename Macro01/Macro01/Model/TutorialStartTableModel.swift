@@ -10,7 +10,7 @@ import Foundation
 class TutorialStartTableModel: ObservableObject {
     
     let tutorialCharacterModel = TutorialStartModel(
-        imageCenter: [],
+        imageCenter: ["score", "rechargeSaci", "attackSaci", "defenseSaci"],
         characterImage: ["playerSaci", "playerIara"],
         charactersNames: ["SP"],
         dialoguePlayOne: [
