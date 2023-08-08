@@ -15,141 +15,64 @@ class PlayerCombat: ObservableObject {
     @Published var cards: [Card]
     @Published var selectedCard = Card(type: .empty, name: "")
     
-    init(image: String, mana: Int = 1, cards: [Card] = [
-        Card(type: .attack, name: "attack"),
-        Card(type: .defense, name: "defense"),
-        Card(type: .recharge, name: "recharge")
-    ]) {
+    init(image: String, mana: Int = 1, cards: [Card]) {
         self.image = image
         self.mana = mana
         self.cards = cards
-//        self.selectedCard = selectedCard
     }
     
-    //MARK: LOGICA JOGADOR FACIL:
-    
-    func playCardPlayerEasy() -> Card {
-        switch mana {
-        //se o mana for 0
-        case 0:
-            return noManaPlayerEasy()
-        //se o mana for 1
-        case 1:
-            return withManaPlayerEasy()
-        //se o mana for 2
-        case 2:
-            return twoManasPlayerEasy()
-        //defaut é defesa porque defesa é a unica carta que pode jogar independente do cenario.
-        default:
-            return Card(type: .defense, name: "defenseSaci")
-        }
-    }
-
-    //Não pode ter +2 manas. Não pode usar carta de recarga
-    private func twoManasPlayerEasy() -> Card {
+    func SPBot() -> Card {
+        let probabilities: [[(Cards.CardType, Double)]] = [
+            [(.recharge, 0.6), (.defense, 0.4)],     // Probabilidades para mana = 0
+            [(.attack, 0.4), (.recharge, 0.3), (.defense, 0.3)],  // Probabilidades para mana = 1
+            [(.attack, 0.5), (.defense, 0.5)]      // Probabilidades para mana = 2
+        ]
+        
         let randomValue = Double.random(in: 0..<1)
-
-        if randomValue < 0.8 { // 80% de chance para ataque
-            return Card(type: .attack, name: "attackSaci")
-        } else { // 20% de chance para defesa
+        let manaIndex = min(mana, probabilities.count - 1)
+        
+        let possibleCards = probabilities[manaIndex]
+        var cumulativeProbability: Double = 0.0
+        
+        var updatedCards = cards  // Create a copy of the current cards
+        
+        let attackCount = updatedCards.filter { $0.type == .attack }.count
+        let rechargeCount = updatedCards.filter { $0.type == .recharge }.count
+        
+        if attackCount >= 3 {
             return Card(type: .defense, name: "defenseSaci")
         }
-    }
-
-    //Sem mana não ataca. Somente defende ou recarga.
-    private func noManaPlayerEasy() -> Card {
-        let randomValue = Double.random(in: 0..<1)
-
-        if randomValue < 0.8 { // 80% de chance para recarga
-            return Card(type: .recharge, name: "rechargeSaci")
-        } else { // 20% de chance para defesa
+        
+        if rechargeCount >= 3 {
             return Card(type: .defense, name: "defenseSaci")
         }
-    }
-
-    //Com mais de um mana e menos de 2 pode usar qualquer uma aleatória.
-    private func withManaPlayerEasy() -> Card {
-        let randomValue = Double.random(in: 0..<1)
-
-        if randomValue < 0.8 { // 80% de chance para ataque
-            return Card(type: .attack, name: "attackSaci")
-        } else if randomValue < 0.9 { // 10% de chance para recarga
-            return Card(type: .recharge, name: "rechargeSaci")
-        } else { // 10% de chance para defesa
-            return Card(type: .defense, name: "defenseSaci")
+        
+        for (cardType, probability) in possibleCards {
+            if cardType == .attack && attackCount >= 2 {
+                cumulativeProbability += 0.0
+            } else if cardType == .recharge && rechargeCount >= 2 {
+                cumulativeProbability += 0.0
+            } else {
+                cumulativeProbability += probability
+            }
+            
+            if randomValue < cumulativeProbability {
+                return Card(type: cardType, name: "\(cardType.rawValue)Saci")
+            }
         }
+        
+        return Card(type: .defense, name: "defenseSaci")
     }
-
     
     func replaceSelectedCardRandomlyEasy() {
         let index = self.cards.firstIndex(of: self.selectedCard)
         guard let currentIndex = index else { return }
         
-        let newCard = playCardPlayerEasy()
+        let newCard = SPBot()
         self.cards[currentIndex] = newCard
         self.selectedCard = newCard
     }
     
-    
-    
-    func playCardPlayerHard() -> Card{
-        switch mana {
-            //se o mana for 0
-        case 0:
-            return noManaPlayerHard()
-            //se o mana for 1
-        case 1:
-            return withManaPlayerHard()
-            //se o mana for 2
-        case 2:
-            return twoManasPlayerHard()
-            //defaut é defesa porque defesa é a unica carta que pode jogar independente do cenario.
-        default:
-            return Card(type: .defense, name: "defenseSaci")
-        }
-    }
-    
-    //Não pode ter +2 manas. Não pode usar carta de recarga
-    private func twoManasPlayerHard() -> Card {
-        let randomValue = Double.random(in: 0..<1)
-
-        if randomValue < 0.9 { // 90% de chance para ataque
-            return Card(type: .attack, name: "attackSaci")
-        } else { // 10% de chance para defesa
-            return Card(type: .defense, name: "defenseSaci")
-        }
-    }
-
-    private func noManaPlayerHard() -> Card {
-        let randomValue = Double.random(in: 0..<1)
-
-        if randomValue < 0.5 { // 50% de chance para recarga
-            return Card(type: .recharge, name: "rechargeSaci")
-        } else { // 50% de chance para defesa
-            return Card(type: .defense, name: "defenseSaci")
-        }
-    }
-
-    private func withManaPlayerHard() -> Card {
-        let randomValue = Double.random(in: 0..<1)
-
-        if randomValue < 0.7 { // 70% de chance para ataque
-            return Card(type: .attack, name: "attackSaci")
-        } else if randomValue < 0.8 { // 10% de chance para recarga
-            return Card(type: .recharge, name: "rechargeSaci")
-        } else { // 20% de chance para defesa
-            return Card(type: .defense, name: "defenseSaci")
-        }
-    }
-    
-    func replaceSelectedCardRandomlyHard() {
-        let index = self.cards.firstIndex(of: self.selectedCard)
-        guard let currentIndex = index else { return }
-        
-        let newCard = playCardPlayerHard()
-        self.cards[currentIndex] = newCard
-        self.selectedCard = newCard
-    }
 }
 
-    
+

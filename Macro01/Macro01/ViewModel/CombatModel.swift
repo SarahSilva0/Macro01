@@ -279,49 +279,27 @@ class CombatViewModel: ObservableObject {
     
     
     //MARK: LÓGICA BOT Raia
-    
     func RaiaBot() -> Card {
-        switch Raia.mana {
-            // se o mana for 0
-        case 0:
-            return noManaRaia()
-            //se o mana for 1
-        case 1:
-            return withManaRaia()
-        case 2:
-            return twoManaRaia()
-        default:
-            return Card(type: .defense, name: "defenseIara")
-        }
-    }
-    
-    private func noManaRaia() -> Card {
+        let probabilities: [[(Cards.CardType, Double)]] = [
+            [(.recharge, 0.6), (.defense, 0.4)],     // Probabilidades para mana = 0
+            [(.attack, 0.4), (.recharge, 0.3), (.defense, 0.3)],  // Probabilidades para mana = 1
+            [(.attack, 0.5), (.defense, 0.5)]      // Probabilidades para mana = 2
+        ]
+        
         let randomValue = Double.random(in: 0..<1)
-        if randomValue < 0.7 { // 70% de chance para recarga
-            return Card(type: .recharge, name: "rechargeIara")
-        } else { // 30% de chance para defesa
-            return Card(type: .defense, name: "defenseIara")
+        let manaIndex = min(Raia.mana, probabilities.count - 1)
+        
+        let possibleCards = probabilities[manaIndex]
+        var cumulativeProbability: Double = 0.0
+        
+        for (cardType, probability) in possibleCards {
+            cumulativeProbability += probability
+            if randomValue < cumulativeProbability {
+                return Card(type: cardType, name: "\(cardType.rawValue)Iara")
+            }
         }
-    }
-    
-    private func withManaRaia() -> Card {
-        let randomValue = Double.random(in: 0..<1)
-        if randomValue < 0.4 { // 40% de chance para recarga
-            return Card(type: .recharge, name: "rechargeIara")
-        } else if randomValue < 0.6 { // 20% de chance para ataque
-            return Card(type: .attack, name: "attackIara")
-        } else { // 40% de chance para defesa
-            return Card(type: .defense, name: "defenseIara")
-        }
-    }
-    
-    private func twoManaRaia() -> Card {
-        let randomValue = Double.random(in: 0..<1)
-        if randomValue < 0.6 { // 60% de chance para ataque
-            return Card(type: .attack, name: "attackIara")
-        } else { // 40% de chance para defesa
-            return Card(type: .defense, name: "defenseIara")
-        }
+        
+        return Card(type: .defense, name: "defenseIara")
     }
     
 }

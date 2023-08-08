@@ -9,8 +9,6 @@ import Foundation
 
 //MARK: MODEL CARDS COM A LOGICA DA ALEATORIEDADE
 struct Cards {
-    let type: CardType
-
     enum CardType: String {
         case attack
         case defense
@@ -18,6 +16,8 @@ struct Cards {
         case empty
         case block
     }
+
+    let type: CardType
 
     init(type: CardType) {
         self.type = type
