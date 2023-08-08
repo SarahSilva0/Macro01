@@ -17,9 +17,10 @@ struct TutorialStartCardsView: View {
                         Image(tutorialData.tutorialData[currentIndex].imageCenter)
                             .resizable()
                             .aspectRatio(contentMode: .fit)
+                            .frame(height: geometry.size.height * 0.4)
+
                     }
-                    .frame(width: geometry.size.width * 0.15, height: geometry.size.height * 0.5, alignment: .center)
-                    .frame(height: geometry.size.height * 0.7)
+                    .frame(width: geometry.size.width * 0.7, height: geometry.size.height * 0.7, alignment: .center)
                     .ignoresSafeArea()
                     
                     HStack {
@@ -44,7 +45,7 @@ struct TutorialStartCardsView: View {
                                 ButtonComponentImage(action: {
                                     decreaseIndex()
                                 }, image: "NextLeft")
-                                .opacity(currentIndex > 0 ? 1.0 : 0.0) // Controla a opacidade
+                                .opacity(currentIndex > 0 ? 1.0 : 0.0)
                             }
                         }
                         .frame(width: geometry.size.width * 0.7, alignment: .trailing)
