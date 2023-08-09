@@ -11,6 +11,7 @@
 		1905A5362A1E961D0010D8A9 /* SquareGallery.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1905A5352A1E961D0010D8A9 /* SquareGallery.swift */; };
 		193567A22A1E854200C7D34B /* Character.swift in Sources */ = {isa = PBXBuildFile; fileRef = 193567A12A1E854200C7D34B /* Character.swift */; };
 		19A41CB52A3A443D00C2D9A7 /* TutorialView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19A41CB42A3A443D00C2D9A7 /* TutorialView.swift */; };
+		19FE502C2A818FCA0064BA54 /* WinnerText.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19FE502B2A818FCA0064BA54 /* WinnerText.swift */; };
 		EB067CA02A6EFA3F003F35F6 /* CooperBlack-StdItal.otf in Resources */ = {isa = PBXBuildFile; fileRef = EB067C9F2A6EFA3F003F35F6 /* CooperBlack-StdItal.otf */; };
 		EB067CA22A6EFDF8003F35F6 /* cooper-std-black.otf in Resources */ = {isa = PBXBuildFile; fileRef = EB067CA12A6EFDF8003F35F6 /* cooper-std-black.otf */; };
 		EB242D1C2A7C1FBA00581BF7 /* SplashScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB242D1B2A7C1FBA00581BF7 /* SplashScreen.swift */; };
@@ -74,6 +75,7 @@
 		1905A5352A1E961D0010D8A9 /* SquareGallery.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SquareGallery.swift; sourceTree = "<group>"; };
 		193567A12A1E854200C7D34B /* Character.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Character.swift; sourceTree = "<group>"; };
 		19A41CB42A3A443D00C2D9A7 /* TutorialView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TutorialView.swift; sourceTree = "<group>"; };
+		19FE502B2A818FCA0064BA54 /* WinnerText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WinnerText.swift; sourceTree = "<group>"; };
 		EB067C9F2A6EFA3F003F35F6 /* CooperBlack-StdItal.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "CooperBlack-StdItal.otf"; sourceTree = "<group>"; };
 		EB067CA12A6EFDF8003F35F6 /* cooper-std-black.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "cooper-std-black.otf"; sourceTree = "<group>"; };
 		EB242D1B2A7C1FBA00581BF7 /* SplashScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashScreen.swift; sourceTree = "<group>"; };
@@ -219,6 +221,7 @@
 				FAE3635B2A1E87C000643271 /* ButtonComponent.swift */,
 				EBCFE2E02A1E8670002CABFF /* BotaoGenRedondoView.swift */,
 				FAD5EE602A74E4FE004A4C78 /* ViewComponent.swift */,
+				19FE502B2A818FCA0064BA54 /* WinnerText.swift */,
 			);
 			path = Componentes;
 			sourceTree = "<group>";
@@ -470,6 +473,7 @@
 				EBF1340B2A23FAA1000FA55E /* CardModel.swift in Sources */,
 				FA6F18582A1D301F00E76127 /* Macro01App.swift in Sources */,
 				EBCFE2E12A1E8670002CABFF /* BotaoGenRedondoView.swift in Sources */,
+				19FE502C2A818FCA0064BA54 /* WinnerText.swift in Sources */,
 				FADCBAD32A3904510012C0FB /* DificultyView .swift in Sources */,
 				FAD5EE612A74E4FE004A4C78 /* ViewComponent.swift in Sources */,
 			);
