@@ -12,6 +12,7 @@ class CombatViewModel: ObservableObject {
     @Published var isGameEndAlertPresented = false
     @Published var endTurnButtonInteraction = true
     @Published var isPaused = false
+    @Published var checkWin = 0
     var timer: Timer?
     
     @Published var countdownSheet: Int = 5
@@ -82,13 +83,16 @@ class CombatViewModel: ObservableObject {
             print("MEDIO DIFICULDADEEEEEE")
             player2.selectedCard = player2.playerLogic(with: player2.RaiaProbabilities, for: player2.name)
         }
-
+        
     }
     
     //MARK: QUANDO O CONTADOR ACABA
     func endTurn() {
         self.endTurnButtonInteraction = false
         isInteractionEnabled = false
+        if player1.selectedCard.name == "" {
+            print("AAAAA")
+        }
         compareCardsInCenter(card1: player1.selectedCard, card2: player2.selectedCard)
         
         DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
@@ -167,22 +171,31 @@ class CombatViewModel: ObservableObject {
         switch (card1.type, card2.type) {
         case (.attack, .attack):
             handleAttackVsAttack()
+            checkWin = 0
         case (.attack, .defense):
             handleAttackVsDefense()
+            checkWin = 0
         case (.attack, .recharge):
             handleAttackVsRecharge()
+            checkWin = 1
         case (.defense, .attack):
             handleDefenseVsAttack()
+            checkWin = 0
         case (.defense, .defense):
             handleDefenseVsDefense()
+            checkWin = 0
         case (.defense, .recharge):
             handleDefenseVsRecharge()
+            checkWin = 0
         case (.recharge, .attack):
             handleRechargeVsAttack()
+            checkWin = 2
         case (.recharge, .defense):
             handleRechargeVsDefense()
+            checkWin = 0
         case (.recharge, .recharge):
             handleRechargeVsRecharge()
+            checkWin = 0
         default:
             break
         }
@@ -276,6 +289,30 @@ class CombatViewModel: ObservableObject {
     }
     private func player2RechargeMana() {
         player2.mana += 1
+    }
+    
+    func checkPlayerVictory() -> [String] {
+        switch checkWin {
+        case 0:
+            return ["Empate!", "Continue tentando!"]
+        case 1:
+            return ["Parabéns!", "Você ganhou a rodada!"]
+        case 2:
+            return ["Cuidado!", "Você perdeu a rodada!"]
+        default:
+            return ["Empate!", "Continue tentando!"]
+        }
+    }
+    
+    func checkGameWinner() -> [String] {
+        switch getScore() {
+        case "Player 1 ganhou!":
+            return ["Vitória!", "Você venceu a partida"]
+        case "Player 2 ganhou!":
+            return ["Derrota!", "Infelizmente não foi dessa vez, vamos jogar de novo?"]
+        default:
+            return ["Empate"]
+        }
     }
     
 }
