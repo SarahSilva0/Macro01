@@ -36,8 +36,8 @@ struct CombatView: View {
                 VStack {
                     //MARK: PLACAR
                     VStack {
-                        ScoreView(player1Wins: combatViewModel.SP.winTurno,
-                                  player2Wins: combatViewModel.Raia.winTurno)
+                        ScoreView(player1Wins: combatViewModel.player1.winTurno,
+                                  player2Wins: combatViewModel.player2.winTurno)
                         .padding(.bottom)
                     }
                     .frame(width: geometry.size.width * 0.25, height: geometry.size.height * 0.22, alignment: .center)
@@ -46,7 +46,7 @@ struct CombatView: View {
                     VStack {
                         //MARK: CARTA JOGADA NO CENTRO PELO PLAYER 1
                         HStack (alignment: .center) {
-                            Image(combatViewModel.SP.selectedCard.name)
+                            Image(combatViewModel.player1.selectedCard.name)
                                 .resizable()
                                 .aspectRatio(contentMode: .fill)
                                 .frame(height: geometry.size.height * 0.4)
@@ -54,7 +54,7 @@ struct CombatView: View {
                             Spacer(minLength: 130)
                             
                             if !combatViewModel.isSheetVisible {
-                                Image(combatViewModel.Raia.selectedCard.name)
+                                Image(combatViewModel.player2.selectedCard.name)
                                     .resizable()
                                     .aspectRatio(contentMode: .fill)
                                     .frame(height: geometry.size.height * 0.4)
@@ -71,7 +71,7 @@ struct CombatView: View {
                     
                     //MARK: AS 3 CARTAS DO PLAYER 1 NA PARTE DEBAIXO
                     HStack {
-                        ForEach(combatViewModel.SP.cards, id: \.self) { card in
+                        ForEach(combatViewModel.player1.cards, id: \.self) { card in
                             CardComponentMainScreen(image: Image(card.name))
                         }
                         .frame(width: geometry.size.width * 0.13, height: geometry.size.height * 0.1)

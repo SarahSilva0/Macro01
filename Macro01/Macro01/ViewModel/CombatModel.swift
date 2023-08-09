@@ -14,35 +14,34 @@ class CombatViewModel: ObservableObject {
     @Published var isPaused = false
     var timer: Timer?
     
-    
-    
     @Published var countdownSheet: Int = 5
     
-    
-    var SP = PlayerCombat(image: "jogador1", cards: [
-        Card(type: .attack, name: "attack"),
-        Card(type: .defense, name: "defense"),
-        Card(type: .recharge, name: "recharge")
-    ])
-    var Raia = PlayerCombat(image: "jogador2", cards: [
-        Card(type: .attack, name: "attackIara"),
-        Card(type: .defense, name: "defenseIara"),
-        Card(type: .recharge, name: "rechargeIara")
-    ])
+    //MARK: CRIANDO OS JOGADORES (ESSA IMAGEM, PODE SER MUDADA DEPOIS)
+    var player1 = PlayerCombat(image: "jogador1", name: "")
+    var player2 = PlayerCombat(image: "jogador2", name: "")
     
     //MARK: Difficulty instancias
     @Published var RaiaDiff = DifficultyModel(imageInitial: "mediumBlockIara", imageSillhoute: "mediumIara", imageWin: "mediumWinIara", winCard: "", selectdedLevel: false, winLevel: false)
     
-    
+    //MARK: SETANDO OS JOGADORES
+    func setPlayer(){
+        if self.RaiaDiff.selectdedLevel == true{
+            player1.name = "Saci"
+            player2.name = "Iara"
+            
+            player1.cards = [Card(type: .attack, name: "attack\(player1.name)"), Card(type: .defense, name: "defense\(player1.name)"), Card(type: .recharge, name: "recharge\(player1.name)")]
+            player2.cards = [Card(type: .attack, name: "attack\(player2.name)"), Card(type: .defense, name: "defense\(player2.name)"), Card(type: .recharge, name: "recharge\(player2.name)")]
+        }
+    }
     
     //MARK: CONTADOR
     func startCountdown() {
         
-        if SP.winTurno == 3{
+        if player1.winTurno == 3{
             self.gameEnd()
             return
         }
-        else if Raia.winTurno == 3 {
+        else if player2.winTurno == 3 {
             self.gameEnd()
             return
         }
@@ -81,7 +80,7 @@ class CombatViewModel: ObservableObject {
         
         if RaiaDiff.selectdedLevel == true {
             print("MEDIO DIFICULDADEEEEEE")
-            Raia.selectedCard = self.RaiaBot()
+            player2.selectedCard = player2.playerLogic(with: player2.RaiaProbabilities, for: player2.name)
         }
 
     }
@@ -90,7 +89,7 @@ class CombatViewModel: ObservableObject {
     func endTurn() {
         self.endTurnButtonInteraction = false
         isInteractionEnabled = false
-        compareCardsInCenter(card1: SP.selectedCard, card2: Raia.selectedCard)
+        compareCardsInCenter(card1: player1.selectedCard, card2: player2.selectedCard)
         
         DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
             self.resetTurn()
@@ -105,16 +104,16 @@ class CombatViewModel: ObservableObject {
         
         if RaiaDiff.selectdedLevel == true {
             print("MEDIO DIFICULDADEEEEEE JOGADOOOOR")
-            self.SP.replaceSelectedCardRandomlyEasy()
+            self.player1.replaceSelectedCardRandomly(with: player1.SPProbabilities, for: player1.name)
             
         }
         
         isInteractionEnabled = true
-        SP.selectedCard = Card(type: .empty, name: "")
-        Raia.selectedCard = Card(type: .empty, name: "")
+        player1.selectedCard = Card(type: .empty, name: "")
+        player2.selectedCard = Card(type: .empty, name: "")
         isCountdownVisible = true
         startCountdown()
-        print("MANA DO JOGADOR 2 \(Raia.mana)")
+        print("MANA DO JOGADOR 2 \(player2.mana)")
     }
     
     private func incrementRound(){
@@ -131,23 +130,23 @@ class CombatViewModel: ObservableObject {
         timer?.invalidate()
         self.turn = 0
         self.countdown = 3
-        self.SP.winTurno = 0
-        self.Raia.winTurno = 0
-        self.SP.mana = 1
-        self.Raia.mana = 1
-        self.SP.cards = [
-            Card(type: .attack, name: "attackSaci"),
-            Card(type: .defense, name: "defenseSaci"),
-            Card(type: .recharge, name: "rechargeSaci")
+        self.player1.winTurno = 0
+        self.player2.winTurno = 0
+        self.player1.mana = 1
+        self.player2.mana = 1
+        self.player1.cards = [
+            Card(type: .attack, name: "attack\(player1.name)"),
+            Card(type: .defense, name: "defense\(player1.name)"),
+            Card(type: .recharge, name: "recharge\(player1.name)")
         ]
     }
     
     //MARK: MOSTRAR O PLACAR DO JOGO
     func getScore() -> String {
-        if SP.winTurno > Raia.winTurno {
+        if player1.winTurno > player2.winTurno {
             winLevel()
             return "Player 1 ganhou!"
-        } else if SP.winTurno < Raia.winTurno {
+        } else if player1.winTurno < player2.winTurno {
             return "Player 2 ganhou!"
         } else {
             return "Empate"
@@ -158,7 +157,9 @@ class CombatViewModel: ObservableObject {
     
     //MELHORAR ISSO AQUI
     func winLevel(){
-
+        if RaiaDiff.selectdedLevel == true{
+            RaiaDiff.winLevel = true
+        }
     }
     
     
@@ -189,14 +190,14 @@ class CombatViewModel: ObservableObject {
     
     
     private func handleAttackVsAttack() {
-        if SP.mana >= 1 && Raia.mana >= 1 {
+        if player1.mana >= 1 && player2.mana >= 1 {
             player1LoseMana()
             player2LoseMana()
             print("AAAAAA INFERNOOOO")
-        } else if SP.mana == 0 && Raia.mana >= 1 {
+        } else if player1.mana == 0 && player2.mana >= 1 {
             player2LoseMana()
             //GANHA TURNO
-        } else if SP.mana >= 1 && Raia.mana == 0 {
+        } else if player1.mana >= 1 && player2.mana == 0 {
             player1LoseMana()
             //GANHA TURNO
         } else {
@@ -205,7 +206,7 @@ class CombatViewModel: ObservableObject {
     }
     
     private func handleAttackVsDefense() {
-        if SP.mana >= 1 {
+        if player1.mana >= 1 {
             player1LoseMana()
         } else {
             print("ATACOU SEM MANA. NADA ACONTECE")
@@ -213,7 +214,7 @@ class CombatViewModel: ObservableObject {
     }
     
     private func handleAttackVsRecharge() {
-        if SP.mana >= 1 {
+        if player1.mana >= 1 {
             player1Win()
         } else {
             player2RechargeMana()
@@ -221,7 +222,7 @@ class CombatViewModel: ObservableObject {
     }
     
     private func handleDefenseVsAttack() {
-        if Raia.mana >= 1 {
+        if player2.mana >= 1 {
             player2LoseMana()
         }
     }
@@ -235,7 +236,7 @@ class CombatViewModel: ObservableObject {
     }
     
     private func handleRechargeVsAttack() {
-        if Raia.mana >= 1 {
+        if player2.mana >= 1 {
             player2Win()
         } else {
             player1RechargeMana()
@@ -253,53 +254,28 @@ class CombatViewModel: ObservableObject {
     
     
     private func player1LoseMana() {
-        SP.mana -= 1
+        player1.mana -= 1
     }
     private func player2LoseMana() {
-        Raia.mana -= 1
+        player2.mana -= 1
     }
     
     private func player1Win() {
-        SP.winTurno += 1
-        SP.mana = 1
-        Raia.mana = 1
+        player1.winTurno += 1
+        player1.mana = 1
+        player2.mana = 1
     }
     private func player2Win() {
-        Raia.winTurno += 1
-        Raia.mana = 1
-        SP.mana = 1
+        player2.winTurno += 1
+        player2.mana = 1
+        player1.mana = 1
     }
     
     private func player1RechargeMana() {
-        SP.mana += 1
+        player1.mana += 1
     }
     private func player2RechargeMana() {
-        Raia.mana += 1
-    }
-    
-    
-    //MARK: LÓGICA BOT Raia
-    func RaiaBot() -> Card {
-        let probabilities: [[(Cards.CardType, Double)]] = [
-            [(.recharge, 0.6), (.defense, 0.4)],     // Probabilidades para mana = 0
-            [(.attack, 0.4), (.recharge, 0.3), (.defense, 0.3)],  // Probabilidades para mana = 1
-            [(.attack, 0.5), (.defense, 0.5)]      // Probabilidades para mana = 2
-        ]
-        
-        let randomValue = Double.random(in: 0..<1)
-        let manaIndex = min(Raia.mana, probabilities.count - 1)
-        
-        let possibleCards = probabilities[manaIndex]
-        var cumulativeProbability: Double = 0.0
-        
-        for (cardType, probability) in possibleCards {
-            cumulativeProbability += probability
-            if randomValue < cumulativeProbability {
-                return Card(type: cardType, name: "\(cardType.rawValue)Iara")
-            }
-        }
-        
-        return Card(type: .defense, name: "defenseIara")
+        player2.mana += 1
     }
     
 }

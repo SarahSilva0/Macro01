@@ -32,12 +32,20 @@ struct DificultyView_: View {
                             Button {
                                 print("Raia")
                                 combatViewModel.RaiaDiff.selectdedLevel = true
+                                combatViewModel.setPlayer()
                                 shouldNavigate.toggle()
                                 
                             } label: {
-                                Image("charIara")
-                                    .resizable()
-                                    .aspectRatio(contentMode: .fit)
+                                if combatViewModel.RaiaDiff.winLevel == true {
+                                    Image("charWinIara")
+                                        .resizable()
+                                        .aspectRatio(contentMode: .fit)
+                                }
+                                else{
+                                    Image("charIara")
+                                        .resizable()
+                                        .aspectRatio(contentMode: .fit)
+                                }
                             }
                         
                             Button {
