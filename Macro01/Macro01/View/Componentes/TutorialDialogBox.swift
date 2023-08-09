@@ -27,6 +27,7 @@ struct TutorialDialogBox: View {
                     VStack(spacing: 0){
                         Text(characterName)
                             .font(.system(size: 15))
+                            .foregroundColor(.black)
                             .fontWeight(.bold)
                             .padding(.bottom, 1)
                             .frame(width: geometry.size.width * 0.95, height: geometry.size.height * 0.3, alignment: .leading)
@@ -34,6 +35,7 @@ struct TutorialDialogBox: View {
 
                         Text(dialogue)
                             .font(.system(size: 15))
+                            .foregroundColor(.black)
                             .frame(width: geometry.size.width * 0.95, height: geometry.size.height * 0.6, alignment: .topLeading)
                             
                     }
