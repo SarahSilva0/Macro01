@@ -89,6 +89,11 @@ class CombatViewModel: ObservableObject {
     func endTurn() {
         self.endTurnButtonInteraction = false
         isInteractionEnabled = false
+        
+        if player1.selectedCard.name == ""{
+            player1.selectedCard = Card(type: .empty, name: "empty")
+        }
+        
         compareCardsInCenter(card1: player1.selectedCard, card2: player2.selectedCard)
         
         DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
@@ -183,12 +188,21 @@ class CombatViewModel: ObservableObject {
             handleRechargeVsDefense()
         case (.recharge, .recharge):
             handleRechargeVsRecharge()
+        case (.empty, .attack):
+            print("vazio e ataque")
+            player2Win()
+        case(.empty, .defense):
+            print("vazio e defesa: Nada acontece")
+        case(.empty, .recharge):
+            print("vazio e recarga")
+            player2RechargeMana()
+        case(.empty, .empty):
+            print("vazio e vazio: Nada acontece")
         default:
             break
         }
     }
-    
-    
+        
     private func handleAttackVsAttack() {
         if player1.mana >= 1 && player2.mana >= 1 {
             player1LoseMana()
