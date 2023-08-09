@@ -1,35 +1,42 @@
+
 import SwiftUI
 
 struct TutorialStartCardsView: View {
     
     var tutorialData = TutorialData()
+   
     @State private var currentIndex = 0
+    @State private var shouldNavigate = false
+    
+    var firstView = FirstView()
+    
+//    let userDefault = UserDefaults.standard
     
     var body: some View {
         GeometryReader { geometry in
-            
             ZStack {
                 Color.black.edgesIgnoringSafeArea(.all)
                 
                 VStack(spacing: 0) {
-                    
                     VStack {
                         Image(tutorialData.tutorialData[currentIndex].imageCenter)
                             .resizable()
                             .aspectRatio(contentMode: .fit)
                             .frame(height: geometry.size.height * 0.5)
-
                     }
                     .frame(width: geometry.size.width * 0.7, height: geometry.size.height * 0.7, alignment: .center)
                     .ignoresSafeArea()
                     
                     HStack {
-                        VStack{
+                        VStack {
                             Character(character: tutorialData.tutorialData[currentIndex].characterImage)
+                                .frame(width: geometry.size.width * 0.25, height: geometry.size.height * 0.25, alignment: .bottomLeading)
                         }
-                        .frame(width: geometry.size.width * 0.3)
+                        .frame(width: geometry.size.width * 0.25, height: geometry.size.height * 0.42, alignment: .bottom)
                         .ignoresSafeArea()
                         
+                        Spacer()
+
                         HStack (spacing: 0) {
                             TutorialDialogBox(
                                 characterName: tutorialData.tutorialData[currentIndex].charactersName,
@@ -39,13 +46,14 @@ struct TutorialStartCardsView: View {
                             
                             VStack {
                                 ButtonComponentImage(action: {
-                                    increaseIndex()
-                                }, image: "NextRight")
-                                
-                                ButtonComponentImage(action: {
                                     decreaseIndex()
                                 }, image: "NextLeft")
                                 .opacity(currentIndex > 0 ? 1.0 : 0.0)
+                                
+                                ButtonComponentImage(action: {
+                                    increaseIndex()
+                                }, image: "NextRight")
+                                
                             }
                         }
                         .frame(width: geometry.size.width * 0.7, alignment: .trailing)
@@ -53,19 +61,31 @@ struct TutorialStartCardsView: View {
                     }
                     .frame(width: geometry.size.width * 1, height: geometry.size.height * 0.3, alignment: .center)
                     .background(.black)
-                    
                 }
                 .frame(width: geometry.size.width, height: geometry.size.height, alignment: .center)
-                
             }
+        }
+        .fullScreenCover(isPresented: $shouldNavigate) {
+            DificultyView_(combatViewModel: CombatViewModel())
         }
     }
     
     private func increaseIndex() {
-        currentIndex = min(currentIndex + 1, tutorialData.tutorialData.count - 1)
+        if currentIndex < tutorialData.tutorialData.count - 1 {
+            currentIndex += 1
+        } else {
+            shouldNavigate = true
+            firstView.isActiveTutorial = false
+//            updateTutorialActive(tutorialActive: !shouldNavigate)
+        }
     }
     
     private func decreaseIndex() {
         currentIndex = max(currentIndex - 1, 0)
     }
+    
+//    func updateTutorialActive(tutorialActive: Bool) {
+//        userDefault.set(tutorialActive, forKey: "tutorialActive")
+//
+//    }
 }

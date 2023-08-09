@@ -10,7 +10,7 @@ class TutorialData {
     init() {
         let tutorialViewOneData = TutorialModel(
             charactersName: "???",
-            characterImage: "",
+            characterImage: "saciSilhouette",
             imageCenter: "",
             dialogue: "Oi, tudo Bem?",
             dialogueColor: "FFF2D9"
@@ -27,7 +27,7 @@ class TutorialData {
         let tutorialViewThreeData = TutorialModel(
             charactersName: "SP",
             characterImage: "saciLeft",
-            imageCenter: "score",
+            imageCenter: "",
             dialogue: "Vou te explicar um pouco sobre o torneiro.",
             dialogueColor: "FFC097"
             
@@ -36,7 +36,7 @@ class TutorialData {
         let tutorialViewFourData = TutorialModel(
             charactersName: "SP",
             characterImage: "saciLeft",
-            imageCenter: "defenseSacie",
+            imageCenter: "score",
             dialogue: "O torneio consiste em um jogo de cartas, em que, aquele que conseguir 3 pontos primeiro vence!",
             dialogueColor: "FFC097"
             
@@ -45,7 +45,7 @@ class TutorialData {
         let tutorialViewFiveData = TutorialModel(
             charactersName: "SP",
             characterImage: "saciLeft",
-            imageCenter: "attackSaci",
+            imageCenter: "rechargeSaci",
             dialogue: "Essa é a Carta de Recarga, sua função é gerar Cargas de Energia utilizadas pelas Cartas de Ataque, entretanto, ao usá-las você fica vulnerável a ataques inimigos, então, é melhor ter cuidado!",
             dialogueColor: "FFC097"
            
@@ -72,7 +72,7 @@ class TutorialData {
             charactersName: "SP",
             characterImage: "saciLeft",
             imageCenter: "defenseSaci",
-            dialogue: "E também, temos a Carta de Defesa, ela é capaz de te proteger sem a necessidade de uma Carga de Energia.",
+            dialogue: "Também, temos a Carta de Defesa, ela é capaz de te proteger sem a necessidade de uma Carga de Energia.",
             dialogueColor: "FFC097"
         )
         
@@ -119,7 +119,7 @@ class TutorialData {
         let tutorialViewFourteenData = TutorialModel(
             charactersName: "SP",
             characterImage: "saciLeft",
-            imageCenter: "",
+            imageCenter: "attackSaci",
             dialogue: "Como que você consegue isso? Bom, basta você usar uma Carta de Ataque com Carga de Energia e seu oponente não se proteger.",
             dialogueColor: "FFC097"
         )
@@ -127,7 +127,7 @@ class TutorialData {
       
         let tutorialViewFifteenData = TutorialModel(
             charactersName: "??",
-            characterImage: "",
+            characterImage: "iaraSilhouette",
             imageCenter: "",
             dialogue: "Olha só o que temos aqui, preparado pra perder?",
             dialogueColor: "FFF2D9"
