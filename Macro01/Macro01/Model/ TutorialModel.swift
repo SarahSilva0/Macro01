@@ -12,6 +12,7 @@ struct TutorialModel {
     var characterImage : String
     var imageCenter : String
     var dialogue: String
+    var dialogueColor: String
 }
 
 

@@ -34,7 +34,7 @@ struct TutorialStartCardsView: View {
                             TutorialDialogBox(
                                 characterName: tutorialData.tutorialData[currentIndex].charactersName,
                                 dialogue: tutorialData.tutorialData[currentIndex].dialogue,
-                                colorBox: "FFC097")
+                                colorBox: tutorialData.tutorialData[currentIndex].dialogueColor)
                             .frame(width: geometry.size.width * 0.7)
                             
                             VStack {
