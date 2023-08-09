@@ -8,10 +8,8 @@ struct TutorialStartCardsView: View {
     @State private var currentIndex = 0
     @State private var shouldNavigate = false
     
-    var firstView = FirstView()
-    
-//    let userDefault = UserDefaults.standard
-    
+    @Binding var isActiveTutorial: Bool
+        
     var body: some View {
         GeometryReader { geometry in
             ZStack {
@@ -74,9 +72,9 @@ struct TutorialStartCardsView: View {
         if currentIndex < tutorialData.tutorialData.count - 1 {
             currentIndex += 1
         } else {
+            isActiveTutorial = false
+            print(isActiveTutorial)
             shouldNavigate = true
-            firstView.isActiveTutorial = false
-//            updateTutorialActive(tutorialActive: !shouldNavigate)
         }
     }
     
@@ -84,8 +82,4 @@ struct TutorialStartCardsView: View {
         currentIndex = max(currentIndex - 1, 0)
     }
     
-//    func updateTutorialActive(tutorialActive: Bool) {
-//        userDefault.set(tutorialActive, forKey: "tutorialActive")
-//
-//    }
 }

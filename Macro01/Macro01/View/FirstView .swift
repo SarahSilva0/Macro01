@@ -4,18 +4,12 @@ struct FirstView: View {
     @ScaledMetric(relativeTo: .body) var buttonSize: CGFloat = 50
     @State private var showConfiguration = false
     @State private var showGaleria = false
-    
-    @State var isActiveTutorial: Bool = true
-    
-//    let userDefault = UserDefaults.standard
+        
+    @AppStorage("Tutorial") var isActiveTutorial: Bool = true
     
     @State private var showTutorialStart = false
     @State private var showDificultyView = false
     
-  
-//    init() {
-//        isActiveTutorial = getTutorialActive()
-//    }
     
     var body: some View {
         GeometryReader { geometry in
@@ -79,7 +73,7 @@ struct FirstView: View {
                                 .cornerRadius(10)
                         }
                         .sheet(isPresented: $showTutorialStart) {
-                            TutorialStartCardsView()
+                            TutorialStartCardsView(isActiveTutorial: $isActiveTutorial)
                         }
                         .sheet(isPresented: $showDificultyView) {
                             DificultyView_(combatViewModel: CombatViewModel())
@@ -113,11 +107,5 @@ struct FirstView: View {
             GaleriaSaciView()
         }
     }
-    
-//    func getTutorialActive() -> Bool {
-//        guard let load = userDefault.object(forKey: "tutorialActive") as? Bool else {return true}
-//        return load
-//    }
-    
    
 }
