@@ -231,7 +231,7 @@ class CombatViewModel: ObservableObject {
             case "Player 1 ganhou!":
                 return ["Vitória!", "Você venceu a partida"]
             case "Player 2 ganhou!":
-                return ["Derrota!", "Infelizmente não foi dessa vez, vamos jogar de novo?"]
+                return ["Derrota!", "Infelizmente não foi dessa vez"]
             default:
                 return ["Empate"]
             }
