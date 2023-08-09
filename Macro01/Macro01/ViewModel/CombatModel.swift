@@ -83,7 +83,7 @@ class CombatViewModel: ObservableObject {
             print("MEDIO DIFICULDADEEEEEE")
             player2.selectedCard = player2.playerLogic(with: player2.RaiaProbabilities, for: player2.name)
         }
-
+        
     }
     
     //MARK: QUANDO O CONTADOR ACABA
@@ -170,72 +170,76 @@ class CombatViewModel: ObservableObject {
     
     
     func compareCardsInCenter(card1: Card, card2: Card) {
-            switch (card1.type, card2.type) {
-            case (.attack, .attack):
-                handleAttackVsAttack()
-                checkWin = 0
-            case (.attack, .defense):
-                handleAttackVsDefense()
-                checkWin = 0
-            case (.attack, .recharge):
-                handleAttackVsRecharge()
-                checkWin = 1
-            case (.defense, .attack):
-                handleDefenseVsAttack()
-                checkWin = 0
-            case (.defense, .defense):
-                handleDefenseVsDefense()
-                checkWin = 0
-            case (.defense, .recharge):
-                handleDefenseVsRecharge()
-                checkWin = 0
-            case (.recharge, .attack):
-                handleRechargeVsAttack()
-                checkWin = 2
-            case (.recharge, .defense):
-                handleRechargeVsDefense()
-                checkWin = 0
-            case (.recharge, .recharge):
-                handleRechargeVsRecharge()
-                checkWin = 0
-            case (.empty, .attack):
-                print("vazio e ataque")
-                player2Win()
-            case(.empty, .defense):
-                print("vazio e defesa: Nada acontece")
-            case(.empty, .recharge):
-                print("vazio e recarga")
-                player2RechargeMana()
-            case(.empty, .empty):
-                print("vazio e vazio: Nada acontece")
-            default:
-                break
-            }
+        switch (card1.type, card2.type) {
+        case (.attack, .attack):
+            handleAttackVsAttack()
+            checkWin = 0
+        case (.attack, .defense):
+            handleAttackVsDefense()
+            checkWin = 0
+        case (.attack, .recharge):
+            handleAttackVsRecharge()
+//            checkWin = 1
+        case (.defense, .attack):
+            handleDefenseVsAttack()
+            checkWin = 0
+        case (.defense, .defense):
+            handleDefenseVsDefense()
+            checkWin = 0
+        case (.defense, .recharge):
+            handleDefenseVsRecharge()
+            checkWin = 0
+        case (.recharge, .attack):
+            handleRechargeVsAttack()
+            checkWin = 2
+        case (.recharge, .defense):
+            handleRechargeVsDefense()
+            checkWin = 0
+        case (.recharge, .recharge):
+            handleRechargeVsRecharge()
+            checkWin = 0
+        case (.empty, .attack):
+            print("vazio e ataque")
+            checkWin = 2
+            player2Win()
+        case(.empty, .defense):
+            print("vazio e defesa: Nada acontece")
+            checkWin = 0
+        case(.empty, .recharge):
+            print("vazio e recarga")
+            player2RechargeMana()
+            checkWin = 0
+        case(.empty, .empty):
+            print("vazio e vazio: Nada acontece")
+            checkWin = 0
+        default:
+            break
         }
+    }
     
     func checkPlayerVictory() -> [String] {
-            switch checkWin {
-            case 0:
-                return ["Empate!", "Continue tentando!"]
-            case 1:
-                return ["Parabéns!", "Você ganhou a rodada!"]
-            case 2:
-                return ["Cuidado!", "Você perdeu a rodada!"]
-            default:
-                return ["Empate!", "Continue tentando!"]
-            }
+        switch checkWin {
+        case 0:
+            return ["Empate!", "Continue tentando!"]
+        case 1:
+            return ["Parabéns!", "Você ganhou a rodada!"]
+        case 2:
+            return ["Cuidado!", "Você perdeu a rodada!"]
+        default:
+            return ["Empate!", "Continue tentando!"]
         }
-        
-        func checkGameWinner() -> [String] {
-            switch getScore() {
-            case "Player 1 ganhou!":
-                return ["Vitória!", "Você venceu a partida"]
-            case "Player 2 ganhou!":
-                return ["Derrota!", "Infelizmente não foi dessa vez"]
-            default:
-                return ["Empate"]
-            }
+    }
+    
+    func checkGameWinner() -> [String] {
+        switch getScore() {
+        case "Player 1 ganhou!":
+            return ["Vitória!", "Você venceu a partida"]
+        case "Player 2 ganhou!":
+            return ["Derrota!", "Infelizmente não foi dessa vez"]
+        default:
+            return ["Empate"]
         }
+    }
     
     private func handleAttackVsAttack() {
         if player1.mana >= 1 && player2.mana >= 1 {
@@ -264,6 +268,7 @@ class CombatViewModel: ObservableObject {
     private func handleAttackVsRecharge() {
         if player1.mana >= 1 {
             player1Win()
+            checkWin = 1
         } else {
             player2RechargeMana()
         }
