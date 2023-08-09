@@ -20,5 +20,6 @@ struct WinnerText: View {
             .bold()
             .zIndex(1)
             .padding(.top, CGFloat(paddingSize))
+            .baselineOffset(-10)
     }
 }

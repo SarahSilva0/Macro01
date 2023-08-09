@@ -12,6 +12,7 @@ class CombatViewModel: ObservableObject {
     @Published var isGameEndAlertPresented = false
     @Published var endTurnButtonInteraction = true
     @Published var isPaused = false
+    @Published var checkWin = 0
     var timer: Timer?
     
     @Published var countdownSheet: Int = 5
@@ -169,40 +170,73 @@ class CombatViewModel: ObservableObject {
     
     
     func compareCardsInCenter(card1: Card, card2: Card) {
-        switch (card1.type, card2.type) {
-        case (.attack, .attack):
-            handleAttackVsAttack()
-        case (.attack, .defense):
-            handleAttackVsDefense()
-        case (.attack, .recharge):
-            handleAttackVsRecharge()
-        case (.defense, .attack):
-            handleDefenseVsAttack()
-        case (.defense, .defense):
-            handleDefenseVsDefense()
-        case (.defense, .recharge):
-            handleDefenseVsRecharge()
-        case (.recharge, .attack):
-            handleRechargeVsAttack()
-        case (.recharge, .defense):
-            handleRechargeVsDefense()
-        case (.recharge, .recharge):
-            handleRechargeVsRecharge()
-        case (.empty, .attack):
-            print("vazio e ataque")
-            player2Win()
-        case(.empty, .defense):
-            print("vazio e defesa: Nada acontece")
-        case(.empty, .recharge):
-            print("vazio e recarga")
-            player2RechargeMana()
-        case(.empty, .empty):
-            print("vazio e vazio: Nada acontece")
-        default:
-            break
+            switch (card1.type, card2.type) {
+            case (.attack, .attack):
+                handleAttackVsAttack()
+                checkWin = 0
+            case (.attack, .defense):
+                handleAttackVsDefense()
+                checkWin = 0
+            case (.attack, .recharge):
+                handleAttackVsRecharge()
+                checkWin = 1
+            case (.defense, .attack):
+                handleDefenseVsAttack()
+                checkWin = 0
+            case (.defense, .defense):
+                handleDefenseVsDefense()
+                checkWin = 0
+            case (.defense, .recharge):
+                handleDefenseVsRecharge()
+                checkWin = 0
+            case (.recharge, .attack):
+                handleRechargeVsAttack()
+                checkWin = 2
+            case (.recharge, .defense):
+                handleRechargeVsDefense()
+                checkWin = 0
+            case (.recharge, .recharge):
+                handleRechargeVsRecharge()
+                checkWin = 0
+            case (.empty, .attack):
+                print("vazio e ataque")
+                player2Win()
+            case(.empty, .defense):
+                print("vazio e defesa: Nada acontece")
+            case(.empty, .recharge):
+                print("vazio e recarga")
+                player2RechargeMana()
+            case(.empty, .empty):
+                print("vazio e vazio: Nada acontece")
+            default:
+                break
+            }
         }
-    }
+    
+    func checkPlayerVictory() -> [String] {
+            switch checkWin {
+            case 0:
+                return ["Empate!", "Continue tentando!"]
+            case 1:
+                return ["Parabéns!", "Você ganhou a rodada!"]
+            case 2:
+                return ["Cuidado!", "Você perdeu a rodada!"]
+            default:
+                return ["Empate!", "Continue tentando!"]
+            }
+        }
         
+        func checkGameWinner() -> [String] {
+            switch getScore() {
+            case "Player 1 ganhou!":
+                return ["Vitória!", "Você venceu a partida"]
+            case "Player 2 ganhou!":
+                return ["Derrota!", "Infelizmente não foi dessa vez, vamos jogar de novo?"]
+            default:
+                return ["Empate"]
+            }
+        }
+    
     private func handleAttackVsAttack() {
         if player1.mana >= 1 && player2.mana >= 1 {
             player1LoseMana()
@@ -293,11 +327,4 @@ class CombatViewModel: ObservableObject {
     }
     
 }
-
-
-
-
-
-
-
 
