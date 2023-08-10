@@ -44,7 +44,7 @@ struct CombatView: View {
             
             GeometryReader { geometry in
                 VStack {
-                    //MARK: PLACAR
+                    //MARK: PLACAR .
                     VStack {
                         ScoreView(player1Wins: combatViewModel.player1.winTurno,
                                   player2Wins: combatViewModel.player2.winTurno)
