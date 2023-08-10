@@ -34,7 +34,7 @@ struct PausedView: View {
                                 ButtonGenRound(action: {
                                     print("SOM")
                                 },
-                                               image: "sound",
+                                               image: "",
                                                foregroundColor: (Color(hex: "FFF2D9")),
                                                backgroundColor: (Color(hex: "FFF2D9")))
                                 .frame(width: 30, height: 30)
