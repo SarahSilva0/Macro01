@@ -22,6 +22,30 @@ struct DificultyView_: View {
                     .resizable()
                     .aspectRatio(contentMode: .fill)
                     .ignoresSafeArea()
+                
+                
+                VStack {
+                    HStack {
+                        ButtonGenRound(action: {
+                            withAnimation {
+//                                isPresented = false
+                            }
+                        },
+                                       image: "out",
+                                       foregroundColor: (Color(hex: "FFF2D9")),
+                                       backgroundColor: (Color(hex: "FFF2D9")))
+                                       .frame(width: 50, height: 50)
+                    
+                        Spacer()
+                        
+                    }
+                    Spacer()
+                        .frame(width: geo.size.width * 0.01, height: geo.size.height * 0.8)
+                }
+                .frame(width: geo.size.width * 1.06, height: geo.size.height * 0.1)
+                
+                
+                
                 VStack{
                     VStack(alignment: .center, spacing: 20){
                         Text("Selecione um oponente")
