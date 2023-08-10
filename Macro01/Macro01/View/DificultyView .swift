@@ -49,11 +49,12 @@ struct DificultyView_: View {
                 
                 
                 VStack{
-                    VStack(alignment: .center, spacing: 20){
-                        Text("Selecione um oponente")
+                    VStack(alignment: .center, spacing: 35){
+                        Text("Selecione um Oponente")
                             .font(Font.custom("CooperBlackStd", size: 25))
                             .fontWeight(.bold)
                             .foregroundColor(.black)
+                        
                         HStack(spacing: 20){
                             Button {
                                 print("Raia")

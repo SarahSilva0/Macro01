@@ -48,17 +48,19 @@ struct TutorialStartCardsView: View {
                                 colorBox: tutorialData.tutorialData[currentIndex].dialogueColor)
                             .frame(width: geometry.size.width * 0.7)
                             
-                            VStack {
-                                ButtonComponentImage(action: {
-                                    decreaseIndex()
-                                }, image: "NextLeft")
-                                .opacity(currentIndex > 0 ? 1.0 : 0.0)
-                                
-                                ButtonComponentImage(action: {
-                                    increaseIndex()
-                                }, image: "NextRight")
-                                
+                            HStack {
+                                VStack {
+                                    ButtonComponentImage(action: {
+                                        decreaseIndex()
+                                    }, image: "NextLeft")
+                                    .opacity(currentIndex > 0 ? 1.0 : 0.0)
+                                    
+                                    ButtonComponentImage(action: {
+                                        increaseIndex()
+                                    }, image: "NextRight")
+                                }
                             }
+                            .frame(width: geometry.size.width * 0.04)
                         }
                         .frame(width: geometry.size.width * 0.7, alignment: .trailing)
                         
