@@ -35,7 +35,7 @@ struct SheetView: View {
                             )
                         Spacer()
                     }
-                    .frame(width: geometry.size.width * 1.06, height: geometry.size.height * 0.1)
+                    .frame(width: geometry.size.width * 1.04, height: geometry.size.height * 0.1)
                     Spacer()
                 }
                 .frame(width: geometry.size.width * 0.1, height: geometry.size.height * 0.98)
