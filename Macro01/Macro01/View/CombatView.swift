@@ -20,15 +20,16 @@ struct CombatView: View {
                 .resizable()
                 .aspectRatio(contentMode: .fill)
                 .ignoresSafeArea()
-            
-            if !combatViewModel.isCountdownVisible && !combatViewModel.isSheetVisible {
-                if combatViewModel.player1.winTurno == 3 || combatViewModel.player2.winTurno == 3 {
-                    WinnerText(text: combatViewModel.checkGameWinner()[0], size: 50, paddingSize: 0)
-                    WinnerText(text: combatViewModel.checkGameWinner()[1], size: 15, paddingSize: 60)
-                }
-                else {
-                    WinnerText(text: combatViewModel.checkPlayerVictory()[0], size: 50, paddingSize: 0)
-                    WinnerText(text: combatViewModel.checkPlayerVictory()[1], size: 15, paddingSize: 60)
+            VStack{
+                if !combatViewModel.isCountdownVisible && !combatViewModel.isSheetVisible {
+                    if combatViewModel.player1.winTurno == 3 || combatViewModel.player2.winTurno == 3 {
+                        WinnerText(text: combatViewModel.checkGameWinner()[0], size: 50, paddingSize: 0)
+                        WinnerText(text: combatViewModel.checkGameWinner()[1], size: 15, paddingSize: 50)
+                    }
+                    else {
+                        WinnerText(text: combatViewModel.checkPlayerVictory()[0], size: 50, paddingSize: 0)
+                        WinnerText(text: combatViewModel.checkPlayerVictory()[1], size: 15, paddingSize: 50)
+                    }
                 }
             }
             
@@ -124,16 +125,16 @@ struct CombatView: View {
                         HStack {
                             //MARK: PERSONAGEM PLAYER 1
                             VStack {
-                                Character(character: "saciCut")
-                                    .frame(width: geometry.size.width * 0.18, height: geometry.size.height * 0.25)
+                                Character(character: "player1")
+                                    .frame(width: geometry.size.width * 0.2, height: geometry.size.height * 0.25)
                             }
                             
                             Spacer()
                             
                             //MARK: PERSONAGEM PLAYER 2
                             VStack {
-                                Character(character: "iaraCut")
-                                    .frame(width: geometry.size.width * 0.18, height: geometry.size.height * 0.32)
+                                Character(character: "player2")
+                                    .frame(width: geometry.size.width * 0.2, height: geometry.size.height * 0.32)
                             }
                         }
                         .ignoresSafeArea()
