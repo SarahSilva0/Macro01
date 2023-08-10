@@ -35,7 +35,7 @@ struct FirstView: View {
                                     showConfiguration = true
                                 }
                             },
-                                           image: "configuracao",
+                                           image: "buttonConf",
                                            foregroundColor: Color(hex: "FFF2D9"),
                                            backgroundColor: Color(hex: "FFF2D9"))
                             .frame(width: buttonSize, height: buttonSize)
