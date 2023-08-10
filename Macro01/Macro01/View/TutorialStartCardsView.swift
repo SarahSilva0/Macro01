@@ -9,7 +9,13 @@ struct TutorialStartCardsView: View {
     @State private var shouldNavigate = false
     
     @Binding var isActiveTutorial: Bool
-        
+    @Binding var isTutorialSheetPresented: Bool
+    @Binding var showDificultyView: Bool
+
+    
+    
+    @Environment(\.presentationMode) var presentationMode
+
     var body: some View {
         GeometryReader { geometry in
             ZStack {
@@ -63,7 +69,7 @@ struct TutorialStartCardsView: View {
                 .frame(width: geometry.size.width, height: geometry.size.height, alignment: .center)
             }
         }
-        .fullScreenCover(isPresented: $shouldNavigate) {
+        .sheet(isPresented: $shouldNavigate) {
             DificultyView_(combatViewModel: CombatViewModel())
         }
     }
@@ -72,9 +78,8 @@ struct TutorialStartCardsView: View {
         if currentIndex < tutorialData.tutorialData.count - 1 {
             currentIndex += 1
         } else {
+            isTutorialSheetPresented = false
             isActiveTutorial = false
-            print(isActiveTutorial)
-            shouldNavigate = true
         }
     }
     

@@ -12,6 +12,8 @@ struct DificultyView_: View {
     @State private var shouldNavigate = false
     @ObservedObject var combatViewModel: CombatViewModel
     @Environment(\.presentations) private var presentations
+    @Environment(\.presentationMode) var presentationMode
+
     
     
     
@@ -28,7 +30,7 @@ struct DificultyView_: View {
                     HStack {
                         ButtonGenRound(action: {
                             withAnimation {
-//                                isPresented = false
+                                self.presentationMode.wrappedValue.dismiss()
                             }
                         },
                                        image: "out",

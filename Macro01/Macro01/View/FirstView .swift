@@ -5,9 +5,10 @@ struct FirstView: View {
     @State private var showConfiguration = false
     @State private var showGaleria = false
         
-    @AppStorage("Tutorial") var isActiveTutorial: Bool = true
+    @AppStorage("saveTutorial") var isActiveTutorial: Bool = true
     
-    @State private var showTutorialStart = false
+    
+    @State private var isTutorialSheetPresented = false
     @State private var showDificultyView = false
     
     
@@ -34,7 +35,7 @@ struct FirstView: View {
                                     showConfiguration = true
                                 }
                             },
-                                           image: "Configuração",
+                                           image: "configuracao",
                                            foregroundColor: Color(hex: "FFF2D9"),
                                            backgroundColor: Color(hex: "FFF2D9"))
                             .frame(width: buttonSize, height: buttonSize)
@@ -58,8 +59,9 @@ struct FirstView: View {
                     VStack {
                         Button(action: {
                             if isActiveTutorial {
-                                showTutorialStart = true
-                            } else {
+                                isTutorialSheetPresented = true
+                            }
+                            if isActiveTutorial == false {
                                 showDificultyView = true
                             }
                         }) {
@@ -72,8 +74,10 @@ struct FirstView: View {
                                 .background(Color(hex: "FFF2D9"))
                                 .cornerRadius(10)
                         }
-                        .sheet(isPresented: $showTutorialStart) {
-                            TutorialStartCardsView(isActiveTutorial: $isActiveTutorial)
+                        .sheet(isPresented: $isTutorialSheetPresented, onDismiss: {
+                            showDificultyView = true
+                        }) {
+                            TutorialStartCardsView(isActiveTutorial: $isActiveTutorial, isTutorialSheetPresented: $isTutorialSheetPresented, showDificultyView: $showDificultyView)
                         }
                         .sheet(isPresented: $showDificultyView) {
                             DificultyView_(combatViewModel: CombatViewModel())
