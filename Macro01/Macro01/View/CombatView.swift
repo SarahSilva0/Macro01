@@ -24,11 +24,11 @@ struct CombatView: View {
             if !combatViewModel.isCountdownVisible && !combatViewModel.isSheetVisible {
                 if combatViewModel.player1.winTurno == 3 || combatViewModel.player2.winTurno == 3 {
                     WinnerText(text: combatViewModel.checkGameWinner()[0], size: 50, paddingSize: 0)
-                    WinnerText(text: combatViewModel.checkGameWinner()[1], size: 15, paddingSize: 50)
+                    WinnerText(text: combatViewModel.checkGameWinner()[1], size: 15, paddingSize: 60)
                 }
                 else {
                     WinnerText(text: combatViewModel.checkPlayerVictory()[0], size: 50, paddingSize: 0)
-                    WinnerText(text: combatViewModel.checkPlayerVictory()[1], size: 15, paddingSize: 50)
+                    WinnerText(text: combatViewModel.checkPlayerVictory()[1], size: 15, paddingSize: 60)
                 }
             }
             
