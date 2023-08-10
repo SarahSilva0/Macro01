@@ -15,10 +15,6 @@ struct PausedView: View {
     @ObservedObject var combatViewModel: CombatViewModel
     @Environment(\.presentations) private var presentations
 
-    
-
-
-    
     var body: some View {
         GeometryReader { geometry in
             ZStack {
@@ -67,6 +63,7 @@ struct PausedView: View {
                                 print("Sair")
                             }
                         }
+                        .frame(width: geometry.size.width * 0.35)
                     }
                     .frame(width: geometry.size.width * 0.4, height: geometry.size.height * 0.5)
                     Spacer()

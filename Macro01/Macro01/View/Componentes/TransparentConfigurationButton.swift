@@ -7,7 +7,6 @@
 
 import SwiftUI
 
-import SwiftUI
 
 struct TransparentConfigurationButton: View {
     let text: String
