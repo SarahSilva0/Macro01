@@ -14,6 +14,8 @@
 		19FE502C2A818FCA0064BA54 /* WinnerText.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19FE502B2A818FCA0064BA54 /* WinnerText.swift */; };
 		EB067CA02A6EFA3F003F35F6 /* CooperBlack-StdItal.otf in Resources */ = {isa = PBXBuildFile; fileRef = EB067C9F2A6EFA3F003F35F6 /* CooperBlack-StdItal.otf */; };
 		EB067CA22A6EFDF8003F35F6 /* cooper-std-black.otf in Resources */ = {isa = PBXBuildFile; fileRef = EB067CA12A6EFDF8003F35F6 /* cooper-std-black.otf */; };
+		EB1CFB392A86AF0800BEB908 /* Preview Content.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EB1CFB382A86AF0800BEB908 /* Preview Content.xcassets */; };
+		EB1CFB3A2A86AF0800BEB908 /* Preview Content.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EB1CFB382A86AF0800BEB908 /* Preview Content.xcassets */; };
 		EB242D1C2A7C1FBA00581BF7 /* SplashScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB242D1B2A7C1FBA00581BF7 /* SplashScreen.swift */; };
 		EB2BC4E92A374A28008ACFD2 /* CharacterCircle.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB2BC4E82A374A28008ACFD2 /* CharacterCircle.swift */; };
 		EB82F3B02A33EEEF006D7011 /* ColorExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB82F3AF2A33EEEF006D7011 /* ColorExtensions.swift */; };
@@ -40,7 +42,7 @@
 		FA5BEDA92A2E2599001B0C07 /* SheetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA5BEDA82A2E2599001B0C07 /* SheetView.swift */; };
 		FA6F18582A1D301F00E76127 /* Macro01App.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6F18572A1D301F00E76127 /* Macro01App.swift */; };
 		FA6F185A2A1D301F00E76127 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6F18592A1D301F00E76127 /* MainView.swift */; };
-		FA6F185F2A1D302000E76127 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FA6F185E2A1D302000E76127 /* Preview Assets.xcassets */; };
+		FA6F185F2A1D302000E76127 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FA6F185E2A1D302000E76127 /* Assets.xcassets */; };
 		FA6F18692A1D302000E76127 /* Macro01Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6F18682A1D302000E76127 /* Macro01Tests.swift */; };
 		FA6F18732A1D302000E76127 /* Macro01UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6F18722A1D302000E76127 /* Macro01UITests.swift */; };
 		FA6F18752A1D302000E76127 /* Macro01UITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6F18742A1D302000E76127 /* Macro01UITestsLaunchTests.swift */; };
@@ -81,6 +83,7 @@
 		19FE502B2A818FCA0064BA54 /* WinnerText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WinnerText.swift; sourceTree = "<group>"; };
 		EB067C9F2A6EFA3F003F35F6 /* CooperBlack-StdItal.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "CooperBlack-StdItal.otf"; sourceTree = "<group>"; };
 		EB067CA12A6EFDF8003F35F6 /* cooper-std-black.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "cooper-std-black.otf"; sourceTree = "<group>"; };
+		EB1CFB382A86AF0800BEB908 /* Preview Content.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = "Preview Content.xcassets"; path = "../../../../Preview Content.xcassets"; sourceTree = "<group>"; };
 		EB242D1B2A7C1FBA00581BF7 /* SplashScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashScreen.swift; sourceTree = "<group>"; };
 		EB2BC4E82A374A28008ACFD2 /* CharacterCircle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterCircle.swift; sourceTree = "<group>"; };
 		EB82F3AF2A33EEEF006D7011 /* ColorExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorExtensions.swift; sourceTree = "<group>"; };
@@ -110,7 +113,7 @@
 		FA6F18542A1D301F00E76127 /* Macro01.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Macro01.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FA6F18572A1D301F00E76127 /* Macro01App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Macro01App.swift; sourceTree = "<group>"; };
 		FA6F18592A1D301F00E76127 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
-		FA6F185E2A1D302000E76127 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		FA6F185E2A1D302000E76127 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FA6F18642A1D302000E76127 /* Macro01Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Macro01Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		FA6F18682A1D302000E76127 /* Macro01Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Macro01Tests.swift; sourceTree = "<group>"; };
 		FA6F186E2A1D302000E76127 /* Macro01UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Macro01UITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -156,7 +159,7 @@
 		EB067C982A6EF576003F35F6 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				FA6F185E2A1D302000E76127 /* Preview Assets.xcassets */,
+				FA6F185E2A1D302000E76127 /* Assets.xcassets */,
 				EB067C9A2A6EF5B4003F35F6 /* Font */,
 			);
 			path = Resources;
@@ -286,16 +289,9 @@
 				EBE41B942A228B4600262C00 /* Model */,
 				EBCD66342A1EADA800157CBF /* ViewModel */,
 				EBCFE2DE2A1E8628002CABFF /* View */,
-				FA6F185D2A1D302000E76127 /* Preview Content */,
+				EB1CFB382A86AF0800BEB908 /* Preview Content.xcassets */,
 			);
 			path = Macro01;
-			sourceTree = "<group>";
-		};
-		FA6F185D2A1D302000E76127 /* Preview Content */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = "Preview Content";
 			sourceTree = "<group>";
 		};
 		FA6F18672A1D302000E76127 /* Macro01Tests */ = {
@@ -420,8 +416,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				EB067CA02A6EFA3F003F35F6 /* CooperBlack-StdItal.otf in Resources */,
+				EB1CFB392A86AF0800BEB908 /* Preview Content.xcassets in Resources */,
 				EB067CA22A6EFDF8003F35F6 /* cooper-std-black.otf in Resources */,
-				FA6F185F2A1D302000E76127 /* Preview Assets.xcassets in Resources */,
+				FA6F185F2A1D302000E76127 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -429,6 +426,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EB1CFB3A2A86AF0800BEB908 /* Preview Content.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -645,7 +643,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"Macro01/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"Macro01/\"";
 				DEVELOPMENT_TEAM = V29KX432S7;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -673,7 +671,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"Macro01/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"Macro01/\"";
 				DEVELOPMENT_TEAM = V29KX432S7;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
