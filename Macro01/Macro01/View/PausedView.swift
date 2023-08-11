@@ -26,6 +26,7 @@ struct PausedView: View {
                             HStack  {
                                 Text("Pausa")
                                     .font(.system(size: 20))
+                                    .foregroundColor(.black)
                                     .fontWeight(.bold)
                             }
                             

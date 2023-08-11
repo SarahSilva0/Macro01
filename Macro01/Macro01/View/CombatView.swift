@@ -13,6 +13,8 @@ struct CombatView: View {
     @ObservedObject var combatViewModel: CombatViewModel
     @Environment(\.presentationMode) var presentationMode
     @Environment(\.presentations) var presentations
+    @Binding var raiaWin: Bool
+
     
     var body: some View {
         ZStack {
@@ -155,6 +157,7 @@ struct CombatView: View {
                   message: Text("\(combatViewModel.getScore())"),
                   dismissButton: .default(Text("OK"), action: {
                 combatViewModel.gameReset()
+                raiaWin = combatViewModel.RaiaDiff.winLevel
                 combatViewModel.isGameEndAlertPresented = false
                 presentationMode.wrappedValue.dismiss()
             }))
