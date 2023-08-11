@@ -1,11 +1,7 @@
 {
   "images" : [
     {
-<<<<<<<< HEAD:Macro01/Macro01/Resources/Assets.xcassets/Icon/configIcon.imageset/Contents.json
-      "filename" : "ConfigIcon.png",
-========
       "filename" : "buttonExit.svg",
->>>>>>>> feature/AjustesFinais1:Macro01/Macro01/Resources/Assets.xcassets/Icon/buttonExit.imageset/Contents.json
       "idiom" : "universal",
       "scale" : "1x"
     },

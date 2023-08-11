@@ -40,7 +40,6 @@
 		FA5BEDA92A2E2599001B0C07 /* SheetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA5BEDA82A2E2599001B0C07 /* SheetView.swift */; };
 		FA6F18582A1D301F00E76127 /* Macro01App.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6F18572A1D301F00E76127 /* Macro01App.swift */; };
 		FA6F185A2A1D301F00E76127 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6F18592A1D301F00E76127 /* MainView.swift */; };
-		FA6F185C2A1D302000E76127 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FA6F185B2A1D302000E76127 /* Assets.xcassets */; };
 		FA6F185F2A1D302000E76127 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FA6F185E2A1D302000E76127 /* Preview Assets.xcassets */; };
 		FA6F18692A1D302000E76127 /* Macro01Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6F18682A1D302000E76127 /* Macro01Tests.swift */; };
 		FA6F18732A1D302000E76127 /* Macro01UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6F18722A1D302000E76127 /* Macro01UITests.swift */; };
@@ -111,7 +110,6 @@
 		FA6F18542A1D301F00E76127 /* Macro01.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Macro01.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FA6F18572A1D301F00E76127 /* Macro01App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Macro01App.swift; sourceTree = "<group>"; };
 		FA6F18592A1D301F00E76127 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
-		FA6F185B2A1D302000E76127 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FA6F185E2A1D302000E76127 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		FA6F18642A1D302000E76127 /* Macro01Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Macro01Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		FA6F18682A1D302000E76127 /* Macro01Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Macro01Tests.swift; sourceTree = "<group>"; };
@@ -158,8 +156,8 @@
 		EB067C982A6EF576003F35F6 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				FA6F185E2A1D302000E76127 /* Preview Assets.xcassets */,
 				EB067C9A2A6EF5B4003F35F6 /* Font */,
-				FA6F185B2A1D302000E76127 /* Assets.xcassets */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -296,7 +294,6 @@
 		FA6F185D2A1D302000E76127 /* Preview Content */ = {
 			isa = PBXGroup;
 			children = (
-				FA6F185E2A1D302000E76127 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
 			sourceTree = "<group>";
@@ -425,7 +422,6 @@
 				EB067CA02A6EFA3F003F35F6 /* CooperBlack-StdItal.otf in Resources */,
 				EB067CA22A6EFDF8003F35F6 /* cooper-std-black.otf in Resources */,
 				FA6F185F2A1D302000E76127 /* Preview Assets.xcassets in Resources */,
-				FA6F185C2A1D302000E76127 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
