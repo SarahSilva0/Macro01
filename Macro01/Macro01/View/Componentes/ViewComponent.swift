@@ -17,6 +17,7 @@ struct ViewComponent: View {
             ZStack {
                 Color.black
                     .ignoresSafeArea()
+                
                 Image("bg-tutorial")
                     .resizable()
                     .aspectRatio(contentMode: .fill)
@@ -29,38 +30,41 @@ struct ViewComponent: View {
                     .padding(EdgeInsets(top: 38, leading: 86, bottom: 16, trailing: 86))
 
                 HStack {
-                    Button(action: {
-                        if count >= 1 {
-                            count -= 1
-                            print(count)
-                        } else {
-                            dismiss()
-                            print(count)
+                    if count > 0 {
+                        Button(action: {
+                            if count >= 1 {
+                                count -= 1
+                            } else {
+                                dismiss()
+                                print(count)
+                            }
+                        }) {
+                            Image("btn-back")
+                                .resizable()
+                                .frame(width: 46, height: 44)
+                                .aspectRatio(contentMode: .fit)
+                                .padding(.leading, 50)
+                                .padding(.top, 263)
                         }
-                    }) {
-                        Image("btn-back")
-                            .resizable()
-                            .frame(width: 46, height: 44)
-                            .aspectRatio(contentMode: .fit)
-                            .padding(.leading, 50)
-                            .padding(.top, 263)
                     }
                     Spacer()
-                    Button(action: {
-                        if count < Images.count - 1 {
-                            count += 1
-                            print(count)
-                        } else {
-                            dismiss()
-                            print(count)
+                    if count < Images.count - 1 {
+                        Button(action: {
+                            if count < Images.count - 1 {
+                                count += 1
+                                print(count)
+                            } else {
+                                dismiss()
+                                print(count)
+                            }
+                        }) {
+                            Image("btn-next")
+                                .resizable()
+                                .frame(width: 46, height: 44)
+                                .aspectRatio(contentMode: .fit)
+                                .padding(.trailing, 50)
+                                .padding(.top, 263)
                         }
-                    }) {
-                        Image("btn-next")
-                            .resizable()
-                            .frame(width: 46, height: 44)
-                            .aspectRatio(contentMode: .fit)
-                            .padding(.trailing, 50)
-                            .padding(.top, 263)
                     }
                 }
             }
