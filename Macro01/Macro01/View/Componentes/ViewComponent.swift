@@ -30,7 +30,7 @@ struct ViewComponent: View {
                     .padding(EdgeInsets(top: 38, leading: 86, bottom: 16, trailing: 86))
 
                 HStack {
-                    if count > 1 {
+                    if count > 0 {
                         Button(action: {
                             if count >= 1 {
                                 count -= 1
