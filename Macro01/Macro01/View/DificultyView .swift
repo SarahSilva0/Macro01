@@ -13,9 +13,7 @@ struct DificultyView_: View {
     @ObservedObject var combatViewModel: CombatViewModel
     @Environment(\.presentations) private var presentations
     @Environment(\.presentationMode) var presentationMode
-
-    
-    
+    @AppStorage("Raia") var raiaWin: Bool = false
     
     var body: some View {
         GeometryReader { geo in
@@ -63,7 +61,7 @@ struct DificultyView_: View {
                                 shouldNavigate.toggle()
                                 
                             } label: {
-                                if combatViewModel.RaiaDiff.winLevel == true {
+                                if raiaWin == true {
                                     Image("charWinIara")
                                         .resizable()
                                         .aspectRatio(contentMode: .fit)
@@ -106,7 +104,7 @@ struct DificultyView_: View {
             combatViewModel.startCountdown()
             combatViewModel.gameReset()
         }){
-            CombatView(combatViewModel: combatViewModel)
+            CombatView(combatViewModel: combatViewModel, raiaWin: $raiaWin)
                 .environment(\.presentations, presentations + [$shouldNavigate])
         }
     }
