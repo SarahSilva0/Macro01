@@ -43,7 +43,7 @@ struct FirstView: View {
                             ButtonGenRound(action: {
                                 showGaleria = true
                             },
-                                           image: "galeria",
+                                           image: "Galeria",
                                            foregroundColor: Color(hex: "FFF2D9"),
                                            backgroundColor: Color(hex: "FFF2D9"))
                             .frame(width: buttonSize, height: buttonSize)
