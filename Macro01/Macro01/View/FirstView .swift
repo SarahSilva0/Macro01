@@ -56,7 +56,7 @@ struct FirstView: View {
                     
                     Spacer()
                     
-                    VStack {
+                    HStack {
                         Button(action: {
                             if isActiveTutorial {
                                 isTutorialSheetPresented = true
@@ -74,6 +74,7 @@ struct FirstView: View {
                                 .background(Color(hex: "FFF2D9"))
                                 .cornerRadius(10)
                         }
+                        .padding(.bottom, 10)
                         .sheet(isPresented: $isTutorialSheetPresented, onDismiss: {
                             showDificultyView = true
                         }) {
