@@ -125,7 +125,7 @@ struct CombatView: View {
                         HStack {
                             //MARK: PERSONAGEM PLAYER 1
                             VStack {
-                                Character(character: "player1")
+                                Character(character: "saciCut")
                                     .frame(width: geometry.size.width * 0.2, height: geometry.size.height * 0.25)
                             }
                             
@@ -133,7 +133,7 @@ struct CombatView: View {
                             
                             //MARK: PERSONAGEM PLAYER 2
                             VStack {
-                                Character(character: "player2")
+                                Character(character: "iaraCut")
                                     .frame(width: geometry.size.width * 0.2, height: geometry.size.height * 0.32)
                             }
                         }
