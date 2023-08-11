@@ -84,6 +84,7 @@
 		EB067C9F2A6EFA3F003F35F6 /* CooperBlack-StdItal.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "CooperBlack-StdItal.otf"; sourceTree = "<group>"; };
 		EB067CA12A6EFDF8003F35F6 /* cooper-std-black.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "cooper-std-black.otf"; sourceTree = "<group>"; };
 		EB1CFB382A86AF0800BEB908 /* Preview Content.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = "Preview Content.xcassets"; path = "../../../../Preview Content.xcassets"; sourceTree = "<group>"; };
+		EB1CFB3C2A86B08700BEB908 /* Preview Content.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Content.xcassets"; sourceTree = "<group>"; };
 		EB242D1B2A7C1FBA00581BF7 /* SplashScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashScreen.swift; sourceTree = "<group>"; };
 		EB2BC4E82A374A28008ACFD2 /* CharacterCircle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterCircle.swift; sourceTree = "<group>"; };
 		EB82F3AF2A33EEEF006D7011 /* ColorExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorExtensions.swift; sourceTree = "<group>"; };
@@ -159,6 +160,7 @@
 		EB067C982A6EF576003F35F6 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				EB1CFB3C2A86B08700BEB908 /* Preview Content.xcassets */,
 				FA6F185E2A1D302000E76127 /* Assets.xcassets */,
 				EB067C9A2A6EF5B4003F35F6 /* Font */,
 			);
