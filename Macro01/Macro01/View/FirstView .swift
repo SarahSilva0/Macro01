@@ -35,7 +35,7 @@ struct FirstView: View {
                                     showConfiguration = true
                                 }
                             },
-                                           image: "buttonConf",
+                                           image: "configuracao",
                                            foregroundColor: Color(hex: "FFF2D9"),
                                            backgroundColor: Color(hex: "FFF2D9"))
                             .frame(width: buttonSize, height: buttonSize)
@@ -52,7 +52,7 @@ struct FirstView: View {
                         }
                         .padding(.leading)
                     }
-                    .frame(width: geometry.size.width * 0.99, height: geometry.size.height * 0.2)
+                    .frame(width: geometry.size.width * 0.9, height: geometry.size.height * 0.2)
                     
                     Spacer()
                     
