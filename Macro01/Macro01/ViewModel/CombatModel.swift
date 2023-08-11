@@ -232,12 +232,12 @@ class CombatViewModel: ObservableObject {
     
     func checkGameWinner() -> [String] {
         switch getScore() {
-        case "Player 1 ganhou!":
+        case "Jogador 1 ganhou!":
             return ["Vitória!", "Você venceu a partida"]
-        case "Player 2 ganhou!":
-            return ["Derrota!", "Infelizmente não foi dessa vez"]
+        case "Jogador 2 ganhou!":
+            return ["Derrota!", "Infelizmente não foi dessa vez."]
         default:
-            return ["Empate"]
+            return ["Empate!", ""]
         }
     }
     
@@ -267,8 +267,8 @@ class CombatViewModel: ObservableObject {
     
     private func handleAttackVsRecharge() {
         if player1.mana >= 1 {
-            player1Win()
             checkWin = 1
+            player1Win()
         } else {
             player2RechargeMana()
         }

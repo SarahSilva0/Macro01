@@ -37,7 +37,7 @@ struct AboutView: View {
                         .frame(width: geometry.size.width * 0.01, height: geometry.size.height * 0.85)
                     
                 }
-                .frame(width: geometry.size.width * 0.945, height: geometry.size.height * 0.1)
+                .frame(width: geometry.size.width * 0.98, height: geometry.size.height * 0.1)
                 Spacer()
                 
                     VStack {

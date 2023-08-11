@@ -41,7 +41,7 @@ struct ConfigurationCardView: View {
                     Spacer()
                         .frame(width: geometry.size.width * 0.01, height: geometry.size.height * 0.853)
                 }
-                .frame(width: geometry.size.width * 0.945, height: geometry.size.height * 0.1)
+                .frame(width: geometry.size.width * 0.98, height: geometry.size.height * 0.1)
                 
                 HStack {
                     VStack  {
