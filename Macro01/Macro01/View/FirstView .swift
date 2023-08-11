@@ -5,7 +5,7 @@ struct FirstView: View {
     @State private var showConfiguration = false
     @State private var showGaleria = false
         
-    @AppStorage("saveTutorial") var isActiveTutorial: Bool = true
+    @AppStorage("tutorial") var isActiveTutorial: Bool = true
     
     
     @State private var isTutorialSheetPresented = false
@@ -35,7 +35,7 @@ struct FirstView: View {
                                     showConfiguration = true
                                 }
                             },
-                                           image: "configuracao",
+                                           image: "buttonConf",
                                            foregroundColor: Color(hex: "FFF2D9"),
                                            backgroundColor: Color(hex: "FFF2D9"))
                             .frame(width: buttonSize, height: buttonSize)
