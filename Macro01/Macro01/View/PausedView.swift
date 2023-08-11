@@ -47,15 +47,14 @@ struct PausedView: View {
                             .frame(height: geometry.size.height * 0.1)
                         
                         VStack {
-                            TransparentConfigurationButton(text: "Cancelar", icon: "book") {
-                                print("Cancelar")
+                            TransparentConfigurationButton(text: "Cancelar", icon: "buttonCancel") {
                                 combatViewModel.isPaused = false
                                 if !combatViewModel.timer!.isValid{
                                     combatViewModel.startTimer()
                                     print("PSUDSFPPP")
                                 }
                             }
-                            TransparentConfigurationButton(text: "Sair", icon: "info") {
+                            TransparentConfigurationButton(text: "Sair", icon: "buttonExit") {
                                 combatViewModel.gameReset()
                                 presentations.forEach{
                                     $0.wrappedValue = false
