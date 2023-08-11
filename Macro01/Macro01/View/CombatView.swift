@@ -126,7 +126,7 @@ struct CombatView: View {
                             //MARK: PERSONAGEM PLAYER 1
                             VStack {
                                 Character(character: "saciCut")
-                                    .frame(width: geometry.size.width * 0.2, height: geometry.size.height * 0.25)
+                                    .frame(width: geometry.size.width * 0.19, height: geometry.size.height * 0.32)
                             }
                             
                             Spacer()
@@ -134,11 +134,11 @@ struct CombatView: View {
                             //MARK: PERSONAGEM PLAYER 2
                             VStack {
                                 Character(character: "iaraCut")
-                                    .frame(width: geometry.size.width * 0.2, height: geometry.size.height * 0.32)
+                                    .frame(width: geometry.size.width * 0.19, height: geometry.size.height * 0.32)
                             }
                         }
                         .ignoresSafeArea()
-                        .frame(width: geometry.size.width, height: geometry.size.height * 0.5, alignment: .bottom)
+                        .frame(width: geometry.size.width, height: geometry.size.height * 0.48, alignment: .bottom)
                     }
                 }
             }
