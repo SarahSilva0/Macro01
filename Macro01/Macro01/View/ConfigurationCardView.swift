@@ -41,7 +41,7 @@ struct ConfigurationCardView: View {
                     Spacer()
                         .frame(width: geometry.size.width * 0.01, height: geometry.size.height * 0.853)
                 }
-                .frame(width: geometry.size.width * 0.858, height: geometry.size.height * 0.1)
+                .frame(width: geometry.size.width * 0.945, height: geometry.size.height * 0.1)
                 
                 HStack {
                     VStack  {
@@ -77,15 +77,15 @@ struct ConfigurationCardView: View {
                                 showAbout = true
                             }
                             
-                            TransparentConfigurationButton(text: "Suporte", icon: "email") {
-                                print("email")
-                            }
+//                            TransparentConfigurationButton(text: "Suporte", icon: "email") {
+//                                print("email")
+//                            }
                             
                             TransparentConfigurationButton(text: "Políticas de Privacidade", icon: "info") {
                                 showPolicyAndPrivacy = true
                             }
                         }
-                        .frame(width: geometry.size.width * 0.4, height: geometry.size.height * 0.5)
+                        .frame(width: geometry.size.width * 0.4, height: geometry.size.height * 0.4)
                         Spacer()
                     }
                     .frame(width: geometry.size.width * 0.4)

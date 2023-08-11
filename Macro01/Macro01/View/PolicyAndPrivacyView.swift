@@ -38,7 +38,7 @@ struct PolicyAndPrivacyView: View {
                         .background(.white)
                     
                 }
-                .frame(width: geometry.size.width * 0.859, height: geometry.size.height * 0.1)
+                .frame(width: geometry.size.width * 0.945, height: geometry.size.height * 0.1)
                 
                     VStack {
                         

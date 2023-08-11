@@ -151,9 +151,9 @@ class CombatViewModel: ObservableObject {
     func getScore() -> String {
         if player1.winTurno > player2.winTurno {
             winLevel()
-            return "Player 1 ganhou!"
+            return "Jogador 1 ganhou!"
         } else if player1.winTurno < player2.winTurno {
-            return "Player 2 ganhou!"
+            return "Jogador 2 ganhou!"
         } else {
             return "Empate"
         }
