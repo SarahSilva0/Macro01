@@ -118,7 +118,7 @@ struct ConfigurationCardView: View {
                 
             }
             .sheet(isPresented: $showTutorial){
-                TutorialView()
+                TutorialView(isPresented: $showTutorial).background(ClearBackgroundView())
             }
            
         }

@@ -43,7 +43,7 @@ struct FirstView: View {
                             ButtonGenRound(action: {
                                 showGaleria = true
                             },
-                                           image: "Galeria",
+                                           image: "galeria",
                                            foregroundColor: Color(hex: "FFF2D9"),
                                            backgroundColor: Color(hex: "FFF2D9"))
                             .frame(width: buttonSize, height: buttonSize)
@@ -108,7 +108,7 @@ struct FirstView: View {
         }
         .navigationBarHidden(true)
         .sheet(isPresented: $showGaleria){
-            GaleriaSaciView()
+            GaleriaSaciView(isPresented: $showGaleria)
         }
     }
    
