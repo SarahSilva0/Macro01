@@ -16,9 +16,6 @@ struct TutorialDialogBox: View {
         GeometryReader { geometry in
             VStack {
                 ZStack {
-                    Color(hex: "2D2828")
-                    .edgesIgnoringSafeArea(.all)
-                    
                     Rectangle()
                         Color(hex: colorBox)
                         .cornerRadius(10)
@@ -41,6 +38,7 @@ struct TutorialDialogBox: View {
                     }
                 }
                 .cornerRadius(10)
+                .foregroundColor(Color(hex: "2D2828"))
             }
             .frame(width: geometry.size.width, height: geometry.size.height, alignment: .center)
             

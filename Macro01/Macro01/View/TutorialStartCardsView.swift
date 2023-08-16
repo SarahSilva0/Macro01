@@ -66,7 +66,7 @@ struct TutorialStartCardsView: View {
                         
                     }
                     .frame(width: geometry.size.width * 1, height: geometry.size.height * 0.3, alignment: .center)
-                    .background(.white)
+                    .background(.black)
                 }
                 .frame(width: geometry.size.width, height: geometry.size.height, alignment: .center)
             }
