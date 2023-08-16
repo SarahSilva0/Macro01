@@ -60,7 +60,7 @@ struct TutorialStartCardsView: View {
                                     }, image: "NextRight")
                                 }
                             }
-                            .frame(width: geometry.size.width * 0.04)
+                            .frame(width: geometry.size.width * 0.057)
                         }
                         .frame(width: geometry.size.width * 0.7, alignment: .trailing)
                         
