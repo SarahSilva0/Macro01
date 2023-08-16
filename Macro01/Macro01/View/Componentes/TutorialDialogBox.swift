@@ -15,9 +15,9 @@ struct TutorialDialogBox: View {
     var body: some View {
         GeometryReader { geometry in
             VStack {
-                ZStack{
-                    Image("backgroundGeral")
-                        .resizable()
+                ZStack {
+                    Color(hex: "2D2828")
+                    .edgesIgnoringSafeArea(.all)
                     
                     Rectangle()
                         Color(hex: colorBox)

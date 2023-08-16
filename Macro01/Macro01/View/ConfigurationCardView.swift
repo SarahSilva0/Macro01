@@ -49,6 +49,7 @@ struct ConfigurationCardView: View {
                             HStack  {
                                 Text("Configuração")
                                     .font(.system(size: 20))
+                                    .foregroundColor(.black)
                                     .fontWeight(.bold)
                             }
                             
@@ -127,8 +128,4 @@ struct ConfigurationCardView: View {
        
 }
     
-struct ConfigurationCard_Previews: PreviewProvider {
-    static var previews: some View {
-        ConfigurationCardView(isPresented: .constant(true))
-    }
-}
+

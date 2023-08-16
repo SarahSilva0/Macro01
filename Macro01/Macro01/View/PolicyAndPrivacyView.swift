@@ -45,6 +45,7 @@ struct PolicyAndPrivacyView: View {
                         HStack  {
                             Text("Política e Privacidade")
                                 .font(.system(size: 20))
+                                .foregroundColor(.black)
                                 .fontWeight(.bold)
                         }
                         .frame(width: geometry.size.width, height: geometry.size.height * 0.15)
@@ -66,6 +67,7 @@ struct PolicyAndPrivacyView: View {
                              """
                             )
                                   .font(Font.custom("SF Pro", size: 12))
+                                  .foregroundColor(.black)
                                   .multilineTextAlignment(.center)
                                   .lineSpacing(5)
                         Spacer()

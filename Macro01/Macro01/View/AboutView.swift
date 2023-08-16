@@ -44,6 +44,7 @@ struct AboutView: View {
                         HStack  {
                             Text("Sobre")
                                 .font(.system(size: 20))
+                                .foregroundColor(.black)
                                 .fontWeight(.bold)
                         }
                         .frame(width: geometry.size.width, height: geometry.size.height * 0.15)
@@ -58,6 +59,7 @@ struct AboutView: View {
                              """
                             )
                             .font(Font.custom("SF Pro", size: 12))
+                            .foregroundColor(.black)
                             .multilineTextAlignment(.center)
                             .lineSpacing(5)
                         }
