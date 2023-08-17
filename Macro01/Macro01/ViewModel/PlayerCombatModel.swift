@@ -53,7 +53,7 @@ class PlayerCombat: ObservableObject {
         }
         
         if rechargeCount >= 3 {
-            return Card(type: .defense, name: "attack\(bot)")
+            return Card(type: .attack, name: "attack\(bot)")
         }
         
         for (cardType, probability) in possibleCards {

@@ -34,6 +34,7 @@
 		EBF1340D2A23FAF0000FA55E /* DeckModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBF1340C2A23FAF0000FA55E /* DeckModel.swift */; };
 		EBFE58CB2A3506F40042A319 /* ScoreView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBFE58CA2A3506F40042A319 /* ScoreView.swift */; };
 		FA1546E02A26D15400C9EE2E /* CombatView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA1546DF2A26D15400C9EE2E /* CombatView.swift */; };
+		FA593D032A8E9CE6004EFBAB /* PlayerLogicTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA593D022A8E9CE6004EFBAB /* PlayerLogicTests.swift */; };
 		FA5BEDA12A2E2428001B0C07 /* PlayerCombatModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA5BEDA02A2E2428001B0C07 /* PlayerCombatModel.swift */; };
 		FA5BEDA32A2E2464001B0C07 /* CardsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA5BEDA22A2E2464001B0C07 /* CardsModel.swift */; };
 		FA5BEDA72A2E2559001B0C07 /* ClearBackground.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA5BEDA62A2E2559001B0C07 /* ClearBackground.swift */; };
@@ -104,6 +105,7 @@
 		EBF592832A6DE47500EBAB04 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		EBFE58CA2A3506F40042A319 /* ScoreView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreView.swift; sourceTree = "<group>"; };
 		FA1546DF2A26D15400C9EE2E /* CombatView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CombatView.swift; sourceTree = "<group>"; };
+		FA593D022A8E9CE6004EFBAB /* PlayerLogicTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerLogicTests.swift; sourceTree = "<group>"; };
 		FA5BEDA02A2E2428001B0C07 /* PlayerCombatModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerCombatModel.swift; sourceTree = "<group>"; };
 		FA5BEDA22A2E2464001B0C07 /* CardsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardsModel.swift; sourceTree = "<group>"; };
 		FA5BEDA62A2E2559001B0C07 /* ClearBackground.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClearBackground.swift; sourceTree = "<group>"; };
@@ -296,6 +298,7 @@
 			isa = PBXGroup;
 			children = (
 				FA6F18682A1D302000E76127 /* Macro01Tests.swift */,
+				FA593D022A8E9CE6004EFBAB /* PlayerLogicTests.swift */,
 			);
 			path = Macro01Tests;
 			sourceTree = "<group>";
@@ -490,6 +493,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FA6F18692A1D302000E76127 /* Macro01Tests.swift in Sources */,
+				FA593D032A8E9CE6004EFBAB /* PlayerLogicTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
