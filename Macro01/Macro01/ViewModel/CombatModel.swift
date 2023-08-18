@@ -151,9 +151,9 @@ class CombatViewModel: ObservableObject {
     func getScore() -> String {
         if player1.winTurno > player2.winTurno {
             winLevel()
-            return "Jogador 1 ganhou!"
+            return "Vitória"
         } else if player1.winTurno < player2.winTurno {
-            return "Jogador 2 ganhou!"
+            return "Derrota"
         } else {
             return "Empate"
         }
@@ -167,8 +167,7 @@ class CombatViewModel: ObservableObject {
             RaiaDiff.winLevel = true
         }
     }
-    
-    
+
     func compareCardsInCenter(card1: Card, card2: Card) {
         switch (card1.type, card2.type) {
         case (.attack, .attack):

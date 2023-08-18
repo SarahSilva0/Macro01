@@ -8,23 +8,31 @@
 import SwiftUI
 
 struct EndOfGameResultView: View {
+    @ObservedObject var combatViewModel: CombatViewModel
+    @Environment(\.presentationMode) var presentationMode
     
     var body: some View {
-        GeometryReader { geometry in
-            
-            ZStack {
-                VStack {
-                    HStack (alignment: .center) {
-                        WinnerDefeatText(text: "Oi", size: 50, paddingSize: 0)
-                    }
-                    .frame(width: geometry.size.width, height: geometry.size.height)
-                }
+        VStack {
+            HStack (alignment: .center) {
+                Text("FUNCIONOU")
+                    .font(.system(size: 30))
+                    .foregroundColor(.blue)
+                // Coloque aqui o código que deseja exibir no fim do jogo
             }
-            .ignoresSafeArea(.all)
-            
+        }
+        .frame(maxWidth: .infinity, maxHeight: .infinity)
+        .background(Color.black.opacity(0.7))
+        .onAppear {
+            combatViewModel.gameReset()
+            raiaWin = combatViewModel.RaiaDiff.winLevel
+            combatViewModel.isGameEndAlertPresented = false
+            presentationMode.wrappedValue.dismiss()
         }
     }
-    
 }
+
+
+
+
 
 

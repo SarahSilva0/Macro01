@@ -14,7 +14,7 @@ struct CombatView: View {
     @Environment(\.presentationMode) var presentationMode
     @Environment(\.presentations) var presentations
     @Binding var raiaWin: Bool
-
+    
     
     var body: some View {
         ZStack {
@@ -93,7 +93,7 @@ struct CombatView: View {
                     }
                     .animation(.easeInOut(duration: 1.0))
                     .frame(width: geometry.size.width * 0.2, height: geometry.size.height * 0.2, alignment: .bottom)
-    
+                    
                 }
                 //AQUI MEXE NA ALTURA DAS CARTAS EM RELACAO AS CARTAS DO CENTRO
                 .frame(width: geometry.size.width, height: geometry.size.height * 1.1, alignment: .center)
