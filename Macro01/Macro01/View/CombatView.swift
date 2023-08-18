@@ -24,7 +24,7 @@ struct CombatView: View {
                 .ignoresSafeArea()
             VStack {
                 if !combatViewModel.isCountdownVisible && !combatViewModel.isSheetVisible {
-                    if combatViewModel.player1.winTurno == 3 || combatViewModel.player2.winTurno == 3 {
+                    if combatViewModel.player1.winTurno == 3 || combatViewModel.player2.winTurno ==  3 {
                         WinnerDefeatText(text: combatViewModel.checkGameWinner()[0], size: 50, paddingSize: 0)
                         WinnerDefeatText(text: combatViewModel.checkGameWinner()[1], size: 15, paddingSize: 50)
                     }
@@ -153,21 +153,21 @@ struct CombatView: View {
         }
         
         //COLOCAR PARA TRÁS ESSA DE FINAL, E TRAZER PRA FRENTE
-        .onChange(of: combatViewModel.isGameEndAlertPresented, perform: { newValue in
-            EndOfGameResultView(combatViewModel: combatViewModel, raiaWin: $raiaWin)
-        })
+//        .onChange(of: combatViewModel.isGameEndAlertPresented, perform: { newValue in
+//            EndOfGameResultView(combatViewModel: combatViewModel, raiaWin: $raiaWin)
+//        })
         
         
-//        .alert(isPresented: $combatViewModel.isGameEndAlertPresented) {
-//            Alert(title: Text("Fim do Jogo"),
-//                  message: Text("\(combatViewModel.getScore())"),
-//                  dismissButton: .default(Text("OK"), action: {
-//                combatViewModel.gameReset()
-//                raiaWin = combatViewModel.RaiaDiff.winLevel
-//                combatViewModel.isGameEndAlertPresented = false
-//                presentationMode.wrappedValue.dismiss()
-//            }))
-//        }
+        .alert(isPresented: $combatViewModel.isGameEndAlertPresented) {
+            Alert(title: Text("Fim do Jogo"),
+                  message: Text("\(combatViewModel.getScore())"),
+                  dismissButton: .default(Text("OK"), action: {
+                combatViewModel.gameReset()
+                raiaWin = combatViewModel.RaiaDiff.winLevel
+                combatViewModel.isGameEndAlertPresented = false
+                presentationMode.wrappedValue.dismiss()
+            }))
+        }
         .navigationBarHidden(true)
     }
 }
