@@ -11,17 +11,19 @@ struct EndOfGameResultView: View {
     @ObservedObject var combatViewModel: CombatViewModel
     @Environment(\.presentationMode) var presentationMode
     
+    @Binding var raiaWin: Bool
+    
     var body: some View {
         VStack {
             HStack (alignment: .center) {
                 Text("FUNCIONOU")
-                    .font(.system(size: 30))
-                    .foregroundColor(.blue)
-                // Coloque aqui o código que deseja exibir no fim do jogo
+                    .font(.system(size: 40))
+                    .foregroundColor(.black)
+ 
             }
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity)
-        .background(Color.black.opacity(0.7))
+        .background(.blue)
         .onAppear {
             combatViewModel.gameReset()
             raiaWin = combatViewModel.RaiaDiff.winLevel
@@ -29,6 +31,7 @@ struct EndOfGameResultView: View {
             presentationMode.wrappedValue.dismiss()
         }
     }
+
 }
 
 

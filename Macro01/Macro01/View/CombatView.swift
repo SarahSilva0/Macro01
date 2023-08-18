@@ -22,7 +22,7 @@ struct CombatView: View {
                 .resizable()
                 .aspectRatio(contentMode: .fill)
                 .ignoresSafeArea()
-            VStack{
+            VStack {
                 if !combatViewModel.isCountdownVisible && !combatViewModel.isSheetVisible {
                     if combatViewModel.player1.winTurno == 3 || combatViewModel.player2.winTurno == 3 {
                         WinnerDefeatText(text: combatViewModel.checkGameWinner()[0], size: 50, paddingSize: 0)
@@ -151,16 +151,23 @@ struct CombatView: View {
         }) {
             SheetView(combatViewModel: combatViewModel, isSheetVisible: $combatViewModel.isSheetVisible, countdownSheet: $combatViewModel.countdownSheet).background(ClearBackgroundView())
         }
-        .alert(isPresented: $combatViewModel.isGameEndAlertPresented) {
-            Alert(title: Text("Fim do Jogo"),
-                  message: Text("\(combatViewModel.getScore())"),
-                  dismissButton: .default(Text("OK"), action: {
-                combatViewModel.gameReset()
-                raiaWin = combatViewModel.RaiaDiff.winLevel
-                combatViewModel.isGameEndAlertPresented = false
-                presentationMode.wrappedValue.dismiss()
-            }))
-        }
+        
+        //COLOCAR PARA TRÁS ESSA DE FINAL, E TRAZER PRA FRENTE
+        .onChange(of: combatViewModel.isGameEndAlertPresented, perform: { newValue in
+            EndOfGameResultView(combatViewModel: combatViewModel, raiaWin: $raiaWin)
+        })
+        
+        
+//        .alert(isPresented: $combatViewModel.isGameEndAlertPresented) {
+//            Alert(title: Text("Fim do Jogo"),
+//                  message: Text("\(combatViewModel.getScore())"),
+//                  dismissButton: .default(Text("OK"), action: {
+//                combatViewModel.gameReset()
+//                raiaWin = combatViewModel.RaiaDiff.winLevel
+//                combatViewModel.isGameEndAlertPresented = false
+//                presentationMode.wrappedValue.dismiss()
+//            }))
+//        }
         .navigationBarHidden(true)
     }
 }
