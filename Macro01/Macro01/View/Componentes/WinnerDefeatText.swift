@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct WinnerText: View {
+struct WinnerDefeatText: View {
     var text: String = ""
     var size: Int
     var paddingSize: Int

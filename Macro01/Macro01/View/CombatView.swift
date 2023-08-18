@@ -25,12 +25,12 @@ struct CombatView: View {
             VStack{
                 if !combatViewModel.isCountdownVisible && !combatViewModel.isSheetVisible {
                     if combatViewModel.player1.winTurno == 3 || combatViewModel.player2.winTurno == 3 {
-                        WinnerText(text: combatViewModel.checkGameWinner()[0], size: 50, paddingSize: 0)
-                        WinnerText(text: combatViewModel.checkGameWinner()[1], size: 15, paddingSize: 50)
+                        WinnerDefeatText(text: combatViewModel.checkGameWinner()[0], size: 50, paddingSize: 0)
+                        WinnerDefeatText(text: combatViewModel.checkGameWinner()[1], size: 15, paddingSize: 50)
                     }
                     else {
-                        WinnerText(text: combatViewModel.checkPlayerVictory()[0], size: 50, paddingSize: 0)
-                        WinnerText(text: combatViewModel.checkPlayerVictory()[1], size: 15, paddingSize: 50)
+                        WinnerDefeatText(text: combatViewModel.checkPlayerVictory()[0], size: 50, paddingSize: 0)
+                        WinnerDefeatText(text: combatViewModel.checkPlayerVictory()[1], size: 15, paddingSize: 50)
                     }
                 }
             }
@@ -93,11 +93,10 @@ struct CombatView: View {
                     }
                     .animation(.easeInOut(duration: 1.0))
                     .frame(width: geometry.size.width * 0.2, height: geometry.size.height * 0.2, alignment: .bottom)
-                    
+    
                 }
                 //AQUI MEXE NA ALTURA DAS CARTAS EM RELACAO AS CARTAS DO CENTRO
                 .frame(width: geometry.size.width, height: geometry.size.height * 1.1, alignment: .center)
-                
                 
                 ZStack {
                     VStack{
