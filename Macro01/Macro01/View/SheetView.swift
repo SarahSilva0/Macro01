@@ -11,7 +11,6 @@ struct SheetView: View {
     
     @ObservedObject var combatViewModel: CombatViewModel
     @Binding var isSheetVisible: Bool
-    
     @Binding var countdownSheet: Int
     
     @State private var timer: Timer?
@@ -68,10 +67,10 @@ struct SheetView: View {
                         }
                         
                     }
-                    .frame(width: geometry.size.width * 0.06, height: geometry.size.height * 0.1,alignment: .trailing)
+                    .frame(width: geometry.size.width * 0.06, height: geometry.size.height * 0.71,alignment: .bottomTrailing)
                     
                 }
-                .frame(width: geometry.size.width * 1, height: geometry.size.height, alignment: .trailing)
+                .frame(width: geometry.size.width , height: geometry.size.height, alignment: .trailing)
             }
             .ignoresSafeArea(.all)
             
