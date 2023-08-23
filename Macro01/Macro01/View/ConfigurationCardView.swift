@@ -70,8 +70,7 @@ struct ConfigurationCardView: View {
                             .frame(height: geometry.size.height * 0.1)
                         
                         VStack {
-                            TransparentConfigurationButton(text: "Tutorial", icon: "book") {
-                                print("Tutorial")
+                            TransparentConfigurationButton(text: "Manual", icon: "book") {
                                 showTutorial = true
                             }
                             TransparentConfigurationButton(text: "Sobre", icon: "info") {
