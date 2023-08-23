@@ -96,7 +96,7 @@ struct ConfigurationCardView: View {
                 
             }
             .ignoresSafeArea()
-            .frame(width: geometry.size.width, height: geometry.size.height )
+            .frame(width: geometry.size.width, height: geometry.size.height)
             
 
             
