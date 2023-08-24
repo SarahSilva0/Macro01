@@ -21,6 +21,8 @@
 		EB8B91412A818C8200D8B6D1 /* TutorialData.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB8B91402A818C8200D8B6D1 /* TutorialData.swift */; };
 		EB8B91432A818CD100D8B6D1 /* TutorialStartCardsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB8B91422A818CD100D8B6D1 /* TutorialStartCardsView.swift */; };
 		EB8B91452A818DBF00D8B6D1 /* TutorialDialogBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB8B91442A818DBF00D8B6D1 /* TutorialDialogBox.swift */; };
+		EB8FDCB82A97EB2C00D7FD0D /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = EB8FDCB72A97EB2C00D7FD0D /* Localizable.strings */; };
+		EB8FDCBC2A97EBD200D7FD0D /* LocalizedLanguage.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB8FDCBB2A97EBD200D7FD0D /* LocalizedLanguage.swift */; };
 		EB99BB582A49F78000DCCE73 /* CardComponentMainScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB99BB572A49F78000DCCE73 /* CardComponentMainScreen.swift */; };
 		EBB6B0D12A80180000F0F992 /* CountdownBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBB6B0D02A80180000F0F992 /* CountdownBar.swift */; };
 		EBC6883E2A69BAD80072E706 /* PolicyAndPrivacyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBC6883D2A69BAD80072E706 /* PolicyAndPrivacyView.swift */; };
@@ -91,6 +93,8 @@
 		EB8B91402A818C8200D8B6D1 /* TutorialData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TutorialData.swift; sourceTree = "<group>"; };
 		EB8B91422A818CD100D8B6D1 /* TutorialStartCardsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TutorialStartCardsView.swift; sourceTree = "<group>"; };
 		EB8B91442A818DBF00D8B6D1 /* TutorialDialogBox.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TutorialDialogBox.swift; sourceTree = "<group>"; };
+		EB8FDCB72A97EB2C00D7FD0D /* Localizable.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
+		EB8FDCBB2A97EBD200D7FD0D /* LocalizedLanguage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalizedLanguage.swift; sourceTree = "<group>"; };
 		EB99BB572A49F78000DCCE73 /* CardComponentMainScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardComponentMainScreen.swift; sourceTree = "<group>"; };
 		EBB6B0D02A80180000F0F992 /* CountdownBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountdownBar.swift; sourceTree = "<group>"; };
 		EBC6883D2A69BAD80072E706 /* PolicyAndPrivacyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PolicyAndPrivacyView.swift; sourceTree = "<group>"; };
@@ -181,6 +185,31 @@
 				EB82F3AF2A33EEEF006D7011 /* ColorExtensions.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		EB8FDCB62A97EAC400D7FD0D /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				EB8FDCBA2A97EB8200D7FD0D /* LocalizableLanguage */,
+				EB8FDCB92A97EB7500D7FD0D /* Localizable */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		EB8FDCB92A97EB7500D7FD0D /* Localizable */ = {
+			isa = PBXGroup;
+			children = (
+				EB8FDCBB2A97EBD200D7FD0D /* LocalizedLanguage.swift */,
+			);
+			path = Localizable;
+			sourceTree = "<group>";
+		};
+		EB8FDCBA2A97EB8200D7FD0D /* LocalizableLanguage */ = {
+			isa = PBXGroup;
+			children = (
+				EB8FDCB72A97EB2C00D7FD0D /* Localizable.strings */,
+			);
+			path = LocalizableLanguage;
 			sourceTree = "<group>";
 		};
 		EBCD66342A1EADA800157CBF /* ViewModel */ = {
@@ -282,6 +311,7 @@
 		FA6F18562A1D301F00E76127 /* Macro01 */ = {
 			isa = PBXGroup;
 			children = (
+				EB8FDCB62A97EAC400D7FD0D /* Utils */,
 				EB067C982A6EF576003F35F6 /* Resources */,
 				EBF592832A6DE47500EBAB04 /* Info.plist */,
 				EB82F3B12A33EF44006D7011 /* Extensions */,
@@ -417,6 +447,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				EB067CA02A6EFA3F003F35F6 /* CooperBlack-StdItal.otf in Resources */,
+				EB8FDCB82A97EB2C00D7FD0D /* Localizable.strings in Resources */,
 				EB067CA22A6EFDF8003F35F6 /* cooper-std-black.otf in Resources */,
 				FA6F185F2A1D302000E76127 /* Assets.xcassets in Resources */,
 			);
@@ -482,6 +513,7 @@
 				EBF1340B2A23FAA1000FA55E /* CardModel.swift in Sources */,
 				FA6F18582A1D301F00E76127 /* Macro01App.swift in Sources */,
 				EBCFE2E12A1E8670002CABFF /* BotaoGenRedondoView.swift in Sources */,
+				EB8FDCBC2A97EBD200D7FD0D /* LocalizedLanguage.swift in Sources */,
 				19FE502C2A818FCA0064BA54 /* WinnerText.swift in Sources */,
 				FADCBAD32A3904510012C0FB /* DificultyView .swift in Sources */,
 				FAD5EE612A74E4FE004A4C78 /* ViewComponent.swift in Sources */,

@@ -1,0 +1,11 @@
+/* 
+  Localizable.strings
+  Macro01
+
+  Created by Higor  Lo Castro on 24/08/23.
+  
+*/
+
+//MARK: - Menu Principal
+
+"Tutorial" = "Tutorial";
