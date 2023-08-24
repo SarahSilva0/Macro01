@@ -6,6 +6,6 @@
   
 */
 
-//MARK: - Menu Principal
+//MARK: - FirstView
 
-"Tutorial" = "Tutorial";
+"Jogar" = "Play";

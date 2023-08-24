@@ -65,7 +65,7 @@ struct FirstView: View {
                                 showDificultyView = true
                             }
                         }) {
-                            Text("Jogar")
+                            Text("Jogar".localizedLanguage())
                                 .font(Font.custom("CooperBlackStd", size: 20))
                                 .fontWeight(.bold)
                                 .foregroundColor(.black)
