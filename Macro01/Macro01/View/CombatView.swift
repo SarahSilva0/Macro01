@@ -14,6 +14,9 @@ struct CombatView: View {
     @Environment(\.presentationMode) var presentationMode
     @Environment(\.presentations) var presentations
     @Binding var raiaWin: Bool
+    @Binding var botoWin: Bool
+    @Binding var cucaWin: Bool
+
 
     
     var body: some View {
@@ -127,7 +130,7 @@ struct CombatView: View {
                         HStack {
                             //MARK: PERSONAGEM PLAYER 1
                             VStack {
-                                Character(character: "saciCut")
+                                Character(character: combatViewModel.player1.name)
                                     .frame(width: geometry.size.width * 0.19, height: geometry.size.height * 0.32)
                             }
                             
@@ -135,7 +138,7 @@ struct CombatView: View {
                             
                             //MARK: PERSONAGEM PLAYER 2
                             VStack {
-                                Character(character: "iaraCut")
+                                Character(character: combatViewModel.player2.name)
                                     .frame(width: geometry.size.width * 0.19, height: geometry.size.height * 0.32)
                             }
                         }
@@ -157,7 +160,15 @@ struct CombatView: View {
                   message: Text("\(combatViewModel.getScore())"),
                   dismissButton: .default(Text("OK"), action: {
                 combatViewModel.gameReset()
-                raiaWin = combatViewModel.RaiaDiff.winLevel
+                if combatViewModel.RaiaDiff.winLevel == true{
+                    raiaWin = combatViewModel.RaiaDiff.winLevel
+                }
+                if combatViewModel.BotoDiff.winLevel == true {
+                    botoWin = combatViewModel.BotoDiff.winLevel
+                }
+                if combatViewModel.CucaDiff.winLevel == true {
+                    cucaWin = combatViewModel.CucaDiff.winLevel
+                }
                 combatViewModel.isGameEndAlertPresented = false
                 presentationMode.wrappedValue.dismiss()
             }))

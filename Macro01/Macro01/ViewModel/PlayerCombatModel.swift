@@ -33,7 +33,7 @@ class PlayerCombat: ObservableObject {
     let RaiaProbabilities = CardProbabilities(probabilities: [
         [(.recharge, 0.6), (.defense, 0.4)],
         [(.attack, 0.4), (.recharge, 0.3), (.defense, 0.3)],
-        [(.attack, 0.5), (.defense, 0.5)]
+        [(.attack, 0.6), (.defense, 0.4)]
     ])
     
     //MARK: FUNCAO GENERICA DA LOGICA DA PROBABILIDADE DAS CARTAS
@@ -47,19 +47,13 @@ class PlayerCombat: ObservableObject {
         
         let attackCount = updatedCards.filter { $0.type == .attack }.count
         let rechargeCount = updatedCards.filter { $0.type == .recharge }.count
-        
-        if attackCount >= 3 {
-            return Card(type: .defense, name: "defense\(bot)")
-        }
-        
-        if rechargeCount >= 3 {
-            return Card(type: .attack, name: "attack\(bot)")
-        }
-        
+
         for (cardType, probability) in possibleCards {
             if cardType == .attack && attackCount >= 2 {
+                print("2 CARTAS DE ATAQUE")
                 cumulativeProbability += 0.0
             } else if cardType == .recharge && rechargeCount >= 2 {
+                print("2 CARTAS DE RECARGA")
                 cumulativeProbability += 0.0
             } else {
                 cumulativeProbability += probability
@@ -82,6 +76,7 @@ class PlayerCombat: ObservableObject {
         self.cards[currentIndex] = newCard
         self.selectedCard = newCard
     }
+    
 
 
     

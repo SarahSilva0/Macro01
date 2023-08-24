@@ -14,6 +14,10 @@ struct DificultyView_: View {
     @Environment(\.presentations) private var presentations
     @Environment(\.presentationMode) var presentationMode
     @AppStorage("Raia") var raiaWin: Bool = false
+    @AppStorage("Boto") var botoWin: Bool = false
+    @AppStorage("Cuca") var cucaWin: Bool = false
+    
+
     
     var body: some View {
         GeometryReader { geo in
@@ -55,41 +59,25 @@ struct DificultyView_: View {
                         
                         HStack(spacing: 20){
                             Button {
-                                print("Raia")
-                                combatViewModel.RaiaDiff.selectdedLevel = true
-                                combatViewModel.setPlayer()
-                                shouldNavigate.toggle()
+                                iaraButton()
                                 
                             } label: {
-                                if raiaWin == true {
-                                    Image("charWinIara")
-                                        .resizable()
-                                        .aspectRatio(contentMode: .fit)
-                                }
-                                else{
-                                    Image("charIara")
-                                        .resizable()
-                                        .aspectRatio(contentMode: .fit)
-                                }
+                               iaraImage()
                             }
                         
                             Button {
-                                print("Boto")
+                               botoButton()
                                 
                             } label: {
-                                Image("charBlockBoto")
-                                    .resizable()
-                                    .aspectRatio(contentMode: .fit)
-                            }.disabled(!combatViewModel.RaiaDiff.winLevel)
+                                botoImage()
+                            }.disabled(!raiaWin)
                             
                             Button {
-                                print("Cuca")
+                               cucaButton()
                                 
                             } label: {
-                                Image("charBlockCuca")
-                                    .resizable()
-                                    .aspectRatio(contentMode: .fit)
-                            }.disabled(!combatViewModel.RaiaDiff.winLevel)
+                                cucaImage()
+                            }.disabled(!botoWin)
 
 
                             
@@ -104,8 +92,90 @@ struct DificultyView_: View {
             combatViewModel.startCountdown()
             combatViewModel.gameReset()
         }){
-            CombatView(combatViewModel: combatViewModel, raiaWin: $raiaWin)
+            CombatView(combatViewModel: combatViewModel, raiaWin: $raiaWin, botoWin: $botoWin, cucaWin: $cucaWin)
                 .environment(\.presentations, presentations + [$shouldNavigate])
+        }
+    }
+}
+
+//MARK: CONFIGURANDO OS BOTOES
+extension DificultyView_{
+    func iaraButton(){
+        print("Raia")
+        combatViewModel.BotoDiff.selectdedLevel = false
+        combatViewModel.RaiaDiff.selectdedLevel = true
+        combatViewModel.CucaDiff.selectdedLevel = false
+        combatViewModel.setPlayer()
+        shouldNavigate.toggle()
+    }
+    func botoButton(){
+        print("Boto")
+        combatViewModel.RaiaDiff.selectdedLevel = false
+        combatViewModel.BotoDiff.selectdedLevel = true
+        combatViewModel.CucaDiff.selectdedLevel = false
+        combatViewModel.setPlayer()
+        shouldNavigate.toggle()
+    }
+    func cucaButton(){
+        print("Cuca")
+        combatViewModel.RaiaDiff.selectdedLevel = false
+        combatViewModel.BotoDiff.selectdedLevel = false
+        combatViewModel.CucaDiff.selectdedLevel = true
+        combatViewModel.setPlayer()
+        shouldNavigate.toggle()
+    }
+}
+
+//MARK: CONFIGURANDO AS IMAGENS
+extension DificultyView_{
+    @ViewBuilder
+    func botoImage() -> some View {
+        if raiaWin == false {
+            Image(combatViewModel.BotoDiff.imageInitial)
+                .resizable()
+                .aspectRatio(contentMode: .fit)
+        }
+        else if raiaWin == true && botoWin == false {
+            Image(combatViewModel.BotoDiff.imageSillhoute)
+                .resizable()
+                .aspectRatio(contentMode: .fit)
+        }
+        else if botoWin == true {
+            Image(combatViewModel.BotoDiff.imageWin)
+                .resizable()
+                .aspectRatio(contentMode: .fit)
+        }
+    }
+    @ViewBuilder
+    func iaraImage() -> some View {
+        if raiaWin == true {
+            Image("charWinIara")
+                .resizable()
+                .aspectRatio(contentMode: .fit)
+        }
+        else{
+            Image("charIara")
+                .resizable()
+                .aspectRatio(contentMode: .fit)
+        }
+    }
+    @ViewBuilder
+    func cucaImage() -> some View{
+        if botoWin == false{
+            Image("charBlockCuca")
+                .resizable()
+                .aspectRatio(contentMode: .fit)
+        }
+        else if botoWin == true && cucaWin == false {
+            Image("charCuca")
+                .resizable()
+                .aspectRatio(contentMode: .fit)
+        }
+        
+        else if cucaWin == true{
+            Image("charWinCuca")
+                .resizable()
+                .aspectRatio(contentMode: .fit)
         }
     }
 }

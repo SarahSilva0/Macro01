@@ -18,21 +18,44 @@ class CombatViewModel: ObservableObject {
     @Published var countdownSheet: Int = 5
     
     //MARK: CRIANDO OS JOGADORES (ESSA IMAGEM, PODE SER MUDADA DEPOIS)
-    var player1 = PlayerCombat(image: "jogador1", name: "")
-    var player2 = PlayerCombat(image: "jogador2", name: "")
+    var player1 = PlayerCombat(image: "", name: "")
+    var player2 = PlayerCombat(image: "", name: "")
     
     //MARK: Difficulty instancias
     @Published var RaiaDiff = DifficultyModel(imageInitial: "mediumBlockIara", imageSillhoute: "mediumIara", imageWin: "mediumWinIara", winCard: "", selectdedLevel: false, winLevel: false)
+    
+    @Published var BotoDiff = DifficultyModel(imageInitial: "charBlockBoto", imageSillhoute: "charBoto", imageWin: "charWinBoto", winCard: "", selectdedLevel: false, winLevel: false)
+    
+    @Published var CucaDiff = DifficultyModel(imageInitial: "charBlockCuca", imageSillhoute: "charCuca", imageWin: "charWinCuca", winCard: "", selectdedLevel: false, winLevel: false)
     
     //MARK: SETANDO OS JOGADORES
     func setPlayer(){
         if self.RaiaDiff.selectdedLevel == true{
             player1.name = "Saci"
             player2.name = "Iara"
-            
-            player1.cards = [Card(type: .attack, name: "attack\(player1.name)"), Card(type: .defense, name: "defense\(player1.name)"), Card(type: .recharge, name: "recharge\(player1.name)")]
-            player2.cards = [Card(type: .attack, name: "attack\(player2.name)"), Card(type: .defense, name: "defense\(player2.name)"), Card(type: .recharge, name: "recharge\(player2.name)")]
         }
+        
+        else if self.BotoDiff.selectdedLevel == true{
+            
+            print("BOTOOOOO")
+            
+            player1.name = "Saci"
+            player2.name = "Boto"
+
+        }
+        else if self.CucaDiff.selectdedLevel == true{
+            print("CUCAAAAA")
+            
+            player1.name = "Saci"
+            player2.name = "Cuca"
+        }
+        setCards()
+    }
+    
+    func setCards(){
+        
+        player1.cards = [Card(type: .attack, name: "attack\(player1.name)"), Card(type: .defense, name: "defense\(player1.name)"), Card(type: .recharge, name: "recharge\(player1.name)")]
+        player2.cards = [Card(type: .attack, name: "attack\(player2.name)"), Card(type: .defense, name: "defense\(player2.name)"), Card(type: .recharge, name: "recharge\(player2.name)")]
     }
     
     //MARK: CONTADOR
@@ -80,7 +103,17 @@ class CombatViewModel: ObservableObject {
     func selectedCardPlayer2() {
         
         if RaiaDiff.selectdedLevel == true {
-            print("MEDIO DIFICULDADEEEEEE")
+            print("RAIA DIFICULDADEEEEEE")
+            player2.selectedCard = player2.playerLogic(with: player2.RaiaProbabilities, for: player2.name)
+        }
+        
+        if BotoDiff.selectdedLevel == true{
+            print("BOTO DIFICULDADDEEEEE")
+            player2.selectedCard = player2.playerLogic(with: player2.RaiaProbabilities, for: player2.name)
+        }
+        
+        if CucaDiff.selectdedLevel == true{
+            print("CUCA DIFICULDADDEEEEE")
             player2.selectedCard = player2.playerLogic(with: player2.RaiaProbabilities, for: player2.name)
         }
         
@@ -108,11 +141,7 @@ class CombatViewModel: ObservableObject {
         
         self.endTurnButtonInteraction = true
         
-        if RaiaDiff.selectdedLevel == true {
-            print("MEDIO DIFICULDADEEEEEE JOGADOOOOR")
-            self.player1.replaceSelectedCardRandomly(with: player1.SPProbabilities, for: player1.name)
-            
-        }
+        self.player1.replaceSelectedCardRandomly(with: player1.SPProbabilities, for: player1.name)
         
         isInteractionEnabled = true
         player1.selectedCard = Card(type: .empty, name: "")
@@ -165,6 +194,12 @@ class CombatViewModel: ObservableObject {
     func winLevel(){
         if RaiaDiff.selectdedLevel == true{
             RaiaDiff.winLevel = true
+        }
+        if BotoDiff.selectdedLevel == true{
+            BotoDiff.winLevel = true
+        }
+        if CucaDiff.selectdedLevel == true {
+            CucaDiff.winLevel = true
         }
     }
     
