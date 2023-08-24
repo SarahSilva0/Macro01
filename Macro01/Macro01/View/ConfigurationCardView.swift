@@ -70,8 +70,7 @@ struct ConfigurationCardView: View {
                             .frame(height: geometry.size.height * 0.1)
                         
                         VStack {
-                            TransparentConfigurationButton(text: "Tutorial", icon: "book") {
-                                print("Tutorial")
+                            TransparentConfigurationButton(text: "Manual", icon: "book") {
                                 showTutorial = true
                             }
                             TransparentConfigurationButton(text: "Sobre", icon: "info") {
@@ -97,7 +96,7 @@ struct ConfigurationCardView: View {
                 
             }
             .ignoresSafeArea()
-            .frame(width: geometry.size.width, height: geometry.size.height )
+            .frame(width: geometry.size.width, height: geometry.size.height)
             
 
             
