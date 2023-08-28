@@ -26,7 +26,7 @@ class PlayerCombat: ObservableObject {
     //MARK: CRIANDO AS PROBABILIDADES DOS BOTS
     let SPProbabilities = CardProbabilities(probabilities: [
         [(.recharge, 0.6), (.defense, 0.4)],
-        [(.attack, 0.6), (.recharge, 0.2), (.defense, 0.2)], // melhorar isso aqui
+        [(.attack, 0.6), (.recharge, 0.3), (.defense, 0.1)], // melhorar isso aqui
         [(.attack, 0.6), (.defense, 0.4)]
     ])
     
@@ -47,15 +47,23 @@ class PlayerCombat: ObservableObject {
         
         let attackCount = updatedCards.filter { $0.type == .attack }.count
         let rechargeCount = updatedCards.filter { $0.type == .recharge }.count
+        let defenseCount = updatedCards.filter { $0.type == .defense }.count
+
 
         for (cardType, probability) in possibleCards {
             if cardType == .attack && attackCount >= 2 {
                 print("2 CARTAS DE ATAQUE")
                 cumulativeProbability += 0.0
-            } else if cardType == .recharge && rechargeCount >= 2 {
+            }
+            else if cardType == .recharge && rechargeCount >= 2 {
                 print("2 CARTAS DE RECARGA")
                 cumulativeProbability += 0.0
-            } else {
+            }
+            else if cardType == .defense && defenseCount >= 2 {
+                print("DEFESAAAAAAAAA 3")
+                cumulativeProbability += 0.0
+            }
+            else {
                 cumulativeProbability += probability
             }
             
