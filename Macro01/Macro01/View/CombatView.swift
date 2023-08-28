@@ -107,7 +107,6 @@ struct CombatView: View {
                         //MARK: BOTÃO DE PAUSE
                         HStack{
                             ButtonGenRound(action: {
-                                print("pause")
                                 combatViewModel.isPaused = true
                                 print(combatViewModel.isPaused)
                             },
@@ -156,7 +155,7 @@ struct CombatView: View {
             SheetView(combatViewModel: combatViewModel, isSheetVisible: $combatViewModel.isSheetVisible, countdownSheet: $combatViewModel.countdownSheet).background(ClearBackgroundView())
         }
         .alert(isPresented: $combatViewModel.isGameEndAlertPresented) {
-            Alert(title: Text("Fim do Jogo"),
+            Alert(title: Text("Fim do Jogo".localizedLanguage()),
                   message: Text("\(combatViewModel.getScore())"),
                   dismissButton: .default(Text("OK"), action: {
                 combatViewModel.gameReset()

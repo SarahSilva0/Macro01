@@ -52,7 +52,7 @@ struct DificultyView_: View {
                 
                 VStack{
                     VStack(alignment: .center, spacing: 35){
-                        Text("Selecione um Oponente")
+                        Text("Selecione um Oponente".localizedLanguage())
                             .font(Font.custom("CooperBlackStd", size: 25))
                             .fontWeight(.bold)
                             .foregroundColor(.black)

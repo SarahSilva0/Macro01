@@ -9,3 +9,157 @@
 //MARK: - FirstView
 
 "Jogar" = "Play";
+
+
+//CombatView
+
+"Fim do Jogo" = "" ;
+
+
+//ConfigurationCardView
+
+"Configuração" = "" ;
+
+ "Manual" = "" ;
+
+"Sobre" = "" ;
+
+"Políticas de Privacidade" = "" ;
+
+
+//PausedView
+
+"Pausa" = "" ;
+
+"Cancelar" = "" ;
+
+"Sair" = "" ;
+
+
+//PolicyAndPrivacyView
+
+"Política e Privacidade" = "" ;
+
+"""
+Este aplicativo é mantido e operado por Higor Crisostomo, Julia Mendes, Sarah dos Santos Silva e Thiago Akira Nakayama.
+                             
+                             Nós NÃO coletamos e utilizamos nenhum
+                             dado pessoal que pertencem àqueles que
+                             utilizam nosso aplicativo.
+                             
+                             Para esclarecer quaisquer dúvidas sobre
+                             esta Política de Privacidade ou sobre
+                             o aplicativo, entre em contato conosco, pelo
+                             canal mencionado abaixo:
+                             
+                             E-mail:
+                             folkardbattlecard@gmail.com
+"""
+                       = "" ;
+
+
+//AboutView
+
+"Sobre" = "" ;
+
+"""
+                             Folkard é um jogo de cartas com tema
+                             folclórico, onde seu objetivo é duelar contra
+                             seus oponentes para conquistar todas as
+                             cartas!
+                             """ = "" ;
+
+
+//SheetView
+
+"Escolha uma carta" = "" ;
+
+
+//DificultyView_
+
+"Selecione um Oponente" = "" ;
+
+
+//TutorialData
+
+"Oi, tudo Bem?" = "" ;
+
+"Seja bem-vindo ao torneio Folkard, meu nome é Sallo Pereira, mas meus amigos me chamam de SP, então pode me chamar assim." = "" ;
+
+"Vou te explicar um pouco sobre o torneiro." = "" ;
+
+
+"O torneio consiste em um jogo de cartas, em que, aquele que conseguir 3 pontos primeiro vence!" = "" ;
+
+"Essa é a Carta de Recarga, sua função é gerar Cargas de Energia utilizadas pelas Cartas de Ataque, entretanto, ao usá-las você fica vulnerável a ataques inimigos, então, é melhor ter cuidado!" = "" ;
+
+"Ao usar uma Carta de Ataque, você poderá tanto atacar, quanto defender golpes, mas atenção, elas consomem uma Carga de Energia!" = "" ;
+
+"O que acontece quando você utiliza essa carta sem Cargas de Energia? Bem, seu efeito é anulado, ou seja, você perde seu turno, mas fica tranquilo isso não significa derrota." = "" ;
+
+"Também, temos a Carta de Defesa, ela é capaz de te proteger sem a necessidade de uma Carga de Energia." = "" ;
+
+"A cada turno você terá 3 Segundos pra elaborar sua próxima jogada." = "" ;
+
+
+"Logo depois, você deverá selecionar uma das cartas, mas atenção, um temporizador de 5 Segundos marcará seu tempo na direita." = "" ;
+
+
+"Durante a seleção de cartas, você poderá visualizar suas Cargas de Energia, lembre-se de mantê-la sempre carregada antes de usar uma Carta de Ataque." = "" ;
+
+
+"Por fim, caso você não selecione uma carta, você perderá seu turno e uma Carta Nula será jogada automaticamente." = "" ;
+
+
+"Quando ambos jogadores selecionarem suas cartas, um duelo é executado. Ganha a rodada aquele que conseguir um Sucesso no Ataque!" = "" ;
+
+"Como que você consegue isso? Bom, basta você usar uma Carta de Ataque com Carga de Energia e seu oponente não se proteger." = "" ;
+
+"Olha só o que temos aqui, preparado pra perder?" = "" ;
+
+"Parece que nossa primeira oponente chegou, vamos!" = "" ;
+
+
+//CombatViewModel
+
+"Jogador 1 ganhou!" = "" ;
+
+"Jogador 2 ganhou!" = "" ;
+
+"Empate" = "" ;
+
+
+"Empate!" = "" ;
+
+"Continue tentando!" = "" ;
+
+"Parabéns!" = "" ;
+
+"Você ganhou a rodada!" = "" ;
+
+
+"Cuidado!" = "" ;
+
+
+"Você perdeu a rodada!" = "" ;
+
+"Empate!" = "" ;
+
+
+"Continue tentando!" = "" ;
+
+
+"Jogador 1 ganhou!" = "" ;
+
+"Vitória!" = "" ;
+
+"Você venceu a partida" = "" ;
+
+"Jogador 2 ganhou!" = "" ;
+
+
+"Derrota!" = "" ;
+
+"Infelizmente não foi dessa vez." = "" ;
+
+"Empate!" = "" ;
