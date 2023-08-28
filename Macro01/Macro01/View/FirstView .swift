@@ -1,4 +1,5 @@
 import SwiftUI
+import Foundation
 
 struct FirstView: View {
     @ScaledMetric(relativeTo: .body) var buttonSize: CGFloat = 50
