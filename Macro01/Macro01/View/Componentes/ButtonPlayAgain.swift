@@ -14,17 +14,17 @@ struct ButtonPlayAgain: View {
 
     
     var body: some View {
-        
         Button(action: action) {
             Text(btnName)
-                .font(Font.custom("CooperBlackStd", size: 20))
+                .font(Font.custom("CooperBlackStd", size: 15))
                 .fontWeight(.bold)
                 .foregroundColor(.white)
-                .frame(width: 200, height: 15)
+                .frame(width: 175, height: 18)
                 .padding()
                 .background(Color(hex: "242020"))
                 .cornerRadius(10)
         }
+        .offset(y: 85)
     }
 }
 

@@ -108,7 +108,9 @@ struct CombatView: View {
                     //MARK: AS 3 CARTAS DO PLAYER 1 NA PARTE DEBAIXO
                     HStack {
                         ForEach(combatViewModel.player1.cards, id: \.self) { card in
-                            CardComponentMainScreen(image: Image(card.name))
+                            if !combatViewModel.checkSomeoneWon() {
+                                CardComponentMainScreen(image: Image(card.name))
+                            }
                         }
                         .frame(width: geometry.size.width * 0.13, height: geometry.size.height * 0.1)
                         
