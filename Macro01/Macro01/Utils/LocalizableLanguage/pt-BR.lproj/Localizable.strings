@@ -1,11 +1,153 @@
-/* 
-  Localizable.strings
-  Macro01
+// Created by Higor Lo Castro on 24/08/23.
 
-  Created by Higor  Lo Castro on 28/08/23.
-  
-*/
-
-//MARK: - FirstView
+// MARK: - FirstView
 
 "Play" = "Jogar";
+
+// CombatView
+
+"Game Over" = "Fim do Jogo";
+
+// ConfigurationCardView
+
+"Configuration" = "Configuração";
+
+"Manual" = "Manual";
+
+"About" = "Sobre";
+
+"Privacy Policies" = "Políticas de Privacidade";
+
+// PausedView
+
+"Pause" = "Pausa";
+
+"Cancel" = "Cancelar";
+
+"Exit" = "Sair";
+
+// PolicyAndPrivacyView
+
+"Privacy Policies" = "Política e Privacidade";
+
+"We DO NOT collect or use any personal
+data belonging to those who use our application.
+
+To clarify any doubts about this
+Privacy Policy or about the application,
+please contact us through the channel
+mentioned below.
+
+E-mail: folkardbattlecard@gmail.com"
+= "Nós NÃO coletamos e utilizamos nenhum
+dado pessoal que pertencem àqueles que
+utilizam nosso aplicativo.
+
+Para esclarecer quaisquer dúvidas sobre
+esta Política de Privacidade ou sobre
+o aplicativo, entre em contato conosco, pelo
+canal mencionado abaixo:
+
+E-mail:
+folkardbattlecard@gmail.com";
+
+// AboutView
+
+//"Manual" = "Manual";
+
+"About" = "Sobre";
+
+
+"Folkard is a folklore-themed card game
+where your objective is to duel against
+your opponents to collect all the cards!" = "Folkard é um jogo de cartas com tema
+folclórico, onde seu objetivo é duelar contra
+seus oponentes para conquistar todas as
+cartas!";
+
+
+// SheetView
+
+"Choose a Card" = "Escolha uma carta";
+
+// DificultyView_
+
+"Choose an Opponent" = "Selecione um Oponente";
+
+// TutorialData
+
+"Hey, How are you?" = "Oi, tudo Bem?";
+
+"Welcome to the Folkard tournament, my name is Sallo Pereira, but my friends call me SP, so feel free to call me that." = "Seja bem-vindo ao torneio Folkard, meu nome é Sallo Pereira, mas meus amigos me chamam de SP, então pode me chamar assim.";
+
+"I'm gonna explain a bit about the tournament." = "Vou te explicar um pouco sobre o torneiro.";
+
+"The tournament consists of a card game, where the first one to score 3 points wins" = "O torneio consiste em um jogo de cartas, em que, aquele que conseguir 3 pontos primeiro vence!";
+
+"This is the Recharge Card, its function is to generate Energy Charges used by Attack Cards, however, when using them, you become vulnerable to enemy attacks, so it's better to be cautious." = "Essa é a Carta de Recarga, sua função é gerar Cargas de Energia utilizadas pelas Cartas de Ataque, entretanto, ao usá-las você fica vulnerável a ataques inimigos, então, é melhor ter cuidado!";
+
+"When using an Attack Card, you'll be able to attack and defend at the same time, but be careful, they consume one Energy Charge!" = "Ao usar uma Carta de Ataque, você poderá tanto atacar, quanto defender golpes, mas atenção, elas consomem uma Carga de Energia!";
+
+"What happens when you use this card without Energy Charges? Well, its effect is nullified, meaning you lose your turn, but don't worry, this doesn't signify defeat." = "O que acontece quando você utiliza essa carta sem Cargas de Energia? Bem, seu efeito é anulado, ou seja, você perde seu turno, mas fica tranquilo isso não significa derrota.";
+
+"Also, we have the Defense Card, which can protect you without the need for an Energy Charge." = "Também, temos a Carta de Defesa, ela é capaz de te proteger sem a necessidade de uma Carga de Energia.";
+
+"Each turn you'll have 3 seconds to plan your next move." = "A cada turno você terá 3 Segundos pra elaborar sua próxima jogada.";
+
+"Right after, you'll need to select one of the cards, but beware, a 5-second timer will be ticking on the right." = "Logo depois, você deverá selecionar uma das cartas, mas atenção, um temporizador de 5 Segundos marcará seu tempo na direita.";
+
+"During the card selection, you can view your Energy Charges; remember to keep it fully charged before using an Attack Card." = "Durante a seleção de cartas, você poderá visualizar suas Cargas de Energia, lembre-se de mantê-la sempre carregada antes de usar uma Carta de Ataque.";
+
+"Finally, if you don't select a card, you'll lose your turn, and a Null Card will be automatically played." = "Por fim, caso você não selecione uma carta, você perderá seu turno e uma Carta Nula será jogada automaticamente.";
+
+"When both players select their cards, a duel is executed. The one who achieves a successful attack wins the round!" = "Quando ambos jogadores selecionarem suas cartas, um duelo é executado. Ganha a rodada aquele que conseguir um Sucesso no Ataque!";
+
+"How do you achieve that? Well, simply use an Attack Card with Energy Charge, and your opponent fails to defend." = "Como que você consegue isso? Bom, basta você usar uma Carta de Ataque com Carga de Energia e seu oponente não se proteger.";
+
+"Look what we have here, ready to lose?" = "Olha só o que temos aqui, preparado pra perder?";
+
+"It looks like our first opponent has arrived, let’s go?" = "Parece que nossa primeira oponente chegou, vamos?";
+
+// CombatViewModel
+
+"Player 1 Win!" = "Jogador 1 ganhou!";
+
+"Player 2 Win!" = "Jogador 2 ganhou!";
+
+"Draw!" = "Empate!";
+
+
+"Draw!" = "Empate!";
+
+"Keep Trying" = "Continue tentando";
+
+"You Win" = "Parabéns";
+
+"You won the round!" = "Você ganhou a rodada!";
+
+
+"Look out!" = "Cuidado!";
+
+
+"You lost the round!" = "Você perdeu a rodada!";
+
+"Draw!" = "Empate!";
+
+
+"Keep trying!" = "Continue tentando!";
+
+
+"Player 1 win!" = "Jogador 1 ganhou!";
+
+"Victory!" = "Vitória!";
+
+"You win the match!" = "Você venceu a partida!";
+
+"Player 2 win!" = "Jogador 2 ganhou!";
+
+
+"Defeat!" = "Derrota!";
+
+"Try again!" = "Infelizmente não foi dessa vez!";
+
+"Draw!" = "Empate!";
