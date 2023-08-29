@@ -1,165 +1,148 @@
-/*
-  Localizable.strings
-  Macro01
+// Created by Higor Lo Castro on 24/08/23.
 
-  Created by Higor  Lo Castro on 24/08/23.
-  
-*/
-
-//MARK: - FirstView
+// MARK: - FirstView
 
 "Jogar" = "Play";
 
+// CombatView
 
-//CombatView
+"Fim do Jogo" = "Game Over";
 
-"Fim do Jogo" = "" ;
+// ConfigurationCardView
 
+"Configuração" = "Configuration";
 
-//ConfigurationCardView
+"Manual" = "Manual";
 
-"Configuração" = "" ;
+"Sobre" = "About";
 
- "Manual" = "" ;
+"Políticas de Privacidade" = "Privacy Policies";
 
-"Sobre" = "" ;
+// PausedView
 
-"Políticas de Privacidade" = "" ;
+"Pausa" = "Pause";
 
+"Cancelar" = "Cancel";
 
-//PausedView
+"Sair" = "Exit";
 
-"Pausa" = "" ;
+// PolicyAndPrivacyView
 
-"Cancelar" = "" ;
+"Política e Privacidade" = "Privacy Policies";
 
-"Sair" = "" ;
+//"""
+//Este aplicativo é mantido e operado por Higor Crisostomo, Julia Mendes, Sarah dos Santos Silva e Thiago Akira Nakayama.
+//
+//Nós NÃO coletamos e utilizamos nenhum
+//dado pessoal que pertencem àqueles que
+//utilizam nosso aplicativo.
+//
+//Para esclarecer quaisquer dúvidas sobre
+//esta Política de Privacidade ou sobre
+//o aplicativo, entre em contato conosco, pelo
+//canal mencionado abaixo:
+//
+//E-mail:
+//folkardbattlecard@gmail.com
+//"""
+//= """We DO NOT collect or use any personal data belonging to those who use our application. To clarify any doubts about this Privacy Policy or about the application, please contact us through the channel mentioned below:
+//
+//E-mail:
+//folkardbattlecard@gmail.com""";
 
+// AboutView
 
-//PolicyAndPrivacyView
+"Sobre" = "About";
+//
+//"""
+//Folkard é um jogo de cartas com tema
+//folclórico, onde seu objetivo é duelar contra
+//seus oponentes para conquistar todas as
+//cartas!
+//""" = """Folkard is a folklore-themed card game where your objective is to duel against your opponents to collect all the cards!""";
 
-"Política e Privacidade" = "" ;
+// SheetView
 
-"""
-Este aplicativo é mantido e operado por Higor Crisostomo, Julia Mendes, Sarah dos Santos Silva e Thiago Akira Nakayama.
-                             
-                             Nós NÃO coletamos e utilizamos nenhum
-                             dado pessoal que pertencem àqueles que
-                             utilizam nosso aplicativo.
-                             
-                             Para esclarecer quaisquer dúvidas sobre
-                             esta Política de Privacidade ou sobre
-                             o aplicativo, entre em contato conosco, pelo
-                             canal mencionado abaixo:
-                             
-                             E-mail:
-                             folkardbattlecard@gmail.com
-"""
-                       = "" ;
+"Escolha uma carta" = "Choose a Card";
 
+// DificultyView_
 
-//AboutView
+"Selecione um Oponente" = "Choose an Opponent";
 
-"Sobre" = "" ;
+// TutorialData
 
-"""
-                             Folkard é um jogo de cartas com tema
-                             folclórico, onde seu objetivo é duelar contra
-                             seus oponentes para conquistar todas as
-                             cartas!
-                             """ = "" ;
+"Oi, tudo Bem?" = "Hey, How are you?";
 
+"Seja bem-vindo ao torneio Folkard, meu nome é Sallo Pereira, mas meus amigos me chamam de SP, então pode me chamar assim." = "Welcome to the Folkard tournament, my name is Sallo Pereira, but my friends call me SP, so feel free to call me that.";
 
-//SheetView
+"Vou te explicar um pouco sobre o torneio." = "I'm gonna explain a bit about the tournament.";
 
-"Escolha uma carta" = "" ;
+"O torneio consiste em um jogo de cartas, em que, aquele que conseguir 3 pontos primeiro vence!" = "The tournament consists of a card game, where the first one to score 3 points wins";
 
+"Essa é a Carta de Recarga, sua função é gerar Cargas de Energia utilizadas pelas Cartas de Ataque, entretanto, ao usá-las você fica vulnerável a ataques inimigos, então, é melhor ter cuidado!" = "This is the Recharge Card, its function is to generate Energy Charges used by Attack Cards, however, when using them, you become vulnerable to enemy attacks, so it's better to be cautious.";
 
-//DificultyView_
+"Ao usar uma Carta de Ataque, você poderá tanto atacar, quanto defender golpes, mas atenção, elas consomem uma Carga de Energia!" = "When using an Attack Card, you'll be able to attack and defend at the same time, but be careful, they consume one Energy Charge!";
 
-"Selecione um Oponente" = "" ;
+"O que acontece quando você utiliza essa carta sem Cargas de Energia? Bem, seu efeito é anulado, ou seja, você perde seu turno, mas fica tranquilo isso não significa derrota." = "What happens when you use this card without Energy Charges? Well, its effect is nullified, meaning you lose your turn, but don't worry, this doesn't signify defeat.";
 
+"Também, temos a Carta de Defesa, ela é capaz de te proteger sem a necessidade de uma Carga de Energia." = "Also, we have the Defense Card, which can protect you without the need for an Energy Charge.";
 
-//TutorialData
+"A cada turno você terá 3 Segundos para elaborar sua próxima jogada." = "Each turn you'll have 3 seconds to plan your next move.";
 
-"Oi, tudo Bem?" = "" ;
+"Logo depois, você deverá selecionar uma das cartas, mas atenção, um temporizador de 5 Segundos marcará seu tempo na direita." = "Right after, you'll need to select one of the cards, but beware, a 5-second timer will be ticking on the right.";
 
-"Seja bem-vindo ao torneio Folkard, meu nome é Sallo Pereira, mas meus amigos me chamam de SP, então pode me chamar assim." = "" ;
+"Durante a seleção de cartas, você poderá visualizar suas Cargas de Energia, lembre-se de mantê-la sempre carregada antes de usar uma Carta de Ataque." = "During the card selection, you can view your Energy Charges; remember to keep it fully charged before using an Attack Card.";
 
-"Vou te explicar um pouco sobre o torneiro." = "" ;
+"Por fim, caso você não selecione uma carta, você perderá seu turno e uma Carta Nula será jogada automaticamente." = "Finally, if you don't select a card, you'll lose your turn, and a Null Card will be automatically played.";
 
+"Quando ambos jogadores selecionarem suas cartas, um duelo é executado. Ganha a rodada aquele que conseguir um Sucesso no Ataque!" = "When both players select their cards, a duel is executed. The one who achieves a successful attack wins the round!";
 
-"O torneio consiste em um jogo de cartas, em que, aquele que conseguir 3 pontos primeiro vence!" = "" ;
+"Como que você consegue isso? Bom, basta você usar uma Carta de Ataque com Carga de Energia e seu oponente não se proteger." = "How do you achieve that? Well, simply use an Attack Card with Energy Charge, and your opponent fails to defend.";
 
-"Essa é a Carta de Recarga, sua função é gerar Cargas de Energia utilizadas pelas Cartas de Ataque, entretanto, ao usá-las você fica vulnerável a ataques inimigos, então, é melhor ter cuidado!" = "" ;
+"Olha só o que temos aqui, preparado pra perder?" = "Look what we have here, ready to lose?";
 
-"Ao usar uma Carta de Ataque, você poderá tanto atacar, quanto defender golpes, mas atenção, elas consomem uma Carga de Energia!" = "" ;
+"Parece que nossa primeira oponente chegou, vamos!" = "It looks like our first opponent has arrived, let’s go?";
 
-"O que acontece quando você utiliza essa carta sem Cargas de Energia? Bem, seu efeito é anulado, ou seja, você perde seu turno, mas fica tranquilo isso não significa derrota." = "" ;
+// CombatViewModel
 
-"Também, temos a Carta de Defesa, ela é capaz de te proteger sem a necessidade de uma Carga de Energia." = "" ;
+"Jogador 1 ganhou!" = "Player 1 Win!";
 
-"A cada turno você terá 3 Segundos pra elaborar sua próxima jogada." = "" ;
+"Jogador 2 ganhou!" = "Player 2 Win!";
 
+"Empate!" = "Draw!";
 
-"Logo depois, você deverá selecionar uma das cartas, mas atenção, um temporizador de 5 Segundos marcará seu tempo na direita." = "" ;
 
+"Empate!" = "Draw!";
 
-"Durante a seleção de cartas, você poderá visualizar suas Cargas de Energia, lembre-se de mantê-la sempre carregada antes de usar uma Carta de Ataque." = "" ;
+"Continue tentando!" = "Keep Trying";
 
+"Parabéns!" = "Congratulations";
 
-"Por fim, caso você não selecione uma carta, você perderá seu turno e uma Carta Nula será jogada automaticamente." = "" ;
+"Você ganhou a rodada!" = "You won the round!";
 
 
-"Quando ambos jogadores selecionarem suas cartas, um duelo é executado. Ganha a rodada aquele que conseguir um Sucesso no Ataque!" = "" ;
+"Cuidado!" = "Watch out!";
 
-"Como que você consegue isso? Bom, basta você usar uma Carta de Ataque com Carga de Energia e seu oponente não se proteger." = "" ;
 
-"Olha só o que temos aqui, preparado pra perder?" = "" ;
+"Você perdeu a rodada!" = "You lost the round!";
 
-"Parece que nossa primeira oponente chegou, vamos!" = "" ;
+"Empate!" = "Draw!";
 
 
-//CombatViewModel
+"Continue tentando!" = "Keep trying!";
 
-"Jogador 1 ganhou!" = "" ;
 
-"Jogador 2 ganhou!" = "" ;
+"Jogador 1 ganhou!" = "Player 1 win!";
 
-"Empate" = "" ;
+"Vitória!" = "Victory!";
 
+"Você venceu a partida!" = "You win the match!";
 
-"Empate!" = "" ;
+"Jogador 2 ganhou!" = "Player 2 win!";
 
-"Continue tentando!" = "" ;
 
-"Parabéns!" = "" ;
+"Derrota!" = "Defeat!";
 
-"Você ganhou a rodada!" = "" ;
+"Infelizmente não foi dessa vez." = "Unfortunately, It wasn’t this time!";
 
-
-"Cuidado!" = "" ;
-
-
-"Você perdeu a rodada!" = "" ;
-
-"Empate!" = "" ;
-
-
-"Continue tentando!" = "" ;
-
-
-"Jogador 1 ganhou!" = "" ;
-
-"Vitória!" = "" ;
-
-"Você venceu a partida" = "" ;
-
-"Jogador 2 ganhou!" = "" ;
-
-
-"Derrota!" = "" ;
-
-"Infelizmente não foi dessa vez." = "" ;
-
-"Empate!" = "" ;
+"Empate!" = "Draw!";
