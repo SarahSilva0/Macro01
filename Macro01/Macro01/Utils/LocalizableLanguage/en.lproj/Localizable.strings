@@ -30,36 +30,43 @@
 
 "Política e Privacidade" = "Privacy Policies";
 
-//"""
-//Este aplicativo é mantido e operado por Higor Crisostomo, Julia Mendes, Sarah dos Santos Silva e Thiago Akira Nakayama.
-//
-//Nós NÃO coletamos e utilizamos nenhum
-//dado pessoal que pertencem àqueles que
-//utilizam nosso aplicativo.
-//
-//Para esclarecer quaisquer dúvidas sobre
-//esta Política de Privacidade ou sobre
-//o aplicativo, entre em contato conosco, pelo
-//canal mencionado abaixo:
-//
-//E-mail:
-//folkardbattlecard@gmail.com
-//"""
-//= """We DO NOT collect or use any personal data belonging to those who use our application. To clarify any doubts about this Privacy Policy or about the application, please contact us through the channel mentioned below:
-//
-//E-mail:
-//folkardbattlecard@gmail.com""";
+"Este aplicativo é mantido e operado por Higor Crisostomo, Julia Mendes, Sarah dos Santos Silva e Thiago Akira Nakayama.
+
+Nós NÃO coletamos e utilizamos nenhum
+dado pessoal que pertencem àqueles que
+utilizam nosso aplicativo.
+
+Para esclarecer quaisquer dúvidas sobre
+esta Política de Privacidade ou sobre
+o aplicativo, entre em contato conosco, pelo
+canal mencionado abaixo:
+
+E-mail:
+folkardbattlecard@gmail.com"
+= "We DO NOT collect or use any personal
+data belonging to those who use our application.
+
+To clarify any doubts about this
+Privacy Policy or about the application,
+please contact us through the channel
+mentioned below.
+
+E-mail: folkardbattlecard@gmail.com";
 
 // AboutView
 
+//"Manual" = "Manual";
+
 "Sobre" = "About";
-//
-//"""
-//Folkard é um jogo de cartas com tema
-//folclórico, onde seu objetivo é duelar contra
-//seus oponentes para conquistar todas as
-//cartas!
-//""" = """Folkard is a folklore-themed card game where your objective is to duel against your opponents to collect all the cards!""";
+
+
+"Folkard é um jogo de cartas com tema
+folclórico, onde seu objetivo é duelar contra
+seus oponentes para conquistar todas as
+cartas!" = "Folkard is a folklore-themed card game
+where your objective is to duel against
+your opponents to collect all the cards!";
+
 
 // SheetView
 
