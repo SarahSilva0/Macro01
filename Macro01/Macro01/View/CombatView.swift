@@ -28,6 +28,7 @@ struct CombatView: View {
                     //Vitoria e derrota > Exibido quando ganha ou perde a partida.
                     if combatViewModel.checkSomeoneWon() {
                         WinnerText(text: combatViewModel.checkGameWinner()[0], size: 50)
+                            .padding(.top, 30)
                         WinnerText(text: combatViewModel.checkGameWinner()[1], size: 15)
                         if combatViewModel.player1Won() {
                             ButtonPlayAgain(action: {
@@ -42,6 +43,8 @@ struct CombatView: View {
                                     combatViewModel.gameReset()
                                     dismiss()
                                 }, btnName: "Sair")
+                                Spacer()
+                                    .frame(width: 30)
                                 ButtonPlayAgain(action: {
                                     combatViewModel.gameReset()
                                     combatViewModel.startCountdown()
