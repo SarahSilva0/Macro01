@@ -16,7 +16,7 @@ struct GaleriaSaciView: View {
     @State var Images: [String] = ["saci1PT".localizedLanguage(),
                                    "saci2PT".localizedLanguage(),
                                    "saci3PT".localizedLanguage(),
-                                   "raia2PT".localizedLanguage(),
+                                   "raia1PT".localizedLanguage(),
                                    "raia2PT".localizedLanguage(),
                                    "raia3PT".localizedLanguage(),
                                    "otto1PT".localizedLanguage(),

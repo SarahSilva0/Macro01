@@ -158,5 +158,22 @@ cartas!";
 "duelo2EN" = "duelo02";
 "duelo3EN" = "duelo03";
 "duelo4EN" = "duelo04";
+                                       
+//MARK: - GaleriaSaciView
 
 
+"saci1EN" = "saci1PT";
+"saci2EN" ="saci2PT";
+"saci3EN" = "saci3PT";
+
+"raia1EN" = "raia1PT";
+"raia2EN" = "raia2PT";
+"raia3EN" = "raia3PT";
+
+"otto1EN" = "otto1PT";
+"otto2EN" = "otto2PT";
+"otto3EN" = "otto3PT";
+
+"lucia1EN" = "lucia1PT";
+"lucia2EN" = "lucia2PT";
+"lucia3EN" = "lucia3PT";
