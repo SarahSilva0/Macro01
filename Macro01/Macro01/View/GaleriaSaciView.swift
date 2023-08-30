@@ -13,12 +13,18 @@ struct GaleriaSaciView: View {
     @State private var count = 0
     @Binding var isPresented: Bool
     @ScaledMetric(relativeTo: .body) var buttonSize: CGFloat = 50
-    @State var Images: [String] = ["saci01",
-                                   "saci02",
-                                   "saci03",
-                                   "raya01",
-                                   "raya02",
-                                   "raya03"]
+    @State var Images: [String] = ["saci1PT".localizedLanguage(),
+                                   "saci2PT".localizedLanguage(),
+                                   "saci3PT".localizedLanguage(),
+                                   "raia2PT".localizedLanguage(),
+                                   "raia2PT".localizedLanguage(),
+                                   "raia3PT".localizedLanguage(),
+                                   "otto1PT".localizedLanguage(),
+                                   "otto2PT".localizedLanguage(),
+                                   "otto3PT".localizedLanguage(),
+                                   "lucia1PT".localizedLanguage(),
+                                   "lucia2PT".localizedLanguage(),
+                                   "lucia3PT".localizedLanguage()]
     
     var body: some View {
         
