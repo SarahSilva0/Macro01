@@ -16,9 +16,9 @@ struct GaleriaSaciView: View {
     @State var Images: [String] = ["saci01",
                                    "saci02",
                                    "saci03",
-                                   "saci04",
-                                   "saci05",
-                                   "saci06"]
+                                   "raya01",
+                                   "raya02",
+                                   "raya03"]
     
     var body: some View {
         
