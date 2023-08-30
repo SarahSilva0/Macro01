@@ -150,3 +150,11 @@ cartas!";
 "Try Again!" = "Infelizmente não foi dessa vez.";
 
 "Draw!" = "Empate!";
+
+
+// MARK: - TutorialView
+
+"duelo1EN" = "duelo01";
+"duelo2EN" = "duelo02";
+"duelo3EN" = "duelo03";
+"duelo4EN" = "duelo04";
