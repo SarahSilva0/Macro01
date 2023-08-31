@@ -190,16 +190,6 @@ struct CombatView: View {
         }) {
             SheetView(combatViewModel: combatViewModel, isSheetVisible: $combatViewModel.isSheetVisible, countdownSheet: $combatViewModel.countdownSheet).background(ClearBackgroundView())
         }
-        //        .alert(isPresented: $combatViewModel.isGameEndAlertPresented) {
-        //            Alert(title: Text("Fim do Jogo"),
-        //                  message: Text("\(combatViewModel.getScore())"),
-        //                  dismissButton: .default(Text("OK"), action: {
-        //                combatViewModel.gameReset()
-        //                raiaWin = combatViewModel.RaiaDiff.winLevel
-        //                combatViewModel.isGameEndAlertPresented = false
-        //                presentationMode.wrappedValue.dismiss()
-        //            }))
-        //        }
         .navigationBarHidden(true)
     }
 }
