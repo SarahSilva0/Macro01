@@ -18,6 +18,7 @@ struct MainView: View {
         NavigationStack{
             VStack {
                 FirstView()
+    
             }
         }
     }

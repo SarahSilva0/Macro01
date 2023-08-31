@@ -11,7 +11,14 @@ struct FirstView: View {
     
     @State private var isTutorialSheetPresented = false
     @State private var showDificultyView = false
+
+//    @State private var raiaWin = false
+//    @State private var botoWin = false
+//    @State private var cucaWin = false
     
+    @AppStorage("Raia") var raiaWin: Bool = false
+    @AppStorage("Boto") var botoWin: Bool = false
+    @AppStorage("Cuca") var cucaWin: Bool = false
     
     var body: some View {
         GeometryReader { geometry in
@@ -110,8 +117,11 @@ struct FirstView: View {
         }
         .navigationBarHidden(true)
         .sheet(isPresented: $showGaleria){
-            GaleriaSaciView(isPresented: $showGaleria)
+            GaleriaSaciView(raiaWin: $raiaWin, botoWin: $botoWin, cucaWin: $cucaWin, isPresented: $showGaleria)
+            }
         }
+        
+        
     }
    
-}
+

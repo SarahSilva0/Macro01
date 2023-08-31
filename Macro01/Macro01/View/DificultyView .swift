@@ -13,11 +13,10 @@ struct DificultyView_: View {
     @ObservedObject var combatViewModel: CombatViewModel
     @Environment(\.presentations) private var presentations
     @Environment(\.presentationMode) var presentationMode
+    
     @AppStorage("Raia") var raiaWin: Bool = false
     @AppStorage("Boto") var botoWin: Bool = false
     @AppStorage("Cuca") var cucaWin: Bool = false
-    
-
     
     var body: some View {
         GeometryReader { geo in

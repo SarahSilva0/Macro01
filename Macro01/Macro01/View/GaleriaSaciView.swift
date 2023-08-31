@@ -9,23 +9,20 @@ import Foundation
 import SwiftUI
 
 struct GaleriaSaciView: View {
+        
+    @Binding var raiaWin: Bool
+    @Binding var botoWin: Bool
+    @Binding var cucaWin: Bool
     
     @State private var count = 0
+    
     @Binding var isPresented: Bool
     @ScaledMetric(relativeTo: .body) var buttonSize: CGFloat = 50
+   
     @State var Images: [String] = ["saci1PT".localizedLanguage(),
                                    "saci2PT".localizedLanguage(),
-                                   "saci3PT".localizedLanguage(),
-                                   "raia1PT".localizedLanguage(),
-                                   "raia2PT".localizedLanguage(),
-                                   "raia3PT".localizedLanguage(),
-                                   "otto1PT".localizedLanguage(),
-                                   "otto2PT".localizedLanguage(),
-                                   "otto3PT".localizedLanguage(),
-                                   "lucia1PT".localizedLanguage(),
-                                   "lucia2PT".localizedLanguage(),
-                                   "lucia3PT".localizedLanguage()]
-    
+                                   "saci3PT".localizedLanguage()]
+                                   
     var body: some View {
         
         GeometryReader { geometry in
@@ -51,5 +48,15 @@ struct GaleriaSaciView: View {
                 }
             }
         }
+        .onAppear {
+                        if raiaWin {
+                           Images.append(contentsOf: [
+                               "raia1PT".localizedLanguage(),
+                               "raia2PT".localizedLanguage(),
+                               "raia3PT".localizedLanguage()
+                           ])
+                   }
+            print(raiaWin)
+               }
     }
 }
