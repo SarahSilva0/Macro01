@@ -12,10 +12,10 @@ struct TutorialView: View {
     @State private var count = 0
     @Binding var isPresented: Bool
     @ScaledMetric(relativeTo: .body) var buttonSize: CGFloat = 50
-    @State var tutorialImages: [String] = ["duelo01",
-                                           "duelo02",
-                                           "duelo03",
-                                           "duelo04"]
+    @State var tutorialImages: [String] = ["duelo01".localizedLanguage(),
+                                           "duelo02".localizedLanguage(),
+                                           "duelo03".localizedLanguage(),
+                                           "duelo04".localizedLanguage()]
     
     var body: some View {
         GeometryReader { geometry in

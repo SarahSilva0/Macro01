@@ -185,11 +185,11 @@ class CombatViewModel: ObservableObject {
     func getScore() -> String {
         if player1.winTurno > player2.winTurno {
             winLevel()
-            return "Jogador 1 ganhou!"
+            return "Jogador 1 ganhou!".localizedLanguage()
         } else if player1.winTurno < player2.winTurno {
-            return "Jogador 2 ganhou!"
+            return "Jogador 2 ganhou!".localizedLanguage()
         } else {
-            return "Empate"
+            return "Empate".localizedLanguage()
         }
     }
     
@@ -264,24 +264,24 @@ class CombatViewModel: ObservableObject {
     func checkPlayerVictory() -> [String] {
         switch checkWin {
         case 0:
-            return ["Empate!", "Continue tentando!"]
+            return ["Empate!".localizedLanguage(), "Continue tentando!".localizedLanguage()]
         case 1:
-            return ["Parabéns!", "Você ganhou a rodada!"]
+            return ["Parabéns!".localizedLanguage(), "Você ganhou a rodada!".localizedLanguage()]
         case 2:
-            return ["Cuidado!", "Você perdeu a rodada!"]
+            return ["Cuidado!".localizedLanguage(), "Você perdeu a rodada!".localizedLanguage()]
         default:
-            return ["Empate!", "Continue tentando!"]
+            return ["Empate!".localizedLanguage(), "Continue tentando!".localizedLanguage()]
         }
     }
     
     func checkGameWinner() -> [String] {
         switch getScore() {
-        case "Jogador 1 ganhou!":
-            return ["Vitória!", "Você venceu a partida"]
-        case "Jogador 2 ganhou!":
-            return ["Derrota!", "Infelizmente não foi dessa vez."]
+        case "Jogador 1 ganhou!".localizedLanguage():
+            return ["Vitória!".localizedLanguage(), "Você venceu a partida".localizedLanguage()]
+        case "Jogador 2 ganhou!".localizedLanguage():
+            return ["Derrota!".localizedLanguage(), "Infelizmente não foi dessa vez.".localizedLanguage()]
         default:
-            return ["Empate!", ""]
+            return ["Empate!".localizedLanguage(), ""]
         }
     }
     

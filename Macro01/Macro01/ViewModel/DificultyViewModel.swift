@@ -3,7 +3,11 @@
 //  Macro01
 //
 //  Created by Higor  Lo Castro on 31/08/23.
+<<<<<<< HEAD
 //aaaaa
+=======
+//
+>>>>>>> parent of 76f8297 (Revert "Merge branch 'feature/Idioma_Ingles' into Developer")
 import Foundation
 import SwiftUI
 

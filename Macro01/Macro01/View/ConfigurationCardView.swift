@@ -47,7 +47,7 @@ struct ConfigurationCardView: View {
                     VStack  {
                         ZStack {
                             HStack  {
-                                Text("Configuração")
+                                Text("Configuração".localizedLanguage())
                                     .font(.system(size: 20))
                                     .foregroundColor(.black)
                                     .fontWeight(.bold)
@@ -70,10 +70,10 @@ struct ConfigurationCardView: View {
                             .frame(height: geometry.size.height * 0.1)
                         
                         VStack {
-                            TransparentConfigurationButton(text: "Manual", icon: "book") {
+                            TransparentConfigurationButton(text: "Manual".localizedLanguage(), icon: "book") {
                                 showTutorial = true
                             }
-                            TransparentConfigurationButton(text: "Sobre", icon: "info") {
+                            TransparentConfigurationButton(text: "Sobre".localizedLanguage(), icon: "info") {
                                 showAbout = true
                             }
                             
@@ -81,7 +81,7 @@ struct ConfigurationCardView: View {
 //                                print("email")
 //                            }
                             
-                            TransparentConfigurationButton(text: "Políticas de Privacidade", icon: "info") {
+                            TransparentConfigurationButton(text: "Políticas de Privacidade".localizedLanguage(), icon: "info") {
                                 showPolicyAndPrivacy = true
                             }
                         }
