@@ -8,7 +8,7 @@ import Foundation
 import SwiftUI
 
 class DificultyViewModel: ObservableObject {
-    @AppStorage("Raia") var raiaWin: Bool = true
-    @AppStorage("Boto") var botoWin: Bool = true
-    @AppStorage("Cuca") var cucaWin: Bool = true
+    @AppStorage("Raia") var raiaWin: Bool = false
+    @AppStorage("Boto") var botoWin: Bool = false
+    @AppStorage("Cuca") var cucaWin: Bool = false
 }
