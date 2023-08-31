@@ -17,11 +17,11 @@ struct GaleriaSaciView: View {
     @ScaledMetric(relativeTo: .body) var buttonSize: CGFloat = 50
     
     @EnvironmentObject var dificultyViewModel: DificultyViewModel
-   
+    
     @State var Images: [String] = ["saci1PT".localizedLanguage(),
                                    "saci2PT".localizedLanguage(),
                                    "saci3PT".localizedLanguage()]
-                                   
+    
     var body: some View {
         
         GeometryReader { geometry in
@@ -49,13 +49,28 @@ struct GaleriaSaciView: View {
         }
         .onAppear {
             if dificultyViewModel.raiaWin {
-                           Images.append(contentsOf: [
-                               "raia1PT".localizedLanguage(),
-                               "raia2PT".localizedLanguage(),
-                               "raia3PT".localizedLanguage()
-                           ])
-                   }
-            print(dificultyViewModel.raiaWin)
-               }
+                Images.append(contentsOf: [
+                    "raia1PT".localizedLanguage(),
+                    "raia2PT".localizedLanguage(),
+                    "raia3PT".localizedLanguage()
+                ])
+            }
+            if dificultyViewModel.botoWin {
+                Images.append(contentsOf: [
+                    "otto1PT".localizedLanguage(),
+                    "otto2PT".localizedLanguage(),
+                    "otto3PT".localizedLanguage()
+                ])
+            }
+            if dificultyViewModel.cucaWin {
+                Images.append(contentsOf: [
+                    "lucia1PT".localizedLanguage(),
+                    "lucia2PT".localizedLanguage(),
+                    "lucia3PT".localizedLanguage()
+                ])
+            }
+        }
     }
 }
+
+
