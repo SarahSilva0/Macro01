@@ -10,6 +10,7 @@
 		1905A5342A1E8FB40010D8A9 /* TextBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1905A5332A1E8FB40010D8A9 /* TextBox.swift */; };
 		1905A5362A1E961D0010D8A9 /* SquareGallery.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1905A5352A1E961D0010D8A9 /* SquareGallery.swift */; };
 		193567A22A1E854200C7D34B /* Character.swift in Sources */ = {isa = PBXBuildFile; fileRef = 193567A12A1E854200C7D34B /* Character.swift */; };
+		197AB5512A953D2400ED7295 /* ButtonPlayAgain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 197AB5502A953D2400ED7295 /* ButtonPlayAgain.swift */; };
 		19A41CB52A3A443D00C2D9A7 /* TutorialView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19A41CB42A3A443D00C2D9A7 /* TutorialView.swift */; };
 		19FE502C2A818FCA0064BA54 /* WinnerText.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19FE502B2A818FCA0064BA54 /* WinnerText.swift */; };
 		EB067CA02A6EFA3F003F35F6 /* CooperBlack-StdItal.otf in Resources */ = {isa = PBXBuildFile; fileRef = EB067C9F2A6EFA3F003F35F6 /* CooperBlack-StdItal.otf */; };
@@ -83,6 +84,7 @@
 		1905A5332A1E8FB40010D8A9 /* TextBox.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextBox.swift; sourceTree = "<group>"; };
 		1905A5352A1E961D0010D8A9 /* SquareGallery.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SquareGallery.swift; sourceTree = "<group>"; };
 		193567A12A1E854200C7D34B /* Character.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Character.swift; sourceTree = "<group>"; };
+		197AB5502A953D2400ED7295 /* ButtonPlayAgain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonPlayAgain.swift; sourceTree = "<group>"; };
 		19A41CB42A3A443D00C2D9A7 /* TutorialView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TutorialView.swift; sourceTree = "<group>"; };
 		19FE502B2A818FCA0064BA54 /* WinnerText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WinnerText.swift; sourceTree = "<group>"; };
 		EB067C9F2A6EFA3F003F35F6 /* CooperBlack-StdItal.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "CooperBlack-StdItal.otf"; sourceTree = "<group>"; };
@@ -259,6 +261,7 @@
 				EBB6B0D02A80180000F0F992 /* CountdownBar.swift */,
 				EBC688432A69BB7D0072E706 /* TransparentConfigurationButton.swift */,
 				EB99BB572A49F78000DCCE73 /* CardComponentMainScreen.swift */,
+				197AB5502A953D2400ED7295 /* ButtonPlayAgain.swift */,
 				1905A5352A1E961D0010D8A9 /* SquareGallery.swift */,
 				EBFE58CA2A3506F40042A319 /* ScoreView.swift */,
 				193567A12A1E854200C7D34B /* Character.swift */,
@@ -490,6 +493,7 @@
 				EB571C9E2AA12BA800D5771D /* DificultyViewModel.swift in Sources */,
 				EBB6B0D12A80180000F0F992 /* CountdownBar.swift in Sources */,
 				EBC688402A69BAF30072E706 /* AboutView.swift in Sources */,
+				197AB5512A953D2400ED7295 /* ButtonPlayAgain.swift in Sources */,
 				EB82F3B02A33EEEF006D7011 /* ColorExtensions.swift in Sources */,
 				EB2BC4E92A374A28008ACFD2 /* CharacterCircle.swift in Sources */,
 				FAD5EE632A75224E004A4C78 /* GaleriaSaciView.swift in Sources */,
