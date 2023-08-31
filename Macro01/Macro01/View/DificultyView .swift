@@ -13,9 +13,9 @@ struct DificultyView_: View {
     @ObservedObject var combatViewModel: CombatViewModel
     @Environment(\.presentations) private var presentations
     @Environment(\.presentationMode) var presentationMode
-    @AppStorage("Raia") var raiaWin: Bool = false
-    @AppStorage("Boto") var botoWin: Bool = false
-    @AppStorage("Cuca") var cucaWin: Bool = false
+    @AppStorage("Rrraia") var raiaWin: Bool = false
+    @AppStorage("Bbboto") var botoWin: Bool = false
+    @AppStorage("Cccuca") var cucaWin: Bool = false
     
 
     
