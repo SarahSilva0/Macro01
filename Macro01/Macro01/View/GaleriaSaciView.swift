@@ -10,15 +10,17 @@ import SwiftUI
 
 struct GaleriaSaciView: View {
     
+    
     @State private var count = 0
+    
     @Binding var isPresented: Bool
     @ScaledMetric(relativeTo: .body) var buttonSize: CGFloat = 50
-    @State var Images: [String] = ["saci01",
-                                   "saci02",
-                                   "saci03",
-                                   "saci04",
-                                   "saci05",
-                                   "saci06"]
+    
+    @EnvironmentObject var dificultyViewModel: DificultyViewModel
+    
+    @State var Images: [String] = ["saci1PT".localizedLanguage(),
+                                   "saci2PT".localizedLanguage(),
+                                   "saci3PT".localizedLanguage()]
     
     var body: some View {
         
@@ -45,5 +47,30 @@ struct GaleriaSaciView: View {
                 }
             }
         }
+        .onAppear {
+            if dificultyViewModel.raiaWin {
+                Images.append(contentsOf: [
+                    "raia1PT".localizedLanguage(),
+                    "raia2PT".localizedLanguage(),
+                    "raia3PT".localizedLanguage()
+                ])
+            }
+            if dificultyViewModel.botoWin {
+                Images.append(contentsOf: [
+                    "otto1PT".localizedLanguage(),
+                    "otto2PT".localizedLanguage(),
+                    "otto3PT".localizedLanguage()
+                ])
+            }
+            if dificultyViewModel.cucaWin {
+                Images.append(contentsOf: [
+                    "lucia1PT".localizedLanguage(),
+                    "lucia2PT".localizedLanguage(),
+                    "lucia3PT".localizedLanguage()
+                ])
+            }
+        }
     }
 }
+
+

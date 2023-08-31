@@ -7,13 +7,11 @@
 
 import SwiftUI
 
-import SwiftUI
-
 struct SplashScreen: View {
     @State private var showHomeView = false
     @State var scale = 0.6
     @State var opacity = 0.6
-    
+        
     let screenWidth = UIScreen.main.bounds.size.width
     let screenHeight = UIScreen.main.bounds.size.height
     

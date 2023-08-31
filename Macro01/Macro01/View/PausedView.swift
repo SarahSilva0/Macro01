@@ -24,7 +24,7 @@ struct PausedView: View {
                     VStack  {
                         ZStack {
                             HStack  {
-                                Text("Pausa")
+                                Text("Pausa".localizedLanguage())
                                     .font(.system(size: 20))
                                     .fontWeight(.bold)
                             }
@@ -47,7 +47,7 @@ struct PausedView: View {
                             .frame(height: geometry.size.height * 0.1)
                         
                         VStack {
-                            TransparentConfigurationButton(text: "Cancelar", icon: "buttonCancel") {
+                            TransparentConfigurationButton(text: "Cancelar".localizedLanguage(), icon: "buttonCancel") {
                                 combatViewModel.isPaused = false
                                 if !combatViewModel.timer!.isValid{
                                     combatViewModel.startTimer()

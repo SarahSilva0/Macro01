@@ -42,7 +42,7 @@ struct AboutView: View {
                 
                     VStack {
                         HStack  {
-                            Text("Sobre")
+                            Text("Sobre".localizedLanguage())
                                 .font(.system(size: 20))
                                 .foregroundColor(.black)
                                 .fontWeight(.bold)
@@ -56,7 +56,7 @@ struct AboutView: View {
                              folclórico, onde seu objetivo é duelar contra
                              seus oponentes para conquistar todas as
                              cartas!
-                             """
+                             """.localizedLanguage()
                             )
                             .font(Font.custom("SF Pro", size: 12))
                             .foregroundColor(.black)

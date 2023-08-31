@@ -33,8 +33,8 @@ struct SecondView: View {
 }
 
 
-struct SecondView__Previews: PreviewProvider {
-    static var previews: some View {
-        SecondView()
-    }
-}
+//struct SecondView__Previews: PreviewProvider {
+//    static var previews: some View {
+//        SecondView()
+//    }
+//}
