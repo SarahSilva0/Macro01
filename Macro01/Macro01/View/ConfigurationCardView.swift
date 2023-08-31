@@ -15,6 +15,7 @@ struct ConfigurationCardView: View {
     @State private var showPolicyAndPrivacy = false
     @State private var showTutorial = false
     
+    private let sound = SoundManager.instance
     
     var body: some View {
         GeometryReader { geometry in
@@ -26,6 +27,7 @@ struct ConfigurationCardView: View {
                 VStack {
                     HStack {
                         ButtonGenRound(action: {
+                            sound.buttonSound()
                             withAnimation {
                                 isPresented = false
                             }
@@ -47,7 +49,7 @@ struct ConfigurationCardView: View {
                     VStack  {
                         ZStack {
                             HStack  {
-                                Text("Configuração".localizedLanguage())
+                                Text("Configuração")
                                     .font(.system(size: 20))
                                     .foregroundColor(.black)
                                     .fontWeight(.bold)
@@ -70,10 +72,12 @@ struct ConfigurationCardView: View {
                             .frame(height: geometry.size.height * 0.1)
                         
                         VStack {
-                            TransparentConfigurationButton(text: "Manual".localizedLanguage(), icon: "book") {
+                            TransparentConfigurationButton(text: "Manual", icon: "book") {
+                                sound.buttonSound()
                                 showTutorial = true
                             }
-                            TransparentConfigurationButton(text: "Sobre".localizedLanguage(), icon: "info") {
+                            TransparentConfigurationButton(text: "Sobre", icon: "info") {
+                                sound.buttonSound()
                                 showAbout = true
                             }
                             
@@ -81,7 +85,9 @@ struct ConfigurationCardView: View {
 //                                print("email")
 //                            }
                             
-                            TransparentConfigurationButton(text: "Políticas de Privacidade".localizedLanguage(), icon: "info") {
+                            TransparentConfigurationButton(text: "Políticas de Privacidade", icon: "info") {
+                                sound.buttonSound()
+                                
                                 showPolicyAndPrivacy = true
                             }
                         }

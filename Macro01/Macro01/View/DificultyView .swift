@@ -13,9 +13,11 @@ struct DificultyView_: View {
     @ObservedObject var combatViewModel: CombatViewModel
     @Environment(\.presentations) private var presentations
     @Environment(\.presentationMode) var presentationMode
+    @AppStorage("Raia") var raiaWin: Bool = false
+    @AppStorage("Boto") var botoWin: Bool = false
+    @AppStorage("Cuca") var cucaWin: Bool = false
+    let sound = SoundManager.instance
 
-    
-    @EnvironmentObject var dificultyViewModel: DificultyViewModel
     
     var body: some View {
         GeometryReader { geo in
@@ -50,7 +52,7 @@ struct DificultyView_: View {
                 
                 VStack{
                     VStack(alignment: .center, spacing: 35){
-                        Text("Selecione um Oponente".localizedLanguage())
+                        Text("Selecione um Oponente")
                             .font(Font.custom("CooperBlackStd", size: 25))
                             .fontWeight(.bold)
                             .foregroundColor(.black)
@@ -58,24 +60,27 @@ struct DificultyView_: View {
                         HStack(spacing: 20){
                             Button {
                                 iaraButton()
-                                
+                                sound.playSound(music: .iaraSong)
                             } label: {
                                iaraImage()
                             }
                         
                             Button {
-                               botoButton()
-                                
+                                botoButton()
+                                sound.playSound(music: .botoSong)
                             } label: {
                                 botoImage()
-                            }.disabled(!dificultyViewModel.raiaWin)
+                            }.disabled(!raiaWin)
                             
                             Button {
-                               cucaButton()
-                                
+                                cucaButton()
+                                sound.playSound(music: .cucaSong)
                             } label: {
                                 cucaImage()
-                            }.disabled(!dificultyViewModel.botoWin)
+                            }.disabled(!botoWin)
+
+
+                            
                         }
                     }
                     .frame(width: geo.size.width * 0.6)
@@ -86,8 +91,9 @@ struct DificultyView_: View {
         }.sheet(isPresented: $shouldNavigate, onDismiss: {
             combatViewModel.startCountdown()
             combatViewModel.gameReset()
+            sound.playSound(music: .lobbyMusic)
         }){
-            CombatView(combatViewModel: combatViewModel, raiaWin: dificultyViewModel.$raiaWin, botoWin: dificultyViewModel.$botoWin, cucaWin: dificultyViewModel.$cucaWin)
+            CombatView(combatViewModel: combatViewModel, raiaWin: $raiaWin, botoWin: $botoWin, cucaWin: $cucaWin)
                 .environment(\.presentations, presentations + [$shouldNavigate])
         }
     }
@@ -125,17 +131,17 @@ extension DificultyView_{
 extension DificultyView_{
     @ViewBuilder
     func botoImage() -> some View {
-        if dificultyViewModel.raiaWin == false {
+        if raiaWin == false {
             Image(combatViewModel.BotoDiff.imageInitial)
                 .resizable()
                 .aspectRatio(contentMode: .fit)
         }
-        else if dificultyViewModel.raiaWin == true && dificultyViewModel.botoWin == false {
+        else if raiaWin == true && botoWin == false {
             Image(combatViewModel.BotoDiff.imageSillhoute)
                 .resizable()
                 .aspectRatio(contentMode: .fit)
         }
-        else if dificultyViewModel.botoWin == true {
+        else if botoWin == true {
             Image(combatViewModel.BotoDiff.imageWin)
                 .resizable()
                 .aspectRatio(contentMode: .fit)
@@ -143,7 +149,7 @@ extension DificultyView_{
     }
     @ViewBuilder
     func iaraImage() -> some View {
-        if dificultyViewModel.raiaWin == true {
+        if raiaWin == true {
             Image("charWinIara")
                 .resizable()
                 .aspectRatio(contentMode: .fit)
@@ -156,18 +162,18 @@ extension DificultyView_{
     }
     @ViewBuilder
     func cucaImage() -> some View{
-        if dificultyViewModel.botoWin == false{
+        if botoWin == false{
             Image("charBlockCuca")
                 .resizable()
                 .aspectRatio(contentMode: .fit)
         }
-        else if dificultyViewModel.botoWin == true && dificultyViewModel.cucaWin == false {
+        else if botoWin == true && cucaWin == false {
             Image("charCuca")
                 .resizable()
                 .aspectRatio(contentMode: .fit)
         }
         
-        else if dificultyViewModel.cucaWin == true{
+        else if cucaWin == true{
             Image("charWinCuca")
                 .resizable()
                 .aspectRatio(contentMode: .fit)
