@@ -36,8 +36,8 @@ struct TextBox: View {
     }
 }
 
-//struct TextBox_Previews: PreviewProvider {
-//    static var previews: some View {
-//        TextBox(textContent: "blalblablablalblablablalblablablalblablablalblablablalblablablalblablablalblablablalblablablalblablablalblablablalblablablalblablablalblablablalblablablalblablablalblabla")
-//    }
-//}
+struct TextBox_Previews: PreviewProvider {
+    static var previews: some View {
+        TextBox(textContent: "blalblablablalblablablalblablablalblablablalblablablalblablablalblablablalblablablalblablablalblablablalblablablalblablablalblablablalblablablalblablablalblablablalblabla")
+    }
+}
