@@ -10,24 +10,20 @@
 		1905A5342A1E8FB40010D8A9 /* TextBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1905A5332A1E8FB40010D8A9 /* TextBox.swift */; };
 		1905A5362A1E961D0010D8A9 /* SquareGallery.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1905A5352A1E961D0010D8A9 /* SquareGallery.swift */; };
 		193567A22A1E854200C7D34B /* Character.swift in Sources */ = {isa = PBXBuildFile; fileRef = 193567A12A1E854200C7D34B /* Character.swift */; };
+		197AB5512A953D2400ED7295 /* ButtonPlayAgain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 197AB5502A953D2400ED7295 /* ButtonPlayAgain.swift */; };
 		19A41CB52A3A443D00C2D9A7 /* TutorialView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19A41CB42A3A443D00C2D9A7 /* TutorialView.swift */; };
 		19FE502C2A818FCA0064BA54 /* WinnerText.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19FE502B2A818FCA0064BA54 /* WinnerText.swift */; };
 		EB067CA02A6EFA3F003F35F6 /* CooperBlack-StdItal.otf in Resources */ = {isa = PBXBuildFile; fileRef = EB067C9F2A6EFA3F003F35F6 /* CooperBlack-StdItal.otf */; };
 		EB067CA22A6EFDF8003F35F6 /* cooper-std-black.otf in Resources */ = {isa = PBXBuildFile; fileRef = EB067CA12A6EFDF8003F35F6 /* cooper-std-black.otf */; };
 		EB242D1C2A7C1FBA00581BF7 /* SplashScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB242D1B2A7C1FBA00581BF7 /* SplashScreen.swift */; };
 		EB2BC4E92A374A28008ACFD2 /* CharacterCircle.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB2BC4E82A374A28008ACFD2 /* CharacterCircle.swift */; };
-		EB4F36D82A9D0E1600103065 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = EB4F36DA2A9D0E1600103065 /* Localizable.strings */; };
-		EB571C9E2AA12BA800D5771D /* DificultyViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB571C9D2AA12BA800D5771D /* DificultyViewModel.swift */; };
 		EB82F3B02A33EEEF006D7011 /* ColorExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB82F3AF2A33EEEF006D7011 /* ColorExtensions.swift */; };
 		EB8B913F2A818C2D00D8B6D1 /*  TutorialModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB8B913E2A818C2D00D8B6D1 /*  TutorialModel.swift */; };
 		EB8B91412A818C8200D8B6D1 /* TutorialData.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB8B91402A818C8200D8B6D1 /* TutorialData.swift */; };
 		EB8B91432A818CD100D8B6D1 /* TutorialStartCardsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB8B91422A818CD100D8B6D1 /* TutorialStartCardsView.swift */; };
 		EB8B91452A818DBF00D8B6D1 /* TutorialDialogBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB8B91442A818DBF00D8B6D1 /* TutorialDialogBox.swift */; };
-		EB8FDCBC2A97EBD200D7FD0D /* LocalizedLanguage.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB8FDCBB2A97EBD200D7FD0D /* LocalizedLanguage.swift */; };
 		EB99BB582A49F78000DCCE73 /* CardComponentMainScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB99BB572A49F78000DCCE73 /* CardComponentMainScreen.swift */; };
 		EBB6B0D12A80180000F0F992 /* CountdownBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBB6B0D02A80180000F0F992 /* CountdownBar.swift */; };
-		EBC48FE72A9D19B400FDDE8A /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = EB4F36DA2A9D0E1600103065 /* Localizable.strings */; };
-		EBC48FE82A9D19B500FDDE8A /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = EB4F36DA2A9D0E1600103065 /* Localizable.strings */; };
 		EBC6883E2A69BAD80072E706 /* PolicyAndPrivacyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBC6883D2A69BAD80072E706 /* PolicyAndPrivacyView.swift */; };
 		EBC688402A69BAF30072E706 /* AboutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBC6883F2A69BAF30072E706 /* AboutView.swift */; };
 		EBC688422A69BB3B0072E706 /* ConfigurationCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBC688412A69BB3B0072E706 /* ConfigurationCardView.swift */; };
@@ -83,6 +79,7 @@
 		1905A5332A1E8FB40010D8A9 /* TextBox.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextBox.swift; sourceTree = "<group>"; };
 		1905A5352A1E961D0010D8A9 /* SquareGallery.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SquareGallery.swift; sourceTree = "<group>"; };
 		193567A12A1E854200C7D34B /* Character.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Character.swift; sourceTree = "<group>"; };
+		197AB5502A953D2400ED7295 /* ButtonPlayAgain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonPlayAgain.swift; sourceTree = "<group>"; };
 		19A41CB42A3A443D00C2D9A7 /* TutorialView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TutorialView.swift; sourceTree = "<group>"; };
 		19FE502B2A818FCA0064BA54 /* WinnerText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WinnerText.swift; sourceTree = "<group>"; };
 		EB067C9F2A6EFA3F003F35F6 /* CooperBlack-StdItal.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "CooperBlack-StdItal.otf"; sourceTree = "<group>"; };
@@ -90,16 +87,12 @@
 		EB1CFB3C2A86B08700BEB908 /* Preview Content.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Content.xcassets"; sourceTree = "<group>"; };
 		EB242D1B2A7C1FBA00581BF7 /* SplashScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashScreen.swift; sourceTree = "<group>"; };
 		EB2BC4E82A374A28008ACFD2 /* CharacterCircle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterCircle.swift; sourceTree = "<group>"; };
-		EB4F36DB2A9D0E1E00103065 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
-		EB4F36DC2A9D13E200103065 /* pt-BR */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "pt-BR"; path = "pt-BR.lproj/Localizable.strings"; sourceTree = "<group>"; };
-		EB571C9D2AA12BA800D5771D /* DificultyViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DificultyViewModel.swift; sourceTree = "<group>"; };
 		EB82F3AF2A33EEEF006D7011 /* ColorExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorExtensions.swift; sourceTree = "<group>"; };
 		EB86C90E2A421F81009CFA31 /* CardComponentMainScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardComponentMainScreen.swift; sourceTree = "<group>"; };
 		EB8B913E2A818C2D00D8B6D1 /*  TutorialModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = " TutorialModel.swift"; sourceTree = "<group>"; };
 		EB8B91402A818C8200D8B6D1 /* TutorialData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TutorialData.swift; sourceTree = "<group>"; };
 		EB8B91422A818CD100D8B6D1 /* TutorialStartCardsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TutorialStartCardsView.swift; sourceTree = "<group>"; };
 		EB8B91442A818DBF00D8B6D1 /* TutorialDialogBox.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TutorialDialogBox.swift; sourceTree = "<group>"; };
-		EB8FDCBB2A97EBD200D7FD0D /* LocalizedLanguage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalizedLanguage.swift; sourceTree = "<group>"; };
 		EB99BB572A49F78000DCCE73 /* CardComponentMainScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardComponentMainScreen.swift; sourceTree = "<group>"; };
 		EBB6B0D02A80180000F0F992 /* CountdownBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountdownBar.swift; sourceTree = "<group>"; };
 		EBC6883D2A69BAD80072E706 /* PolicyAndPrivacyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PolicyAndPrivacyView.swift; sourceTree = "<group>"; };
@@ -192,36 +185,10 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
-		EB8FDCB62A97EAC400D7FD0D /* Utils */ = {
-			isa = PBXGroup;
-			children = (
-				EB8FDCBA2A97EB8200D7FD0D /* LocalizableLanguage */,
-				EB8FDCB92A97EB7500D7FD0D /* Localizable */,
-			);
-			path = Utils;
-			sourceTree = "<group>";
-		};
-		EB8FDCB92A97EB7500D7FD0D /* Localizable */ = {
-			isa = PBXGroup;
-			children = (
-				EB8FDCBB2A97EBD200D7FD0D /* LocalizedLanguage.swift */,
-			);
-			path = Localizable;
-			sourceTree = "<group>";
-		};
-		EB8FDCBA2A97EB8200D7FD0D /* LocalizableLanguage */ = {
-			isa = PBXGroup;
-			children = (
-				EB4F36DA2A9D0E1600103065 /* Localizable.strings */,
-			);
-			path = LocalizableLanguage;
-			sourceTree = "<group>";
-		};
 		EBCD66342A1EADA800157CBF /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
 				FA5BEDA02A2E2428001B0C07 /* PlayerCombatModel.swift */,
-				EB571C9D2AA12BA800D5771D /* DificultyViewModel.swift */,
 				FA5BEDA22A2E2464001B0C07 /* CardsModel.swift */,
 				FAF5E95F2A2814CB00155C76 /* CombatModel.swift */,
 				FAA898D92A3BAA740052B998 /* DifficultyModel.swift */,
@@ -259,6 +226,7 @@
 				EBB6B0D02A80180000F0F992 /* CountdownBar.swift */,
 				EBC688432A69BB7D0072E706 /* TransparentConfigurationButton.swift */,
 				EB99BB572A49F78000DCCE73 /* CardComponentMainScreen.swift */,
+				197AB5502A953D2400ED7295 /* ButtonPlayAgain.swift */,
 				1905A5352A1E961D0010D8A9 /* SquareGallery.swift */,
 				EBFE58CA2A3506F40042A319 /* ScoreView.swift */,
 				193567A12A1E854200C7D34B /* Character.swift */,
@@ -317,7 +285,6 @@
 		FA6F18562A1D301F00E76127 /* Macro01 */ = {
 			isa = PBXGroup;
 			children = (
-				EB8FDCB62A97EAC400D7FD0D /* Utils */,
 				EB067C982A6EF576003F35F6 /* Resources */,
 				EBF592832A6DE47500EBAB04 /* Info.plist */,
 				EB82F3B12A33EF44006D7011 /* Extensions */,
@@ -434,7 +401,6 @@
 			knownRegions = (
 				"pt-BR",
 				Base,
-				en,
 			);
 			mainGroup = FA6F184B2A1D301F00E76127;
 			productRefGroup = FA6F18552A1D301F00E76127 /* Products */;
@@ -454,7 +420,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				EB067CA02A6EFA3F003F35F6 /* CooperBlack-StdItal.otf in Resources */,
-				EB4F36D82A9D0E1600103065 /* Localizable.strings in Resources */,
 				EB067CA22A6EFDF8003F35F6 /* cooper-std-black.otf in Resources */,
 				FA6F185F2A1D302000E76127 /* Assets.xcassets in Resources */,
 			);
@@ -464,7 +429,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EBC48FE72A9D19B400FDDE8A /* Localizable.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -472,7 +436,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EBC48FE82A9D19B500FDDE8A /* Localizable.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -487,9 +450,9 @@
 				EB99BB582A49F78000DCCE73 /* CardComponentMainScreen.swift in Sources */,
 				FA1546E02A26D15400C9EE2E /* CombatView.swift in Sources */,
 				FAE3635E2A1E90EA00643271 /* CardComponent.swift in Sources */,
-				EB571C9E2AA12BA800D5771D /* DificultyViewModel.swift in Sources */,
 				EBB6B0D12A80180000F0F992 /* CountdownBar.swift in Sources */,
 				EBC688402A69BAF30072E706 /* AboutView.swift in Sources */,
+				197AB5512A953D2400ED7295 /* ButtonPlayAgain.swift in Sources */,
 				EB82F3B02A33EEEF006D7011 /* ColorExtensions.swift in Sources */,
 				EB2BC4E92A374A28008ACFD2 /* CharacterCircle.swift in Sources */,
 				FAD5EE632A75224E004A4C78 /* GaleriaSaciView.swift in Sources */,
@@ -523,7 +486,6 @@
 				EBF1340B2A23FAA1000FA55E /* CardModel.swift in Sources */,
 				FA6F18582A1D301F00E76127 /* Macro01App.swift in Sources */,
 				EBCFE2E12A1E8670002CABFF /* BotaoGenRedondoView.swift in Sources */,
-				EB8FDCBC2A97EBD200D7FD0D /* LocalizedLanguage.swift in Sources */,
 				19FE502C2A818FCA0064BA54 /* WinnerText.swift in Sources */,
 				FADCBAD32A3904510012C0FB /* DificultyView .swift in Sources */,
 				FAD5EE612A74E4FE004A4C78 /* ViewComponent.swift in Sources */,
@@ -563,24 +525,11 @@
 		};
 /* End PBXTargetDependency section */
 
-/* Begin PBXVariantGroup section */
-		EB4F36DA2A9D0E1600103065 /* Localizable.strings */ = {
-			isa = PBXVariantGroup;
-			children = (
-				EB4F36DB2A9D0E1E00103065 /* en */,
-				EB4F36DC2A9D13E200103065 /* pt-BR */,
-			);
-			name = Localizable.strings;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
-
 /* Begin XCBuildConfiguration section */
 		FA6F18762A1D302000E76127 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
@@ -641,7 +590,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
@@ -700,7 +648,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = Macro01/Resources/Assets.xcassets;
-				DEVELOPMENT_TEAM = 76KNCX7A8A;
+				DEVELOPMENT_TEAM = V29KX432S7;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Macro01/Info.plist;
@@ -733,7 +681,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = Macro01/Resources/Assets.xcassets;
-				DEVELOPMENT_TEAM = 76KNCX7A8A;
+				DEVELOPMENT_TEAM = V29KX432S7;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Macro01/Info.plist;

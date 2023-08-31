@@ -63,10 +63,14 @@ class CombatViewModel: ObservableObject {
         
         if player1.winTurno == 3{
             self.gameEnd()
+            timer?.invalidate()
+            isCountdownVisible = false
             return
         }
         else if player2.winTurno == 3 {
             self.gameEnd()
+            timer?.invalidate()
+            isCountdownVisible = false
             return
         }
         
@@ -165,6 +169,7 @@ class CombatViewModel: ObservableObject {
         timer?.invalidate()
         self.turn = 0
         self.countdown = 3
+        self.isCountdownVisible = true
         self.player1.winTurno = 0
         self.player2.winTurno = 0
         self.player1.mana = 1
@@ -180,12 +185,16 @@ class CombatViewModel: ObservableObject {
     func getScore() -> String {
         if player1.winTurno > player2.winTurno {
             winLevel()
-            return "Jogador 1 ganhou!".localizedLanguage()
+            return "Jogador 1 ganhou!"
         } else if player1.winTurno < player2.winTurno {
-            return "Jogador 2 ganhou!".localizedLanguage()
+            return "Jogador 2 ganhou!"
         } else {
-            return "Empate".localizedLanguage()
+            return "Empate"
         }
+    }
+    
+    func player1Won() -> Bool {
+        return player1.winTurno > player2.winTurno
     }
     
     //AQUI É OQ ACONTECE SE O PLAYER1 GANHAR O LEVEL.
@@ -255,25 +264,33 @@ class CombatViewModel: ObservableObject {
     func checkPlayerVictory() -> [String] {
         switch checkWin {
         case 0:
-            return ["Empate!".localizedLanguage(), "Continue tentando!".localizedLanguage()]
+            return ["Empate!", "Continue tentando!"]
         case 1:
-            return ["Parabéns!".localizedLanguage(), "Você ganhou a rodada!".localizedLanguage()]
+            return ["Parabéns!", "Você ganhou a rodada!"]
         case 2:
-            return ["Cuidado!".localizedLanguage(), "Você perdeu a rodada!".localizedLanguage()]
+            return ["Cuidado!", "Você perdeu a rodada!"]
         default:
-            return ["Empate!".localizedLanguage(), "Continue tentando!".localizedLanguage()]
+            return ["Empate!", "Continue tentando!"]
         }
     }
     
     func checkGameWinner() -> [String] {
         switch getScore() {
-        case "Jogador 1 ganhou!".localizedLanguage():
-            return ["Vitória!".localizedLanguage(), "Você venceu a partida".localizedLanguage()]
-        case "Jogador 2 ganhou!".localizedLanguage():
-            return ["Derrota!".localizedLanguage(), "Infelizmente não foi dessa vez.".localizedLanguage()]
+        case "Jogador 1 ganhou!":
+            return ["Vitória!", "Você venceu a partida"]
+        case "Jogador 2 ganhou!":
+            return ["Derrota!", "Infelizmente não foi dessa vez."]
         default:
-            return ["Empate!".localizedLanguage(), ""]
+            return ["Empate!", ""]
         }
+    }
+    
+    func timeAndSheetIsVisible() -> Bool {
+        return !isCountdownVisible && !isSheetVisible
+    }
+    
+    func checkSomeoneWon() -> Bool {
+        return player1.winTurno == 3 || player2.winTurno == 3
     }
     
     private func handleAttackVsAttack() {
@@ -365,6 +382,8 @@ class CombatViewModel: ObservableObject {
     private func player2RechargeMana() {
         player2.mana += 1
     }
+    
+    
     
 }
 
