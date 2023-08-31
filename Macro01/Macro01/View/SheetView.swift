@@ -42,7 +42,7 @@ struct SheetView: View {
                 HStack {
                     
                     VStack {
-                        Text("Escolha uma carta".localizedLanguage())
+                        Text("Escolha uma carta")
                             .font(Font.custom("CooperBlackStd", size: 30))
                             .foregroundColor(Color(hex: "FFF2D9"))
                           
