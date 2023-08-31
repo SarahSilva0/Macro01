@@ -11,10 +11,6 @@ struct FirstView: View {
     
     @State private var isTutorialSheetPresented = false
     @State private var showDificultyView = false
-
-//    @State private var raiaWin = false
-//    @State private var botoWin = false
-//    @State private var cucaWin = false
     
     @AppStorage("Raia") var raiaWin: Bool = false
     @AppStorage("Boto") var botoWin: Bool = false
