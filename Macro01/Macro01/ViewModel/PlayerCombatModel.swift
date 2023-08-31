@@ -26,7 +26,7 @@ class PlayerCombat: ObservableObject {
     //MARK: CRIANDO AS PROBABILIDADES DOS BOTS
     let SPProbabilities = CardProbabilities(probabilities: [
         [(.recharge, 0.6), (.defense, 0.4)],
-        [(.attack, 0.6), (.recharge, 0.2), (.defense, 0.2)], // melhorar isso aqui
+        [(.attack, 0.6), (.recharge, 0.3), (.defense, 0.1)], // melhorar isso aqui
         [(.attack, 0.6), (.defense, 0.4)]
     ])
     
@@ -38,23 +38,38 @@ class PlayerCombat: ObservableObject {
     
     //MARK: FUNCAO GENERICA DA LOGICA DA PROBABILIDADE DAS CARTAS
     func playerLogic(with probabilities: CardProbabilities, for bot: String) -> Card {
-        let randomValue = Double.random(in: 0..<1)
         let manaIndex = min(mana, probabilities.probabilities.count - 1)
-
+        let randomValue = Double.random(in: 0...1)
+        
         let possibleCards = probabilities.probabilities[manaIndex]
-        var cumulativeProbability: Double = 0.0
         var updatedCards = cards
         
         let attackCount = updatedCards.filter { $0.type == .attack }.count
         let rechargeCount = updatedCards.filter { $0.type == .recharge }.count
-
+        let defenseCount = updatedCards.filter { $0.type == .defense }.count
+        
+        return chooseCard(from: possibleCards, with: randomValue, attackCount: attackCount, rechargeCount: rechargeCount, defenseCount: defenseCount, bot: bot)
+    }
+    //MARK: FUNCAO QUE IRA RETORNAR A CARTA
+    func chooseCard(from possibleCards: [(cardType: Cards.CardType, probability: Double)], with randomValue: Double, attackCount: Int, rechargeCount: Int, defenseCount: Int, bot: String) -> Card {
+        var cumulativeProbability: Double = 0.0
+        
         for (cardType, probability) in possibleCards {
-            if cardType == .attack && attackCount >= 2 {
-                print("2 CARTAS DE ATAQUE")
+            if shouldSkipCard(cardType: cardType, count: getCount(for: cardType, attackCount: attackCount, rechargeCount: rechargeCount, defenseCount: defenseCount)) {
+                if attackCount == 2 && mana < 2 {
+                    print("MANAAAAAAA")
+                    switch randomValue {
+                    case 0..<0.6:
+                        print("RECARGA") // 80% de chance de cair recarga
+                        return Card(type: .recharge, name: "recharge\(bot)")
+                        
+                    default:
+                        print("Defesa") // 20% de chance de cair defesa
+                        return Card(type: .defense, name: "defense\(bot)")
+                    }
+                }
                 cumulativeProbability += 0.0
-            } else if cardType == .recharge && rechargeCount >= 2 {
-                print("2 CARTAS DE RECARGA")
-                cumulativeProbability += 0.0
+                
             } else {
                 cumulativeProbability += probability
             }
@@ -66,19 +81,40 @@ class PlayerCombat: ObservableObject {
         
         return Card(type: .defense, name: "defense\(bot)")
     }
-
+    
+    //MARK: verifica a contagem das cartas que estao na mao
+    func shouldSkipCard(cardType: Cards.CardType, count: Int) -> Bool {
+        switch cardType {
+        case .attack, .recharge, .defense:
+            return count >= 2
+        case .empty, .block:
+            return false
+        }
+    }
+    
+    //MARK: SETANDO OS TAMANHOS
+    func getCount(for cardType: Cards.CardType, attackCount: Int, rechargeCount: Int, defenseCount: Int) -> Int {
+        switch cardType {
+        case .attack: return attackCount
+        case .recharge: return rechargeCount
+        case .defense: return defenseCount
+        case .empty: return 0
+        case .block: return 0
+        }
+    }
+    
     //MARK: FUNCAO PARA SUBSTITUIR A CARTA QUE O JOGADOR JOGOU
     func replaceSelectedCardRandomly(with probabilities: CardProbabilities, for bot: String) {
         let index = self.cards.firstIndex(of: self.selectedCard)
         guard let currentIndex = index else { return }
-
+        
         let newCard = playerLogic(with: probabilities, for: bot)
         self.cards[currentIndex] = newCard
         self.selectedCard = newCard
     }
     
-
-
+    
+    
     
 }
 

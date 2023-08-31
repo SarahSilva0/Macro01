@@ -10,7 +10,6 @@ import SwiftUI
 struct WinnerText: View {
     var text: String = ""
     var size: Int
-    var paddingSize: Int
     @State private var isTextVisible = false
 
     var body: some View {
@@ -28,6 +27,7 @@ struct WinnerText: View {
                     }
                 }
             }
+
     }
 }
 
