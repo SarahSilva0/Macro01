@@ -7,13 +7,60 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1905A5342A1E8FB40010D8A9 /* TextBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1905A5332A1E8FB40010D8A9 /* TextBox.swift */; };
+		1905A5362A1E961D0010D8A9 /* SquareGallery.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1905A5352A1E961D0010D8A9 /* SquareGallery.swift */; };
+		193567A22A1E854200C7D34B /* Character.swift in Sources */ = {isa = PBXBuildFile; fileRef = 193567A12A1E854200C7D34B /* Character.swift */; };
+		197AB5512A953D2400ED7295 /* ButtonPlayAgain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 197AB5502A953D2400ED7295 /* ButtonPlayAgain.swift */; };
+		19A41CB52A3A443D00C2D9A7 /* TutorialView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19A41CB42A3A443D00C2D9A7 /* TutorialView.swift */; };
+		19FE502C2A818FCA0064BA54 /* WinnerText.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19FE502B2A818FCA0064BA54 /* WinnerText.swift */; };
+		EB067CA02A6EFA3F003F35F6 /* CooperBlack-StdItal.otf in Resources */ = {isa = PBXBuildFile; fileRef = EB067C9F2A6EFA3F003F35F6 /* CooperBlack-StdItal.otf */; };
+		EB067CA22A6EFDF8003F35F6 /* cooper-std-black.otf in Resources */ = {isa = PBXBuildFile; fileRef = EB067CA12A6EFDF8003F35F6 /* cooper-std-black.otf */; };
+		EB242D1C2A7C1FBA00581BF7 /* SplashScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB242D1B2A7C1FBA00581BF7 /* SplashScreen.swift */; };
+		EB2BC4E92A374A28008ACFD2 /* CharacterCircle.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB2BC4E82A374A28008ACFD2 /* CharacterCircle.swift */; };
+		EB4F36D82A9D0E1600103065 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = EB4F36DA2A9D0E1600103065 /* Localizable.strings */; };
+		EB571C9E2AA12BA800D5771D /* DificultyViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB571C9D2AA12BA800D5771D /* DificultyViewModel.swift */; };
+		EB82F3B02A33EEEF006D7011 /* ColorExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB82F3AF2A33EEEF006D7011 /* ColorExtensions.swift */; };
+		EB8B913F2A818C2D00D8B6D1 /*  TutorialModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB8B913E2A818C2D00D8B6D1 /*  TutorialModel.swift */; };
+		EB8B91412A818C8200D8B6D1 /* TutorialData.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB8B91402A818C8200D8B6D1 /* TutorialData.swift */; };
+		EB8B91432A818CD100D8B6D1 /* TutorialStartCardsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB8B91422A818CD100D8B6D1 /* TutorialStartCardsView.swift */; };
+		EB8B91452A818DBF00D8B6D1 /* TutorialDialogBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB8B91442A818DBF00D8B6D1 /* TutorialDialogBox.swift */; };
+		EB8FDCBC2A97EBD200D7FD0D /* LocalizedLanguage.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB8FDCBB2A97EBD200D7FD0D /* LocalizedLanguage.swift */; };
+		EB99BB582A49F78000DCCE73 /* CardComponentMainScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB99BB572A49F78000DCCE73 /* CardComponentMainScreen.swift */; };
+		EBB6B0D12A80180000F0F992 /* CountdownBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBB6B0D02A80180000F0F992 /* CountdownBar.swift */; };
+		EBC48FE72A9D19B400FDDE8A /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = EB4F36DA2A9D0E1600103065 /* Localizable.strings */; };
+		EBC48FE82A9D19B500FDDE8A /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = EB4F36DA2A9D0E1600103065 /* Localizable.strings */; };
+		EBC6883E2A69BAD80072E706 /* PolicyAndPrivacyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBC6883D2A69BAD80072E706 /* PolicyAndPrivacyView.swift */; };
+		EBC688402A69BAF30072E706 /* AboutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBC6883F2A69BAF30072E706 /* AboutView.swift */; };
+		EBC688422A69BB3B0072E706 /* ConfigurationCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBC688412A69BB3B0072E706 /* ConfigurationCardView.swift */; };
+		EBC688442A69BB7D0072E706 /* TransparentConfigurationButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBC688432A69BB7D0072E706 /* TransparentConfigurationButton.swift */; };
+		EBCFE2E12A1E8670002CABFF /* BotaoGenRedondoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBCFE2E02A1E8670002CABFF /* BotaoGenRedondoView.swift */; };
+		EBE41B962A228D8400262C00 /* GameTableModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBE41B952A228D8400262C00 /* GameTableModel.swift */; };
+		EBF134092A23FA7F000FA55E /* PlayerModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBF134082A23FA7F000FA55E /* PlayerModel.swift */; };
+		EBF1340B2A23FAA1000FA55E /* CardModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBF1340A2A23FAA1000FA55E /* CardModel.swift */; };
+		EBF1340D2A23FAF0000FA55E /* DeckModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBF1340C2A23FAF0000FA55E /* DeckModel.swift */; };
+		EBFE58CB2A3506F40042A319 /* ScoreView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBFE58CA2A3506F40042A319 /* ScoreView.swift */; };
+		FA1546E02A26D15400C9EE2E /* CombatView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA1546DF2A26D15400C9EE2E /* CombatView.swift */; };
+		FA593D032A8E9CE6004EFBAB /* PlayerLogicTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA593D022A8E9CE6004EFBAB /* PlayerLogicTests.swift */; };
+		FA5BEDA12A2E2428001B0C07 /* PlayerCombatModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA5BEDA02A2E2428001B0C07 /* PlayerCombatModel.swift */; };
+		FA5BEDA32A2E2464001B0C07 /* CardsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA5BEDA22A2E2464001B0C07 /* CardsModel.swift */; };
+		FA5BEDA72A2E2559001B0C07 /* ClearBackground.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA5BEDA62A2E2559001B0C07 /* ClearBackground.swift */; };
+		FA5BEDA92A2E2599001B0C07 /* SheetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA5BEDA82A2E2599001B0C07 /* SheetView.swift */; };
 		FA6F18582A1D301F00E76127 /* Macro01App.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6F18572A1D301F00E76127 /* Macro01App.swift */; };
 		FA6F185A2A1D301F00E76127 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6F18592A1D301F00E76127 /* MainView.swift */; };
-		FA6F185C2A1D302000E76127 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FA6F185B2A1D302000E76127 /* Assets.xcassets */; };
-		FA6F185F2A1D302000E76127 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FA6F185E2A1D302000E76127 /* Preview Assets.xcassets */; };
+		FA6F185F2A1D302000E76127 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FA6F185E2A1D302000E76127 /* Assets.xcassets */; };
 		FA6F18692A1D302000E76127 /* Macro01Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6F18682A1D302000E76127 /* Macro01Tests.swift */; };
 		FA6F18732A1D302000E76127 /* Macro01UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6F18722A1D302000E76127 /* Macro01UITests.swift */; };
 		FA6F18752A1D302000E76127 /* Macro01UITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6F18742A1D302000E76127 /* Macro01UITestsLaunchTests.swift */; };
+		FAA898DA2A3BAA740052B998 /* DifficultyModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA898D92A3BAA740052B998 /* DifficultyModel.swift */; };
+		FAD5EE612A74E4FE004A4C78 /* ViewComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD5EE602A74E4FE004A4C78 /* ViewComponent.swift */; };
+		FAD5EE632A75224E004A4C78 /* GaleriaSaciView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD5EE622A75224E004A4C78 /* GaleriaSaciView.swift */; };
+		FAD5EE652A7989F9004A4C78 /* PausedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD5EE642A7989F9004A4C78 /* PausedView.swift */; };
+		FADCBAD32A3904510012C0FB /* DificultyView .swift in Sources */ = {isa = PBXBuildFile; fileRef = FADCBAD22A3904510012C0FB /* DificultyView .swift */; };
+		FAE3635C2A1E87C000643271 /* ButtonComponentImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAE3635B2A1E87C000643271 /* ButtonComponentImage.swift */; };
+		FAE3635E2A1E90EA00643271 /* CardComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAE3635D2A1E90EA00643271 /* CardComponent.swift */; };
+		FAEA1B9A2A2693C40007905A /* SecondView .swift in Sources */ = {isa = PBXBuildFile; fileRef = FAEA1B992A2693C40007905A /* SecondView .swift */; };
+		FAF5E9602A2814CB00155C76 /* CombatModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF5E95F2A2814CB00155C76 /* CombatModel.swift */; };
+		FAFF07C72A251E4D00D5BA2B /* FirstView .swift in Sources */ = {isa = PBXBuildFile; fileRef = FAFF07C62A251E4D00D5BA2B /* FirstView .swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,16 +81,65 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1905A5332A1E8FB40010D8A9 /* TextBox.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextBox.swift; sourceTree = "<group>"; };
+		1905A5352A1E961D0010D8A9 /* SquareGallery.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SquareGallery.swift; sourceTree = "<group>"; };
+		193567A12A1E854200C7D34B /* Character.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Character.swift; sourceTree = "<group>"; };
+		197AB5502A953D2400ED7295 /* ButtonPlayAgain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonPlayAgain.swift; sourceTree = "<group>"; };
+		19A41CB42A3A443D00C2D9A7 /* TutorialView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TutorialView.swift; sourceTree = "<group>"; };
+		19FE502B2A818FCA0064BA54 /* WinnerText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WinnerText.swift; sourceTree = "<group>"; };
+		EB067C9F2A6EFA3F003F35F6 /* CooperBlack-StdItal.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "CooperBlack-StdItal.otf"; sourceTree = "<group>"; };
+		EB067CA12A6EFDF8003F35F6 /* cooper-std-black.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "cooper-std-black.otf"; sourceTree = "<group>"; };
+		EB1CFB3C2A86B08700BEB908 /* Preview Content.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Content.xcassets"; sourceTree = "<group>"; };
+		EB242D1B2A7C1FBA00581BF7 /* SplashScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashScreen.swift; sourceTree = "<group>"; };
+		EB2BC4E82A374A28008ACFD2 /* CharacterCircle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterCircle.swift; sourceTree = "<group>"; };
+		EB4F36DB2A9D0E1E00103065 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		EB4F36DC2A9D13E200103065 /* pt-BR */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "pt-BR"; path = "pt-BR.lproj/Localizable.strings"; sourceTree = "<group>"; };
+		EB571C9D2AA12BA800D5771D /* DificultyViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DificultyViewModel.swift; sourceTree = "<group>"; };
+		EB82F3AF2A33EEEF006D7011 /* ColorExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorExtensions.swift; sourceTree = "<group>"; };
+		EB86C90E2A421F81009CFA31 /* CardComponentMainScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardComponentMainScreen.swift; sourceTree = "<group>"; };
+		EB8B913E2A818C2D00D8B6D1 /*  TutorialModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = " TutorialModel.swift"; sourceTree = "<group>"; };
+		EB8B91402A818C8200D8B6D1 /* TutorialData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TutorialData.swift; sourceTree = "<group>"; };
+		EB8B91422A818CD100D8B6D1 /* TutorialStartCardsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TutorialStartCardsView.swift; sourceTree = "<group>"; };
+		EB8B91442A818DBF00D8B6D1 /* TutorialDialogBox.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TutorialDialogBox.swift; sourceTree = "<group>"; };
+		EB8FDCBB2A97EBD200D7FD0D /* LocalizedLanguage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalizedLanguage.swift; sourceTree = "<group>"; };
+		EB99BB572A49F78000DCCE73 /* CardComponentMainScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardComponentMainScreen.swift; sourceTree = "<group>"; };
+		EBB6B0D02A80180000F0F992 /* CountdownBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountdownBar.swift; sourceTree = "<group>"; };
+		EBC6883D2A69BAD80072E706 /* PolicyAndPrivacyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PolicyAndPrivacyView.swift; sourceTree = "<group>"; };
+		EBC6883F2A69BAF30072E706 /* AboutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutView.swift; sourceTree = "<group>"; };
+		EBC688412A69BB3B0072E706 /* ConfigurationCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigurationCardView.swift; sourceTree = "<group>"; };
+		EBC688432A69BB7D0072E706 /* TransparentConfigurationButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransparentConfigurationButton.swift; sourceTree = "<group>"; };
+		EBCFE2E02A1E8670002CABFF /* BotaoGenRedondoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BotaoGenRedondoView.swift; sourceTree = "<group>"; };
+		EBE41B952A228D8400262C00 /* GameTableModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameTableModel.swift; sourceTree = "<group>"; };
+		EBF134082A23FA7F000FA55E /* PlayerModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerModel.swift; sourceTree = "<group>"; };
+		EBF1340A2A23FAA1000FA55E /* CardModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardModel.swift; sourceTree = "<group>"; };
+		EBF1340C2A23FAF0000FA55E /* DeckModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeckModel.swift; sourceTree = "<group>"; };
+		EBF592832A6DE47500EBAB04 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		EBFE58CA2A3506F40042A319 /* ScoreView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreView.swift; sourceTree = "<group>"; };
+		FA1546DF2A26D15400C9EE2E /* CombatView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CombatView.swift; sourceTree = "<group>"; };
+		FA593D022A8E9CE6004EFBAB /* PlayerLogicTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerLogicTests.swift; sourceTree = "<group>"; };
+		FA5BEDA02A2E2428001B0C07 /* PlayerCombatModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerCombatModel.swift; sourceTree = "<group>"; };
+		FA5BEDA22A2E2464001B0C07 /* CardsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardsModel.swift; sourceTree = "<group>"; };
+		FA5BEDA62A2E2559001B0C07 /* ClearBackground.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClearBackground.swift; sourceTree = "<group>"; };
+		FA5BEDA82A2E2599001B0C07 /* SheetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SheetView.swift; sourceTree = "<group>"; };
 		FA6F18542A1D301F00E76127 /* Macro01.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Macro01.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FA6F18572A1D301F00E76127 /* Macro01App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Macro01App.swift; sourceTree = "<group>"; };
 		FA6F18592A1D301F00E76127 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
-		FA6F185B2A1D302000E76127 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		FA6F185E2A1D302000E76127 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		FA6F185E2A1D302000E76127 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FA6F18642A1D302000E76127 /* Macro01Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Macro01Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		FA6F18682A1D302000E76127 /* Macro01Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Macro01Tests.swift; sourceTree = "<group>"; };
 		FA6F186E2A1D302000E76127 /* Macro01UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Macro01UITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		FA6F18722A1D302000E76127 /* Macro01UITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Macro01UITests.swift; sourceTree = "<group>"; };
 		FA6F18742A1D302000E76127 /* Macro01UITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Macro01UITestsLaunchTests.swift; sourceTree = "<group>"; };
+		FAA898D92A3BAA740052B998 /* DifficultyModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DifficultyModel.swift; sourceTree = "<group>"; };
+		FAD5EE602A74E4FE004A4C78 /* ViewComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewComponent.swift; sourceTree = "<group>"; };
+		FAD5EE622A75224E004A4C78 /* GaleriaSaciView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GaleriaSaciView.swift; sourceTree = "<group>"; };
+		FAD5EE642A7989F9004A4C78 /* PausedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PausedView.swift; sourceTree = "<group>"; };
+		FADCBAD22A3904510012C0FB /* DificultyView .swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DificultyView .swift"; sourceTree = "<group>"; };
+		FAE3635B2A1E87C000643271 /* ButtonComponentImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonComponentImage.swift; sourceTree = "<group>"; };
+		FAE3635D2A1E90EA00643271 /* CardComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardComponent.swift; sourceTree = "<group>"; };
+		FAEA1B992A2693C40007905A /* SecondView .swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SecondView .swift"; sourceTree = "<group>"; };
+		FAF5E95F2A2814CB00155C76 /* CombatModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CombatModel.swift; sourceTree = "<group>"; };
+		FAFF07C62A251E4D00D5BA2B /* FirstView .swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FirstView .swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,6 +167,136 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		EB067C982A6EF576003F35F6 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				EB1CFB3C2A86B08700BEB908 /* Preview Content.xcassets */,
+				FA6F185E2A1D302000E76127 /* Assets.xcassets */,
+				EB067C9A2A6EF5B4003F35F6 /* Font */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		EB067C9A2A6EF5B4003F35F6 /* Font */ = {
+			isa = PBXGroup;
+			children = (
+				EB067C9F2A6EFA3F003F35F6 /* CooperBlack-StdItal.otf */,
+				EB067CA12A6EFDF8003F35F6 /* cooper-std-black.otf */,
+			);
+			path = Font;
+			sourceTree = "<group>";
+		};
+		EB82F3B12A33EF44006D7011 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				EB82F3AF2A33EEEF006D7011 /* ColorExtensions.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		EB8FDCB62A97EAC400D7FD0D /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				EB8FDCBA2A97EB8200D7FD0D /* LocalizableLanguage */,
+				EB8FDCB92A97EB7500D7FD0D /* Localizable */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		EB8FDCB92A97EB7500D7FD0D /* Localizable */ = {
+			isa = PBXGroup;
+			children = (
+				EB8FDCBB2A97EBD200D7FD0D /* LocalizedLanguage.swift */,
+			);
+			path = Localizable;
+			sourceTree = "<group>";
+		};
+		EB8FDCBA2A97EB8200D7FD0D /* LocalizableLanguage */ = {
+			isa = PBXGroup;
+			children = (
+				EB4F36DA2A9D0E1600103065 /* Localizable.strings */,
+			);
+			path = LocalizableLanguage;
+			sourceTree = "<group>";
+		};
+		EBCD66342A1EADA800157CBF /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				FA5BEDA02A2E2428001B0C07 /* PlayerCombatModel.swift */,
+				EB571C9D2AA12BA800D5771D /* DificultyViewModel.swift */,
+				FA5BEDA22A2E2464001B0C07 /* CardsModel.swift */,
+				FAF5E95F2A2814CB00155C76 /* CombatModel.swift */,
+				FAA898D92A3BAA740052B998 /* DifficultyModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		EBCFE2DE2A1E8628002CABFF /* View */ = {
+			isa = PBXGroup;
+			children = (
+				FA6F18592A1D301F00E76127 /* MainView.swift */,
+				EB242D1B2A7C1FBA00581BF7 /* SplashScreen.swift */,
+				EB8B91422A818CD100D8B6D1 /* TutorialStartCardsView.swift */,
+				FAFF07C62A251E4D00D5BA2B /* FirstView .swift */,
+				19A41CB42A3A443D00C2D9A7 /* TutorialView.swift */,
+				FAEA1B992A2693C40007905A /* SecondView .swift */,
+				FA1546DF2A26D15400C9EE2E /* CombatView.swift */,
+				EBC688412A69BB3B0072E706 /* ConfigurationCardView.swift */,
+				FAD5EE642A7989F9004A4C78 /* PausedView.swift */,
+				EBC6883D2A69BAD80072E706 /* PolicyAndPrivacyView.swift */,
+				EBC6883F2A69BAF30072E706 /* AboutView.swift */,
+				FAD5EE622A75224E004A4C78 /* GaleriaSaciView.swift */,
+				FA5BEDA82A2E2599001B0C07 /* SheetView.swift */,
+				FADCBAD22A3904510012C0FB /* DificultyView .swift */,
+				EBCFE2DF2A1E863C002CABFF /* Componentes */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		EBCFE2DF2A1E863C002CABFF /* Componentes */ = {
+			isa = PBXGroup;
+			children = (
+				1905A5332A1E8FB40010D8A9 /* TextBox.swift */,
+				EB2BC4E82A374A28008ACFD2 /* CharacterCircle.swift */,
+				EBB6B0D02A80180000F0F992 /* CountdownBar.swift */,
+				EBC688432A69BB7D0072E706 /* TransparentConfigurationButton.swift */,
+				EB99BB572A49F78000DCCE73 /* CardComponentMainScreen.swift */,
+				197AB5502A953D2400ED7295 /* ButtonPlayAgain.swift */,
+				1905A5352A1E961D0010D8A9 /* SquareGallery.swift */,
+				EBFE58CA2A3506F40042A319 /* ScoreView.swift */,
+				193567A12A1E854200C7D34B /* Character.swift */,
+				FAE3635D2A1E90EA00643271 /* CardComponent.swift */,
+				EB86C90E2A421F81009CFA31 /* CardComponentMainScreen.swift */,
+				EB8B91442A818DBF00D8B6D1 /* TutorialDialogBox.swift */,
+				FAE3635B2A1E87C000643271 /* ButtonComponentImage.swift */,
+				EBCFE2E02A1E8670002CABFF /* BotaoGenRedondoView.swift */,
+				FAD5EE602A74E4FE004A4C78 /* ViewComponent.swift */,
+				19FE502B2A818FCA0064BA54 /* WinnerText.swift */,
+			);
+			path = Componentes;
+			sourceTree = "<group>";
+		};
+		EBE41B942A228B4600262C00 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				EBE41B952A228D8400262C00 /* GameTableModel.swift */,
+				EB8B913E2A818C2D00D8B6D1 /*  TutorialModel.swift */,
+				EB8B91402A818C8200D8B6D1 /* TutorialData.swift */,
+				EBF134082A23FA7F000FA55E /* PlayerModel.swift */,
+				EBF1340C2A23FAF0000FA55E /* DeckModel.swift */,
+				EBF1340A2A23FAA1000FA55E /* CardModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		FA5BEDA52A2E2512001B0C07 /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				FA5BEDA62A2E2559001B0C07 /* ClearBackground.swift */,
+			);
+			path = Helper;
+			sourceTree = "<group>";
+		};
 		FA6F184B2A1D301F00E76127 = {
 			isa = PBXGroup;
 			children = (
@@ -94,26 +320,24 @@
 		FA6F18562A1D301F00E76127 /* Macro01 */ = {
 			isa = PBXGroup;
 			children = (
+				EB8FDCB62A97EAC400D7FD0D /* Utils */,
+				EB067C982A6EF576003F35F6 /* Resources */,
+				EBF592832A6DE47500EBAB04 /* Info.plist */,
+				EB82F3B12A33EF44006D7011 /* Extensions */,
 				FA6F18572A1D301F00E76127 /* Macro01App.swift */,
-				FA6F18592A1D301F00E76127 /* MainView.swift */,
-				FA6F185B2A1D302000E76127 /* Assets.xcassets */,
-				FA6F185D2A1D302000E76127 /* Preview Content */,
+				FA5BEDA52A2E2512001B0C07 /* Helper */,
+				EBE41B942A228B4600262C00 /* Model */,
+				EBCD66342A1EADA800157CBF /* ViewModel */,
+				EBCFE2DE2A1E8628002CABFF /* View */,
 			);
 			path = Macro01;
-			sourceTree = "<group>";
-		};
-		FA6F185D2A1D302000E76127 /* Preview Content */ = {
-			isa = PBXGroup;
-			children = (
-				FA6F185E2A1D302000E76127 /* Preview Assets.xcassets */,
-			);
-			path = "Preview Content";
 			sourceTree = "<group>";
 		};
 		FA6F18672A1D302000E76127 /* Macro01Tests */ = {
 			isa = PBXGroup;
 			children = (
 				FA6F18682A1D302000E76127 /* Macro01Tests.swift */,
+				FA593D022A8E9CE6004EFBAB /* PlayerLogicTests.swift */,
 			);
 			path = Macro01Tests;
 			sourceTree = "<group>";
@@ -191,7 +415,7 @@
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 1410;
-				LastUpgradeCheck = 1410;
+				LastUpgradeCheck = 1420;
 				TargetAttributes = {
 					FA6F18532A1D301F00E76127 = {
 						CreatedOnToolsVersion = 14.1;
@@ -208,11 +432,12 @@
 			};
 			buildConfigurationList = FA6F184F2A1D301F00E76127 /* Build configuration list for PBXProject "Macro01" */;
 			compatibilityVersion = "Xcode 14.0";
-			developmentRegion = en;
+			developmentRegion = "pt-BR";
 			hasScannedForEncodings = 0;
 			knownRegions = (
-				en,
+				"pt-BR",
 				Base,
+				en,
 			);
 			mainGroup = FA6F184B2A1D301F00E76127;
 			productRefGroup = FA6F18552A1D301F00E76127 /* Products */;
@@ -231,8 +456,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FA6F185F2A1D302000E76127 /* Preview Assets.xcassets in Resources */,
-				FA6F185C2A1D302000E76127 /* Assets.xcassets in Resources */,
+				EB067CA02A6EFA3F003F35F6 /* CooperBlack-StdItal.otf in Resources */,
+				EB4F36D82A9D0E1600103065 /* Localizable.strings in Resources */,
+				EB067CA22A6EFDF8003F35F6 /* cooper-std-black.otf in Resources */,
+				FA6F185F2A1D302000E76127 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -240,6 +467,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EBC48FE72A9D19B400FDDE8A /* Localizable.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -247,6 +475,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EBC48FE82A9D19B500FDDE8A /* Localizable.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -257,8 +486,51 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EB242D1C2A7C1FBA00581BF7 /* SplashScreen.swift in Sources */,
+				EB99BB582A49F78000DCCE73 /* CardComponentMainScreen.swift in Sources */,
+				FA1546E02A26D15400C9EE2E /* CombatView.swift in Sources */,
+				FAE3635E2A1E90EA00643271 /* CardComponent.swift in Sources */,
+				EB571C9E2AA12BA800D5771D /* DificultyViewModel.swift in Sources */,
+				EBB6B0D12A80180000F0F992 /* CountdownBar.swift in Sources */,
+				EBC688402A69BAF30072E706 /* AboutView.swift in Sources */,
+				197AB5512A953D2400ED7295 /* ButtonPlayAgain.swift in Sources */,
+				EB82F3B02A33EEEF006D7011 /* ColorExtensions.swift in Sources */,
+				EB2BC4E92A374A28008ACFD2 /* CharacterCircle.swift in Sources */,
+				FAD5EE632A75224E004A4C78 /* GaleriaSaciView.swift in Sources */,
+				EBF134092A23FA7F000FA55E /* PlayerModel.swift in Sources */,
 				FA6F185A2A1D301F00E76127 /* MainView.swift in Sources */,
+				FAFF07C72A251E4D00D5BA2B /* FirstView .swift in Sources */,
+				EBC688442A69BB7D0072E706 /* TransparentConfigurationButton.swift in Sources */,
+				FAFF07C72A251E4D00D5BA2B /* FirstView .swift in Sources */,
+				FA5BEDA72A2E2559001B0C07 /* ClearBackground.swift in Sources */,
+				19A41CB52A3A443D00C2D9A7 /* TutorialView.swift in Sources */,
+				EBFE58CB2A3506F40042A319 /* ScoreView.swift in Sources */,
+				FAE3635C2A1E87C000643271 /* ButtonComponentImage.swift in Sources */,
+				FAA898DA2A3BAA740052B998 /* DifficultyModel.swift in Sources */,
+				1905A5342A1E8FB40010D8A9 /* TextBox.swift in Sources */,
+				EB8B91452A818DBF00D8B6D1 /* TutorialDialogBox.swift in Sources */,
+				EB8B91412A818C8200D8B6D1 /* TutorialData.swift in Sources */,
+				EB8B913F2A818C2D00D8B6D1 /*  TutorialModel.swift in Sources */,
+				193567A22A1E854200C7D34B /* Character.swift in Sources */,
+				1905A5362A1E961D0010D8A9 /* SquareGallery.swift in Sources */,
+				FAEA1B9A2A2693C40007905A /* SecondView .swift in Sources */,
+				FAF5E9602A2814CB00155C76 /* CombatModel.swift in Sources */,
+				EBC6883E2A69BAD80072E706 /* PolicyAndPrivacyView.swift in Sources */,
+				EBC688422A69BB3B0072E706 /* ConfigurationCardView.swift in Sources */,
+				EBF1340D2A23FAF0000FA55E /* DeckModel.swift in Sources */,
+				EBE41B962A228D8400262C00 /* GameTableModel.swift in Sources */,
+				FA5BEDA92A2E2599001B0C07 /* SheetView.swift in Sources */,
+				FA5BEDA32A2E2464001B0C07 /* CardsModel.swift in Sources */,
+				FAD5EE652A7989F9004A4C78 /* PausedView.swift in Sources */,
+				EB8B91432A818CD100D8B6D1 /* TutorialStartCardsView.swift in Sources */,
+				FA5BEDA12A2E2428001B0C07 /* PlayerCombatModel.swift in Sources */,
+				EBF1340B2A23FAA1000FA55E /* CardModel.swift in Sources */,
 				FA6F18582A1D301F00E76127 /* Macro01App.swift in Sources */,
+				EBCFE2E12A1E8670002CABFF /* BotaoGenRedondoView.swift in Sources */,
+				EB8FDCBC2A97EBD200D7FD0D /* LocalizedLanguage.swift in Sources */,
+				19FE502C2A818FCA0064BA54 /* WinnerText.swift in Sources */,
+				FADCBAD32A3904510012C0FB /* DificultyView .swift in Sources */,
+				FAD5EE612A74E4FE004A4C78 /* ViewComponent.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -267,6 +539,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FA6F18692A1D302000E76127 /* Macro01Tests.swift in Sources */,
+				FA593D032A8E9CE6004EFBAB /* PlayerLogicTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -294,11 +567,24 @@
 		};
 /* End PBXTargetDependency section */
 
+/* Begin PBXVariantGroup section */
+		EB4F36DA2A9D0E1600103065 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				EB4F36DB2A9D0E1E00103065 /* en */,
+				EB4F36DC2A9D13E200103065 /* pt-BR */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
 /* Begin XCBuildConfiguration section */
 		FA6F18762A1D302000E76127 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
@@ -345,7 +631,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -359,6 +645,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
@@ -399,7 +686,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -416,25 +703,29 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"Macro01/Preview Content\"";
-				DEVELOPMENT_TEAM = V29KX432S7;
+				DEVELOPMENT_ASSET_PATHS = Macro01/Resources/Assets.xcassets;
+				DEVELOPMENT_TEAM = 76KNCX7A8A;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_FILE = Macro01/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = Folkard;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.card-games";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationLandscapeRight UIInterfaceOrientationLandscapeLeft";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 1.0.2;
 				PRODUCT_BUNDLE_IDENTIFIER = sarah.com.Macro01;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -445,25 +736,29 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"Macro01/Preview Content\"";
-				DEVELOPMENT_TEAM = V29KX432S7;
+				DEVELOPMENT_ASSET_PATHS = Macro01/Resources/Assets.xcassets;
+				DEVELOPMENT_TEAM = 76KNCX7A8A;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_FILE = Macro01/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = Folkard;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.card-games";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationLandscapeRight UIInterfaceOrientationLandscapeLeft";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 1.0.2;
 				PRODUCT_BUNDLE_IDENTIFIER = sarah.com.Macro01;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
