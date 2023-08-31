@@ -13,19 +13,18 @@ extension EnvironmentValues {
 }
 
 struct MainView: View {
-    @StateObject var dificultyViewModel = DificultyViewModel()
     var body: some View {
-        
-        
         
         NavigationStack{
             VStack {
                 FirstView()
-                    .environmentObject(dificultyViewModel)
-    
             }
         }
     }
 }
 
-
+//struct ContentView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        MainView()
+//    }
+//}

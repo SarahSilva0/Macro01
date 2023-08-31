@@ -43,7 +43,7 @@ struct PolicyAndPrivacyView: View {
                     VStack {
                         
                         HStack  {
-                            Text("Política e Privacidade".localizedLanguage())
+                            Text("Política e Privacidade")
                                 .font(.system(size: 20))
                                 .foregroundColor(.black)
                                 .fontWeight(.bold)
@@ -64,7 +64,7 @@ struct PolicyAndPrivacyView: View {
                              
                              E-mail:
                              folkardbattlecard@gmail.com
-                             """.localizedLanguage()
+                             """
                             )
                                   .font(Font.custom("SF Pro", size: 12))
                                   .foregroundColor(.black)
