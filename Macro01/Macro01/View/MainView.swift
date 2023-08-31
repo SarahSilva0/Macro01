@@ -15,9 +15,12 @@ extension EnvironmentValues {
 struct MainView: View {
     var body: some View {
         
+        @StateObject var dificultyViewModel = DificultyViewModel()
+        
         NavigationStack{
             VStack {
                 FirstView()
+                    .environmentObject(dificultyViewModel)
     
             }
         }

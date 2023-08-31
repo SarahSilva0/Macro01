@@ -12,9 +12,11 @@ struct FirstView: View {
     @State private var isTutorialSheetPresented = false
     @State private var showDificultyView = false
     
-    @AppStorage("Raia") var raiaWin: Bool = false
-    @AppStorage("Boto") var botoWin: Bool = false
-    @AppStorage("Cuca") var cucaWin: Bool = false
+//    @AppStorage("Raia") var raiaWin: Bool = false
+//    @AppStorage("Boto") var botoWin: Bool = false
+//    @AppStorage("Cuca") var cucaWin: Bool = false
+    
+    @EnvironmentObject var dificultyViewModel: DificultyViewModel
     
     var body: some View {
         GeometryReader { geometry in
@@ -86,6 +88,7 @@ struct FirstView: View {
                         }
                         .sheet(isPresented: $showDificultyView) {
                             DificultyView_(combatViewModel: CombatViewModel())
+                                .environmentObject(dificultyViewModel)
                         }
                     }
                 }
@@ -113,7 +116,13 @@ struct FirstView: View {
         }
         .navigationBarHidden(true)
         .sheet(isPresented: $showGaleria){
-            GaleriaSaciView(raiaWin: $raiaWin, botoWin: $botoWin, cucaWin: $cucaWin, isPresented: $showGaleria)
+            GaleriaSaciView(
+//                   raiaWin: $raiaWin,
+//                   botoWin: $botoWin,
+//                   cucaWin: $cucaWin,
+                   isPresented: $showGaleria
+               )
+            .environmentObject(dificultyViewModel)
             }
         }
         

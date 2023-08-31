@@ -13,10 +13,9 @@ struct DificultyView_: View {
     @ObservedObject var combatViewModel: CombatViewModel
     @Environment(\.presentations) private var presentations
     @Environment(\.presentationMode) var presentationMode
+
     
-    @AppStorage("Raia") var raiaWin: Bool = false
-    @AppStorage("Boto") var botoWin: Bool = false
-    @AppStorage("Cuca") var cucaWin: Bool = false
+    @EnvironmentObject var dificultyViewModel: DificultyViewModel
     
     var body: some View {
         GeometryReader { geo in
@@ -69,14 +68,14 @@ struct DificultyView_: View {
                                 
                             } label: {
                                 botoImage()
-                            }.disabled(!raiaWin)
+                            }.disabled(!dificultyViewModel.raiaWin)
                             
                             Button {
                                cucaButton()
                                 
                             } label: {
                                 cucaImage()
-                            }.disabled(!botoWin)
+                            }.disabled(!dificultyViewModel.botoWin)
 
 
                             
@@ -91,7 +90,7 @@ struct DificultyView_: View {
             combatViewModel.startCountdown()
             combatViewModel.gameReset()
         }){
-            CombatView(combatViewModel: combatViewModel, raiaWin: $raiaWin, botoWin: $botoWin, cucaWin: $cucaWin)
+            CombatView(combatViewModel: combatViewModel, raiaWin: dificultyViewModel.$raiaWin, botoWin: dificultyViewModel.$botoWin, cucaWin: dificultyViewModel.$cucaWin)
                 .environment(\.presentations, presentations + [$shouldNavigate])
         }
     }
@@ -129,17 +128,17 @@ extension DificultyView_{
 extension DificultyView_{
     @ViewBuilder
     func botoImage() -> some View {
-        if raiaWin == false {
+        if dificultyViewModel.raiaWin == false {
             Image(combatViewModel.BotoDiff.imageInitial)
                 .resizable()
                 .aspectRatio(contentMode: .fit)
         }
-        else if raiaWin == true && botoWin == false {
+        else if dificultyViewModel.raiaWin == true && dificultyViewModel.botoWin == false {
             Image(combatViewModel.BotoDiff.imageSillhoute)
                 .resizable()
                 .aspectRatio(contentMode: .fit)
         }
-        else if botoWin == true {
+        else if dificultyViewModel.botoWin == true {
             Image(combatViewModel.BotoDiff.imageWin)
                 .resizable()
                 .aspectRatio(contentMode: .fit)
@@ -147,7 +146,7 @@ extension DificultyView_{
     }
     @ViewBuilder
     func iaraImage() -> some View {
-        if raiaWin == true {
+        if dificultyViewModel.raiaWin == true {
             Image("charWinIara")
                 .resizable()
                 .aspectRatio(contentMode: .fit)
@@ -160,18 +159,18 @@ extension DificultyView_{
     }
     @ViewBuilder
     func cucaImage() -> some View{
-        if botoWin == false{
+        if dificultyViewModel.botoWin == false{
             Image("charBlockCuca")
                 .resizable()
                 .aspectRatio(contentMode: .fit)
         }
-        else if botoWin == true && cucaWin == false {
+        else if dificultyViewModel.botoWin == true && dificultyViewModel.cucaWin == false {
             Image("charCuca")
                 .resizable()
                 .aspectRatio(contentMode: .fit)
         }
         
-        else if cucaWin == true{
+        else if dificultyViewModel.cucaWin == true{
             Image("charWinCuca")
                 .resizable()
                 .aspectRatio(contentMode: .fit)

@@ -9,15 +9,14 @@ import Foundation
 import SwiftUI
 
 struct GaleriaSaciView: View {
-        
-    @Binding var raiaWin: Bool
-    @Binding var botoWin: Bool
-    @Binding var cucaWin: Bool
+    
     
     @State private var count = 0
     
     @Binding var isPresented: Bool
     @ScaledMetric(relativeTo: .body) var buttonSize: CGFloat = 50
+    
+    @EnvironmentObject var dificultyViewModel: DificultyViewModel
    
     @State var Images: [String] = ["saci1PT".localizedLanguage(),
                                    "saci2PT".localizedLanguage(),
@@ -49,14 +48,14 @@ struct GaleriaSaciView: View {
             }
         }
         .onAppear {
-                        if raiaWin {
+            if dificultyViewModel.raiaWin {
                            Images.append(contentsOf: [
                                "raia1PT".localizedLanguage(),
                                "raia2PT".localizedLanguage(),
                                "raia3PT".localizedLanguage()
                            ])
                    }
-            print(raiaWin)
+            print(dificultyViewModel.raiaWin)
                }
     }
 }
