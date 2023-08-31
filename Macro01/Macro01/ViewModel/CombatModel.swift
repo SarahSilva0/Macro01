@@ -63,10 +63,14 @@ class CombatViewModel: ObservableObject {
         
         if player1.winTurno == 3{
             self.gameEnd()
+            timer?.invalidate()
+            isCountdownVisible = false
             return
         }
         else if player2.winTurno == 3 {
             self.gameEnd()
+            timer?.invalidate()
+            isCountdownVisible = false
             return
         }
         
@@ -165,6 +169,7 @@ class CombatViewModel: ObservableObject {
         timer?.invalidate()
         self.turn = 0
         self.countdown = 3
+        self.isCountdownVisible = true
         self.player1.winTurno = 0
         self.player2.winTurno = 0
         self.player1.mana = 1
@@ -186,6 +191,10 @@ class CombatViewModel: ObservableObject {
         } else {
             return "Empate"
         }
+    }
+    
+    func player1Won() -> Bool {
+        return player1.winTurno > player2.winTurno
     }
     
     //AQUI É OQ ACONTECE SE O PLAYER1 GANHAR O LEVEL.
@@ -274,6 +283,14 @@ class CombatViewModel: ObservableObject {
         default:
             return ["Empate!", ""]
         }
+    }
+    
+    func timeAndSheetIsVisible() -> Bool {
+        return !isCountdownVisible && !isSheetVisible
+    }
+    
+    func checkSomeoneWon() -> Bool {
+        return player1.winTurno == 3 || player2.winTurno == 3
     }
     
     private func handleAttackVsAttack() {
@@ -365,6 +382,8 @@ class CombatViewModel: ObservableObject {
     private func player2RechargeMana() {
         player2.mana += 1
     }
+    
+    
     
 }
 

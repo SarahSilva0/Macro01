@@ -13,10 +13,8 @@ struct CombatView: View {
     @ObservedObject var combatViewModel: CombatViewModel
     @Environment(\.presentationMode) var presentationMode
     @Environment(\.presentations) var presentations
+    @Environment(\.dismiss) var dismiss
     @Binding var raiaWin: Bool
-    @Binding var botoWin: Bool
-    @Binding var cucaWin: Bool
-
 
     
     var body: some View {
@@ -25,15 +23,39 @@ struct CombatView: View {
                 .resizable()
                 .aspectRatio(contentMode: .fill)
                 .ignoresSafeArea()
-            VStack{
-                if !combatViewModel.isCountdownVisible && !combatViewModel.isSheetVisible {
-                    if combatViewModel.player1.winTurno == 3 || combatViewModel.player2.winTurno == 3 {
-                        WinnerText(text: combatViewModel.checkGameWinner()[0], size: 50, paddingSize: 0)
-                        WinnerText(text: combatViewModel.checkGameWinner()[1], size: 15, paddingSize: 50)
+            VStack {
+                if combatViewModel.timeAndSheetIsVisible(){
+                    //Vitoria e derrota > Exibido quando ganha ou perde a partida.
+                    if combatViewModel.checkSomeoneWon() {
+                        WinnerText(text: combatViewModel.checkGameWinner()[0], size: 50)
+                            .padding(.top, 30)
+                        WinnerText(text: combatViewModel.checkGameWinner()[1], size: 15)
+                        if combatViewModel.player1Won() {
+                            ButtonPlayAgain(action: {
+                                raiaWin = combatViewModel.RaiaDiff.winLevel
+                                combatViewModel.gameReset()
+                                dismiss()
+                            }, btnName: "Sair")
+                        }
+                        else {
+                            HStack {
+                                ButtonPlayAgain(action: {
+                                    combatViewModel.gameReset()
+                                    dismiss()
+                                }, btnName: "Sair")
+                                Spacer()
+                                    .frame(width: 30)
+                                ButtonPlayAgain(action: {
+                                    combatViewModel.gameReset()
+                                    combatViewModel.startCountdown()
+                                }, btnName: "Jogar Novamente")
+                            }
+                        }
                     }
+                    //Parabens, Empate e Cuidado > Exibido a cada jogada de cartas
                     else {
-                        WinnerText(text: combatViewModel.checkPlayerVictory()[0], size: 50, paddingSize: 0)
-                        WinnerText(text: combatViewModel.checkPlayerVictory()[1], size: 15, paddingSize: 50)
+                        WinnerText(text: combatViewModel.checkPlayerVictory()[0], size: 50)
+                        WinnerText(text: combatViewModel.checkPlayerVictory()[1], size: 15)
                     }
                 }
             }
@@ -89,7 +111,9 @@ struct CombatView: View {
                     //MARK: AS 3 CARTAS DO PLAYER 1 NA PARTE DEBAIXO
                     HStack {
                         ForEach(combatViewModel.player1.cards, id: \.self) { card in
-                            CardComponentMainScreen(image: Image(card.name))
+                            if !combatViewModel.checkSomeoneWon() {
+                                CardComponentMainScreen(image: Image(card.name))
+                            }
                         }
                         .frame(width: geometry.size.width * 0.13, height: geometry.size.height * 0.1)
                         
@@ -130,7 +154,7 @@ struct CombatView: View {
                         HStack {
                             //MARK: PERSONAGEM PLAYER 1
                             VStack {
-                                Character(character: combatViewModel.player1.name)
+                                Character(character: "saciCut")
                                     .frame(width: geometry.size.width * 0.19, height: geometry.size.height * 0.32)
                             }
                             
@@ -138,7 +162,7 @@ struct CombatView: View {
                             
                             //MARK: PERSONAGEM PLAYER 2
                             VStack {
-                                Character(character: combatViewModel.player2.name)
+                                Character(character: "iaraCut")
                                     .frame(width: geometry.size.width * 0.19, height: geometry.size.height * 0.32)
                             }
                         }
@@ -155,24 +179,16 @@ struct CombatView: View {
         }) {
             SheetView(combatViewModel: combatViewModel, isSheetVisible: $combatViewModel.isSheetVisible, countdownSheet: $combatViewModel.countdownSheet).background(ClearBackgroundView())
         }
-        .alert(isPresented: $combatViewModel.isGameEndAlertPresented) {
-            Alert(title: Text("Fim do Jogo"),
-                  message: Text("\(combatViewModel.getScore())"),
-                  dismissButton: .default(Text("OK"), action: {
-                combatViewModel.gameReset()
-                if combatViewModel.RaiaDiff.winLevel == true{
-                    raiaWin = combatViewModel.RaiaDiff.winLevel
-                }
-                if combatViewModel.BotoDiff.winLevel == true {
-                    botoWin = combatViewModel.BotoDiff.winLevel
-                }
-                if combatViewModel.CucaDiff.winLevel == true {
-                    cucaWin = combatViewModel.CucaDiff.winLevel
-                }
-                combatViewModel.isGameEndAlertPresented = false
-                presentationMode.wrappedValue.dismiss()
-            }))
-        }
+//        .alert(isPresented: $combatViewModel.isGameEndAlertPresented) {
+//            Alert(title: Text("Fim do Jogo"),
+//                  message: Text("\(combatViewModel.getScore())"),
+//                  dismissButton: .default(Text("OK"), action: {
+//                combatViewModel.gameReset()
+//                raiaWin = combatViewModel.RaiaDiff.winLevel
+//                combatViewModel.isGameEndAlertPresented = false
+//                presentationMode.wrappedValue.dismiss()
+//            }))
+//        }
         .navigationBarHidden(true)
     }
 }
