@@ -16,7 +16,7 @@ struct DificultyView_: View {
     @AppStorage("Raia") var raiaWin: Bool = false
     @AppStorage("Boto") var botoWin: Bool = false
     @AppStorage("Cuca") var cucaWin: Bool = false
-    
+    let sound = SoundManager.instance
 
     
     var body: some View {
@@ -60,21 +60,21 @@ struct DificultyView_: View {
                         HStack(spacing: 20){
                             Button {
                                 iaraButton()
-                                
+                                sound.playSound(music: .iaraSong)
                             } label: {
                                iaraImage()
                             }
                         
                             Button {
-                               botoButton()
-                                
+                                botoButton()
+                                sound.playSound(music: .botoSong)
                             } label: {
                                 botoImage()
                             }.disabled(!raiaWin)
                             
                             Button {
-                               cucaButton()
-                                
+                                cucaButton()
+                                sound.playSound(music: .cucaSong)
                             } label: {
                                 cucaImage()
                             }.disabled(!botoWin)
@@ -91,6 +91,7 @@ struct DificultyView_: View {
         }.sheet(isPresented: $shouldNavigate, onDismiss: {
             combatViewModel.startCountdown()
             combatViewModel.gameReset()
+            sound.playSound(music: .lobbyMusic)
         }){
             CombatView(combatViewModel: combatViewModel, raiaWin: $raiaWin, botoWin: $botoWin, cucaWin: $cucaWin)
                 .environment(\.presentations, presentations + [$shouldNavigate])

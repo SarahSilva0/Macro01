@@ -10,6 +10,7 @@ import SwiftUI
 struct PolicyAndPrivacyView: View {
     @ScaledMetric(relativeTo: .body) var buttonSize: CGFloat = 50
     @Binding var isPresented: Bool
+    private let sound = SoundManager.instance
     
     var body: some View {
         GeometryReader { geometry in
@@ -20,6 +21,7 @@ struct PolicyAndPrivacyView: View {
                 VStack {
                     HStack {
                         ButtonGenRound(action: {
+                            sound.buttonSound()
                             withAnimation {
                                 isPresented = false
                             }

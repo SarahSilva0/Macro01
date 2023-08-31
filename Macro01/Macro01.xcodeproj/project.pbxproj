@@ -10,6 +10,13 @@
 		1905A5342A1E8FB40010D8A9 /* TextBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1905A5332A1E8FB40010D8A9 /* TextBox.swift */; };
 		1905A5362A1E961D0010D8A9 /* SquareGallery.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1905A5352A1E961D0010D8A9 /* SquareGallery.swift */; };
 		193567A22A1E854200C7D34B /* Character.swift in Sources */ = {isa = PBXBuildFile; fileRef = 193567A12A1E854200C7D34B /* Character.swift */; };
+		193A2BAB2AA10CC1003BA969 /* SoundManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 193A2BAA2AA10CC1003BA969 /* SoundManager.swift */; };
+		193A2BB22AA10E5F003BA969 /* botoSong.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 193A2BAC2AA10E5F003BA969 /* botoSong.mp3 */; };
+		193A2BB32AA10E5F003BA969 /* lobbyMusic.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 193A2BAD2AA10E5F003BA969 /* lobbyMusic.mp3 */; };
+		193A2BB42AA10E5F003BA969 /* cucaSong.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 193A2BAE2AA10E5F003BA969 /* cucaSong.mp3 */; };
+		193A2BB52AA10E5F003BA969 /* buttonClick.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 193A2BAF2AA10E5F003BA969 /* buttonClick.mp3 */; };
+		193A2BB62AA10E5F003BA969 /* tutorial.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 193A2BB02AA10E5F003BA969 /* tutorial.mp3 */; };
+		193A2BB72AA10E5F003BA969 /* iaraSong.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 193A2BB12AA10E5F003BA969 /* iaraSong.mp3 */; };
 		19A41CB52A3A443D00C2D9A7 /* TutorialView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19A41CB42A3A443D00C2D9A7 /* TutorialView.swift */; };
 		19FE502C2A818FCA0064BA54 /* WinnerText.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19FE502B2A818FCA0064BA54 /* WinnerText.swift */; };
 		EB067CA02A6EFA3F003F35F6 /* CooperBlack-StdItal.otf in Resources */ = {isa = PBXBuildFile; fileRef = EB067C9F2A6EFA3F003F35F6 /* CooperBlack-StdItal.otf */; };
@@ -78,6 +85,13 @@
 		1905A5332A1E8FB40010D8A9 /* TextBox.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextBox.swift; sourceTree = "<group>"; };
 		1905A5352A1E961D0010D8A9 /* SquareGallery.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SquareGallery.swift; sourceTree = "<group>"; };
 		193567A12A1E854200C7D34B /* Character.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Character.swift; sourceTree = "<group>"; };
+		193A2BAA2AA10CC1003BA969 /* SoundManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundManager.swift; sourceTree = "<group>"; };
+		193A2BAC2AA10E5F003BA969 /* botoSong.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = botoSong.mp3; sourceTree = "<group>"; };
+		193A2BAD2AA10E5F003BA969 /* lobbyMusic.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = lobbyMusic.mp3; sourceTree = "<group>"; };
+		193A2BAE2AA10E5F003BA969 /* cucaSong.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = cucaSong.mp3; sourceTree = "<group>"; };
+		193A2BAF2AA10E5F003BA969 /* buttonClick.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = buttonClick.mp3; sourceTree = "<group>"; };
+		193A2BB02AA10E5F003BA969 /* tutorial.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = tutorial.mp3; sourceTree = "<group>"; };
+		193A2BB12AA10E5F003BA969 /* iaraSong.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = iaraSong.mp3; sourceTree = "<group>"; };
 		19A41CB42A3A443D00C2D9A7 /* TutorialView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TutorialView.swift; sourceTree = "<group>"; };
 		19FE502B2A818FCA0064BA54 /* WinnerText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WinnerText.swift; sourceTree = "<group>"; };
 		EB067C9F2A6EFA3F003F35F6 /* CooperBlack-StdItal.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "CooperBlack-StdItal.otf"; sourceTree = "<group>"; };
@@ -156,9 +170,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		193A2BA92AA1097C003BA969 /* Audios */ = {
+			isa = PBXGroup;
+			children = (
+				193A2BAC2AA10E5F003BA969 /* botoSong.mp3 */,
+				193A2BAF2AA10E5F003BA969 /* buttonClick.mp3 */,
+				193A2BAE2AA10E5F003BA969 /* cucaSong.mp3 */,
+				193A2BB12AA10E5F003BA969 /* iaraSong.mp3 */,
+				193A2BAD2AA10E5F003BA969 /* lobbyMusic.mp3 */,
+				193A2BB02AA10E5F003BA969 /* tutorial.mp3 */,
+			);
+			path = Audios;
+			sourceTree = "<group>";
+		};
 		EB067C982A6EF576003F35F6 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				193A2BA92AA1097C003BA969 /* Audios */,
 				EB1CFB3C2A86B08700BEB908 /* Preview Content.xcassets */,
 				FA6F185E2A1D302000E76127 /* Assets.xcassets */,
 				EB067C9A2A6EF5B4003F35F6 /* Font */,
@@ -190,6 +218,7 @@
 				FA5BEDA22A2E2464001B0C07 /* CardsModel.swift */,
 				FAF5E95F2A2814CB00155C76 /* CombatModel.swift */,
 				FAA898D92A3BAA740052B998 /* DifficultyModel.swift */,
+				193A2BAA2AA10CC1003BA969 /* SoundManager.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -417,7 +446,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				EB067CA02A6EFA3F003F35F6 /* CooperBlack-StdItal.otf in Resources */,
+				193A2BB22AA10E5F003BA969 /* botoSong.mp3 in Resources */,
+				193A2BB32AA10E5F003BA969 /* lobbyMusic.mp3 in Resources */,
+				193A2BB42AA10E5F003BA969 /* cucaSong.mp3 in Resources */,
+				193A2BB52AA10E5F003BA969 /* buttonClick.mp3 in Resources */,
 				EB067CA22A6EFDF8003F35F6 /* cooper-std-black.otf in Resources */,
+				193A2BB72AA10E5F003BA969 /* iaraSong.mp3 in Resources */,
+				193A2BB62AA10E5F003BA969 /* tutorial.mp3 in Resources */,
 				FA6F185F2A1D302000E76127 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -453,6 +488,7 @@
 				EB2BC4E92A374A28008ACFD2 /* CharacterCircle.swift in Sources */,
 				FAD5EE632A75224E004A4C78 /* GaleriaSaciView.swift in Sources */,
 				EBF134092A23FA7F000FA55E /* PlayerModel.swift in Sources */,
+				193A2BAB2AA10CC1003BA969 /* SoundManager.swift in Sources */,
 				FA6F185A2A1D301F00E76127 /* MainView.swift in Sources */,
 				FAFF07C72A251E4D00D5BA2B /* FirstView .swift in Sources */,
 				EBC688442A69BB7D0072E706 /* TransparentConfigurationButton.swift in Sources */,

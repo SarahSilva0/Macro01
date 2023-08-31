@@ -15,6 +15,7 @@ struct ConfigurationCardView: View {
     @State private var showPolicyAndPrivacy = false
     @State private var showTutorial = false
     
+    private let sound = SoundManager.instance
     
     var body: some View {
         GeometryReader { geometry in
@@ -26,6 +27,7 @@ struct ConfigurationCardView: View {
                 VStack {
                     HStack {
                         ButtonGenRound(action: {
+                            sound.buttonSound()
                             withAnimation {
                                 isPresented = false
                             }
@@ -71,9 +73,11 @@ struct ConfigurationCardView: View {
                         
                         VStack {
                             TransparentConfigurationButton(text: "Manual", icon: "book") {
+                                sound.buttonSound()
                                 showTutorial = true
                             }
                             TransparentConfigurationButton(text: "Sobre", icon: "info") {
+                                sound.buttonSound()
                                 showAbout = true
                             }
                             
@@ -82,6 +86,8 @@ struct ConfigurationCardView: View {
 //                            }
                             
                             TransparentConfigurationButton(text: "Políticas de Privacidade", icon: "info") {
+                                sound.buttonSound()
+                                
                                 showPolicyAndPrivacy = true
                             }
                         }

@@ -4,6 +4,7 @@ struct FirstView: View {
     @ScaledMetric(relativeTo: .body) var buttonSize: CGFloat = 50
     @State private var showConfiguration = false
     @State private var showGaleria = false
+    private let sound = SoundManager.instance
         
     @AppStorage("tutorial") var isActiveTutorial: Bool = true
     
@@ -34,6 +35,7 @@ struct FirstView: View {
                                 withAnimation {
                                     showConfiguration = true
                                 }
+                                SoundManager.instance.buttonSound()
                             },
                                            image: "buttonConf",
                                            foregroundColor: Color(hex: "FFF2D9"),
@@ -42,6 +44,7 @@ struct FirstView: View {
                             
                             ButtonGenRound(action: {
                                 showGaleria = true
+                                SoundManager.instance.buttonSound()
                             },
                                            image: "Galeria",
                                            foregroundColor: Color(hex: "FFF2D9"),
@@ -64,6 +67,7 @@ struct FirstView: View {
                             if isActiveTutorial == false {
                                 showDificultyView = true
                             }
+                            SoundManager.instance.buttonSound()
                         }) {
                             Text("Jogar")
                                 .font(Font.custom("CooperBlackStd", size: 20))
@@ -110,6 +114,9 @@ struct FirstView: View {
         .navigationBarHidden(true)
         .sheet(isPresented: $showGaleria){
             GaleriaSaciView(isPresented: $showGaleria)
+        }
+        .onAppear{
+            sound.playSound(music: .lobbyMusic)
         }
     }
    

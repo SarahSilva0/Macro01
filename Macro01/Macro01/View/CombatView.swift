@@ -16,8 +16,7 @@ struct CombatView: View {
     @Binding var raiaWin: Bool
     @Binding var botoWin: Bool
     @Binding var cucaWin: Bool
-
-
+    let sound = SoundManager.instance
     
     var body: some View {
         ZStack {
@@ -28,12 +27,12 @@ struct CombatView: View {
             VStack{
                 if !combatViewModel.isCountdownVisible && !combatViewModel.isSheetVisible {
                     if combatViewModel.player1.winTurno == 3 || combatViewModel.player2.winTurno == 3 {
-                        WinnerText(text: combatViewModel.checkGameWinner()[0], size: 50, paddingSize: 0)
-                        WinnerText(text: combatViewModel.checkGameWinner()[1], size: 15, paddingSize: 50)
+                        WinnerText(text: combatViewModel.checkGameWinner()[0], size: 50)
+                        WinnerText(text: combatViewModel.checkGameWinner()[1], size: 15)
                     }
                     else {
-                        WinnerText(text: combatViewModel.checkPlayerVictory()[0], size: 50, paddingSize: 0)
-                        WinnerText(text: combatViewModel.checkPlayerVictory()[1], size: 15, paddingSize: 50)
+                        WinnerText(text: combatViewModel.checkPlayerVictory()[0], size: 50)
+                        WinnerText(text: combatViewModel.checkPlayerVictory()[1], size: 15)
                     }
                 }
             }
@@ -107,6 +106,7 @@ struct CombatView: View {
                         //MARK: BOTÃO DE PAUSE
                         HStack{
                             ButtonGenRound(action: {
+                                sound.buttonSound()
                                 print("pause")
                                 combatViewModel.isPaused = true
                                 print(combatViewModel.isPaused)

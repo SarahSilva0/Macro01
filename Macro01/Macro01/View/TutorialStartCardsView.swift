@@ -2,17 +2,14 @@
 import SwiftUI
 
 struct TutorialStartCardsView: View {
-    
+
     var tutorialData = TutorialData()
-   
     @State private var currentIndex = 0
     @State private var shouldNavigate = false
-    
     @Binding var isActiveTutorial: Bool
     @Binding var isTutorialSheetPresented: Bool
     @Binding var showDificultyView: Bool
-
-    
+    private let sound = SoundManager.instance
     
     @Environment(\.presentationMode) var presentationMode
 
@@ -40,7 +37,7 @@ struct TutorialStartCardsView: View {
                         .ignoresSafeArea()
                         
                         Spacer()
-
+                        
                         HStack (spacing: 0) {
                             TutorialDialogBox(
                                 characterName: tutorialData.tutorialData[currentIndex].charactersName,
@@ -52,11 +49,13 @@ struct TutorialStartCardsView: View {
                                 VStack {
                                     ButtonComponentImage(action: {
                                         decreaseIndex()
+                                        sound.buttonSound()
                                     }, image: "NextLeft")
                                     .opacity(currentIndex > 0 ? 1.0 : 0.0)
                                     
                                     ButtonComponentImage(action: {
                                         increaseIndex()
+                                        sound.buttonSound()
                                     }, image: "NextRight")
                                 }
                             }
@@ -73,6 +72,12 @@ struct TutorialStartCardsView: View {
         }
         .sheet(isPresented: $shouldNavigate) {
             DificultyView_(combatViewModel: CombatViewModel())
+        }
+        .onAppear{
+            sound.playSound(music: .tutorial)
+        }
+        .onDisappear {
+            sound.playSound(music: .lobbyMusic)
         }
     }
     
