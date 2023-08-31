@@ -76,9 +76,6 @@ struct DificultyView_: View {
                             } label: {
                                 cucaImage()
                             }.disabled(!dificultyViewModel.botoWin)
-
-
-                            
                         }
                     }
                     .frame(width: geo.size.width * 0.6)
