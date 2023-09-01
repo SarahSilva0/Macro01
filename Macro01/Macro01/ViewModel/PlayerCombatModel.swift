@@ -56,8 +56,8 @@ class PlayerCombat: ObservableObject {
         
         for (cardType, probability) in possibleCards {
             if shouldSkipCard(cardType: cardType, count: getCount(for: cardType, attackCount: attackCount, rechargeCount: rechargeCount, defenseCount: defenseCount)) {
-                if attackCount == 2 && mana < 2 {
-                    print("MANAAAAAAA")
+                
+                if attackCount == 2 && mana < 2  {
                     switch randomValue {
                     case 0..<0.6:
                         print("RECARGA") // 80% de chance de cair recarga
@@ -68,6 +68,25 @@ class PlayerCombat: ObservableObject {
                         return Card(type: .defense, name: "defense\(bot)")
                     }
                 }
+                
+                if defenseCount >= 2 && mana < 2 {
+                    print("DEFESAAAAAA")
+                    switch randomValue {
+                    case 0..<0.6:
+                        print("RECARGA") // 60% de chance de cair recarga
+                        return Card(type: .attack, name: "attack\(bot)")
+                        
+                    default:
+                        print("RECARGA") // 40% de chance de cair defesa
+                        return Card(type: .recharge, name: "recharge\(bot)")
+                    }
+                }
+                
+                if defenseCount >= 2 && mana >= 2 {
+                    print("ATAQUEEEE")
+                    return Card(type: .attack, name: "attack\(bot)")
+                }
+                
                 cumulativeProbability += 0.0
                 
             } else {
