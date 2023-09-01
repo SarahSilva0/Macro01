@@ -14,6 +14,7 @@ struct PausedView: View {
     @Binding var isPresented: Bool
     @ObservedObject var combatViewModel: CombatViewModel
     @Environment(\.presentations) private var presentations
+    private let sound = SoundManager.instance
 
     var body: some View {
         GeometryReader { geometry in
@@ -32,6 +33,7 @@ struct PausedView: View {
                             HStack  {
                                 Spacer()
                                 ButtonGenRound(action: {
+                                    sound.buttonSound()
                                     print("SOM")
                                 },
                                                image: "",
@@ -49,12 +51,14 @@ struct PausedView: View {
                         VStack {
                             TransparentConfigurationButton(text: "Cancelar".localizedLanguage(), icon: "buttonCancel") {
                                 combatViewModel.isPaused = false
+                                sound.buttonSound()
                                 if !combatViewModel.timer!.isValid{
                                     combatViewModel.startTimer()
                                     print("PSUDSFPPP")
                                 }
                             }
                             TransparentConfigurationButton(text: "Sair", icon: "buttonExit") {
+                                sound.buttonSound()
                                 combatViewModel.gameReset()
                                 presentations.forEach{
                                     $0.wrappedValue = false

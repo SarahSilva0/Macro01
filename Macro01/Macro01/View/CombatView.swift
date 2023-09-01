@@ -17,7 +17,7 @@ struct CombatView: View {
     @Binding var raiaWin: Bool
     @Binding var botoWin: Bool
     @Binding var cucaWin: Bool
-
+    private let sound = SoundManager.instance
     
     
     var body: some View {
@@ -44,6 +44,7 @@ struct CombatView: View {
                                 if combatViewModel.CucaDiff.winLevel == true {
                                     cucaWin = combatViewModel.CucaDiff.winLevel
                                 }
+                                sound.buttonSound()
                                 combatViewModel.gameReset()
                                 dismiss()
                             }, btnName: "Sair")
@@ -51,12 +52,14 @@ struct CombatView: View {
                         else {
                             HStack {
                                 ButtonPlayAgain(action: {
+                                    sound.buttonSound()
                                     combatViewModel.gameReset()
                                     dismiss()
                                 }, btnName: "Sair")
                                 Spacer()
                                     .frame(width: 30)
                                 ButtonPlayAgain(action: {
+                                    sound.buttonSound()
                                     combatViewModel.gameReset()
                                     combatViewModel.startCountdown()
                                 }, btnName: "Jogar Novamente")
@@ -142,6 +145,7 @@ struct CombatView: View {
                         //MARK: BOTÃO DE PAUSE
                         HStack{
                             ButtonGenRound(action: {
+                                sound.buttonSound()
                                 print("pause")
                                 combatViewModel.isPaused = true
                                 print(combatViewModel.isPaused)

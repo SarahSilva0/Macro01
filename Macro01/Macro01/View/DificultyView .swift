@@ -13,7 +13,8 @@ struct DificultyView_: View {
     @ObservedObject var combatViewModel: CombatViewModel
     @Environment(\.presentations) private var presentations
     @Environment(\.presentationMode) var presentationMode
-
+    private let sound = SoundManager.instance
+    
     
     @EnvironmentObject var dificultyViewModel: DificultyViewModel
     
@@ -29,6 +30,7 @@ struct DificultyView_: View {
                 VStack {
                     HStack {
                         ButtonGenRound(action: {
+                            sound.buttonSound()
                             withAnimation {
                                 self.presentationMode.wrappedValue.dismiss()
                             }
@@ -58,21 +60,21 @@ struct DificultyView_: View {
                         HStack(spacing: 20){
                             Button {
                                 iaraButton()
-                                
+                                sound.playSound(music: .iaraSong)
                             } label: {
                                iaraImage()
                             }
                         
                             Button {
-                               botoButton()
-                                
+                                botoButton()
+                                sound.playSound(music: .botoSong)
                             } label: {
                                 botoImage()
                             }.disabled(!dificultyViewModel.raiaWin)
                             
                             Button {
-                               cucaButton()
-                                
+                                cucaButton()
+                                sound.playSound(music: .cucaSong)
                             } label: {
                                 cucaImage()
                             }.disabled(!dificultyViewModel.botoWin)

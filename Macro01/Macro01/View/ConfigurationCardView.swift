@@ -15,6 +15,7 @@ struct ConfigurationCardView: View {
     @State private var showPolicyAndPrivacy = false
     @State private var showTutorial = false
     
+    private let sound = SoundManager.instance
     
     var body: some View {
         GeometryReader { geometry in
@@ -26,6 +27,7 @@ struct ConfigurationCardView: View {
                 VStack {
                     HStack {
                         ButtonGenRound(action: {
+                            sound.buttonSound()
                             withAnimation {
                                 isPresented = false
                             }
@@ -56,6 +58,7 @@ struct ConfigurationCardView: View {
                             HStack  {
                                 Spacer()
                                 ButtonGenRound(action: {
+                                    sound.buttonSound()
                                 },
                                                image: "",
                                                foregroundColor: (Color(hex: "FFF2D9")),
@@ -71,9 +74,11 @@ struct ConfigurationCardView: View {
                         
                         VStack {
                             TransparentConfigurationButton(text: "Manual".localizedLanguage(), icon: "book") {
+                                sound.buttonSound()
                                 showTutorial = true
                             }
                             TransparentConfigurationButton(text: "Sobre".localizedLanguage(), icon: "info") {
+                                sound.buttonSound()
                                 showAbout = true
                             }
                             
@@ -82,6 +87,7 @@ struct ConfigurationCardView: View {
 //                            }
                             
                             TransparentConfigurationButton(text: "Políticas de Privacidade".localizedLanguage(), icon: "info") {
+                                sound.buttonSound()
                                 showPolicyAndPrivacy = true
                             }
                         }

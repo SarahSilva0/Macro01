@@ -9,6 +9,13 @@
 /* Begin PBXBuildFile section */
 		1905A5342A1E8FB40010D8A9 /* TextBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1905A5332A1E8FB40010D8A9 /* TextBox.swift */; };
 		1905A5362A1E961D0010D8A9 /* SquareGallery.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1905A5352A1E961D0010D8A9 /* SquareGallery.swift */; };
+		19298EC12AA2584200CA70CC /* iaraSong.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 19298EBB2AA2584100CA70CC /* iaraSong.mp3 */; };
+		19298EC22AA2584200CA70CC /* botoSong.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 19298EBC2AA2584100CA70CC /* botoSong.mp3 */; };
+		19298EC32AA2584200CA70CC /* CucaSong.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 19298EBD2AA2584100CA70CC /* CucaSong.mp3 */; };
+		19298EC42AA2584200CA70CC /* lobbyMusic.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 19298EBE2AA2584100CA70CC /* lobbyMusic.mp3 */; };
+		19298EC52AA2584200CA70CC /* tutorial.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 19298EBF2AA2584200CA70CC /* tutorial.mp3 */; };
+		19298EC62AA2584200CA70CC /* buttonClick.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 19298EC02AA2584200CA70CC /* buttonClick.mp3 */; };
+		19298EC92AA2587200CA70CC /* SoundManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19298EC82AA2587200CA70CC /* SoundManager.swift */; };
 		193567A22A1E854200C7D34B /* Character.swift in Sources */ = {isa = PBXBuildFile; fileRef = 193567A12A1E854200C7D34B /* Character.swift */; };
 		197AB5512A953D2400ED7295 /* ButtonPlayAgain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 197AB5502A953D2400ED7295 /* ButtonPlayAgain.swift */; };
 		19A41CB52A3A443D00C2D9A7 /* TutorialView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19A41CB42A3A443D00C2D9A7 /* TutorialView.swift */; };
@@ -83,6 +90,13 @@
 /* Begin PBXFileReference section */
 		1905A5332A1E8FB40010D8A9 /* TextBox.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextBox.swift; sourceTree = "<group>"; };
 		1905A5352A1E961D0010D8A9 /* SquareGallery.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SquareGallery.swift; sourceTree = "<group>"; };
+		19298EBB2AA2584100CA70CC /* iaraSong.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = iaraSong.mp3; sourceTree = "<group>"; };
+		19298EBC2AA2584100CA70CC /* botoSong.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = botoSong.mp3; sourceTree = "<group>"; };
+		19298EBD2AA2584100CA70CC /* CucaSong.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = CucaSong.mp3; sourceTree = "<group>"; };
+		19298EBE2AA2584100CA70CC /* lobbyMusic.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = lobbyMusic.mp3; sourceTree = "<group>"; };
+		19298EBF2AA2584200CA70CC /* tutorial.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = tutorial.mp3; sourceTree = "<group>"; };
+		19298EC02AA2584200CA70CC /* buttonClick.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = buttonClick.mp3; sourceTree = "<group>"; };
+		19298EC82AA2587200CA70CC /* SoundManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundManager.swift; sourceTree = "<group>"; };
 		193567A12A1E854200C7D34B /* Character.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Character.swift; sourceTree = "<group>"; };
 		197AB5502A953D2400ED7295 /* ButtonPlayAgain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonPlayAgain.swift; sourceTree = "<group>"; };
 		19A41CB42A3A443D00C2D9A7 /* TutorialView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TutorialView.swift; sourceTree = "<group>"; };
@@ -167,9 +181,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		19298EBA2AA257F600CA70CC /* Sounds */ = {
+			isa = PBXGroup;
+			children = (
+				19298EBC2AA2584100CA70CC /* botoSong.mp3 */,
+				19298EC02AA2584200CA70CC /* buttonClick.mp3 */,
+				19298EBD2AA2584100CA70CC /* CucaSong.mp3 */,
+				19298EBB2AA2584100CA70CC /* iaraSong.mp3 */,
+				19298EBE2AA2584100CA70CC /* lobbyMusic.mp3 */,
+				19298EBF2AA2584200CA70CC /* tutorial.mp3 */,
+			);
+			path = Sounds;
+			sourceTree = "<group>";
+		};
 		EB067C982A6EF576003F35F6 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				19298EBA2AA257F600CA70CC /* Sounds */,
 				EB1CFB3C2A86B08700BEB908 /* Preview Content.xcassets */,
 				FA6F185E2A1D302000E76127 /* Assets.xcassets */,
 				EB067C9A2A6EF5B4003F35F6 /* Font */,
@@ -227,6 +255,7 @@
 				FA5BEDA22A2E2464001B0C07 /* CardsModel.swift */,
 				FAF5E95F2A2814CB00155C76 /* CombatModel.swift */,
 				FAA898D92A3BAA740052B998 /* DifficultyModel.swift */,
+				19298EC82AA2587200CA70CC /* SoundManager.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -456,10 +485,16 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				19298EC52AA2584200CA70CC /* tutorial.mp3 in Resources */,
+				19298EC32AA2584200CA70CC /* CucaSong.mp3 in Resources */,
 				EB067CA02A6EFA3F003F35F6 /* CooperBlack-StdItal.otf in Resources */,
+				19298EC22AA2584200CA70CC /* botoSong.mp3 in Resources */,
 				EB4F36D82A9D0E1600103065 /* Localizable.strings in Resources */,
 				EB067CA22A6EFDF8003F35F6 /* cooper-std-black.otf in Resources */,
+				19298EC42AA2584200CA70CC /* lobbyMusic.mp3 in Resources */,
 				FA6F185F2A1D302000E76127 /* Assets.xcassets in Resources */,
+				19298EC12AA2584200CA70CC /* iaraSong.mp3 in Resources */,
+				19298EC62AA2584200CA70CC /* buttonClick.mp3 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -499,6 +534,7 @@
 				FAD5EE632A75224E004A4C78 /* GaleriaSaciView.swift in Sources */,
 				EBF134092A23FA7F000FA55E /* PlayerModel.swift in Sources */,
 				FA6F185A2A1D301F00E76127 /* MainView.swift in Sources */,
+				19298EC92AA2587200CA70CC /* SoundManager.swift in Sources */,
 				FAFF07C72A251E4D00D5BA2B /* FirstView .swift in Sources */,
 				EBC688442A69BB7D0072E706 /* TransparentConfigurationButton.swift in Sources */,
 				FAFF07C72A251E4D00D5BA2B /* FirstView .swift in Sources */,
