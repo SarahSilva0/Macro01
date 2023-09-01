@@ -11,7 +11,7 @@
 		1905A5362A1E961D0010D8A9 /* SquareGallery.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1905A5352A1E961D0010D8A9 /* SquareGallery.swift */; };
 		19298EC12AA2584200CA70CC /* iaraSong.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 19298EBB2AA2584100CA70CC /* iaraSong.mp3 */; };
 		19298EC22AA2584200CA70CC /* botoSong.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 19298EBC2AA2584100CA70CC /* botoSong.mp3 */; };
-		19298EC32AA2584200CA70CC /* CucaSong.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 19298EBD2AA2584100CA70CC /* CucaSong.mp3 */; };
+		19298EC32AA2584200CA70CC /* cucaSong.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 19298EBD2AA2584100CA70CC /* cucaSong.mp3 */; };
 		19298EC42AA2584200CA70CC /* lobbyMusic.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 19298EBE2AA2584100CA70CC /* lobbyMusic.mp3 */; };
 		19298EC52AA2584200CA70CC /* tutorial.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 19298EBF2AA2584200CA70CC /* tutorial.mp3 */; };
 		19298EC62AA2584200CA70CC /* buttonClick.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 19298EC02AA2584200CA70CC /* buttonClick.mp3 */; };
@@ -92,7 +92,7 @@
 		1905A5352A1E961D0010D8A9 /* SquareGallery.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SquareGallery.swift; sourceTree = "<group>"; };
 		19298EBB2AA2584100CA70CC /* iaraSong.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = iaraSong.mp3; sourceTree = "<group>"; };
 		19298EBC2AA2584100CA70CC /* botoSong.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = botoSong.mp3; sourceTree = "<group>"; };
-		19298EBD2AA2584100CA70CC /* CucaSong.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = CucaSong.mp3; sourceTree = "<group>"; };
+		19298EBD2AA2584100CA70CC /* cucaSong.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = cucaSong.mp3; sourceTree = "<group>"; };
 		19298EBE2AA2584100CA70CC /* lobbyMusic.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = lobbyMusic.mp3; sourceTree = "<group>"; };
 		19298EBF2AA2584200CA70CC /* tutorial.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = tutorial.mp3; sourceTree = "<group>"; };
 		19298EC02AA2584200CA70CC /* buttonClick.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = buttonClick.mp3; sourceTree = "<group>"; };
@@ -186,7 +186,7 @@
 			children = (
 				19298EBC2AA2584100CA70CC /* botoSong.mp3 */,
 				19298EC02AA2584200CA70CC /* buttonClick.mp3 */,
-				19298EBD2AA2584100CA70CC /* CucaSong.mp3 */,
+				19298EBD2AA2584100CA70CC /* cucaSong.mp3 */,
 				19298EBB2AA2584100CA70CC /* iaraSong.mp3 */,
 				19298EBE2AA2584100CA70CC /* lobbyMusic.mp3 */,
 				19298EBF2AA2584200CA70CC /* tutorial.mp3 */,
@@ -486,7 +486,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				19298EC52AA2584200CA70CC /* tutorial.mp3 in Resources */,
-				19298EC32AA2584200CA70CC /* CucaSong.mp3 in Resources */,
+				19298EC32AA2584200CA70CC /* cucaSong.mp3 in Resources */,
 				EB067CA02A6EFA3F003F35F6 /* CooperBlack-StdItal.otf in Resources */,
 				19298EC22AA2584200CA70CC /* botoSong.mp3 in Resources */,
 				EB4F36D82A9D0E1600103065 /* Localizable.strings in Resources */,

@@ -11,6 +11,7 @@ struct ViewComponent: View {
     @Environment(\.dismiss) var dismiss
     @Binding var count: Int
     var Images: [String]
+    private let sound = SoundManager.instance
 
     var body: some View {
         GeometryReader { geometry in
@@ -33,6 +34,7 @@ struct ViewComponent: View {
                     if count > 0 {
                         Button(action: {
                             if count >= 1 {
+                                sound.buttonSound()
                                 count -= 1
                             } else {
                                 dismiss()
@@ -50,7 +52,9 @@ struct ViewComponent: View {
                     Spacer()
                     if count < Images.count - 1 {
                         Button(action: {
+                            sound.buttonSound()
                             if count < Images.count - 1 {
+                                
                                 count += 1
                                 print(count)
                             } else {
