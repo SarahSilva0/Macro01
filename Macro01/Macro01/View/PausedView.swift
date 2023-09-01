@@ -59,6 +59,7 @@ struct PausedView: View {
                             }
                             TransparentConfigurationButton(text: "Sair", icon: "buttonExit") {
                                 sound.buttonSound()
+                                sound.playSound(music: .lobbyMusic)
                                 combatViewModel.gameReset()
                                 presentations.forEach{
                                     $0.wrappedValue = false

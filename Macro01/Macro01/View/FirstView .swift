@@ -127,10 +127,10 @@ struct FirstView: View {
                    isPresented: $showGaleria
                )
             .environmentObject(dificultyViewModel)
-            .onAppear{
-                sound.playSound(music: .lobbyMusic)
             }
-            }
+        .onAppear{
+            sound.playSound(music: .lobbyMusic)
+        }
         }
         
         

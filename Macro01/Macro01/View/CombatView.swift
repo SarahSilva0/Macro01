@@ -47,6 +47,7 @@ struct CombatView: View {
                                 sound.buttonSound()
                                 combatViewModel.gameReset()
                                 dismiss()
+                                sound.playSound(music: .lobbyMusic)
                             }, btnName: "Sair")
                         }
                         else {
@@ -55,6 +56,7 @@ struct CombatView: View {
                                     sound.buttonSound()
                                     combatViewModel.gameReset()
                                     dismiss()
+                                    sound.playSound(music: .lobbyMusic)
                                 }, btnName: "Sair")
                                 Spacer()
                                     .frame(width: 30)
