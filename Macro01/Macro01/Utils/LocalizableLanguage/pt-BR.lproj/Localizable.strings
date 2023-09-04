@@ -22,9 +22,10 @@
 
 "Pause" = "Pausa";
 
-"Cancel" = "Cancelar";
+"Continue" = "Continuar";
 
 "Exit" = "Sair";
+
 
 // PolicyAndPrivacyView
 
@@ -125,17 +126,13 @@ cartas!";
 
 "You won the round!" = "Você ganhou a rodada!";
 
-
-"Watch out!" = "Cuidado!";
-
+"Attention!" = "Cuidado!";
 
 "You lost the round!" = "Você perdeu a rodada!";
 
 "Draw!" = "Empate!";
 
-
 "Keep trying!" = "Continue tentando!";
-
 
 "Player 1 win!" = "Jogador 1 ganhou!";
 

@@ -49,22 +49,22 @@ struct PausedView: View {
                             .frame(height: geometry.size.height * 0.1)
                         
                         VStack {
-                            TransparentConfigurationButton(text: "Cancelar".localizedLanguage(), icon: "buttonCancel") {
+                            TransparentConfigurationButton(text: "Continuar".localizedLanguage(), icon: "buttonCancel") {
                                 combatViewModel.isPaused = false
                                 sound.buttonSound()
                                 if !combatViewModel.timer!.isValid{
                                     combatViewModel.startTimer()
-                                    print("PSUDSFPPP")
+                                   
                                 }
                             }
-                            TransparentConfigurationButton(text: "Sair", icon: "buttonExit") {
+                            TransparentConfigurationButton(text: "Sair".localizedLanguage(), icon: "buttonExit") {
                                 sound.buttonSound()
                                 sound.playSound(music: .lobbyMusic)
                                 combatViewModel.gameReset()
                                 presentations.forEach{
                                     $0.wrappedValue = false
                                 }
-                                print("Sair")
+                           
                             }
                         }
                         .frame(width: geometry.size.width * 0.35)

@@ -22,7 +22,7 @@
 
 "Pausa" = "Pause";
 
-"Cancelar" = "Cancel";
+"Continuar" = "Continue";
 
 "Sair" = "Exit";
 
@@ -58,7 +58,6 @@ E-mail: folkardbattlecard@gmail.com";
 //"Manual" = "Manual";
 
 "Sobre" = "About";
-
 
 "Folkard é um jogo de cartas com tema
 folclórico, onde seu objetivo é duelar contra
@@ -127,9 +126,7 @@ your opponents to collect all the cards!";
 
 "Você ganhou a rodada!" = "You won the round!";
 
-
-"Cuidado!" = "Watch out!";
-
+"Cuidado!" = "Attention";
 
 "Você perdeu a rodada!" = "You lost the round!";
 
