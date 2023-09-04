@@ -88,7 +88,7 @@ struct ConfigurationCardView: View {
                                 showPolicyAndPrivacy = true
                             }
                             
-                            TransparentConfigurationButton(text: "Créditos", icon: "email") {
+                            TransparentConfigurationButton(text: "Créditos".localizedLanguage(), icon: "email") {
                                 showCredits = true
                             }
                         }
