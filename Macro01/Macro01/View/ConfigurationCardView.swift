@@ -127,6 +127,9 @@ struct ConfigurationCardView: View {
             .sheet(isPresented: $showTutorial){
                 TutorialView(isPresented: $showTutorial).background(ClearBackgroundView())
             }
+            .sheet(isPresented: $showCredits) {
+                CreditsView(isPresented: $showCredits).background(ClearBackgroundView())
+            }
             
         }
         

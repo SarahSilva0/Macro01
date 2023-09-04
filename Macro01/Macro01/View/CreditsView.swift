@@ -51,13 +51,10 @@ struct CreditsView: View {
                         }
                         .frame(width: geometry.size.width, height: geometry.size.height * 0.15)
 
-                        HStack {
-                            
-                            Text("Desenvolvimento".localizedLanguage()
-                            )
+                        VStack {
+                            Text("Desenvolvimento".localizedLanguage())
                             .font(Font.custom("SF Pro", size: 12))
                             .foregroundColor(.black)
-                            .bold()
                             
                             Text("""
                                 Higor Lo Castro
@@ -66,6 +63,33 @@ struct CreditsView: View {
                             """)
                             .multilineTextAlignment(.center)
                             .lineSpacing(5)
+                            .foregroundColor(.black)
+                            
+                            Spacer()
+                            
+                            Text("Design".localizedLanguage())
+                            .font(Font.custom("SF Pro", size: 12))
+                            .foregroundColor(.black)
+                            
+                            Text("""
+                                Thiago Nakayama
+                            """)
+                            .foregroundColor(.black)
+                            
+                            Spacer()
+                            
+                            Text("Música e Sons".localizedLanguage())
+                            .font(Font.custom("SF Pro", size: 12))
+                            .foregroundColor(.black)
+                            
+                            Text("""
+                                Fiftysounds
+                                Freesound
+                            """)
+                            .multilineTextAlignment(.center)
+                            .lineSpacing(5)
+                            .foregroundColor(.black)
+                            
                             
                         }
                         .frame(width: geometry.size.width, height: geometry.size.height * 0.7)
