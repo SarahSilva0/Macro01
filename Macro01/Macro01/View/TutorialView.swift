@@ -29,7 +29,6 @@ struct TutorialView: View {
                             withAnimation {
                                 isPresented = false
                             }
-                            
                         },
                                        image: "out",
                                        foregroundColor: (Color(hex: "FFF2D9")),
