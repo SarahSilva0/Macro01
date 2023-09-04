@@ -62,8 +62,8 @@ struct CombatView: View {
                                     .frame(width: 30)
                                 ButtonPlayAgain(action: {
                                     sound.buttonSound()
-                                    combatViewModel.gameReset()
                                     combatViewModel.startCountdown()
+                                    combatViewModel.gameReset()
                                 }, btnName: "Jogar Novamente")
                             }
                         }
