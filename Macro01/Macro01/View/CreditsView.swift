@@ -21,94 +21,97 @@ struct CreditsView: View {
                             }
                             
                         },
-                        image: "out",
-                        foregroundColor: (Color(hex: "FFF2D9")),
-                        backgroundColor: (Color(hex: "FFF2D9")))
+                                       image: "out",
+                                       foregroundColor: (Color(hex: "FFF2D9")),
+                                       backgroundColor: (Color(hex: "FFF2D9")))
                         .frame(width: buttonSize, height: buttonSize)
-                      
+                        
                         Spacer()
                         
                     }
                     Spacer()
-                        .frame(width: geometry.size.width * 0.01, height: geometry.size.height * 0.85)
-                        .background(.white)
+                        .frame(height: geometry.size.height * 0.85)
+                        
                     
                 }
                 .frame(width: geometry.size.width * 0.98, height: geometry.size.height * 0.1)
                 
+                VStack {
                     VStack {
-                        
-                        HStack  {
+                        HStack {
                             Text("Créditos".localizedLanguage())
                                 .font(.system(size: 20))
                                 .foregroundColor(.black)
                                 .fontWeight(.bold)
                         }
-                        .frame(width: geometry.size.width, height: geometry.size.height * 0.15)
-                    
-                       
-                        VStack (spacing: 5) {
-                            Text("Desenvolvimento".localizedLanguage())
-                                .font(.system(size: 12))
-                                .fontWeight(.bold)
-                                .foregroundColor(.black)
-                            
-                            Text("""
-                            Higor Lo Castro
-                            Júlia Mendes
-                            Sarah Silva
-                            """)
-                            .font(.system(size: 12))
-                            .multilineTextAlignment(.center)
-                            .lineSpacing(2)
-                            .foregroundColor(.black)
-                        }
-            
-                        Spacer()
+                        .frame(width: geometry.size.width * 0.4, height: geometry.size.height * 0.2)
                         
-                        VStack (spacing: 5) {
-                            Text("Design".localizedLanguage())
-                                .font(.system(size: 12))
-                                .foregroundColor(.black)
-                                .fontWeight(.semibold)
+                        
+                        VStack{
+                            VStack {
+                                Section {
+                                    Text("Desenvolvimento".localizedLanguage())
+                                        .font(.system(size: 12).weight(.bold))
+                                    Text("""
+                                    Higor Lo Castro
+                                    Júlia Mendes
+                                    Sarah Silva
+                                    """)
+                                    .multilineTextAlignment(.center)
 
-                            Text("""
+                                }
+                            }
+                            .frame(height: geometry.size.height * 0.2)
+                            
+                            
+                            VStack{
+                                Section {
+                                    Text("Design".localizedLanguage())
+                                        .fontWeight(.bold)
+                                    
+                                    Text("""
                                 Thiago Nakayama
                                 """)
-                            .foregroundColor(.black)
-                            .font(.system(size: 12))
-                        }
-                        
-                        Spacer()
-                        
-                        VStack (spacing: 5) {
-                               Text("Música e Sons".localizedLanguage())
-                                   .font(.system(size: 12))
-                                   .foregroundColor(.black)
-                                   .fontWeight(.semibold)
-
-                               Text("""
+                                }
+//                                Divider()
+                            }
+                            .frame(height: geometry.size.height * 0.1, alignment: .top)
+                            
+                            
+                            VStack{
+                                Section {
+                                    Text("Músicas e Sons".localizedLanguage())
+                                        .fontWeight(.semibold)
+                                    
+                                    Text("""
                                    Fiftysounds
                                    Freesound
                                    """)
-                               .font(Font.custom("SF Pro", size: 12))
-                               .multilineTextAlignment(.center)
-                               .lineSpacing(5)
-                               .foregroundColor(.black)
-                           }
+                                    .multilineTextAlignment(.center)
+                                }
+                            }
+                            .frame(height: geometry.size.height * 0.2, alignment: .top)
+                            
+                            Spacer()
+
+                        }
+                        .font(.system(size: 12))
+                        .foregroundColor(.black)
+                        .lineSpacing(2)
+                        .frame(width: geometry.size.width * 0.4, height: geometry.size.height * 0.8)
                         
                         
-                        Spacer()
-                    
                     }
-                    .frame(width: geometry.size.width * 0.4)
+                    .frame(width: geometry.size.width * 0.4, height: geometry.size.height * 1.051)
                     .background(Color(hex: "FFF2D9"))
                     .cornerRadius(10)
                     .shadow(radius: 2)
-
+ 
+                    
+                }
+                .frame(width: geometry.size.width, height: geometry.size.height, alignment: .center)
             }
             .ignoresSafeArea()
-            .frame(width: geometry.size.width, height: geometry.size.height)
             .transition(.move(edge: .leading))
             .animation(.easeOut(duration: 4), value: false)
             
@@ -120,3 +123,12 @@ struct CreditsView: View {
         }
     }
 }
+
+
+//struct CreditsView_Previews: PreviewProvider {
+//    @State var ispresent: Bool = true
+//
+//    static var previews: some View {
+//        CreditsView()
+//    }
+//}
