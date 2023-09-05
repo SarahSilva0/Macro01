@@ -11,9 +11,10 @@ import AVFoundation
 class SoundManager: ObservableObject {
     
     static let instance = SoundManager()
+
+    @AppStorage("isPlaying") var isAudioPlaying: Bool = false
     
     var bgm: AVAudioPlayer?
-    
     var buttonbgm: AVAudioPlayer?
     
     enum BGMOptions: String{
@@ -44,12 +45,23 @@ class SoundManager: ObservableObject {
         do {
             bgm = try AVAudioPlayer(contentsOf: url)
             bgm?.numberOfLoops = .infinity
-            bgm?.play()
+            
+            if !isAudioPlaying {
+                bgm?.play()
+            }
         } catch let error {
             print("Erro, não tá tocando. \(error.localizedDescription)")
         }
     }
     
+    func stopMusic() {
+        if isAudioPlaying {
+            self.bgm?.pause()
+        }
+        else {
+            self.bgm?.play()
+        }
+    }
 }
 
 extension Int {

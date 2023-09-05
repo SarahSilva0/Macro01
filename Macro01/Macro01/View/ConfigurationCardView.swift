@@ -17,6 +17,8 @@ struct ConfigurationCardView: View {
     
     private let sound = SoundManager.instance
     
+    @AppStorage("iconDefault") var icon = "sound"
+    
     var body: some View {
         GeometryReader { geometry in
             ZStack {
@@ -58,9 +60,12 @@ struct ConfigurationCardView: View {
                             HStack  {
                                 Spacer()
                                 ButtonGenRound(action: {
+                                    sound.isAudioPlaying.toggle()
+                                    sound.stopMusic()
                                     sound.buttonSound()
+                                    icon = sound.isAudioPlaying ? "mute" : "sound"
                                 },
-                                               image: "",
+                                               image: icon,
                                                foregroundColor: (Color(hex: "FFF2D9")),
                                                backgroundColor: (Color(hex: "FFF2D9")))
                                 .frame(width: 30, height: 30)

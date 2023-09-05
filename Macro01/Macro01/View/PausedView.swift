@@ -15,7 +15,9 @@ struct PausedView: View {
     @ObservedObject var combatViewModel: CombatViewModel
     @Environment(\.presentations) private var presentations
     private let sound = SoundManager.instance
-
+    
+    @AppStorage("iconDefault") var icon = "sound"
+    
     var body: some View {
         GeometryReader { geometry in
             ZStack {
@@ -33,10 +35,14 @@ struct PausedView: View {
                             HStack  {
                                 Spacer()
                                 ButtonGenRound(action: {
+                                    sound.isAudioPlaying.toggle()
+                                    sound.stopMusic()
                                     sound.buttonSound()
+                                    icon = sound.isAudioPlaying ? "mute" : "sound"
                                     print("SOM")
+                                    
                                 },
-                                               image: "",
+                                               image: icon,
                                                foregroundColor: (Color(hex: "FFF2D9")),
                                                backgroundColor: (Color(hex: "FFF2D9")))
                                 .frame(width: 30, height: 30)

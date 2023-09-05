@@ -8,7 +8,7 @@ struct FirstView: View {
     private let sound = SoundManager.instance
     
     @AppStorage("tutorial") var isActiveTutorial: Bool = true
-    
+    @AppStorage("iconDefault") var icon = "sound"
     
     @State private var isTutorialSheetPresented = false
     @State private var showDificultyView = false
