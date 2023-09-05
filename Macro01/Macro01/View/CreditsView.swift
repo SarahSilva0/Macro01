@@ -30,12 +30,14 @@ struct CreditsView: View {
                                        foregroundColor: (Color(hex: "FFF2D9")),
                                        backgroundColor: (Color(hex: "FFF2D9")))
                         .frame(width: buttonSize, height: buttonSize)
+                        
+                        Spacer()
                     }
-                    .frame(width: geometry.size.width * 0.9, height: geometry.size.height * 0.85)
+                    Spacer()
+                    .frame(width: geometry.size.width * 0.01, height: geometry.size.height * 0.85)
                     
                 }
-                .frame(width: geometry.size.width * 0.8, height: geometry.size.height * 0.1)
-                .background(.red)
+                .frame(width: geometry.size.width * 0.98, height: geometry.size.height * 0.1)
                 
                 VStack {
                     Spacer()
