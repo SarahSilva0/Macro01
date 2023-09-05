@@ -31,36 +31,32 @@ struct CreditsView: View {
                         foregroundColor: (Color(hex: "FFF2D9")),
                         backgroundColor: (Color(hex: "FFF2D9")))
                         .frame(width: buttonSize, height: buttonSize)
-                      
-                        Spacer()
-                        
                     }
-                    Spacer()
                         .frame(width: geometry.size.width * 0.01, height: geometry.size.height * 0.85)
                     
                 }
                 .frame(width: geometry.size.width * 0.98, height: geometry.size.height * 0.1)
-                Spacer()
-                
+   
                     VStack {
-                        HStack  {
+                        Spacer()
+                        VStack {
                             Text("Créditos".localizedLanguage())
                                 .font(.system(size: 20))
                                 .foregroundColor(.black)
                                 .fontWeight(.bold)
                         }
-                        .frame(width: geometry.size.width, height: geometry.size.height * 0.15)
 
                         VStack {
                             Text("Desenvolvimento".localizedLanguage())
                             .font(Font.custom("SF Pro", size: 12))
                             .foregroundColor(.black)
+                            .fontWeight(.bold)
                             
                             Text("""
                                 Higor Lo Castro
                                 Júlia Mendes
                                 Sarah Silva
-                            """)
+                                """ )
                             .multilineTextAlignment(.center)
                             .lineSpacing(5)
                             .foregroundColor(.black)
@@ -70,10 +66,11 @@ struct CreditsView: View {
                             Text("Design".localizedLanguage())
                             .font(Font.custom("SF Pro", size: 12))
                             .foregroundColor(.black)
+                            .fontWeight(.bold)
                             
                             Text("""
                                 Thiago Nakayama
-                            """)
+                                """)
                             .foregroundColor(.black)
                             
                             Spacer()
@@ -85,7 +82,7 @@ struct CreditsView: View {
                             Text("""
                                 Fiftysounds
                                 Freesound
-                            """)
+                                """)
                             .multilineTextAlignment(.center)
                             .lineSpacing(5)
                             .foregroundColor(.black)
@@ -94,7 +91,6 @@ struct CreditsView: View {
                         }
                         .frame(width: geometry.size.width, height: geometry.size.height * 0.7)
                         Spacer()
-                            .background(.red)
                     }
                     .frame(width: geometry.size.width * 0.4)
                     .background(Color(hex: "FFF2D9"))
