@@ -1,9 +1,3 @@
-//
-//  CreditsView.swift
-//  Macro01
-//
-//  Created by Higor  Lo Castro on 04/09/23.
-//
 
 import SwiftUI
 
@@ -25,84 +19,93 @@ struct CreditsView: View {
                             withAnimation {
                                 isPresented = false
                             }
+                            
                         },
-                                       image: "out",
-                                       foregroundColor: (Color(hex: "FFF2D9")),
-                                       backgroundColor: (Color(hex: "FFF2D9")))
+                        image: "out",
+                        foregroundColor: (Color(hex: "FFF2D9")),
+                        backgroundColor: (Color(hex: "FFF2D9")))
                         .frame(width: buttonSize, height: buttonSize)
-                        
+                      
                         Spacer()
+                        
                     }
                     Spacer()
-                    .frame(width: geometry.size.width * 0.01, height: geometry.size.height * 0.85)
+                        .frame(width: geometry.size.width * 0.01, height: geometry.size.height * 0.85)
+                        .background(.white)
                     
                 }
                 .frame(width: geometry.size.width * 0.98, height: geometry.size.height * 0.1)
                 
-                VStack {
-                    Spacer()
                     VStack {
-                        Text("Créditos".localizedLanguage())
-                            .font(.system(size: 20))
-                            .foregroundColor(.black)
-                            .fontWeight(.bold)
-                    }
+                        
+                        HStack  {
+                            Text("Créditos".localizedLanguage())
+                                .font(.system(size: 20))
+                                .foregroundColor(.black)
+                                .fontWeight(.bold)
+                        }
+                        .frame(width: geometry.size.width, height: geometry.size.height * 0.15)
                     
-                    Spacer()
-                    
-                    VStack {
-                        Text("Desenvolvimento".localizedLanguage())
+                       
+                        VStack (spacing: 5) {
+                            Text("Desenvolvimento".localizedLanguage())
+                                .font(.system(size: 12))
+                                .fontWeight(.bold)
+                                .foregroundColor(.black)
+                            
+                            Text("""
+                            Higor Lo Castro
+                            Júlia Mendes
+                            Sarah Silva
+                            """)
                             .font(.system(size: 12))
+                            .multilineTextAlignment(.center)
+                            .lineSpacing(2)
                             .foregroundColor(.black)
-                            .fontWeight(.bold)
-                        
-                        Text("""
-                                Higor Lo Castro
-                                Júlia Mendes
-                                Sarah Silva
-                                """)
-                        .font(Font.custom("SF Pro", size: 12))
-                        .multilineTextAlignment(.center)
-                        .lineSpacing(5)
-                        .foregroundColor(.black)
-                        
+                        }
+            
                         Spacer()
                         
-                        Text("Design".localizedLanguage())
-                            .font(.system(size: 12))
-                            .foregroundColor(.black)
-                            .fontWeight(.semibold)
-                        
-                        Text("""
+                        VStack (spacing: 5) {
+                            Text("Design".localizedLanguage())
+                                .font(.system(size: 12))
+                                .foregroundColor(.black)
+                                .fontWeight(.semibold)
+
+                            Text("""
                                 Thiago Nakayama
                                 """)
-                        .foregroundColor(.black)
-                        .font(.system(size: 12))
+                            .foregroundColor(.black)
+                            .font(.system(size: 12))
+                        }
                         
                         Spacer()
                         
-                        Text("Música e Sons".localizedLanguage())
-                            .font(.system(size: 12))
-                            .foregroundColor(.black)
-                            .fontWeight(.semibold)
+                        VStack (spacing: 5) {
+                               Text("Música e Sons".localizedLanguage())
+                                   .font(.system(size: 12))
+                                   .foregroundColor(.black)
+                                   .fontWeight(.semibold)
+
+                               Text("""
+                                   Fiftysounds
+                                   Freesound
+                                   """)
+                               .font(Font.custom("SF Pro", size: 12))
+                               .multilineTextAlignment(.center)
+                               .lineSpacing(5)
+                               .foregroundColor(.black)
+                           }
                         
-                        Text("""
-                                Fiftysounds
-                                Freesound
-                                """)
-                        .font(Font.custom("SF Pro", size: 12))
-                        .multilineTextAlignment(.center)
-                        .lineSpacing(5)
-                        .foregroundColor(.black)
+                        
+                        Spacer()
+                    
                     }
-                    .frame(width: geometry.size.width, height: geometry.size.height * 0.7)
-                    Spacer()
-                }
-                .frame(width: geometry.size.width * 0.4)
-                .background(Color(hex: "FFF2D9"))
-                .cornerRadius(10)
-                .shadow(radius: 2)
-                
+                    .frame(width: geometry.size.width * 0.4)
+                    .background(Color(hex: "FFF2D9"))
+                    .cornerRadius(10)
+                    .shadow(radius: 2)
+
             }
             .ignoresSafeArea()
             .frame(width: geometry.size.width, height: geometry.size.height)
@@ -117,4 +120,3 @@ struct CreditsView: View {
         }
     }
 }
-
