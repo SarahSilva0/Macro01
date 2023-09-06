@@ -201,7 +201,7 @@ struct CombatView: View {
                                 )
                         }
                     }
-                    .frame(width: geometry.size.width, height: geometry.size.height * 0.9, alignment: .bottomLeading)
+                    .frame(width: geometry.size.width * 0.75, height: geometry.size.height * 0.9, alignment: .bottomLeading)
                 }
             }
             
