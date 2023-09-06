@@ -29,7 +29,7 @@ struct SheetView: View {
                             .foregroundColor(Color(hex: "FFF2D9"))
                             .overlay(
                                 Text("\(combatViewModel.player1.mana)")
-                                    .font(.system(size: 30, weight: .bold))
+                                    .font(Font.custom("CooperBlackStd", size: 30))
                                     .foregroundColor(.black)
                             )
                     }
