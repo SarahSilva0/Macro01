@@ -14,6 +14,7 @@ struct ConfigurationCardView: View {
     @State private var showAbout = false
     @State private var showPolicyAndPrivacy = false
     @State private var showTutorial = false
+    @State private var showCredits = false
     
     private let sound = SoundManager.instance
     
@@ -35,8 +36,8 @@ struct ConfigurationCardView: View {
                                        image: "out",
                                        foregroundColor: (Color(hex: "FFF2D9")),
                                        backgroundColor: (Color(hex: "FFF2D9")))
-                                       .frame(width: buttonSize, height: buttonSize)
-                    
+                        .frame(width: buttonSize, height: buttonSize)
+                        
                         Spacer()
                         
                     }
@@ -82,16 +83,16 @@ struct ConfigurationCardView: View {
                                 showAbout = true
                             }
                             
-//                            TransparentConfigurationButton(text: "Suporte", icon: "email") {
-//                                print("email")
-//                            }
-                            
-                            TransparentConfigurationButton(text: "Políticas de Privacidade".localizedLanguage(), icon: "info") {
+                            TransparentConfigurationButton(text: "Políticas de Privacidade".localizedLanguage(), icon: "policies") {
                                 sound.buttonSound()
                                 showPolicyAndPrivacy = true
                             }
+                            
+                            TransparentConfigurationButton(text: "Créditos".localizedLanguage(), icon: "credits") {
+                                showCredits = true
+                            }
                         }
-                        .frame(width: geometry.size.width * 0.4, height: geometry.size.height * 0.4)
+                        .frame(width: geometry.size.width * 0.4, height: geometry.size.height * 0.5)
                         Spacer()
                     }
                     .frame(width: geometry.size.width * 0.4)
@@ -104,7 +105,7 @@ struct ConfigurationCardView: View {
             .ignoresSafeArea()
             .frame(width: geometry.size.width, height: geometry.size.height)
             
-
+            
             
             .transition(.move(edge: .leading))
             .animation(.easeOut(duration: 4), value: false)
@@ -126,11 +127,14 @@ struct ConfigurationCardView: View {
             .sheet(isPresented: $showTutorial){
                 TutorialView(isPresented: $showTutorial).background(ClearBackgroundView())
             }
-           
+            .sheet(isPresented: $showCredits) {
+                CreditsView(isPresented: $showCredits).background(ClearBackgroundView())
+            }
+            
         }
         
     }
-       
-}
     
+}
+
 

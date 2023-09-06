@@ -18,6 +18,8 @@
 
 "Políticas de Privacidade" = "Privacy Policies";
 
+"Créditos" = "Credits";
+
 // MARK: - PausedView
 
 "Pausa" = "Pause";
@@ -177,6 +179,13 @@ your opponents to collect all the cards!";
 "lucia3PT" = "lucia3EN";
 
 
+//MARK: - CreditsView
+
+"Desenvolvimento" = "Developement";
+
+"Design" = "Design";
+ 
+"Música e Sons" = "Music and Sounds";
 
 
 
