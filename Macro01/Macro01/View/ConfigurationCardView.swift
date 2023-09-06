@@ -83,12 +83,12 @@ struct ConfigurationCardView: View {
                                 showAbout = true
                             }
                             
-                            TransparentConfigurationButton(text: "Políticas de Privacidade".localizedLanguage(), icon: "info") {
+                            TransparentConfigurationButton(text: "Políticas de Privacidade".localizedLanguage(), icon: "policies") {
                                 sound.buttonSound()
                                 showPolicyAndPrivacy = true
                             }
                             
-                            TransparentConfigurationButton(text: "Créditos".localizedLanguage(), icon: "email") {
+                            TransparentConfigurationButton(text: "Créditos".localizedLanguage(), icon: "credits") {
                                 showCredits = true
                             }
                         }
