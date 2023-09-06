@@ -195,7 +195,7 @@ struct CombatView: View {
                                 .frame(width: 34, height: 34)
                                 .foregroundColor(Color(hex: "FFF2D9"))
                                 .overlay(
-                                    Text("1")
+                                    Text("\(combatViewModel.player1.mana)")
                                         .font(Font.custom("CooperBlackStd", size: 20))
                                         .foregroundColor(Color .black)
                                 )
