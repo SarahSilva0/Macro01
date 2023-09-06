@@ -26,6 +26,7 @@ struct CombatView: View {
                 .resizable()
                 .aspectRatio(contentMode: .fill)
                 .ignoresSafeArea()
+            
             VStack {
                 if combatViewModel.timeAndSheetIsVisible(){
                     //Vitoria e derrota > Exibido quando ganha ou perde a partida.
@@ -141,14 +142,12 @@ struct CombatView: View {
                 //AQUI MEXE NA ALTURA DAS CARTAS EM RELACAO AS CARTAS DO CENTRO
                 .frame(width: geometry.size.width, height: geometry.size.height * 1.1, alignment: .center)
                 
-                
                 ZStack {
-                    VStack{
+                    VStack {
                         //MARK: BOTÃO DE PAUSE
-                        HStack{
+                        HStack {
                             ButtonGenRound(action: {
                                 sound.buttonSound()
-                                print("pause")
                                 combatViewModel.isPaused = true
                                 print(combatViewModel.isPaused)
                             },
@@ -162,7 +161,6 @@ struct CombatView: View {
                         .sheet(isPresented: $combatViewModel.isPaused){
                             PausedView(isPresented: $combatViewModel.isPaused, combatViewModel: combatViewModel)
                                 .environment(\.presentations, presentations + [$combatViewModel.isPaused])
-                            
                                 .background(ClearBackgroundView())
                             
                         }
@@ -186,8 +184,28 @@ struct CombatView: View {
                         .ignoresSafeArea()
                         .frame(width: geometry.size.width, height: geometry.size.height * 0.48, alignment: .bottom)
                     }
+                    
+                    HStack {
+                        ZStack {
+                            Circle()
+                                .frame(width: 58, height: 58)
+                                .foregroundColor(Color(hex: "3C3634"))
+                            
+                            Circle()
+                                .frame(width: 45, height: 45)
+                                .foregroundColor(Color(hex: "FFF2D9"))
+                                .overlay(
+                                    Text("1")
+                                        .font(.system(size: 30, weight: .bold))
+                                        .foregroundColor(.black)
+                                )
+                        }
+                    }
+                    .frame(width: geometry.size.width, height: geometry.size.height * 0.9, alignment: .bottomLeading)
                 }
             }
+            
+          
         }
         .onAppear {
             combatViewModel.startCountdown()
