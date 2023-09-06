@@ -187,10 +187,13 @@ struct CombatView: View {
                     
                     HStack {
                         ZStack {
-                            Circle()
-                                .frame(width: 44, height: 44)
-                                .foregroundColor(Color(hex: "3C3634"))
-                            
+                            Image("backgroundGeral")
+                                        .resizable()
+                                        .frame(width: 44, height: 44)
+                                        .aspectRatio(contentMode: .fill)
+                                        .clipShape(Circle())
+                                        
+                                       
                             Circle()
                                 .frame(width: 34, height: 34)
                                 .foregroundColor(Color(hex: "FFF2D9"))
@@ -205,7 +208,7 @@ struct CombatView: View {
                 }
             }
             
-          
+            
         }
         .onAppear {
             combatViewModel.startCountdown()
