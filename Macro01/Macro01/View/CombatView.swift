@@ -188,16 +188,16 @@ struct CombatView: View {
                     HStack {
                         ZStack {
                             Circle()
-                                .frame(width: 58, height: 58)
+                                .frame(width: 44, height: 44)
                                 .foregroundColor(Color(hex: "3C3634"))
                             
                             Circle()
-                                .frame(width: 45, height: 45)
+                                .frame(width: 34, height: 34)
                                 .foregroundColor(Color(hex: "FFF2D9"))
                                 .overlay(
                                     Text("1")
-                                        .font(.system(size: 30, weight: .bold))
-                                        .foregroundColor(.black)
+                                        .font(Font.custom("CooperBlackStd", size: 20))
+                                        .foregroundColor(Color .black)
                                 )
                         }
                     }
