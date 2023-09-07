@@ -31,7 +31,9 @@ class SoundManager: ObservableObject {
         
         do {
             buttonbgm = try AVAudioPlayer(contentsOf: url)
-            buttonbgm?.play()
+            if !isAudioPlaying {
+                buttonbgm?.play()
+            }
         } catch let error {
             print("Erro, não tá tocando. \(error.localizedDescription)")
         }
@@ -57,9 +59,11 @@ class SoundManager: ObservableObject {
     func stopMusic() {
         if isAudioPlaying {
             self.bgm?.pause()
+            self.buttonbgm?.pause()
         }
         else {
             self.bgm?.play()
+            self.buttonbgm?.play()
         }
     }
 }
