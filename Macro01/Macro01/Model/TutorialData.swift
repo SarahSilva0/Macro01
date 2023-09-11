@@ -100,6 +100,15 @@ class TutorialData {
             dialogueColor: "FFC097"
         )
         
+        let tutorialViewElevenDataTwo = TutorialModel(
+            charactersName: "SP",
+            characterImage: "Saci",
+            imageCenter: "saciManaTutorial",
+            dialogue: "Elas também aparecerão ao lado do meu retrato, portanto lembre-se de checá-las...".localizedLanguage(),
+            dialogueColor: "FFC097"
+        )
+        
+        
         let tutorialViewTwelveData = TutorialModel(
             charactersName: "SP",
             characterImage: "Saci",
@@ -143,7 +152,7 @@ class TutorialData {
         )
         
         
-        tutorialData = [tutorialViewOneData, tutorialViewTwoData, tutorialViewThreeData, tutorialViewFourData, tutorialViewFiveData,tutorialViewSixData, tutorialViewSevenData, tutorialViewEightData, tutorialViewNineData, tutorialViewTenData, tutorialViewElevenData, tutorialViewTwelveData, tutorialViewThirteenData, tutorialViewFourteenData, tutorialViewFifteenData, tutorialViewSixteenData]
+        tutorialData = [tutorialViewOneData, tutorialViewTwoData, tutorialViewThreeData, tutorialViewFourData, tutorialViewFiveData,tutorialViewSixData, tutorialViewSevenData, tutorialViewEightData, tutorialViewNineData, tutorialViewTenData, tutorialViewElevenData, tutorialViewElevenDataTwo, tutorialViewTwelveData, tutorialViewThirteenData, tutorialViewFourteenData, tutorialViewFifteenData, tutorialViewSixteenData]
     }
 }
 
