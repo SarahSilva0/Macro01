@@ -17,6 +17,7 @@ struct CombatView: View {
     @Binding var raiaWin: Bool
     @Binding var botoWin: Bool
     @Binding var cucaWin: Bool
+        
     private let sound = SoundManager.instance
     
     
@@ -66,6 +67,16 @@ struct CombatView: View {
                                     combatViewModel.startCountdown()
                                 }, btnName: "Jogar Novamente")
                             }
+                            .opacity(combatViewModel.isCardVisible ? 1: 0)
+                            .onAppear {
+                                DispatchQueue.main.asyncAfter(deadline: .now() + 3.0) {
+                                    withAnimation {
+                                        combatViewModel.isCardVisible = true
+                                    }
+                                }
+                            }
+                            
+                            
                         }
                     }
                     //Parabens, Empate e Cuidado > Exibido a cada jogada de cartas
@@ -198,4 +209,12 @@ struct CombatView: View {
         }
         .navigationBarHidden(true)
     }
+    
 }
+
+extension View {
+    func hidden(_ shouldHide: Bool) -> some View {
+        opacity(shouldHide ? 0 : 1)
+    }
+}
+

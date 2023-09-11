@@ -13,6 +13,7 @@ class CombatViewModel: ObservableObject {
     @Published var endTurnButtonInteraction = true
     @Published var isPaused = false
     @Published var checkWin = 0
+    @Published var isCardVisible = false
     var timer: Timer?
     
     @Published var countdownSheet: Int = 5
@@ -166,6 +167,7 @@ class CombatViewModel: ObservableObject {
     
     //AQUI ESTOU RESETANDO MEU JOGO. JÁ QUE O OBJETO NÃO É INSTANCIADO DE NOVO COM O STATEOBJECT, OS VALORES PERMANECEM. ESSA FUNÇÃO COM CERTEZA PRECISA SER MELHORADA.
     func gameReset(){
+        isCardVisible = false
         timer?.invalidate()
         isPaused = false
         self.turn = 0
@@ -196,6 +198,9 @@ class CombatViewModel: ObservableObject {
     
     func player1Won() -> Bool {
         return player1.winTurno > player2.winTurno
+    }
+    func player2Won() -> Bool {
+        return player2.winTurno > player1.winTurno
     }
     
     //AQUI É OQ ACONTECE SE O PLAYER1 GANHAR O LEVEL.
