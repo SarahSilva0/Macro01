@@ -14,7 +14,6 @@ struct ButtonGenRound: View {
                 .foregroundColor(foregroundColor)
                 .background(backgroundColor)
                 .clipShape(Circle())
-               
         }
     }
 }

@@ -22,6 +22,18 @@ struct TutorialStartCardsView: View {
                 Color.black.edgesIgnoringSafeArea(.all)
                 
                 VStack(spacing: 0) {
+                    
+                    HStack  (alignment: .bottom) {
+                        Spacer()
+                        Button(action: {
+                            print("oi")
+                        }) {
+                            Text("Pular Tutorial")
+                                .font(.custom("SF Pro", size: 12))
+                                .foregroundColor(.white)
+                        }
+                    }
+                    
                     VStack {
                         Image(tutorialData.tutorialData[currentIndex].imageCenter)
                             .resizable()
