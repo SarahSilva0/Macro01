@@ -167,6 +167,7 @@ class CombatViewModel: ObservableObject {
     //AQUI ESTOU RESETANDO MEU JOGO. JÁ QUE O OBJETO NÃO É INSTANCIADO DE NOVO COM O STATEOBJECT, OS VALORES PERMANECEM. ESSA FUNÇÃO COM CERTEZA PRECISA SER MELHORADA.
     func gameReset(){
         timer?.invalidate()
+        isPaused = false
         self.turn = 0
         self.countdown = 3
         self.isCountdownVisible = true
