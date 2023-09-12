@@ -21,23 +21,21 @@ struct TutorialStartCardsView: View {
             ZStack {
                 Color.black.edgesIgnoringSafeArea(.all)
                 
-                VStack  {
+                VStack {
                     HStack {
                         Spacer()
                         Button(action: {
                             print("oi")
                         }) {
-                            Text("Pular Tutorial")
+                            Text("Pular Tutorial".localizedLanguage())
                                 .font(.custom("SF Pro", size: 12))
                                 .foregroundColor(.white)
-                                .padding(.bottom, 250)
+                                .padding(.top, 25)
                         }
+                      
                     }
-
+                    Spacer()
                 }
-            
-                .background(.red)
-               
                 VStack(spacing: 0) {
                    
                     VStack {
