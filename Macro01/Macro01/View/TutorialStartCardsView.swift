@@ -21,9 +21,8 @@ struct TutorialStartCardsView: View {
             ZStack {
                 Color.black.edgesIgnoringSafeArea(.all)
                 
-                VStack(spacing: 0) {
-                    
-                    HStack  (alignment: .bottom) {
+                VStack  {
+                    HStack {
                         Spacer()
                         Button(action: {
                             print("oi")
@@ -31,9 +30,16 @@ struct TutorialStartCardsView: View {
                             Text("Pular Tutorial")
                                 .font(.custom("SF Pro", size: 12))
                                 .foregroundColor(.white)
+                                .padding(.bottom, 250)
                         }
                     }
-                    
+
+                }
+            
+                .background(.red)
+               
+                VStack(spacing: 0) {
+                   
                     VStack {
                         Image(tutorialData.tutorialData[currentIndex].imageCenter)
                             .resizable()
