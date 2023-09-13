@@ -25,7 +25,8 @@ struct TutorialStartCardsView: View {
                     HStack {
                         Spacer()
                         Button(action: {
-                            print("oi")
+                            isTutorialSheetPresented = false
+                            isActiveTutorial = false
                         }) {
                             Text("Pular Tutorial".localizedLanguage())
                                 .font(.custom("SF Pro", size: 12))

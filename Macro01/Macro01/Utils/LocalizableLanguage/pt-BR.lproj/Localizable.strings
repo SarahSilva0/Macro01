@@ -178,3 +178,8 @@ cartas!";
 "lucia1EN" = "lucia1PT";
 "lucia2EN" = "lucia2PT";
 "lucia3EN" = "lucia3PT";
+
+
+//MARK: - TutorialStartCardsView
+
+"Skip Tutorial" = "Pular Tutorial";
