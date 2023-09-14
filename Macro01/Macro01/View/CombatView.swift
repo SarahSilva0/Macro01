@@ -17,7 +17,7 @@ struct CombatView: View {
     @Binding var raiaWin: Bool
     @Binding var botoWin: Bool
     @Binding var cucaWin: Bool
-
+    private let sound = SoundManager.instance
     
     
     var body: some View {
@@ -26,6 +26,7 @@ struct CombatView: View {
                 .resizable()
                 .aspectRatio(contentMode: .fill)
                 .ignoresSafeArea()
+            
             VStack {
                 if combatViewModel.timeAndSheetIsVisible(){
                     //Vitoria e derrota > Exibido quando ganha ou perde a partida.
@@ -44,21 +45,26 @@ struct CombatView: View {
                                 if combatViewModel.CucaDiff.winLevel == true {
                                     cucaWin = combatViewModel.CucaDiff.winLevel
                                 }
+                                sound.buttonSound()
                                 combatViewModel.gameReset()
                                 dismiss()
+                                sound.playSound(music: .lobbyMusic)
                             }, btnName: "Sair")
                         }
                         else {
                             HStack {
                                 ButtonPlayAgain(action: {
+                                    sound.buttonSound()
                                     combatViewModel.gameReset()
                                     dismiss()
+                                    sound.playSound(music: .lobbyMusic)
                                 }, btnName: "Sair")
                                 Spacer()
                                     .frame(width: 30)
                                 ButtonPlayAgain(action: {
-                                    combatViewModel.gameReset()
+                                    sound.buttonSound()
                                     combatViewModel.startCountdown()
+                                    combatViewModel.gameReset()
                                 }, btnName: "Jogar Novamente")
                             }
                         }
@@ -136,13 +142,12 @@ struct CombatView: View {
                 //AQUI MEXE NA ALTURA DAS CARTAS EM RELACAO AS CARTAS DO CENTRO
                 .frame(width: geometry.size.width, height: geometry.size.height * 1.1, alignment: .center)
                 
-                
                 ZStack {
-                    VStack{
+                    VStack {
                         //MARK: BOTÃO DE PAUSE
-                        HStack{
+                        HStack {
                             ButtonGenRound(action: {
-                                print("pause")
+                                sound.buttonSound()
                                 combatViewModel.isPaused = true
                                 print(combatViewModel.isPaused)
                             },
@@ -156,7 +161,6 @@ struct CombatView: View {
                         .sheet(isPresented: $combatViewModel.isPaused){
                             PausedView(isPresented: $combatViewModel.isPaused, combatViewModel: combatViewModel)
                                 .environment(\.presentations, presentations + [$combatViewModel.isPaused])
-                            
                                 .background(ClearBackgroundView())
                             
                         }
@@ -180,8 +184,31 @@ struct CombatView: View {
                         .ignoresSafeArea()
                         .frame(width: geometry.size.width, height: geometry.size.height * 0.48, alignment: .bottom)
                     }
+                    
+                    HStack {
+                        ZStack {
+                            Image("backgroundGeral")
+                                        .resizable()
+                                        .frame(width: 44, height: 44)
+                                        .aspectRatio(contentMode: .fill)
+                                        .clipShape(Circle())
+                                        
+                                       
+                            Circle()
+                                .frame(width: 34, height: 34)
+                                .foregroundColor(Color(hex: "FFF2D9"))
+                                .overlay(
+                                    Text("\(combatViewModel.player1.mana)")
+                                        .font(Font.custom("CooperBlackStd", size: 20))
+                                        .foregroundColor(Color .black)
+                                )
+                        }
+                    }
+                    .frame(width: geometry.size.width * 0.75, height: geometry.size.height * 0.9, alignment: .bottomLeading)
                 }
             }
+            
+            
         }
         .onAppear {
             combatViewModel.startCountdown()
@@ -190,16 +217,6 @@ struct CombatView: View {
         }) {
             SheetView(combatViewModel: combatViewModel, isSheetVisible: $combatViewModel.isSheetVisible, countdownSheet: $combatViewModel.countdownSheet).background(ClearBackgroundView())
         }
-        //        .alert(isPresented: $combatViewModel.isGameEndAlertPresented) {
-        //            Alert(title: Text("Fim do Jogo"),
-        //                  message: Text("\(combatViewModel.getScore())"),
-        //                  dismissButton: .default(Text("OK"), action: {
-        //                combatViewModel.gameReset()
-        //                raiaWin = combatViewModel.RaiaDiff.winLevel
-        //                combatViewModel.isGameEndAlertPresented = false
-        //                presentationMode.wrappedValue.dismiss()
-        //            }))
-        //        }
         .navigationBarHidden(true)
     }
 }

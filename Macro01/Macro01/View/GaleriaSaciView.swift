@@ -10,7 +10,7 @@ import SwiftUI
 
 struct GaleriaSaciView: View {
     
-    
+    private let sound = SoundManager.instance
     @State private var count = 0
     
     @Binding var isPresented: Bool
@@ -31,6 +31,7 @@ struct GaleriaSaciView: View {
                 VStack {
                     HStack {
                         ButtonGenRound(action: {
+                            sound.buttonSound()
                             withAnimation {
                                 isPresented = false
                             }

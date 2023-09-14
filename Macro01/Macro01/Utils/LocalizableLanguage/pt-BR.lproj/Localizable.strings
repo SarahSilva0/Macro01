@@ -18,13 +18,16 @@
 
 "Privacy Policies" = "Políticas de Privacidade";
 
+"Credits" = "Créditos";
+
 // PausedView
 
 "Pause" = "Pausa";
 
-"Cancel" = "Cancelar";
+"Continue" = "Continuar";
 
 "Exit" = "Sair";
+
 
 // PolicyAndPrivacyView
 
@@ -98,6 +101,8 @@ cartas!";
 
 "During the card selection, you can view your Energy Charges; remember to keep it fully charged before using an Attack Card." = "Durante a seleção de cartas, você poderá visualizar suas Cargas de Energia, lembre-se de mantê-la sempre carregada antes de usar uma Carta de Ataque.";
 
+"It will also appear next to my portrait, so please remember to check them..." = "Elas também aparecerão ao lado do meu retrato, portanto lembre-se de checá-las...";
+
 "Finally, if you don't select a card, you'll lose your turn, and a Null Card will be automatically played." = "Por fim, caso você não selecione uma carta, você perderá seu turno e uma Carta Nula será jogada automaticamente.";
 
 "When both players select their cards, a duel is executed. The one who achieves a successful attack wins the round!" = "Quando ambos jogadores selecionarem suas cartas, um duelo é executado. Ganha a rodada aquele que conseguir um Sucesso no Ataque!";
@@ -125,17 +130,13 @@ cartas!";
 
 "You won the round!" = "Você ganhou a rodada!";
 
-
-"Watch out!" = "Cuidado!";
-
+"Attention!" = "Cuidado!";
 
 "You lost the round!" = "Você perdeu a rodada!";
 
 "Draw!" = "Empate!";
 
-
 "Keep trying!" = "Continue tentando!";
-
 
 "Player 1 win!" = "Jogador 1 ganhou!";
 
@@ -177,3 +178,8 @@ cartas!";
 "lucia1EN" = "lucia1PT";
 "lucia2EN" = "lucia2PT";
 "lucia3EN" = "lucia3PT";
+
+
+//MARK: - TutorialStartCardsView
+
+"Skip Tutorial" = "Pular Tutorial";

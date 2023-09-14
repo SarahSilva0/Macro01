@@ -11,7 +11,7 @@ struct TutorialStartCardsView: View {
     @Binding var isActiveTutorial: Bool
     @Binding var isTutorialSheetPresented: Bool
     @Binding var showDificultyView: Bool
-
+    private let sound = SoundManager.instance
     
     
     @Environment(\.presentationMode) var presentationMode
@@ -21,7 +21,24 @@ struct TutorialStartCardsView: View {
             ZStack {
                 Color.black.edgesIgnoringSafeArea(.all)
                 
+                VStack {
+                    HStack {
+                        Spacer()
+                        Button(action: {
+                            isTutorialSheetPresented = false
+                            isActiveTutorial = false
+                        }) {
+                            Text("Pular Tutorial".localizedLanguage())
+                                .font(.custom("SF Pro", size: 12))
+                                .foregroundColor(.white)
+                                .padding(.top, 25)
+                        }
+                      
+                    }
+                    Spacer()
+                }
                 VStack(spacing: 0) {
+                   
                     VStack {
                         Image(tutorialData.tutorialData[currentIndex].imageCenter)
                             .resizable()
@@ -52,11 +69,13 @@ struct TutorialStartCardsView: View {
                                 VStack {
                                     ButtonComponentImage(action: {
                                         decreaseIndex()
+                                        sound.buttonSound()
                                     }, image: "NextLeft")
                                     .opacity(currentIndex > 0 ? 1.0 : 0.0)
                                     
                                     ButtonComponentImage(action: {
                                         increaseIndex()
+                                        sound.buttonSound()
                                     }, image: "NextRight")
                                 }
                             }
@@ -74,6 +93,13 @@ struct TutorialStartCardsView: View {
         .sheet(isPresented: $shouldNavigate) {
             DificultyView_(combatViewModel: CombatViewModel())
         }
+        .onAppear{
+            sound.playSound(music: .tutorial)
+        }
+        .onDisappear{
+            sound.playSound(music: .lobbyMusic)
+        }
+        
     }
     
     private func increaseIndex() {
